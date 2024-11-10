@@ -251,6 +251,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 agregarActionPerformed(evt);
             }
         });
+        agregar.addActionListener(this);
 
         personas.setBackground(new java.awt.Color(13, 17, 23));
         personas.setForeground(new java.awt.Color(13, 17, 23));
@@ -392,6 +393,10 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             Global global = new Global();
             global.setVisible(true);
             this.dispose();
+        }
+        if(evt.getSource() == agregar){
+            AgregarPK agregar = new AgregarPK(this,true);
+            agregar.setVisible(true);
         }
     }
 }

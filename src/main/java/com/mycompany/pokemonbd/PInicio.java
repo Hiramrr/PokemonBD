@@ -52,7 +52,7 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         principal.setForeground(new java.awt.Color(255, 255, 255));
         principal.setMinimumSize(new java.awt.Dimension(1280, 764));
 
-        entrenador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pk.jpg"))); // NOI18N
+        entrenador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/collage2.png"))); // NOI18N
 
         secundario.setBackground(new java.awt.Color(22, 26, 33));
         secundario.setForeground(new java.awt.Color(22, 26, 33));
@@ -179,6 +179,13 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         this.dispose();
     }
     
+    public void iniciarSesionError() {
+        Dialogo acciones = new Dialogo(this,false);
+        acciones.setVisible(true);
+        acciones.setMensaje("No existe el usuario en la base de datos");
+        acciones.setLocation(450, 261);
+        System.out.println("fallo");
+    }
     
     @Override
     public void actionPerformed(ActionEvent evt) {

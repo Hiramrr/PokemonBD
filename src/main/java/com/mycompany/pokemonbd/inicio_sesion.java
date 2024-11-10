@@ -226,7 +226,9 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
                
             if(usuarioValido(ID,Con)){
               ((PInicio) javax.swing.SwingUtilities.getWindowAncestor(this)).iniciarSesionExitoso();
+              return;
             }
+            ((PInicio) javax.swing.SwingUtilities.getWindowAncestor(this)).iniciarSesionError();
             error.setText("\tIntroduce datos correctos!");
         }
     }

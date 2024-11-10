@@ -45,7 +45,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
 
         regresar.setBackground(new java.awt.Color(13, 17, 23));
         regresar.setForeground(new java.awt.Color(13, 17, 23));
-        regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Usuario.png"))); // NOI18N
+        regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
         regresar.setBorder(null);
         regresar.addActionListener(this);
         regresar.setToolTipText("Regresar a la caja de Pokemons");
@@ -81,6 +81,8 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 502, 760);
 
+        jTable1.setBackground(new java.awt.Color(13, 17, 23));
+        jTable1.setForeground(new java.awt.Color(13, 17, 23));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -117,7 +119,10 @@ public class Global extends javax.swing.JFrame implements ActionListener{
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setGridColor(new java.awt.Color(22, 26, 33));
         jTable1.setRowHeight(50);
+        jTable1.setSelectionBackground(new java.awt.Color(13, 17, 23));
+        jTable1.setSelectionForeground(new java.awt.Color(13, 17, 23));
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1);

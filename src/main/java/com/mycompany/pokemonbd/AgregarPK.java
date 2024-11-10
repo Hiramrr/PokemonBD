@@ -4,11 +4,14 @@
  */
 package com.mycompany.pokemonbd;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author cinom
  */
-public class AgregarPK extends javax.swing.JDialog {
+public class AgregarPK extends javax.swing.JDialog implements ActionListener{
 
     /**
      * Creates new form AgregarPK
@@ -35,7 +38,19 @@ public class AgregarPK extends javax.swing.JDialog {
         perfil = new javax.swing.JLabel();
         especie_Label = new javax.swing.JLabel();
         IDEntrenador1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        naturalezas_combo = new javax.swing.JComboBox<>();
+        mote_label = new javax.swing.JLabel();
+        mote = new javax.swing.JTextField();
+        naturaleza_label = new javax.swing.JLabel();
+        Naturaleza = new javax.swing.JTextField();
+        especies_combo = new javax.swing.JComboBox<>();
+        objeto_label = new javax.swing.JLabel();
+        objeto = new javax.swing.JTextField();
+        objeto_combo = new javax.swing.JComboBox<>();
+        genero_label = new javax.swing.JLabel();
+        genero = new javax.swing.JTextField();
+        objeto_combo1 = new javax.swing.JComboBox<>();
+        agregarPK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -48,6 +63,7 @@ public class AgregarPK extends javax.swing.JDialog {
         Agregar.setLayout(null);
 
         titulo.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
+        titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setText("Agregar Pokemón");
         Agregar.add(titulo);
         titulo.setBounds(20, 10, 360, 54);
@@ -56,15 +72,16 @@ public class AgregarPK extends javax.swing.JDialog {
         imagen.setForeground(new java.awt.Color(13, 17, 23));
         imagen.setLayout(null);
         imagen.add(perfil);
-        perfil.setBounds(-4, -3, 260, 270);
+        perfil.setBounds(6, -3, 240, 260);
 
         Agregar.add(imagen);
-        imagen.setBounds(40, 90, 260, 270);
+        imagen.setBounds(40, 90, 250, 260);
 
         especie_Label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        especie_Label.setForeground(new java.awt.Color(255, 255, 255));
         especie_Label.setText("Elegir especie");
         Agregar.add(especie_Label);
-        especie_Label.setBounds(320, 100, 140, 29);
+        especie_Label.setBounds(320, 80, 140, 29);
 
         IDEntrenador1.setEditable(false);
         IDEntrenador1.setBackground(new java.awt.Color(13, 17, 23));
@@ -80,11 +97,138 @@ public class AgregarPK extends javax.swing.JDialog {
             }
         });
         Agregar.add(IDEntrenador1);
-        IDEntrenador1.setBounds(320, 140, 400, 30);
+        IDEntrenador1.setBounds(320, 120, 400, 30);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Agregar.add(jComboBox1);
-        jComboBox1.setBounds(596, 180, 120, 26);
+        naturalezas_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        naturalezas_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                naturalezas_comboActionPerformed(evt);
+            }
+        });
+        Agregar.add(naturalezas_combo);
+        naturalezas_combo.setBounds(600, 330, 120, 26);
+
+        mote_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        mote_label.setForeground(new java.awt.Color(255, 255, 255));
+        mote_label.setText("Mote");
+        Agregar.add(mote_label);
+        mote_label.setBounds(320, 180, 140, 29);
+
+        mote.setBackground(new java.awt.Color(13, 17, 23));
+        mote.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        mote.setForeground(new java.awt.Color(255, 255, 255));
+        mote.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        mote.setBorder(null);
+        mote.setCaretColor(new java.awt.Color(255, 255, 255));
+        mote.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        mote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moteActionPerformed(evt);
+            }
+        });
+        Agregar.add(mote);
+        mote.setBounds(320, 220, 400, 30);
+
+        naturaleza_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        naturaleza_label.setForeground(new java.awt.Color(255, 255, 255));
+        naturaleza_label.setText("Naturaleza");
+        Agregar.add(naturaleza_label);
+        naturaleza_label.setBounds(320, 250, 140, 29);
+
+        Naturaleza.setEditable(false);
+        Naturaleza.setBackground(new java.awt.Color(13, 17, 23));
+        Naturaleza.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Naturaleza.setForeground(new java.awt.Color(255, 255, 255));
+        Naturaleza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Naturaleza.setBorder(null);
+        Naturaleza.setCaretColor(new java.awt.Color(255, 255, 255));
+        Naturaleza.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        Naturaleza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NaturalezaActionPerformed(evt);
+            }
+        });
+        Agregar.add(Naturaleza);
+        Naturaleza.setBounds(320, 290, 400, 30);
+
+        especies_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        especies_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                especies_comboActionPerformed(evt);
+            }
+        });
+        Agregar.add(especies_combo);
+        especies_combo.setBounds(600, 160, 120, 26);
+
+        objeto_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        objeto_label.setForeground(new java.awt.Color(255, 255, 255));
+        objeto_label.setText("Objeto");
+        Agregar.add(objeto_label);
+        objeto_label.setBounds(40, 370, 140, 29);
+
+        objeto.setEditable(false);
+        objeto.setBackground(new java.awt.Color(13, 17, 23));
+        objeto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        objeto.setForeground(new java.awt.Color(255, 255, 255));
+        objeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        objeto.setBorder(null);
+        objeto.setCaretColor(new java.awt.Color(255, 255, 255));
+        objeto.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        objeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                objetoActionPerformed(evt);
+            }
+        });
+        Agregar.add(objeto);
+        objeto.setBounds(40, 400, 250, 30);
+
+        objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        objeto_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                objeto_comboActionPerformed(evt);
+            }
+        });
+        Agregar.add(objeto_combo);
+        objeto_combo.setBounds(170, 440, 120, 26);
+
+        genero_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        genero_label.setForeground(new java.awt.Color(255, 255, 255));
+        genero_label.setText("Genero");
+        Agregar.add(genero_label);
+        genero_label.setBounds(340, 370, 140, 29);
+
+        genero.setEditable(false);
+        genero.setBackground(new java.awt.Color(13, 17, 23));
+        genero.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        genero.setForeground(new java.awt.Color(255, 255, 255));
+        genero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        genero.setBorder(null);
+        genero.setCaretColor(new java.awt.Color(255, 255, 255));
+        genero.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        genero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generoActionPerformed(evt);
+            }
+        });
+        Agregar.add(genero);
+        genero.setBounds(340, 400, 250, 30);
+
+        objeto_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        objeto_combo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                objeto_combo1ActionPerformed(evt);
+            }
+        });
+        Agregar.add(objeto_combo1);
+        objeto_combo1.setBounds(470, 440, 120, 26);
+
+        agregarPK.setBackground(new java.awt.Color(35, 135, 55));
+        agregarPK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        agregarPK.setForeground(new java.awt.Color(255, 255, 255));
+        agregarPK.setText("Agregar");
+        agregarPK.addActionListener(this);
+        Agregar.add(agregarPK);
+        agregarPK.setBounds(260, 730, 240, 40);
 
         javax.swing.GroupLayout panel_tablaLayout = new javax.swing.GroupLayout(panel_tabla);
         panel_tabla.setLayout(panel_tablaLayout);
@@ -99,7 +243,7 @@ public class AgregarPK extends javax.swing.JDialog {
             panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_tablaLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -120,6 +264,38 @@ public class AgregarPK extends javax.swing.JDialog {
     private void IDEntrenador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDEntrenador1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IDEntrenador1ActionPerformed
+
+    private void naturalezas_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naturalezas_comboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_naturalezas_comboActionPerformed
+
+    private void moteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_moteActionPerformed
+
+    private void NaturalezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NaturalezaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NaturalezaActionPerformed
+
+    private void especies_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especies_comboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_especies_comboActionPerformed
+
+    private void objetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objetoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_objetoActionPerformed
+
+    private void objeto_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_comboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_objeto_comboActionPerformed
+
+    private void generoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generoActionPerformed
+
+    private void objeto_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_combo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_objeto_combo1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,12 +342,31 @@ public class AgregarPK extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
     private javax.swing.JTextField IDEntrenador1;
+    private javax.swing.JTextField Naturaleza;
+    private javax.swing.JButton agregarPK;
     private javax.swing.JLabel especie_Label;
+    private javax.swing.JComboBox<String> especies_combo;
+    private javax.swing.JTextField genero;
+    private javax.swing.JLabel genero_label;
     private javax.swing.JPanel imagen;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField mote;
+    private javax.swing.JLabel mote_label;
+    private javax.swing.JLabel naturaleza_label;
+    private javax.swing.JComboBox<String> naturalezas_combo;
+    private javax.swing.JTextField objeto;
+    private javax.swing.JComboBox<String> objeto_combo;
+    private javax.swing.JComboBox<String> objeto_combo1;
+    private javax.swing.JLabel objeto_label;
     private javax.swing.JPanel panel_tabla;
     private javax.swing.JLabel perfil;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent evt) {
+        if(evt.getSource() == agregarPK){
+            this.dispose();
+        }
+    }
 }
