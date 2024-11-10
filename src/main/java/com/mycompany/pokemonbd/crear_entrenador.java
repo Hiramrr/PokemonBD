@@ -7,8 +7,8 @@ package com.mycompany.pokemonbd;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static java.lang.Math.random;
-import static java.lang.StrictMath.random;
+
+import java.io.*;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -19,13 +19,19 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author sasuk
  */
 public class crear_entrenador extends javax.swing.JPanel implements ActionListener {
-
+    String ruta;
+    BD mBD = new BD();
     /**
      * Creates new form crear_entrenador
      */
     public crear_entrenador() {
         initComponents();
         entrenadorID.setText(generarID());
+        if(mBD.conectar()){
+            System.out.println("Conectado");
+        } else {
+            System.out.println("No conectado");
+        }
     }
 
     /**
@@ -243,6 +249,25 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
     
     @Override
     public void actionPerformed(ActionEvent evt) {
+        if(evt.getSource() == crear){
+            if(mBD.conectar()) {
+
+
+                String nombre = IDEntrenador1.getText();
+                String pass = contraseña.getText();
+                String id = entrenadorID.getText();
+
+                ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
+                entrenador.setID(Integer.parseInt(id));
+                entrenador.setNombre(nombre);
+                entrenador.setContraseña(pass);
+                entrenador.setImagen(getImagen(ruta));
+
+                mBD.AgregarEntrenador(entrenador);
+            }
+
+        }
+
         /*
         *abrir los archivos para seleccionar una imagen
         */
@@ -253,12 +278,25 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
             
             int respuesta = archivos.showOpenDialog(this);
             if(respuesta == archivos.APPROVE_OPTION){
-                String ruta = archivos.getSelectedFile().getPath();
+                ruta = archivos.getSelectedFile().getPath();
                 
                 Image foto = new ImageIcon(ruta).getImage();
                 ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
                 perfil.setIcon(icono);
             }
+        }
+    }
+
+    private byte[] getImagen(String ruta){
+        File imagen = new File(ruta);
+        try{
+            byte[] icono = new byte[(int)imagen.length()];
+            InputStream input = new FileInputStream(imagen);
+            input.read(icono);
+            return icono;
+        } catch (Exception e){
+            System.out.println(e);
+            return null;
         }
     }
 }
