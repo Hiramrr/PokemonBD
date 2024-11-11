@@ -5,6 +5,7 @@
 package com.mycompany.pokemonbd;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -284,6 +285,9 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
         ArrayList imagenUser = mBD.cargarImagen(idEntrenador);
         if (mBD.conectar()) {
             byte[] datos = (byte[]) imagenUser.get(0);
+            Image foto = new ImageIcon(datos).getImage();
+            ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
+            perfil.setIcon(icono);
         }
     }
 
