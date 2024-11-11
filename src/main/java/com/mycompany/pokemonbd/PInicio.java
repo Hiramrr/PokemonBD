@@ -17,7 +17,7 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
      */
     public PInicio() {
         initComponents();
-        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        setIconImage(new ImageIcon("Icono.png").getImage());
         this.setTitle("PokeConnect");
         inicio_sesion inicio = new inicio_sesion();
         inicio.setLocation(0,0);

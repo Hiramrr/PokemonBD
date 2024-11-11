@@ -30,7 +30,7 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
     public Usuario(String idEntrenador) {
         this.idEntrenador = idEntrenador;
         initComponents();
-        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        setIconImage(new ImageIcon("Icono.png").getImage());
         this.setTitle("Perfil de usuario");
         cargarImagen();
         cargarDatos();

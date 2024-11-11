@@ -28,7 +28,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     public ListaPK(String idEntrenador) {
         this.idEntrenador = idEntrenador;
         initComponents();
-        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        setIconImage(new ImageIcon("Icono.png").getImage());
         this.setTitle("Lista de Pokemones");
     }
 
@@ -399,10 +399,11 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             this.dispose();
         }
         if(evt.getSource() == personas){
-            Global global = new Global();
+            Global global = new Global(idEntrenador);
             global.setVisible(true);
             this.dispose();
         }
+
         if(evt.getSource() == agregar){
             AgregarPK agregar = new AgregarPK(this,true);
             agregar.setVisible(true);

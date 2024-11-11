@@ -21,14 +21,14 @@ public class Global extends javax.swing.JFrame implements ActionListener{
      */
     public Global() {
         initComponents();
-        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        setIconImage(new ImageIcon("Icono.png").getImage());
         this.setTitle("Otros usuarios");
     }
 
     public Global(String idEntrenador) {
         this.idEntrenador = idEntrenador;
         initComponents();
-        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        setIconImage(new ImageIcon("Icono.png").getImage());
         this.setTitle("Otros usuarios");
     }
 
@@ -207,6 +207,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         if(evt.getSource() == regresar){
             ListaPK lista = new ListaPK(idEntrenador);
             lista.setVisible(true);
+
             this.dispose();
         }
     }
