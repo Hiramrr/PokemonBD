@@ -145,4 +145,23 @@ public class BD {
         }
         return imagenes;
     }
+
+    public ArrayList obtenerDatos(String idEntrenador) {
+        ArrayList datos = new ArrayList<>();
+        try {
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT * FROM Entrenador WHERE ID = '" + idEntrenador + "'");
+            if (resultado.next()) {
+                System.out.println("Datos obtenidos");
+                datos.add(resultado.getString("Nombre")); // 0
+                datos.add(resultado.getString("Ganadas")); // 1
+                datos.add(resultado.getString("Perdidas")); // 2
+            } else {
+                System.out.println("Datos no obtenidos");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return datos;
+    }
 }

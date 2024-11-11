@@ -33,6 +33,7 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
         setIconImage(new ImageIcon("Icono.jpg").getImage());
         this.setTitle("Perfil de usuario");
         cargarImagen();
+        cargarDatos();
     }
 
     /**
@@ -285,6 +286,18 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
             Image foto = new ImageIcon(datos).getImage();
             ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
             perfil.setIcon(icono);
+        }
+    }
+
+
+    public void cargarDatos(){
+        ArrayList datos = mBD.obtenerDatos(idEntrenador);
+        if (mBD.conectar()) {
+            saludo_label.setText("Hola " + datos.get(0));
+            nombre_label.setText("Nombre: " + datos.get(0));
+            idEntrenador_label.setText("ID Entrenador: " + idEntrenador);
+            ganadas_label.setText("Batallas ganadas: " + datos.get(1));
+            perdidas_label.setText("Batallas perdidas: " + datos.get(2));
         }
     }
 
