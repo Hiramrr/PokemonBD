@@ -6,9 +6,18 @@ package com.mycompany.pokemonbd;
 
 import org.w3c.dom.html.HTMLIsIndexElement;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -16,6 +25,15 @@ import java.awt.event.ActionListener;
  */
 public class Global extends javax.swing.JFrame implements ActionListener{
     private static String idEntrenador;
+    BD mBD = new BD();
+    String[] titulo = new String[]{"Foto de perfil","Nombre Entrenador","Pokemon favorito"};
+    DefaultTableModel dtm = new DefaultTableModel(titulo, 21) {
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    };
+
     /**
      * Creates new form Global
      */
@@ -30,6 +48,9 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         initComponents();
         setIconImage(new ImageIcon("Icono.png").getImage());
         this.setTitle("Otros usuarios");
+        dtm = (DefaultTableModel) tabla_usuarios.getModel();
+        tabla_usuarios.setModel(dtm);
+        llenarTabla();
     }
 
     /**
@@ -167,7 +188,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         usuario_panel.setBounds(0, 0, 502, 760);
 
         tabla_usuarios.setBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setForeground(new java.awt.Color(13, 17, 23));
+        tabla_usuarios.setForeground(new java.awt.Color(255, 255, 255));
         tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -207,7 +228,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         tabla_usuarios.setGridColor(new java.awt.Color(22, 26, 33));
         tabla_usuarios.setRowHeight(50);
         tabla_usuarios.setSelectionBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setSelectionForeground(new java.awt.Color(13, 17, 23));
+        tabla_usuarios.setSelectionForeground(new java.awt.Color(255,255,255));
         jScrollPane1.setViewportView(tabla_usuarios);
 
         jPanel1.add(jScrollPane1);
@@ -284,6 +305,66 @@ public class Global extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JPanel usuario_panel;
     // End of variables declaration//GEN-END:variables
 
+    public int desafio(){
+        Random random = new Random();
+        int limiteInferior = 0;
+        int limiteSuperior = 10;
+        int limiteSuperiorAbierto = limiteSuperior + 1;
+        int numeroAleatorio = limiteInferior + random.nextInt(limiteSuperiorAbierto - limiteInferior);
+        return numeroAleatorio;
+    }
+
+    public void ganar(){
+        Dialogo dialogo = new Dialogo(this,true);
+        dialogo.setMensaje("¡Felicidades! !Has ganado la batalla!");
+        dialogo.setVisible(true);
+        dialogo.setLocation(450, 261);
+        dialogo.setTitle("¡Felicidades!");
+        mBD.actualizarGanadas(idEntrenador);
+    }
+
+    public void perder(){
+        Dialogo dialogo = new Dialogo(this,true);
+        dialogo.setMensaje("¡Que mala suerte! Has perdido la batalla");
+        dialogo.setVisible(true);
+        dialogo.setLocation(450, 261);
+        dialogo.setTitle("¡Que mala suerte!");
+        mBD.actualizarPerdidas(idEntrenador);
+    }
+
+    public void llenarTabla() {
+        tabla_usuarios.setDefaultRenderer(Object.class, new RenderImagen());
+        ArrayList<ImagenAlmacenEntrenador> datos = mBD.obtenerTabla(idEntrenador);
+
+        if (datos != null) {
+            for (int i = 0; i < datos.size() && i < 21; i++) { // Solo llena hasta 21 filas
+                ImagenAlmacenEntrenador imagen = datos.get(i);
+                Object[] informacion = new Object[3];
+
+                try {
+                    byte[] perfilFoto = imagen.getImagen();
+                    BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(perfilFoto));
+                    ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(50, 50, bufferedImage.SCALE_SMOOTH));
+                    informacion[0] = new JLabel(mFoto); // Foto de perfil
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+
+                informacion[1] = imagen.getNombre(); // Nombre Entrenador
+                informacion[2] = "Pikachu"; // Pokemon favorito (temporalmente "Pikachu")
+
+                // Coloca la información en la fila existente sin añadir nuevas filas
+                dtm.setValueAt(informacion[0], i, 0); // Foto de perfil
+                dtm.setValueAt(informacion[1], i, 1); // Nombre Entrenador
+                dtm.setValueAt(informacion[2], i, 2); // Pokemon favorito
+            }
+        }
+    }
+
+
+
+
+
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == regresar){
@@ -291,6 +372,15 @@ public class Global extends javax.swing.JFrame implements ActionListener{
             lista.setVisible(true);
 
             this.dispose();
+        }if(evt.getSource() == desafiar){
+            int usuario1 = desafio();
+            int usuario2 = desafio();
+            if(usuario1 > usuario2) {
+                ganar();
+                return;
+            }
+            perder();
+            mBD.actualizarPerdidas(idEntrenador);
         }
     }
 }

@@ -17,6 +17,7 @@ public class BD {
     private String SQL_AGREGAR = "INSERT INTO Entrenador (ID, Nombre, Contraseña, Imagen) VALUES (?, ?, ?, ?)";
     private String SQL_CONSULTA = "SELECT * FROM Entrenador";
 
+
     public BD() {
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Pokemon", "Hiram", "coco123");
@@ -164,4 +165,43 @@ public class BD {
         }
         return datos;
     }
+
+    public void actualizarGanadas(String idEntrenador) {
+        try {
+            consulta = con.createStatement();
+            consulta.executeUpdate("UPDATE Entrenador SET Ganadas = Ganadas + 1 WHERE ID = '" + idEntrenador + "'");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void actualizarPerdidas(String idEntrenador) {
+        try {
+            consulta = con.createStatement();
+            consulta.executeUpdate("UPDATE Entrenador SET Perdidas = Perdidas + 1 WHERE ID = '" + idEntrenador + "'");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public ArrayList<ImagenAlmacenEntrenador> obtenerTabla(String idEntrenador) {
+        ArrayList<ImagenAlmacenEntrenador> tabla = new ArrayList<>();
+        try {
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT ID, Nombre, Imagen FROM Entrenador WHERE ID != '" + idEntrenador + "'");
+
+            while (resultado.next()) {
+                ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
+                entrenador.setID(resultado.getInt("ID"));
+                entrenador.setNombre(resultado.getString("Nombre"));
+                entrenador.setImagen(resultado.getBytes("Imagen"));
+
+                tabla.add(entrenador);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return tabla;
+    }
+
 }
