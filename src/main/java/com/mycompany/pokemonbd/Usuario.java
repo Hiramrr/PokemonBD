@@ -46,14 +46,14 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        saludo_label = new javax.swing.JLabel();
+        nombre_label = new javax.swing.JLabel();
+        idEntrenador_label = new javax.swing.JLabel();
+        pk_favorito = new javax.swing.JLabel();
         adios = new javax.swing.JButton();
         favorito_label = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        ganadas_label = new javax.swing.JLabel();
+        perdidas_label = new javax.swing.JLabel();
         cerrar = new javax.swing.JButton();
         imagen = new javax.swing.JPanel();
         perfil = new javax.swing.JLabel();
@@ -68,30 +68,30 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
         jPanel2.setBackground(new java.awt.Color(22, 26, 33));
         jPanel2.setForeground(new java.awt.Color(22, 26, 33));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Hola, + Nombre Usuario");
+        saludo_label.setBackground(new java.awt.Color(255, 255, 255));
+        saludo_label.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        saludo_label.setForeground(new java.awt.Color(255, 255, 255));
+        saludo_label.setText("Hola, + Nombre Usuario");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre: ");
+        nombre_label.setBackground(new java.awt.Color(255, 255, 255));
+        nombre_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nombre_label.setForeground(new java.awt.Color(255, 255, 255));
+        nombre_label.setText("Nombre: ");
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("ID Entrenador:");
+        idEntrenador_label.setBackground(new java.awt.Color(255, 255, 255));
+        idEntrenador_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        idEntrenador_label.setForeground(new java.awt.Color(255, 255, 255));
+        idEntrenador_label.setText("ID Entrenador:");
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PikachuPrueba.png"))); // NOI18N
-        jLabel4.setText("Pikachu");
-        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        pk_favorito.setBackground(new java.awt.Color(255, 255, 255));
+        pk_favorito.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pk_favorito.setForeground(new java.awt.Color(255, 255, 255));
+        pk_favorito.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pk_favorito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PikachuPrueba.png"))); // NOI18N
+        pk_favorito.setText("Pikachu");
+        pk_favorito.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        pk_favorito.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pk_favorito.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         adios.setBackground(new java.awt.Color(184, 44, 0));
         adios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -104,15 +104,15 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
         favorito_label.setForeground(new java.awt.Color(255, 255, 255));
         favorito_label.setText("Pokemon favorito:");
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Batallas ganadas:");
+        ganadas_label.setBackground(new java.awt.Color(255, 255, 255));
+        ganadas_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ganadas_label.setForeground(new java.awt.Color(255, 255, 255));
+        ganadas_label.setText("Batallas ganadas:");
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Batallas perdidas:");
+        perdidas_label.setBackground(new java.awt.Color(255, 255, 255));
+        perdidas_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        perdidas_label.setForeground(new java.awt.Color(255, 255, 255));
+        perdidas_label.setText("Batallas perdidas:");
 
         cerrar.setBackground(new java.awt.Color(184, 44, 0));
         cerrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -138,7 +138,7 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
                         .addGap(33, 33, 33)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(adios)
-                            .addComponent(jLabel4))))
+                            .addComponent(pk_favorito))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -149,44 +149,41 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(jLabel2))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(jLabel3)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
+                            .addComponent(nombre_label)
+                            .addComponent(idEntrenador_label))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 296, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
+                            .addComponent(ganadas_label)
+                            .addComponent(perdidas_label))
                         .addGap(226, 226, 226))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(saludo_label)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel1)
+                .addComponent(saludo_label)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5))
+                            .addComponent(nombre_label)
+                            .addComponent(ganadas_label))
                         .addGap(51, 51, 51)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel3)))
+                            .addComponent(perdidas_label)
+                            .addComponent(idEntrenador_label)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(9, 9, 9)
                 .addComponent(favorito_label)
                 .addGap(15, 15, 15)
-                .addComponent(jLabel4)
+                .addComponent(pk_favorito)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
@@ -268,17 +265,17 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton adios;
     private javax.swing.JButton cerrar;
     private javax.swing.JLabel favorito_label;
+    private javax.swing.JLabel ganadas_label;
+    private javax.swing.JLabel idEntrenador_label;
     private javax.swing.JPanel imagen;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel nombre_label;
+    private javax.swing.JLabel perdidas_label;
     private javax.swing.JLabel perfil;
+    private javax.swing.JLabel pk_favorito;
     private javax.swing.JButton regresar;
+    private javax.swing.JLabel saludo_label;
     // End of variables declaration//GEN-END:variables
 
     public void cargarImagen(){
