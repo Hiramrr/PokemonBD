@@ -40,12 +40,11 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
         inicio_sesion = new javax.swing.JPanel();
         inicio_label = new javax.swing.JLabel();
         entrenadorID = new javax.swing.JTextField();
-        ID_label = new javax.swing.JLabel();
+        Nombre_label = new javax.swing.JLabel();
         contraseña_label = new javax.swing.JLabel();
         contraseña = new javax.swing.JPasswordField();
         inicio = new javax.swing.JButton();
         error = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(704, 502));
         setPreferredSize(new java.awt.Dimension(704, 502));
@@ -75,10 +74,10 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
             }
         });
 
-        ID_label.setBackground(new java.awt.Color(255, 255, 255));
-        ID_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        ID_label.setForeground(new java.awt.Color(255, 255, 255));
-        ID_label.setText("ID Entrenador");
+        Nombre_label.setBackground(new java.awt.Color(255, 255, 255));
+        Nombre_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Nombre_label.setForeground(new java.awt.Color(255, 255, 255));
+        Nombre_label.setText("Nombre del entrenador");
 
         contraseña_label.setBackground(new java.awt.Color(255, 255, 255));
         contraseña_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -109,7 +108,7 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
                 .addGap(35, 35, 35)
                 .addGroup(inicio_sesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(inicio_sesionLayout.createSequentialGroup()
-                        .addComponent(ID_label)
+                        .addComponent(Nombre_label)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(inicio_sesionLayout.createSequentialGroup()
                         .addGroup(inicio_sesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +136,7 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
                 .addGap(25, 25, 25)
                 .addComponent(inicio_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(ID_label)
+                .addComponent(Nombre_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(entrenadorID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -151,20 +150,13 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
                 .addGap(27, 27, 27))
         );
 
-        jLabel1.setText("Si no cuenta con un usuario ");
-
         javax.swing.GroupLayout panel_manejoLayout = new javax.swing.GroupLayout(panel_manejo);
         panel_manejo.setLayout(panel_manejoLayout);
         panel_manejoLayout.setHorizontalGroup(
             panel_manejoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_manejoLayout.createSequentialGroup()
-                .addGroup(panel_manejoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_manejoLayout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(inicio_sesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_manejoLayout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(jLabel1)))
+                .addGap(80, 80, 80)
+                .addComponent(inicio_sesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(76, Short.MAX_VALUE))
         );
         panel_manejoLayout.setVerticalGroup(
@@ -172,9 +164,7 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_manejoLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(inicio_sesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -195,7 +185,7 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ID_label;
+    private javax.swing.JLabel Nombre_label;
     private javax.swing.JPasswordField contraseña;
     private javax.swing.JLabel contraseña_label;
     private javax.swing.JTextField entrenadorID;
@@ -203,7 +193,6 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
     private javax.swing.JButton inicio;
     private javax.swing.JLabel inicio_label;
     private javax.swing.JPanel inicio_sesion;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel panel_manejo;
     // End of variables declaration//GEN-END:variables
     

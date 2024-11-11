@@ -48,16 +48,8 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="inicio_sesion" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                  <Component id="inicio_sesion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="76" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -67,9 +59,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="inicio_sesion" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
+                  <EmptySpace pref="45" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -95,7 +85,7 @@
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="ID_label" min="-2" max="-2" attributes="0"/>
+                              <Component id="Nombre_label" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -133,7 +123,7 @@
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="inicio_label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="35" max="32767" attributes="0"/>
-                      <Component id="ID_label" min="-2" max="-2" attributes="0"/>
+                      <Component id="Nombre_label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="entrenadorID" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -190,7 +180,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="entrenadorIDActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="ID_label">
+            <Component class="javax.swing.JLabel" name="Nombre_label">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -201,7 +191,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="ID Entrenador"/>
+                <Property name="text" type="java.lang.String" value="Nombre del entrenador"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="contrase&#xf1;a_label">
@@ -265,11 +255,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Si no cuenta con un usuario "/>
-          </Properties>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
