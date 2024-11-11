@@ -3,6 +3,7 @@ package com.mycompany.pokemonbd;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,6 +28,9 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         contenido.add(inicio,BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
+        Image foto = new ImageIcon("Icono.png").getImage();
+        ImageIcon icono =  new ImageIcon(foto.getScaledInstance(iconoLugar.getWidth(),iconoLugar.getHeight(),Image.SCALE_SMOOTH));
+        iconoP.setIcon(icono);
     }
 
     /**
@@ -44,6 +48,8 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         titulo = new javax.swing.JLabel();
         contenido = new javax.swing.JPanel();
         boton = new javax.swing.JButton();
+        iconoLugar = new javax.swing.JPanel();
+        iconoP = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(15, 123, 189));
@@ -77,6 +83,24 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         boton.addActionListener(this);
         boton.setToolTipText("Crear un nuevo usuario en el sistema");
 
+        iconoLugar.setBackground(new java.awt.Color(22, 26, 33));
+        iconoLugar.setForeground(new java.awt.Color(22, 26, 33));
+        iconoLugar.setToolTipText("");
+
+        iconoP.setBackground(new java.awt.Color(22, 26, 33));
+        iconoP.setForeground(new java.awt.Color(22, 26, 33));
+
+        javax.swing.GroupLayout iconoLugarLayout = new javax.swing.GroupLayout(iconoLugar);
+        iconoLugar.setLayout(iconoLugarLayout);
+        iconoLugarLayout.setHorizontalGroup(
+            iconoLugarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(iconoP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        iconoLugarLayout.setVerticalGroup(
+            iconoLugarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(iconoP, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout secundarioLayout = new javax.swing.GroupLayout(secundario);
         secundario.setLayout(secundarioLayout);
         secundarioLayout.setHorizontalGroup(
@@ -86,8 +110,10 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
                 .addGroup(secundarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(secundarioLayout.createSequentialGroup()
+                        .addComponent(iconoLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
                         .addComponent(titulo)
-                        .addGap(108, 108, 108)
+                        .addGap(81, 81, 81)
                         .addComponent(boton)))
                 .addGap(68, 68, 68))
         );
@@ -99,8 +125,10 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
                         .addGap(98, 98, 98)
                         .addComponent(boton))
                     .addGroup(secundarioLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addGroup(secundarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(iconoLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -170,6 +198,8 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton boton;
     private javax.swing.JPanel contenido;
     private javax.swing.JLabel entrenador;
+    private javax.swing.JPanel iconoLugar;
+    private javax.swing.JLabel iconoP;
     private javax.swing.JPanel principal;
     private javax.swing.JPanel secundario;
     private javax.swing.JLabel titulo;
