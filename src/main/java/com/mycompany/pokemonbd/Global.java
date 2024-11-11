@@ -43,10 +43,19 @@ public class Global extends javax.swing.JFrame implements ActionListener{
 
         jPanel1 = new javax.swing.JPanel();
         regresar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        titutlo = new javax.swing.JLabel();
+        usuario_panel = new javax.swing.JPanel();
+        imagen = new javax.swing.JPanel();
+        perfil = new javax.swing.JLabel();
+        nombre_label = new javax.swing.JLabel();
+        ganadas_label = new javax.swing.JLabel();
+        perdidas_label = new javax.swing.JLabel();
+        imagen1 = new javax.swing.JPanel();
+        perfil1 = new javax.swing.JLabel();
+        pokemon_favorito = new javax.swing.JLabel();
+        desafiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_usuarios = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,73 +78,137 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         jPanel1.add(regresar);
         regresar.setBounds(1200, 20, 50, 50);
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Otros usuarios");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(520, 10, 325, 64);
+        titutlo.setBackground(new java.awt.Color(255, 255, 255));
+        titutlo.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        titutlo.setForeground(new java.awt.Color(255, 255, 255));
+        titutlo.setText("Otros usuarios");
+        jPanel1.add(titutlo);
+        titutlo.setBounds(520, 10, 325, 64);
 
-        jPanel2.setBackground(new java.awt.Color(22, 26, 33));
-        jPanel2.setForeground(new java.awt.Color(22, 26, 33));
+        usuario_panel.setBackground(new java.awt.Color(22, 26, 33));
+        usuario_panel.setForeground(new java.awt.Color(22, 26, 33));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 502, Short.MAX_VALUE)
+        imagen.setBackground(new java.awt.Color(13, 17, 23));
+        imagen.setForeground(new java.awt.Color(13, 17, 23));
+        imagen.setLayout(null);
+        imagen.add(perfil);
+        perfil.setBounds(0, 0, 250, 250);
+
+        nombre_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nombre_label.setForeground(new java.awt.Color(255, 255, 255));
+        nombre_label.setText("Nombre: ");
+
+        ganadas_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ganadas_label.setForeground(new java.awt.Color(255, 255, 255));
+        ganadas_label.setText("Peleas ganadas:");
+
+        perdidas_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        perdidas_label.setForeground(new java.awt.Color(255, 255, 255));
+        perdidas_label.setText("Peleas perdidas:");
+
+        imagen1.setBackground(new java.awt.Color(13, 17, 23));
+        imagen1.setForeground(new java.awt.Color(13, 17, 23));
+        imagen1.setLayout(null);
+        imagen1.add(perfil1);
+        perfil1.setBounds(0, 0, 160, 150);
+
+        pokemon_favorito.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pokemon_favorito.setForeground(new java.awt.Color(255, 255, 255));
+        pokemon_favorito.setText("Pokemon favorito:");
+
+        desafiar.setBackground(new java.awt.Color(30, 112, 235));
+        desafiar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        desafiar.setForeground(new java.awt.Color(255, 255, 255));
+        desafiar.setText("Desafiar");
+        desafiar.addActionListener(this);
+
+        javax.swing.GroupLayout usuario_panelLayout = new javax.swing.GroupLayout(usuario_panel);
+        usuario_panel.setLayout(usuario_panelLayout);
+        usuario_panelLayout.setHorizontalGroup(
+            usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(usuario_panelLayout.createSequentialGroup()
+                .addGroup(usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(usuario_panelLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(perdidas_label)
+                            .addComponent(ganadas_label)
+                            .addComponent(nombre_label)
+                            .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(imagen1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pokemon_favorito, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(usuario_panelLayout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(desafiar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
+        usuario_panelLayout.setVerticalGroup(
+            usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(usuario_panelLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nombre_label)
+                .addGap(18, 18, 18)
+                .addComponent(ganadas_label)
+                .addGap(18, 18, 18)
+                .addComponent(perdidas_label)
+                .addGap(18, 18, 18)
+                .addComponent(pokemon_favorito)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(desafiar)
+                .addGap(114, 114, 114))
         );
 
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 502, 760);
+        jPanel1.add(usuario_panel);
+        usuario_panel.setBounds(0, 0, 502, 760);
 
-        jTable1.setBackground(new java.awt.Color(13, 17, 23));
-        jTable1.setForeground(new java.awt.Color(13, 17, 23));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_usuarios.setBackground(new java.awt.Color(13, 17, 23));
+        tabla_usuarios.setForeground(new java.awt.Color(13, 17, 23));
+        tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Nombre Entrenador", "Pokémon favorito"
+                "Foto de perfil", "Nombre Entrenador", "Pokémon favorito"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(22, 26, 33));
-        jTable1.setRowHeight(50);
-        jTable1.setSelectionBackground(new java.awt.Color(13, 17, 23));
-        jTable1.setSelectionForeground(new java.awt.Color(13, 17, 23));
-        jScrollPane1.setViewportView(jTable1);
+        tabla_usuarios.setGridColor(new java.awt.Color(22, 26, 33));
+        tabla_usuarios.setRowHeight(50);
+        tabla_usuarios.setSelectionBackground(new java.awt.Color(13, 17, 23));
+        tabla_usuarios.setSelectionForeground(new java.awt.Color(13, 17, 23));
+        jScrollPane1.setViewportView(tabla_usuarios);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(550, 100, 700, 640);
@@ -194,12 +267,21 @@ public class Global extends javax.swing.JFrame implements ActionListener{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton desafiar;
+    private javax.swing.JLabel ganadas_label;
+    private javax.swing.JPanel imagen;
+    private javax.swing.JPanel imagen1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel nombre_label;
+    private javax.swing.JLabel perdidas_label;
+    private javax.swing.JLabel perfil;
+    private javax.swing.JLabel perfil1;
+    private javax.swing.JLabel pokemon_favorito;
     private javax.swing.JButton regresar;
+    private javax.swing.JTable tabla_usuarios;
+    private javax.swing.JLabel titutlo;
+    private javax.swing.JPanel usuario_panel;
     // End of variables declaration//GEN-END:variables
 
     @Override
