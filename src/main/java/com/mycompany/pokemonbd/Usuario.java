@@ -58,6 +58,7 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
         cerrar = new javax.swing.JButton();
         imagen = new javax.swing.JPanel();
         perfil = new javax.swing.JLabel();
+        editar = new javax.swing.JButton();
         regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -127,6 +128,12 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
         imagen.add(perfil);
         perfil.setBounds(0, 0, 260, 260);
 
+        editar.setBackground(new java.awt.Color(30, 112, 235));
+        editar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        editar.setForeground(new java.awt.Color(255, 255, 255));
+        editar.setText("Editar datos");
+        editar.addActionListener(this);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -143,6 +150,8 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(editar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cerrar)
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -188,7 +197,9 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(cerrar)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cerrar)
+                    .addComponent(editar))
                 .addContainerGap())
         );
 
@@ -265,6 +276,7 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adios;
     private javax.swing.JButton cerrar;
+    private javax.swing.JButton editar;
     private javax.swing.JLabel favorito_label;
     private javax.swing.JLabel ganadas_label;
     private javax.swing.JLabel idEntrenador_label;
