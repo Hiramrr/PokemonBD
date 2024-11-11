@@ -4,24 +4,35 @@
  */
 package com.mycompany.pokemonbd;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
  * @author hiram
  */
 public class Editar_Usuario extends javax.swing.JDialog implements ActionListener {
-
+    private String idEntrenador;
+    BD mBD = new BD();
+    public String ruta;
     /**
      * Creates new form Editar_Usuario
      */
-    public Editar_Usuario(java.awt.Frame parent, boolean modal) {
+    public Editar_Usuario(java.awt.Frame parent, boolean modal,String idEntrenador) {
         super(parent, modal);
+        this.idEntrenador = idEntrenador;
         initComponents();
         setIconImage(new ImageIcon("Icono.png").getImage());
-        this.setTitle("Lista de Pokemones");
+        this.setTitle("Editar usuario");
+        cargarImagenPerfil();
+        cargarDatos();
     }
 
     /**
@@ -51,7 +62,7 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(829, 822));
+        setMinimumSize(new java.awt.Dimension(829, 594));
 
         panel_tabla.setBackground(new java.awt.Color(13, 17, 23));
         panel_tabla.setForeground(new java.awt.Color(255, 255, 255));
@@ -210,7 +221,7 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -232,8 +243,10 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            private String idEntrenador;
+
             public void run() {
-                Editar_Usuario dialog = new Editar_Usuario(new javax.swing.JFrame(), true);
+                Editar_Usuario dialog = new Editar_Usuario(new javax.swing.JFrame(), true, this.idEntrenador);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -264,8 +277,109 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 
+    public void cargarImagenPerfil(){
+        ArrayList imagenUser = mBD.cargarImagen(idEntrenador);
+        if (mBD.conectar()) {
+            byte[] datos = (byte[]) imagenUser.get(0);
+            Image foto = new ImageIcon(datos).getImage();
+            ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
+            perfil.setIcon(icono);
+        }
+    }
+
+    public void cargarDatos(){
+        ArrayList datos = mBD.obtenerDatos(idEntrenador);
+        IDEntrenador1.setText((String) datos.get(0));
+        id_texto.setText(idEntrenador);
+    }
+
+    public void cargarImagen() {
+        JFileChooser archivos = new JFileChooser();
+        FileNameExtensionFilter imagenes = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
+        archivos.setFileFilter(imagenes);
+
+        int respuesta = archivos.showOpenDialog(this);
+        if (respuesta == archivos.APPROVE_OPTION) {
+            ruta = archivos.getSelectedFile().getPath();
+
+            Image foto = new ImageIcon(ruta).getImage();
+            ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(), imagen.getHeight(), Image.SCALE_SMOOTH));
+            perfil.setIcon(icono);
+        }
+    }
+
+    public boolean comprobarContraseña(String contraseñaAntigua, String idEntrenador ){
+        if(contraseñaAntigua.equals(mBD.getContraseña(idEntrenador))){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void actualizarEntrenador(){
+        String nombre = IDEntrenador1.getText();
+        String contraseñaAntigua = contraseñaA_text.getText();
+        if(!comprobarContraseña(contraseñaAntigua,idEntrenador)){
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("La contraseña anterior no coincide con la contraseña del usuario");
+            return;
+        }
+        String contraseñaNueva = contraseñaN.getText();
+
+        String id = id_texto.getText();
+
+        ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
+        entrenador.setID(Integer.parseInt(id));
+        entrenador.setNombre(nombre);
+        entrenador.setContraseña(contraseñaNueva);
+        //Checa si el usuario cargo una imagen, si no la cargo se le asiganara una default
+        try {
+            entrenador.setImagen(getImagen(ruta));
+        } catch (NullPointerException e){
+            entrenador.setImagen(getImagen("src/main/resources/images/PikachuPrueba.png"));
+        }
+        if(mBD.actualizarDatos(entrenador)) {
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioExitoso();
+            vaciarTexto();
+        } else {
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("El nombre "  +  nombre + " ya existe en la base de datos");
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent evt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(evt.getSource() == cargar) {
+            cargarImagen();
+        }
+        if(evt.getSource() == actualizar) {
+            actualizarEntrenador();
+            this.dispose();
+        } if(evt.getSource() == eliminar){
+            mBD.eliminarEntrenador(idEntrenador);
+            System.out.println("Se elimino el usuario de la base de datos");
+            PInicio pInicio = new PInicio();
+            pInicio.setVisible(true);
+            this.dispose();
+        }
+    }
+
+    public void vaciarTexto(){
+        IDEntrenador1.setText("");
+        id_texto.setText("");
+        contraseñaA_text.setText("");
+        contraseñaN.setText("");
+        perfil.setIcon(null);
+    }
+
+    private byte[] getImagen(String ruta){
+        File imagen = new File(ruta);
+        try{
+            byte[] icono = new byte[(int)imagen.length()];
+            InputStream input = new FileInputStream(imagen);
+            input.read(icono);
+            return icono;
+        } catch (Exception e){
+            System.out.println(e);
+            return null;
+        }
     }
 }

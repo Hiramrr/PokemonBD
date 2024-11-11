@@ -219,4 +219,50 @@ public class BD {
         }
     }
 
+    public boolean actualizarDatos(ImagenAlmacenEntrenador mImagen){
+        PreparedStatement ps = null;
+        try{
+            System.out.println("intento de actualizacion");
+            ps = con.prepareStatement("UPDATE Entrenador SET Nombre = ?, Contraseña = ?, Imagen = ? WHERE ID = ?");
+            ps.setString(1, mImagen.getNombre());
+            ps.setString(2, mImagen.getContraseña());
+            ps.setBytes(3, mImagen.getImagen());
+            ps.setInt(4, mImagen.getID());
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e){
+            System.out.println(e);
+            return false;
+        } finally {
+            try {
+                ps.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public String getContraseña(String idEntrenador) {
+        try {
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT Contraseña FROM Entrenador WHERE ID = '" + idEntrenador + "'");
+            if (resultado.next()) {
+                return resultado.getString("Contraseña");
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+    }
+
+    public void eliminarEntrenador(String idEntrenador) {
+        try {
+            consulta = con.createStatement();
+            consulta.executeUpdate("DELETE FROM Entrenador WHERE ID = '" + idEntrenador + "'");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }

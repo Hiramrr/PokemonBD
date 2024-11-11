@@ -313,6 +313,24 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
         }
     }
 
+    public void actualizarUsuarioError(String mensaje) {
+        Dialogo acciones = new Dialogo(this,false);
+        acciones.setVisible(true);
+        acciones.setMensaje(mensaje);
+        acciones.setLocation(450, 261);
+        System.out.println("fallo");
+    }
+
+
+
+    public void actualizarUsuarioExitoso() {
+        Dialogo acciones = new Dialogo(this,false);
+        acciones.setVisible(true);
+        acciones.setMensaje("Usuario editado exitosamente");
+        acciones.setLocation(450, 261);
+        System.out.println("Funciono");
+    }
+
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == adios){
@@ -328,6 +346,11 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
         if(evt.getSource() == regresar){
             ListaPK lista = new ListaPK(idEntrenador);
             lista.setVisible(true);
+            this.dispose();
+        }
+        if(evt.getSource() == editar){
+            Editar_Usuario editar = new Editar_Usuario(this,true,idEntrenador);
+            editar.setVisible(true);
             this.dispose();
         }
     }
