@@ -57,12 +57,12 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         actualizar = new javax.swing.JButton();
         contraseñaA_text = new javax.swing.JPasswordField();
         cargar = new javax.swing.JButton();
-        naturaleza_label1 = new javax.swing.JLabel();
-        contraseñaN = new javax.swing.JPasswordField();
+        contraseñaN_label = new javax.swing.JLabel();
+        contraseñaN_text = new javax.swing.JPasswordField();
         eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(829, 594));
+        setMinimumSize(new java.awt.Dimension(829, 822));
 
         panel_tabla.setBackground(new java.awt.Color(13, 17, 23));
         panel_tabla.setForeground(new java.awt.Color(255, 255, 255));
@@ -154,16 +154,16 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         Agregar.add(cargar);
         cargar.setBounds(40, 370, 250, 30);
 
-        naturaleza_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        naturaleza_label1.setForeground(new java.awt.Color(255, 255, 255));
-        naturaleza_label1.setText("Contraseña nueva");
-        Agregar.add(naturaleza_label1);
-        naturaleza_label1.setBounds(320, 350, 180, 29);
+        contraseñaN_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        contraseñaN_label.setForeground(new java.awt.Color(255, 255, 255));
+        contraseñaN_label.setText("Contraseña nueva");
+        Agregar.add(contraseñaN_label);
+        contraseñaN_label.setBounds(320, 350, 180, 29);
 
-        contraseñaN.setBackground(new java.awt.Color(13, 17, 23));
-        contraseñaN.setForeground(new java.awt.Color(255, 255, 255));
-        Agregar.add(contraseñaN);
-        contraseñaN.setBounds(320, 390, 400, 30);
+        contraseñaN_text.setBackground(new java.awt.Color(13, 17, 23));
+        contraseñaN_text.setForeground(new java.awt.Color(255, 255, 255));
+        Agregar.add(contraseñaN_text);
+        contraseñaN_text.setBounds(320, 390, 400, 30);
 
         eliminar.setBackground(new java.awt.Color(184, 44, 0));
         eliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -265,12 +265,12 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
     private javax.swing.JButton cargar;
     private javax.swing.JLabel contraseñaA_label;
     private javax.swing.JPasswordField contraseñaA_text;
-    private javax.swing.JPasswordField contraseñaN;
+    private javax.swing.JLabel contraseñaN_label;
+    private javax.swing.JPasswordField contraseñaN_text;
     private javax.swing.JButton eliminar;
     private javax.swing.JLabel id_label;
     private javax.swing.JTextField id_texto;
     private javax.swing.JPanel imagen;
-    private javax.swing.JLabel naturaleza_label1;
     private javax.swing.JLabel nombre_label;
     private javax.swing.JPanel panel_tabla;
     private javax.swing.JLabel perfil;
@@ -323,7 +323,7 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
             ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("La contraseña anterior no coincide con la contraseña del usuario");
             return;
         }
-        String contraseñaNueva = contraseñaN.getText();
+        String contraseñaNueva = contraseñaN_text.getText();
 
         String id = id_texto.getText();
 
@@ -366,7 +366,7 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         IDEntrenador1.setText("");
         id_texto.setText("");
         contraseñaA_text.setText("");
-        contraseñaN.setText("");
+        contraseñaN_text.setText("");
         perfil.setIcon(null);
     }
 
