@@ -7,20 +7,29 @@ package com.mycompany.pokemonbd;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
 
 /**
  *
- * @author sasuk
+ * @author hiram
  */
 public class ListaPK extends javax.swing.JFrame implements ActionListener {
-
+    private static String idEntrenador;
     /**
      * Creates new form ListaPK
      */
     public ListaPK() {
         initComponents();
+        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        this.setTitle("Lista de Pokemones");
+    }
+
+    public ListaPK(String idEntrenador) {
+        this.idEntrenador = idEntrenador;
+        initComponents();
+        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        this.setTitle("Lista de Pokemones");
     }
 
     /**
@@ -385,7 +394,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == user){
-            Usuario usuario = new Usuario();
+            Usuario usuario = new Usuario(idEntrenador);
             usuario.setVisible(true);
             this.dispose();
         }

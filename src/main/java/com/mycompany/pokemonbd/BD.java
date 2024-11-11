@@ -4,7 +4,9 @@ import java.net.ConnectException;
 import java.sql.*;
 import java.util.ArrayList;
 
-
+/**
+ * @autor Hiram
+ */
 public class BD {
     private static Connection con;
 
@@ -49,7 +51,7 @@ public class BD {
         }
     }
 
-    public void AgregarEntrenador(ImagenAlmacenEntrenador mImagen){
+    public boolean AgregarEntrenador(ImagenAlmacenEntrenador mImagen){
         PreparedStatement ps = null;
         try{
             ps = con.prepareStatement(SQL_AGREGAR);
@@ -58,8 +60,10 @@ public class BD {
             ps.setString(3, mImagen.getContraseña());
             ps.setBytes(4, mImagen.getImagen());
             ps.executeUpdate();
-        }catch (Exception e){
+            return true;
+        } catch (Exception e){
             System.out.println(e);
+            return false;
         } finally {
             try {
                 ps.close();
@@ -68,6 +72,7 @@ public class BD {
             }
         }
     }
+
 
     /*
     Este seria mas para cargar los pokemons guardados en la base de datos
@@ -88,6 +93,55 @@ public class BD {
         } catch (Exception e){
             System.out.println(e);
             return null;
+        }
+        return imagenes;
+    }
+
+    public boolean inicioSesion(String nombre, String contraseña) {
+        try {
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT * FROM Entrenador WHERE Nombre = '" + nombre + "' AND Contraseña = '" + contraseña + "'");
+            if (resultado.next()) {
+                System.out.println("Inicio de sesión exitoso");
+                return true;
+            } else {
+                System.out.println("Inicio de sesión fallido");
+                return false;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+    }
+
+    public String getID(String nombre, String contraseña) {
+        try {
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT ID FROM Entrenador WHERE Nombre = '" + nombre + "' AND Contraseña = '" + contraseña + "'");
+            if (resultado.next()) {
+                return resultado.getString("ID");
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+    }
+
+    public ArrayList cargarImagen(String idEntrenador) {
+        ArrayList imagenes = new ArrayList<>();
+        try {
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT Imagen FROM Entrenador WHERE ID = '" + idEntrenador + "'");
+            if (resultado.next()) {
+                System.out.println("Imagen cargada");
+                imagenes.add(resultado.getBytes("Imagen")); // Añade la imagen en bytes al ArrayList
+            } else {
+                System.out.println("Imagen no cargada");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
         return imagenes;
     }

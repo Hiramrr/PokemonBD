@@ -4,12 +4,13 @@
  */
 package com.mycompany.pokemonbd;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  *
- * @author cinom
+ * @author Hiram
  */
 public class Adios extends javax.swing.JDialog implements ActionListener {
 
@@ -19,6 +20,8 @@ public class Adios extends javax.swing.JDialog implements ActionListener {
     public Adios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        this.setTitle("Adios....");
     }
 
     /**

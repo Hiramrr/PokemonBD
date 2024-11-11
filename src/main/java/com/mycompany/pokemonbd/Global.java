@@ -4,20 +4,32 @@
  */
 package com.mycompany.pokemonbd;
 
+import org.w3c.dom.html.HTMLIsIndexElement;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  *
- * @author cinom
+ * @author hiram
  */
 public class Global extends javax.swing.JFrame implements ActionListener{
-
+    private static String idEntrenador;
     /**
      * Creates new form Global
      */
     public Global() {
         initComponents();
+        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        this.setTitle("Otros usuarios");
+    }
+
+    public Global(String idEntrenador) {
+        this.idEntrenador = idEntrenador;
+        initComponents();
+        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        this.setTitle("Otros usuarios");
     }
 
     /**
@@ -193,7 +205,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == regresar){
-            ListaPK lista = new ListaPK();
+            ListaPK lista = new ListaPK(idEntrenador);
             lista.setVisible(true);
             this.dispose();
         }

@@ -4,11 +4,12 @@
  */
 package com.mycompany.pokemonbd;
 
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 /**
  *
- * @author cinom
+ * @author hiram
  */
 public class Acciones extends javax.swing.JDialog implements ActionListener {
     /**
@@ -17,6 +18,8 @@ public class Acciones extends javax.swing.JDialog implements ActionListener {
     public Acciones(Usuario parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        this.setTitle("PokeDialogo");
     }
 
     /**

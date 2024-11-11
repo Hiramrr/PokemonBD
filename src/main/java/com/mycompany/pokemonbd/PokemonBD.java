@@ -2,7 +2,7 @@ package com.mycompany.pokemonbd;
 
 /**
  *
- * @author sasuk
+ * @author hiram
  */
 public class PokemonBD {
 

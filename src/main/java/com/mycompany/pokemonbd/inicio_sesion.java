@@ -9,16 +9,22 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author sasuk
+ * @author hiram
  */
 public class inicio_sesion extends javax.swing.JPanel implements ActionListener {
-    public String ID;
-    public String Con;
+    public String Nombre;
+    public String Contraseña;
+    BD mBD = new BD();
     /**
      * Creates new form inicio_lesion
      */
     public inicio_sesion() {
         initComponents();
+        if(mBD.conectar()){
+            System.out.println("Conectado");
+        } else {
+            System.out.println("No conectado");
+        }
     }
 
     /**
@@ -201,31 +207,33 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
     private javax.swing.JPanel panel_manejo;
     // End of variables declaration//GEN-END:variables
     
-    public boolean usuarioValido(String ID, String Con){
-        if(ID.equals("Miyu") && Con.equals("123")){
+    public boolean usuarioValido(String Nombre, String Contraseña){
+        if(mBD.inicioSesion(Nombre, Contraseña)){
             return true;
         }
         return false;
     }
 
-    public String getID() {
-        return ID;
+    public String getNombre() {
+        return Nombre;
     }
 
-    public String getCon() {
-        return Con;
+    public String getContraseña() {
+        return Contraseña;
     }
-    
+
+    public String getID(){
+        return mBD.getID(Nombre,Contraseña);
+    }
     
   
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == inicio){
-            ID = entrenadorID.getText();
-            Con = contraseña.getText();
-               
-            if(usuarioValido(ID,Con)){
-              ((PInicio) javax.swing.SwingUtilities.getWindowAncestor(this)).iniciarSesionExitoso();
+            Nombre = entrenadorID.getText();
+            Contraseña = contraseña.getText();
+            if(usuarioValido(Nombre,Contraseña)){
+              ((PInicio) javax.swing.SwingUtilities.getWindowAncestor(this)).iniciarSesionExitoso(getID());
               return;
             }
             ((PInicio) javax.swing.SwingUtilities.getWindowAncestor(this)).iniciarSesionError();

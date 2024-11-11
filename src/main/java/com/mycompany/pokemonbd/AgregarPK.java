@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author cinom
+ * @author hiram
  */
 public class AgregarPK extends javax.swing.JDialog implements ActionListener{
 

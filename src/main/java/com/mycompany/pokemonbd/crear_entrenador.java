@@ -246,44 +246,65 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
  
         return String.valueOf(numeroAleatorio);
     }
-    
+
+    public void crearEntrenador(){
+        String nombre = IDEntrenador1.getText();
+        String pass = contraseña.getText();
+        String id = entrenadorID.getText();
+
+        ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
+        entrenador.setID(Integer.parseInt(id));
+        entrenador.setNombre(nombre);
+        entrenador.setContraseña(pass);
+        //Checa si el usuario cargo una imagen, si no la cargo se le asiganara una default
+        try {
+            entrenador.setImagen(getImagen(ruta));
+        } catch (NullPointerException e){
+            entrenador.setImagen(getImagen("src/main/resources/images/PikachuPrueba.png"));
+        }
+        if(mBD.AgregarEntrenador(entrenador)) {
+            ((PInicio) javax.swing.SwingUtilities.getWindowAncestor(this)).crearUsuarioExitoso();
+            vaciarTexto();
+        } else {
+            ((PInicio) javax.swing.SwingUtilities.getWindowAncestor(this)).crearUsuarioError("El nombre "  +  nombre + " ya existe en la base de datos");
+        }
+    }
+
+
+
+    public void vaciarTexto(){
+        IDEntrenador1.setText("");
+        contraseña.setText("");
+        entrenadorID.setText(generarID());
+        perfil.setIcon(null);
+    }
+
+    public void cargarImagen(){
+        JFileChooser archivos = new JFileChooser();
+        FileNameExtensionFilter imagenes = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
+        archivos.setFileFilter(imagenes);
+
+        int respuesta = archivos.showOpenDialog(this);
+        if(respuesta == archivos.APPROVE_OPTION){
+            ruta = archivos.getSelectedFile().getPath();
+
+            Image foto = new ImageIcon(ruta).getImage();
+            ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
+            perfil.setIcon(icono);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == crear){
             if(mBD.conectar()) {
-
-
-                String nombre = IDEntrenador1.getText();
-                String pass = contraseña.getText();
-                String id = entrenadorID.getText();
-
-                ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
-                entrenador.setID(Integer.parseInt(id));
-                entrenador.setNombre(nombre);
-                entrenador.setContraseña(pass);
-                entrenador.setImagen(getImagen(ruta));
-
-                mBD.AgregarEntrenador(entrenador);
+                crearEntrenador();
+                return;
             }
-
         }
 
-        /*
-        *abrir los archivos para seleccionar una imagen
-        */
         if(evt.getSource() == cargar){
-            JFileChooser archivos = new JFileChooser();
-            FileNameExtensionFilter imagenes = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
-            archivos.setFileFilter(imagenes);
-            
-            int respuesta = archivos.showOpenDialog(this);
-            if(respuesta == archivos.APPROVE_OPTION){
-                ruta = archivos.getSelectedFile().getPath();
-                
-                Image foto = new ImageIcon(ruta).getImage();
-                ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
-                perfil.setIcon(icono);
-            }
+            cargarImagen();
         }
     }
 

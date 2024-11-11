@@ -4,6 +4,9 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 
+/**
+ * @autor Hiram
+ */
 public class RenderImagen extends DefaultTableCellRenderer {
 
     @Override

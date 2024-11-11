@@ -4,20 +4,34 @@
  */
 package com.mycompany.pokemonbd;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  *
- * @author cinom
+ * @author hiram
  */
 public class Usuario extends javax.swing.JFrame implements ActionListener {
-
+    private String idEntrenador;
+    BD mBD = new BD();
+    ImagenAlmacenEntrenador mImagen = new ImagenAlmacenEntrenador();
     /**
      * Creates new form Usuario
      */
     public Usuario() {
         initComponents();
+        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        this.setTitle("Perfil de usuario");
+    }
+
+    public Usuario(String idEntrenador) {
+        this.idEntrenador = idEntrenador;
+        initComponents();
+        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        this.setTitle("Perfil de usuario");
+        cargarImagen();
     }
 
     /**
@@ -269,7 +283,13 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton regresar;
     // End of variables declaration//GEN-END:variables
 
-    
+    public void cargarImagen(){
+        ArrayList imagenUser = mBD.cargarImagen(idEntrenador);
+        if (mBD.conectar()) {
+            byte[] datos = (byte[]) imagenUser.get(0);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == adios){
@@ -283,9 +303,11 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
             this.dispose();
         }
         if(evt.getSource() == regresar){
-            ListaPK lista = new ListaPK();
+            ListaPK lista = new ListaPK(idEntrenador);
             lista.setVisible(true);
             this.dispose();
         }
     }
+
+
 }

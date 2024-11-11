@@ -1,13 +1,14 @@
 package com.mycompany.pokemonbd;
 
 
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  *
- * @author sasuk
+ * @author hiram
  */
 public class PInicio extends javax.swing.JFrame implements ActionListener {
     public boolean estado = true;
@@ -16,6 +17,8 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
      */
     public PInicio() {
         initComponents();
+        setIconImage(new ImageIcon("Icono.jpg").getImage());
+        this.setTitle("PokeConnect");
         inicio_sesion inicio = new inicio_sesion();
         inicio.setLocation(0,0);
         inicio.setSize(704, 502);
@@ -172,13 +175,13 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 
-    public void iniciarSesionExitoso() {
-        ListaPK lista = new ListaPK();
+    public void iniciarSesionExitoso(String idEntrenador) {
+        ListaPK lista = new ListaPK(idEntrenador);
         lista.setVisible(true);
         System.out.println("Funciono");
         this.dispose();
     }
-    
+
     public void iniciarSesionError() {
         Dialogo acciones = new Dialogo(this,false);
         acciones.setVisible(true);
@@ -186,7 +189,23 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         acciones.setLocation(450, 261);
         System.out.println("fallo");
     }
-    
+
+    public void crearUsuarioExitoso() {
+        Dialogo acciones = new Dialogo(this,false);
+        acciones.setVisible(true);
+        acciones.setMensaje("Usuario creado exitosamente");
+        acciones.setLocation(450, 261);
+        System.out.println("Funciono");
+    }
+
+    public void crearUsuarioError(String mensaje) {
+        Dialogo acciones = new Dialogo(this,false);
+        acciones.setVisible(true);
+        acciones.setMensaje(mensaje);
+        acciones.setLocation(450, 261);
+        System.out.println("fallo");
+    }
+
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == boton){
