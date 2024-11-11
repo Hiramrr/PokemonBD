@@ -63,7 +63,7 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         titulo.setBackground(new java.awt.Color(240, 246, 252));
         titulo.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         titulo.setForeground(new java.awt.Color(240, 246, 252));
-        titulo.setText("Pokemon");
+        titulo.setText("PokeConnect");
         titulo.setToolTipText("");
 
         contenido.setBackground(new java.awt.Color(13, 17, 23));
