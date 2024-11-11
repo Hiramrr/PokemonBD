@@ -204,4 +204,19 @@ public class BD {
         return tabla;
     }
 
+    public String obtenerID(String nombre) {
+        try {
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT ID FROM Entrenador WHERE Nombre = '" + nombre + "'");
+            if (resultado.next()) {
+                return resultado.getString("ID");
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+    }
+
 }

@@ -25,6 +25,7 @@ import java.util.Random;
  */
 public class Global extends javax.swing.JFrame implements ActionListener{
     private static String idEntrenador;
+    private String idEntrenadorSeleccionado;
     BD mBD = new BD();
     String[] titulo = new String[]{"Foto de perfil","Nombre Entrenador","Pokemon favorito"};
     DefaultTableModel dtm = new DefaultTableModel(titulo, 21) {
@@ -51,6 +52,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         dtm = (DefaultTableModel) tabla_usuarios.getModel();
         tabla_usuarios.setModel(dtm);
         llenarTabla();
+        agregarListenerSeleccionTabla();
     }
 
     /**
@@ -317,19 +319,21 @@ public class Global extends javax.swing.JFrame implements ActionListener{
     public void ganar(){
         Dialogo dialogo = new Dialogo(this,true);
         dialogo.setMensaje("¡Felicidades! !Has ganado la batalla!");
-        dialogo.setVisible(true);
         dialogo.setLocation(450, 261);
         dialogo.setTitle("¡Felicidades!");
+        dialogo.setVisible(true);
         mBD.actualizarGanadas(idEntrenador);
+        mBD.actualizarPerdidas(idEntrenadorSeleccionado);
     }
 
     public void perder(){
         Dialogo dialogo = new Dialogo(this,true);
         dialogo.setMensaje("¡Que mala suerte! Has perdido la batalla");
-        dialogo.setVisible(true);
         dialogo.setLocation(450, 261);
         dialogo.setTitle("¡Que mala suerte!");
+        dialogo.setVisible(true);
         mBD.actualizarPerdidas(idEntrenador);
+        mBD.actualizarGanadas(idEntrenadorSeleccionado);
     }
 
     public void llenarTabla() {
@@ -377,10 +381,46 @@ public class Global extends javax.swing.JFrame implements ActionListener{
             int usuario2 = desafio();
             if(usuario1 > usuario2) {
                 ganar();
+                mostrarDatos(idEntrenadorSeleccionado);
                 return;
             }
             perder();
-            mBD.actualizarPerdidas(idEntrenador);
+            mostrarDatos(idEntrenadorSeleccionado);
         }
+    }
+
+    private void agregarListenerSeleccionTabla() {
+        tabla_usuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+
+                int filaSeleccionada = tabla_usuarios.getSelectedRow();
+
+                if (filaSeleccionada != -1) {
+                    String nombreEntrenadorSeleccionado = tabla_usuarios.getValueAt(filaSeleccionada, 1).toString();
+                    idEntrenadorSeleccionado = mBD.obtenerID(nombreEntrenadorSeleccionado);
+                    mostrarDatos(idEntrenadorSeleccionado);
+                }
+            }
+        });
+    }
+
+    public void mostrarDatos(String idEntrenadorSeleccionado){
+        ArrayList imagenUser = mBD.cargarImagen(idEntrenadorSeleccionado);
+        byte[] imagen = (byte[]) imagenUser.get(0);
+        try {
+            InputStream is = new ByteArrayInputStream(imagen);
+            BufferedImage bufferedImage = ImageIO.read(is);
+            ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(250, 250, bufferedImage.SCALE_SMOOTH));
+            perfil.setIcon(mFoto);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        ArrayList datos = mBD.obtenerDatos(idEntrenadorSeleccionado);
+        String nombre = datos.get(0).toString();
+        String ganadas = datos.get(1).toString();
+        String perdidas = datos.get(2).toString();
+        nombre_label.setText("Nombre: " + nombre);
+        ganadas_label.setText("Peleas ganadas: " + ganadas);
+        perdidas_label.setText("Peleas perdidas: " + perdidas);
     }
 }
