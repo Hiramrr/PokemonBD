@@ -1,6 +1,5 @@
 package com.mycompany.pokemonbd;
 
-import java.net.ConnectException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -219,7 +218,7 @@ public class BD {
         }
     }
 
-    public boolean actualizarDatos(ImagenAlmacenEntrenador mImagen){
+    public boolean actualizarDatosContraseñaImagen(ImagenAlmacenEntrenador mImagen){
         PreparedStatement ps = null;
         try{
             System.out.println("intento de actualizacion");
@@ -231,6 +230,68 @@ public class BD {
             ps.executeUpdate();
             return true;
         } catch (Exception e){
+            System.out.println(e);
+            return false;
+        } finally {
+            try {
+                ps.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public boolean actualizarDatosContraseña(ImagenAlmacenEntrenador mImagen) {
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement("UPDATE Entrenador SET Nombre = ?, Contraseña = ? WHERE ID = ?");
+            ps.setString(1, mImagen.getNombre());
+            ps.setString(2, mImagen.getContraseña());
+            ps.setInt(3, mImagen.getID());
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        } finally {
+            try {
+                ps.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public boolean actualizarDatosImagen(ImagenAlmacenEntrenador mImagen) {
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement("UPDATE Entrenador SET Nombre = ?, Imagen = ? WHERE ID = ?");
+            ps.setString(1, mImagen.getNombre());
+            ps.setBytes(2, mImagen.getImagen());
+            ps.setInt(3, mImagen.getID());
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        } finally {
+            try {
+                ps.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+    public boolean actualizarDatos(ImagenAlmacenEntrenador mImagen) {
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement("UPDATE Entrenador SET Nombre = ? WHERE ID = ?");
+            ps.setString(1, mImagen.getNombre());
+            ps.setInt(2, mImagen.getID());
+
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
             System.out.println(e);
             return false;
         } finally {

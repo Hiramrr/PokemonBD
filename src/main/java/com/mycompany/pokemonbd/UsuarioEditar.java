@@ -16,10 +16,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author hiram
  */
 public class UsuarioEditar extends javax.swing.JPanel implements ActionListener{
-    public boolean estado = true;
+    public boolean pedirContraseña = false;
     private static String idEntrenador;
     BD mBD = new BD();
     public String ruta;
+    public boolean imagen_nueva = false;
     
 
     public UsuarioEditar(String idEntrenador) {
@@ -291,8 +292,37 @@ public class UsuarioEditar extends javax.swing.JPanel implements ActionListener{
         Agregar.remove(contraseñaN_text);
         Agregar.repaint();
     }
-    
-    public void actualizarEntrenador(){
+
+    public void actualizarDatosNoImagenNoContraseña(){
+        String nombre = IDEntrenador1.getText();
+        String id = id_texto.getText();
+        ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
+        entrenador.setID(Integer.parseInt(id));
+        entrenador.setNombre(nombre);
+        if (mBD.actualizarDatos(entrenador)) {
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioExitoso();
+            vaciarTexto();
+        } else {
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("El nombre "  +  nombre + " ya existe en la base de datos");
+        }
+    }
+
+    public void actualizarDatosNoContraseña(){
+        String nombre = IDEntrenador1.getText();
+        String id = id_texto.getText();
+        ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
+        entrenador.setID(Integer.parseInt(id));
+        entrenador.setNombre(nombre);
+        entrenador.setImagen(getImagen(ruta));
+        if(mBD.actualizarDatosImagen(entrenador)) {
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioExitoso();
+            vaciarTexto();
+        } else {
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("El nombre "  +  nombre + " ya existe en la base de datos");
+        }
+    }
+
+    public void actualizarDatosNoImagen(){
         String nombre = IDEntrenador1.getText();
         String contraseñaAntigua = contraseñaA_text.getText();
         if(!comprobarContraseña(contraseñaAntigua,idEntrenador)){
@@ -307,36 +337,74 @@ public class UsuarioEditar extends javax.swing.JPanel implements ActionListener{
         entrenador.setID(Integer.parseInt(id));
         entrenador.setNombre(nombre);
         entrenador.setContraseña(contraseñaNueva);
-        try {
-            entrenador.setImagen(getImagen(ruta));
-        } catch (NullPointerException e){
-            entrenador.setImagen(getImagen("src/main/resources/images/PikachuPrueba.png"));
-        }
-        if(mBD.actualizarDatos(entrenador)) {
+        if(mBD.actualizarDatosContraseña(entrenador)) {
             ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioExitoso();
             vaciarTexto();
         } else {
             ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("El nombre "  +  nombre + " ya existe en la base de datos");
         }
     }
+
+    public void actualizarDatos(){
+        String nombre = IDEntrenador1.getText();
+        String contraseñaAntigua = contraseñaA_text.getText();
+        if(!comprobarContraseña(contraseñaAntigua,idEntrenador)){
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("La contraseña anterior no coincide con la contraseña del usuario");
+            return;
+        }
+        String contraseñaNueva = contraseñaN_text.getText();
+
+        String id = id_texto.getText();
+
+        ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
+        entrenador.setID(Integer.parseInt(id));
+        entrenador.setNombre(nombre);
+        entrenador.setContraseña(contraseñaNueva);
+        entrenador.setImagen(getImagen(ruta));
+        if(mBD.actualizarDatosContraseñaImagen(entrenador)) {
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioExitoso();
+            vaciarTexto();
+        } else {
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("El nombre "  +  nombre + " ya existe en la base de datos");
+        }
+    }
+
+    public void actualizarEntrenador(){
+        if(pedirContraseña == false && imagen_nueva == false){
+            actualizarDatosNoImagenNoContraseña();
+            return;
+        }
+        if(pedirContraseña == true && !imagen_nueva){
+            actualizarDatosNoImagen();
+            return;
+        }
+        if(pedirContraseña == false && imagen_nueva == true){
+            actualizarDatosNoContraseña();
+            return;
+        }
+        if(pedirContraseña == true && imagen_nueva == true){
+            actualizarDatos();
+        }
+    }
     
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == cambiar){
-            if(estado == true){
+            if(pedirContraseña == false){
                 cambiar.setText("No");
                 cambiar.setBackground(new java.awt.Color(35,135,55));
                 mostrar();
-                estado = false;
+                pedirContraseña = true;
                 return;
             }
             cambiar.setText("Si");
             cambiar.setBackground(new java.awt.Color(184,44,0));
             ocultar();
-            estado = true;
+            pedirContraseña = false;
             return;
         } if(evt.getSource() == cargar) {
             cargarImagen();
+            imagen_nueva = true;
         }
         if(evt.getSource() == actualizar) {
             actualizarEntrenador();
@@ -357,14 +425,14 @@ public class UsuarioEditar extends javax.swing.JPanel implements ActionListener{
         perfil.setIcon(null);
     }
 
-    private byte[] getImagen(String ruta){
+    private byte[] getImagen(String ruta) {
         File imagen = new File(ruta);
-        try{
-            byte[] icono = new byte[(int)imagen.length()];
+        try {
+            byte[] icono = new byte[(int) imagen.length()];
             InputStream input = new FileInputStream(imagen);
             input.read(icono);
             return icono;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return null;
         }
