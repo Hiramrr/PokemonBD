@@ -1,36 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
 package com.mycompany.pokemonbd;
 
-import java.awt.*;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
  * @author hiram
  */
-public class Editar_Usuario extends javax.swing.JDialog implements ActionListener {
-    private String idEntrenador;
+public class UsuarioEditar extends javax.swing.JPanel implements ActionListener{
+    public boolean estado = true;
+    private static String idEntrenador;
     BD mBD = new BD();
     public String ruta;
-    /**
-     * Creates new form Editar_Usuario
-     */
-    public Editar_Usuario(java.awt.Frame parent, boolean modal,String idEntrenador) {
-        super(parent, modal);
-        this.idEntrenador = idEntrenador;
+    
+
+    public UsuarioEditar(String idEntrenador) {
         initComponents();
-        setIconImage(new ImageIcon("Icono.png").getImage());
-        this.setTitle("Editar usuario");
+        this.idEntrenador = idEntrenador;
         cargarImagenPerfil();
         cargarDatos();
     }
@@ -44,11 +38,10 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_tabla = new javax.swing.JPanel();
         Agregar = new javax.swing.JPanel();
-        titulo = new javax.swing.JLabel();
         imagen = new javax.swing.JPanel();
         perfil = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
         nombre_label = new javax.swing.JLabel();
         IDEntrenador1 = new javax.swing.JTextField();
         id_label = new javax.swing.JLabel();
@@ -60,38 +53,36 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         contraseñaN_label = new javax.swing.JLabel();
         contraseñaN_text = new javax.swing.JPasswordField();
         eliminar = new javax.swing.JButton();
+        contraseña_cambio = new javax.swing.JLabel();
+        cambiar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(829, 822));
-
-        panel_tabla.setBackground(new java.awt.Color(13, 17, 23));
-        panel_tabla.setForeground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1150, 690));
 
         Agregar.setBackground(new java.awt.Color(22, 26, 33));
         Agregar.setForeground(new java.awt.Color(22, 26, 33));
         Agregar.setMinimumSize(new java.awt.Dimension(548, 411));
         Agregar.setLayout(null);
 
-        titulo.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
-        titulo.setForeground(new java.awt.Color(255, 255, 255));
-        titulo.setText("Editar Usuario");
-        Agregar.add(titulo);
-        titulo.setBounds(20, 10, 360, 54);
-
         imagen.setBackground(new java.awt.Color(13, 17, 23));
         imagen.setForeground(new java.awt.Color(13, 17, 23));
         imagen.setLayout(null);
         imagen.add(perfil);
-        perfil.setBounds(6, -3, 240, 260);
+        perfil.setBounds(0, 0, 265, 265);
 
         Agregar.add(imagen);
-        imagen.setBounds(40, 90, 250, 260);
+        imagen.setBounds(50, 100, 265, 265);
+
+        titulo.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
+        titulo.setForeground(new java.awt.Color(255, 255, 255));
+        titulo.setText("Editar Usuario");
+        Agregar.add(titulo);
+        titulo.setBounds(50, 30, 360, 54);
 
         nombre_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         nombre_label.setForeground(new java.awt.Color(255, 255, 255));
         nombre_label.setText("Cambiar Nombre");
         Agregar.add(nombre_label);
-        nombre_label.setBounds(320, 80, 180, 29);
+        nombre_label.setBounds(350, 110, 180, 29);
 
         IDEntrenador1.setBackground(new java.awt.Color(13, 17, 23));
         IDEntrenador1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -105,13 +96,13 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
             }
         });
         Agregar.add(IDEntrenador1);
-        IDEntrenador1.setBounds(320, 120, 400, 30);
+        IDEntrenador1.setBounds(350, 150, 730, 40);
 
         id_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         id_label.setForeground(new java.awt.Color(255, 255, 255));
         id_label.setText("ID");
         Agregar.add(id_label);
-        id_label.setBounds(320, 170, 140, 29);
+        id_label.setBounds(350, 220, 140, 29);
 
         id_texto.setEditable(false);
         id_texto.setBackground(new java.awt.Color(13, 17, 23));
@@ -126,13 +117,15 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
             }
         });
         Agregar.add(id_texto);
-        id_texto.setBounds(320, 210, 400, 30);
+        id_texto.setBounds(350, 250, 560, 40);
 
         contraseñaA_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         contraseñaA_label.setForeground(new java.awt.Color(255, 255, 255));
         contraseñaA_label.setText("Contraseña antigua");
+        /*
         Agregar.add(contraseñaA_label);
-        contraseñaA_label.setBounds(320, 260, 210, 29);
+        contraseñaA_label.setBounds(50, 480, 210, 29);
+        */
 
         actualizar.setBackground(new java.awt.Color(35, 135, 55));
         actualizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -140,30 +133,36 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         actualizar.setText("Actualizar datos");
         actualizar.addActionListener(this);
         Agregar.add(actualizar);
-        actualizar.setBounds(320, 450, 400, 40);
+        actualizar.setBounds(740, 630, 400, 40);
 
         contraseñaA_text.setBackground(new java.awt.Color(13, 17, 23));
         contraseñaA_text.setForeground(new java.awt.Color(255, 255, 255));
+        /*
         Agregar.add(contraseñaA_text);
-        contraseñaA_text.setBounds(320, 300, 400, 30);
+        contraseñaA_text.setBounds(50, 520, 400, 40);
+        */
 
         cargar.setBackground(new java.awt.Color(30, 112, 235));
         cargar.setForeground(new java.awt.Color(255, 255, 255));
         cargar.setText("Cargar imagen nueva");
         cargar.addActionListener(this);
         Agregar.add(cargar);
-        cargar.setBounds(40, 370, 250, 30);
+        cargar.setBounds(50, 380, 270, 30);
 
         contraseñaN_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         contraseñaN_label.setForeground(new java.awt.Color(255, 255, 255));
         contraseñaN_label.setText("Contraseña nueva");
+        /*
         Agregar.add(contraseñaN_label);
-        contraseñaN_label.setBounds(320, 350, 180, 29);
+        contraseñaN_label.setBounds(620, 480, 180, 29);
+        */
 
         contraseñaN_text.setBackground(new java.awt.Color(13, 17, 23));
         contraseñaN_text.setForeground(new java.awt.Color(255, 255, 255));
+        /*
         Agregar.add(contraseñaN_text);
-        contraseñaN_text.setBounds(320, 390, 400, 30);
+        contraseñaN_text.setBounds(620, 520, 400, 40);
+        */
 
         eliminar.setBackground(new java.awt.Color(184, 44, 0));
         eliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -171,39 +170,33 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         eliminar.setText("Eliminar usuario");
         eliminar.addActionListener(this);
         Agregar.add(eliminar);
-        eliminar.setBounds(50, 450, 160, 40);
+        eliminar.setBounds(40, 620, 160, 40);
 
-        javax.swing.GroupLayout panel_tablaLayout = new javax.swing.GroupLayout(panel_tabla);
-        panel_tabla.setLayout(panel_tablaLayout);
-        panel_tablaLayout.setHorizontalGroup(
-            panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_tablaLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
-        panel_tablaLayout.setVerticalGroup(
-            panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_tablaLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
+        contraseña_cambio.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        contraseña_cambio.setForeground(new java.awt.Color(255, 255, 255));
+        contraseña_cambio.setText("¿Deseas cambiar la contraseña?");
+        Agregar.add(contraseña_cambio);
+        contraseña_cambio.setBounds(350, 310, 320, 29);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        cambiar.setBackground(new java.awt.Color(184, 44, 0));
+        cambiar.setForeground(new java.awt.Color(255, 255, 255));
+        cambiar.setText("Si");
+        cambiar.addActionListener(this);
+        Agregar.add(cambiar);
+        cambiar.setBounds(350, 350, 110, 27);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_tabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 1150, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panel_tabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void IDEntrenador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDEntrenador1ActionPerformed
@@ -214,69 +207,28 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         // TODO add your handling code here:
     }//GEN-LAST:event_id_textoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Editar_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Editar_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Editar_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Editar_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            private String idEntrenador;
-
-            public void run() {
-                Editar_Usuario dialog = new Editar_Usuario(new javax.swing.JFrame(), true, this.idEntrenador);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
     private javax.swing.JTextField IDEntrenador1;
     private javax.swing.JButton actualizar;
+    private javax.swing.JButton cambiar;
     private javax.swing.JButton cargar;
     private javax.swing.JLabel contraseñaA_label;
     private javax.swing.JPasswordField contraseñaA_text;
     private javax.swing.JLabel contraseñaN_label;
     private javax.swing.JPasswordField contraseñaN_text;
+    private javax.swing.JLabel contraseña_cambio;
     private javax.swing.JButton eliminar;
     private javax.swing.JLabel id_label;
     private javax.swing.JTextField id_texto;
     private javax.swing.JPanel imagen;
     private javax.swing.JLabel nombre_label;
-    private javax.swing.JPanel panel_tabla;
     private javax.swing.JLabel perfil;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
-
+    
+    
     public void cargarImagenPerfil(){
         ArrayList imagenUser = mBD.cargarImagen(idEntrenador);
         if (mBD.conectar()) {
@@ -315,7 +267,31 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
             return false;
         }
     }
-
+    
+    public void mostrar(){
+        Agregar.add(contraseñaA_label);
+        contraseñaA_label.setBounds(50, 480, 210, 29);
+        
+        Agregar.add(contraseñaA_text);
+        contraseñaA_text.setBounds(50, 520, 400, 40);
+        
+        Agregar.add(contraseñaN_label);
+        contraseñaN_label.setBounds(620, 480, 180, 29);
+        
+        Agregar.add(contraseñaN_text);
+        contraseñaN_text.setBounds(620, 520, 400, 40);
+        
+        Agregar.repaint();
+    }
+    
+    public void ocultar() {
+        Agregar.remove(contraseñaA_label);
+        Agregar.remove(contraseñaA_text);
+        Agregar.remove(contraseñaN_label);
+        Agregar.remove(contraseñaN_text);
+        Agregar.repaint();
+    }
+    
     public void actualizarEntrenador(){
         String nombre = IDEntrenador1.getText();
         String contraseñaAntigua = contraseñaA_text.getText();
@@ -331,7 +307,6 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
         entrenador.setID(Integer.parseInt(id));
         entrenador.setNombre(nombre);
         entrenador.setContraseña(contraseñaNueva);
-        //Checa si el usuario cargo una imagen, si no la cargo se le asiganara una default
         try {
             entrenador.setImagen(getImagen(ruta));
         } catch (NullPointerException e){
@@ -344,24 +319,36 @@ public class Editar_Usuario extends javax.swing.JDialog implements ActionListene
             ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("El nombre "  +  nombre + " ya existe en la base de datos");
         }
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent evt) {
-        if(evt.getSource() == cargar) {
+        if(evt.getSource() == cambiar){
+            if(estado == true){
+                cambiar.setText("No");
+                cambiar.setBackground(new java.awt.Color(35,135,55));
+                mostrar();
+                estado = false;
+                return;
+            }
+            cambiar.setText("Si");
+            cambiar.setBackground(new java.awt.Color(184,44,0));
+            ocultar();
+            estado = true;
+            return;
+        } if(evt.getSource() == cargar) {
             cargarImagen();
         }
         if(evt.getSource() == actualizar) {
             actualizarEntrenador();
-            this.dispose();
         } if(evt.getSource() == eliminar){
             mBD.eliminarEntrenador(idEntrenador);
             System.out.println("Se elimino el usuario de la base de datos");
             PInicio pInicio = new PInicio();
             pInicio.setVisible(true);
-            this.dispose();
         }
     }
-
+    
+    
     public void vaciarTexto(){
         IDEntrenador1.setText("");
         id_texto.setText("");
