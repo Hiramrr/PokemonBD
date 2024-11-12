@@ -196,7 +196,7 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
         if (mBD.conectar()) {
             byte[] datos = (byte[]) imagenUser.get(0);
             Image foto = new ImageIcon(datos).getImage();
-            ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
+            ImageIcon icono = new ImageIcon(foto.getScaledInstance(265,265,Image.SCALE_SMOOTH));
             perfil.setIcon(icono);
         }
     }
