@@ -168,7 +168,7 @@ public class BD {
     public void actualizarGanadas(String idEntrenador) {
         try {
             consulta = con.createStatement();
-            consulta.executeUpdate("UPDATE Entrenador SET Ganadas = Ganadas + 1 WHERE ID = '" + idEntrenador + "'");
+            consulta.executeUpdate("CALL actualizar_ganadas(" + idEntrenador + ")");
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -177,7 +177,7 @@ public class BD {
     public void actualizarPerdidas(String idEntrenador) {
         try {
             consulta = con.createStatement();
-            consulta.executeUpdate("UPDATE Entrenador SET Perdidas = Perdidas + 1 WHERE ID = '" + idEntrenador + "'");
+            consulta.executeUpdate("CALL actualizar_perdidas(" + idEntrenador + ")");
         } catch (Exception e) {
             System.out.println(e);
         }
