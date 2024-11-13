@@ -46,9 +46,24 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         jPanel2 = new javax.swing.JPanel();
         opciones = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
+        imagen = new javax.swing.JPanel();
+        perfil = new javax.swing.JLabel();
+        nombre_label = new javax.swing.JLabel();
+        mote_label = new javax.swing.JLabel();
+        objeto_label = new javax.swing.JLabel();
+        naturaleza_label = new javax.swing.JLabel();
+        genero_label = new javax.swing.JLabel();
+        num_label = new javax.swing.JLabel();
+        region_label = new javax.swing.JLabel();
+        eliminar = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        imagen1 = new javax.swing.JPanel();
+        perfil1 = new javax.swing.JLabel();
+        nombre_label1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabla_estadisticas = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         panel_tabla = new javax.swing.JPanel();
@@ -89,27 +104,113 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
 
         jPanel7.setBackground(new java.awt.Color(22, 26, 33));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Datos del pokemon");
+        titulo.setBackground(new java.awt.Color(255, 255, 255));
+        titulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titulo.setForeground(new java.awt.Color(255, 255, 255));
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setText("Datos del pokemon");
+
+        imagen.setBackground(new java.awt.Color(13, 17, 23));
+        imagen.setForeground(new java.awt.Color(13, 17, 23));
+        imagen.setLayout(null);
+        imagen.add(perfil);
+        perfil.setBounds(0, 0, 210, 210);
+
+        nombre_label.setBackground(new java.awt.Color(255, 255, 255));
+        nombre_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nombre_label.setForeground(new java.awt.Color(255, 255, 255));
+        nombre_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nombre_label.setText("Nombre:");
+
+        mote_label.setBackground(new java.awt.Color(255, 255, 255));
+        mote_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mote_label.setForeground(new java.awt.Color(255, 255, 255));
+        mote_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mote_label.setText("Mote:");
+
+        objeto_label.setBackground(new java.awt.Color(255, 255, 255));
+        objeto_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        objeto_label.setForeground(new java.awt.Color(255, 255, 255));
+        objeto_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        objeto_label.setText("Objeto:");
+
+        naturaleza_label.setBackground(new java.awt.Color(255, 255, 255));
+        naturaleza_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        naturaleza_label.setForeground(new java.awt.Color(255, 255, 255));
+        naturaleza_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        naturaleza_label.setText("Naturaleza:");
+
+        genero_label.setBackground(new java.awt.Color(255, 255, 255));
+        genero_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        genero_label.setForeground(new java.awt.Color(255, 255, 255));
+        genero_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        genero_label.setText("Género:");
+
+        num_label.setBackground(new java.awt.Color(255, 255, 255));
+        num_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        num_label.setForeground(new java.awt.Color(255, 255, 255));
+        num_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        num_label.setText("Número Pokedex:");
+
+        region_label.setBackground(new java.awt.Color(255, 255, 255));
+        region_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        region_label.setForeground(new java.awt.Color(255, 255, 255));
+        region_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        region_label.setText("Región:");
+
+        eliminar.setBackground(new java.awt.Color(184, 44, 0));
+        eliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        eliminar.setForeground(new java.awt.Color(255, 255, 255));
+        eliminar.setText("Liberar Pokemon");
+        eliminar.addActionListener(this);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(164, 164, 164)
-                .addComponent(jLabel1)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(164, 164, 164)
+                            .addComponent(titulo))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(24, 24, 24)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(nombre_label)
+                                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(mote_label)
+                                .addComponent(objeto_label)
+                                .addComponent(naturaleza_label)
+                                .addComponent(genero_label)
+                                .addComponent(num_label)
+                                .addComponent(region_label)))))
                 .addContainerGap(156, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addContainerGap(673, Short.MAX_VALUE))
+                .addComponent(titulo)
+                .addGap(38, 38, 38)
+                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nombre_label)
+                .addGap(18, 18, 18)
+                .addComponent(mote_label)
+                .addGap(18, 18, 18)
+                .addComponent(objeto_label)
+                .addGap(18, 18, 18)
+                .addComponent(naturaleza_label)
+                .addGap(18, 18, 18)
+                .addComponent(genero_label)
+                .addGap(80, 80, 80)
+                .addComponent(num_label)
+                .addGap(18, 18, 18)
+                .addComponent(region_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(eliminar))
         );
 
         opciones.addTab("Datos", jPanel7);
@@ -122,21 +223,66 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Estadisticas del pokemon");
 
+        imagen1.setBackground(new java.awt.Color(13, 17, 23));
+        imagen1.setForeground(new java.awt.Color(13, 17, 23));
+        imagen1.setLayout(null);
+        imagen1.add(perfil1);
+        perfil1.setBounds(0, 0, 210, 210);
+
+        nombre_label1.setBackground(new java.awt.Color(255, 255, 255));
+        nombre_label1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nombre_label1.setForeground(new java.awt.Color(255, 255, 255));
+        nombre_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nombre_label1.setText("Nombre:");
+
+        tabla_estadisticas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "PS", "ATK", "DEF", "VEL", "SDEF", "SATK", "IV PS", "IV ATK", "IV DEF", "IV VEL", "IVS DEF", "IVS ATK", "EV PS", "EV ATK", "EV DEF", "EV VEL", "EVS ATK", ""
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabla_estadisticas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane2.setViewportView(tabla_estadisticas);
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jLabel2)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombre_label1)
+                            .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel2)
-                .addContainerGap(675, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nombre_label1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         opciones.addTab("Estadisticas", jPanel8);
@@ -373,8 +519,11 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregar;
+    private javax.swing.JButton eliminar;
     private javax.swing.JButton favorito;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel genero_label;
+    private javax.swing.JPanel imagen;
+    private javax.swing.JPanel imagen1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
@@ -384,10 +533,22 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel mote_label;
+    private javax.swing.JLabel naturaleza_label;
+    private javax.swing.JLabel nombre_label;
+    private javax.swing.JLabel nombre_label1;
+    private javax.swing.JLabel num_label;
+    private javax.swing.JLabel objeto_label;
     private javax.swing.JTabbedPane opciones;
     private javax.swing.JPanel panel_tabla;
+    private javax.swing.JLabel perfil;
+    private javax.swing.JLabel perfil1;
     private javax.swing.JButton personas;
+    private javax.swing.JLabel region_label;
     private javax.swing.JTable tabla;
+    private javax.swing.JTable tabla_estadisticas;
+    private javax.swing.JLabel titulo;
     private javax.swing.JButton user;
     // End of variables declaration//GEN-END:variables
 
