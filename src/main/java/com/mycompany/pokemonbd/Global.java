@@ -79,6 +79,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         desafiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_usuarios = new javax.swing.JTable();
+        usuariosTotales = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -190,7 +191,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         usuario_panel.setBounds(0, 0, 502, 760);
 
         tabla_usuarios.setBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setForeground(new java.awt.Color(255, 255, 255));
+        tabla_usuarios.setForeground(new java.awt.Color(13, 17, 23));
         tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -230,11 +231,17 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         tabla_usuarios.setGridColor(new java.awt.Color(22, 26, 33));
         tabla_usuarios.setRowHeight(50);
         tabla_usuarios.setSelectionBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setSelectionForeground(new java.awt.Color(255,255,255));
+        tabla_usuarios.setSelectionForeground(new java.awt.Color(13, 17, 23));
         jScrollPane1.setViewportView(tabla_usuarios);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(550, 100, 700, 640);
+        jScrollPane1.setBounds(540, 80, 700, 640);
+
+        usuariosTotales.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        usuariosTotales.setForeground(new java.awt.Color(255, 255, 255));
+        usuariosTotales.setText("Entrenadores registrados:");
+        jPanel1.add(usuariosTotales);
+        usuariosTotales.setBounds(540, 730, 170, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -305,6 +312,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JTable tabla_usuarios;
     private javax.swing.JLabel titutlo;
     private javax.swing.JPanel usuario_panel;
+    private javax.swing.JLabel usuariosTotales;
     // End of variables declaration//GEN-END:variables
 
     public int desafio(){
