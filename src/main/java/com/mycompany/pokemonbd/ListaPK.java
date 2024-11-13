@@ -62,10 +62,15 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         imagen1 = new javax.swing.JPanel();
         perfil1 = new javax.swing.JLabel();
         nombre_label1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabla_estadisticas = new javax.swing.JTable();
+        estadisticas_otropanelporque = new javax.swing.JTabbedPane();
+        Base = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        contenedor_movimientos = new javax.swing.JScrollPane();
+        movimietos_tabla = new javax.swing.JTable();
         panel_tabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
@@ -87,7 +92,6 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1350, 820));
-        setPreferredSize(new java.awt.Dimension(1350, 820));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(13, 17, 23));
@@ -235,24 +239,57 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         nombre_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nombre_label1.setText("Nombre:");
 
-        tabla_estadisticas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "PS", "ATK", "DEF", "VEL", "SDEF", "SATK", "IV PS", "IV ATK", "IV DEF", "IV VEL", "IVS DEF", "IVS ATK", "EV PS", "EV ATK", "EV DEF", "EV VEL", "EVS ATK", ""
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
-            };
+        javax.swing.GroupLayout BaseLayout = new javax.swing.GroupLayout(Base);
+        Base.setLayout(BaseLayout);
+        BaseLayout.setHorizontalGroup(
+            BaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 434, Short.MAX_VALUE)
+        );
+        BaseLayout.setVerticalGroup(
+            BaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 212, Short.MAX_VALUE)
+        );
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tabla_estadisticas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane2.setViewportView(tabla_estadisticas);
+        estadisticas_otropanelporque.addTab("tab1", Base);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 434, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 212, Short.MAX_VALUE)
+        );
+
+        estadisticas_otropanelporque.addTab("tab2", jPanel5);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 434, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 212, Short.MAX_VALUE)
+        );
+
+        estadisticas_otropanelporque.addTab("tab3", jPanel6);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 434, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 212, Short.MAX_VALUE)
+        );
+
+        estadisticas_otropanelporque.addTab("tab4", jPanel10);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -268,8 +305,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nombre_label1)
                             .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(11, Short.MAX_VALUE))
+                            .addComponent(estadisticas_otropanelporque, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,10 +317,12 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nombre_label1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addComponent(estadisticas_otropanelporque, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
+
+        estadisticas_otropanelporque.getAccessibleContext().setAccessibleName("Base");
 
         opciones.addTab("Estadisticas", jPanel8);
 
@@ -295,6 +334,28 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Movimientos del pokemon");
 
+        movimietos_tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Movimientos"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        movimietos_tabla.setRowHeight(60);
+        contenedor_movimientos.setViewportView(movimietos_tabla);
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -303,13 +364,19 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addGap(134, 134, 134)
                 .addComponent(jLabel3)
                 .addContainerGap(124, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(contenedor_movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel3)
-                .addContainerGap(678, Short.MAX_VALUE))
+                .addGap(114, 114, 114)
+                .addComponent(contenedor_movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         opciones.addTab("Movimientos", jPanel9);
@@ -518,8 +585,11 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Base;
     private javax.swing.JButton agregar;
+    private javax.swing.JScrollPane contenedor_movimientos;
     private javax.swing.JButton eliminar;
+    private javax.swing.JTabbedPane estadisticas_otropanelporque;
     private javax.swing.JButton favorito;
     private javax.swing.JLabel genero_label;
     private javax.swing.JPanel imagen;
@@ -527,14 +597,17 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel mote_label;
+    private javax.swing.JTable movimietos_tabla;
     private javax.swing.JLabel naturaleza_label;
     private javax.swing.JLabel nombre_label;
     private javax.swing.JLabel nombre_label1;
@@ -547,7 +620,6 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton personas;
     private javax.swing.JLabel region_label;
     private javax.swing.JTable tabla;
-    private javax.swing.JTable tabla_estadisticas;
     private javax.swing.JLabel titulo;
     private javax.swing.JButton user;
     // End of variables declaration//GEN-END:variables
