@@ -299,7 +299,7 @@ public class UsuarioEditar extends javax.swing.JPanel implements ActionListener{
         ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
         entrenador.setID(Integer.parseInt(id));
         entrenador.setNombre(nombre);
-        if (mBD.actualizarDatos(entrenador)) {
+        if (mBD.actualizarDatosSinContraseña(entrenador)) {
             ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioExitoso();
             vaciarTexto();
         } else {

@@ -100,7 +100,7 @@ public class BD {
     public boolean inicioSesion(String nombre, String contraseña) {
         try {
             consulta = con.createStatement();
-            resultado = consulta.executeQuery("SELECT * FROM Entrenador WHERE Nombre = '" + nombre + "' AND Contraseña = '" + contraseña + "'");
+            resultado = consulta.executeQuery("CALL validacion_entrenador('" + nombre + "','" + contraseña + "')");
             if (resultado.next()) {
                 System.out.println("Inicio de sesión exitoso");
                 return true;
@@ -111,21 +111,6 @@ public class BD {
         } catch (Exception e) {
             System.out.println(e);
             return false;
-        }
-    }
-
-    public String getID(String nombre, String contraseña) {
-        try {
-            consulta = con.createStatement();
-            resultado = consulta.executeQuery("SELECT ID FROM Entrenador WHERE Nombre = '" + nombre + "' AND Contraseña = '" + contraseña + "'");
-            if (resultado.next()) {
-                return resultado.getString("ID");
-            } else {
-                return null;
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-            return null;
         }
     }
 
@@ -187,7 +172,7 @@ public class BD {
         ArrayList<ImagenAlmacenEntrenador> tabla = new ArrayList<>();
         try {
             consulta = con.createStatement();
-            resultado = consulta.executeQuery("SELECT ID, Nombre, Imagen FROM Entrenador WHERE ID != '" + idEntrenador + "'");
+            resultado = consulta.executeQuery("CALL obtener_tablaEntrenador(" + idEntrenador + ")");
 
             while (resultado.next()) {
                 ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
@@ -206,7 +191,7 @@ public class BD {
     public String obtenerID(String nombre) {
         try {
             consulta = con.createStatement();
-            resultado = consulta.executeQuery("SELECT ID FROM Entrenador WHERE Nombre = '" + nombre + "'");
+            resultado = consulta.executeQuery("CALL obtener_idEntrenador('" + nombre + "')");
             if (resultado.next()) {
                 return resultado.getString("ID");
             } else {
@@ -282,10 +267,10 @@ public class BD {
             }
         }
     }
-    public boolean actualizarDatos(ImagenAlmacenEntrenador mImagen) {
+    public boolean actualizarDatosSinContraseña(ImagenAlmacenEntrenador mImagen) {
         PreparedStatement ps = null;
         try {
-            ps = con.prepareStatement("UPDATE Entrenador SET Nombre = ? WHERE ID = ?");
+            ps = con.prepareStatement("CALL actualizarDatosSinContraseña(?, ?)");
             ps.setString(1, mImagen.getNombre());
             ps.setInt(2, mImagen.getID());
 
@@ -306,7 +291,7 @@ public class BD {
     public String getContraseña(String idEntrenador) {
         try {
             consulta = con.createStatement();
-            resultado = consulta.executeQuery("SELECT Contraseña FROM Entrenador WHERE ID = '" + idEntrenador + "'");
+            resultado = consulta.executeQuery("CALL obtener_contraseña(" + idEntrenador + ")");;
             if (resultado.next()) {
                 return resultado.getString("Contraseña");
             } else {

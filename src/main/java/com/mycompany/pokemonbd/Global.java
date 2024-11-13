@@ -191,7 +191,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         usuario_panel.setBounds(0, 0, 502, 760);
 
         tabla_usuarios.setBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setForeground(new java.awt.Color(13, 17, 23));
+        tabla_usuarios.setForeground(new java.awt.Color(255,255,255));
         tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -231,7 +231,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         tabla_usuarios.setGridColor(new java.awt.Color(22, 26, 33));
         tabla_usuarios.setRowHeight(50);
         tabla_usuarios.setSelectionBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setSelectionForeground(new java.awt.Color(13, 17, 23));
+        tabla_usuarios.setSelectionForeground(new java.awt.Color(255,255,255));
         jScrollPane1.setViewportView(tabla_usuarios);
 
         jPanel1.add(jScrollPane1);

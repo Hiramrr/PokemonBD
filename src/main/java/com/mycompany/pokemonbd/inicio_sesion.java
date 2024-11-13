@@ -212,7 +212,7 @@ public class inicio_sesion extends javax.swing.JPanel implements ActionListener 
     }
 
     public String getID(){
-        return mBD.getID(Nombre,Contraseña);
+        return mBD.obtenerID(Nombre);
     }
     
   
