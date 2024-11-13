@@ -67,6 +67,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         contenedor_movimientos = new javax.swing.JScrollPane();
@@ -92,6 +94,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1350, 820));
+        setPreferredSize(new java.awt.Dimension(1350, 820));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(13, 17, 23));
@@ -239,6 +242,14 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         nombre_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nombre_label1.setText("Nombre:");
 
+        estadisticas_otropanelporque.setBackground(new java.awt.Color(22, 26, 33));
+        estadisticas_otropanelporque.setForeground(new java.awt.Color(255, 255, 255));
+        estadisticas_otropanelporque.setToolTipText("Base");
+
+        Base.setBackground(new java.awt.Color(22, 26, 33));
+        Base.setForeground(new java.awt.Color(255, 255, 255));
+        Base.setToolTipText("Base");
+
         javax.swing.GroupLayout BaseLayout = new javax.swing.GroupLayout(Base);
         Base.setLayout(BaseLayout);
         BaseLayout.setHorizontalGroup(
@@ -250,7 +261,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             .addGap(0, 212, Short.MAX_VALUE)
         );
 
-        estadisticas_otropanelporque.addTab("tab1", Base);
+        estadisticas_otropanelporque.addTab("Base", Base);
+
+        jPanel5.setBackground(new java.awt.Color(22, 26, 33));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -263,7 +276,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             .addGap(0, 212, Short.MAX_VALUE)
         );
 
-        estadisticas_otropanelporque.addTab("tab2", jPanel5);
+        estadisticas_otropanelporque.addTab("S", jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(22, 26, 33));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -276,7 +291,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             .addGap(0, 212, Short.MAX_VALUE)
         );
 
-        estadisticas_otropanelporque.addTab("tab3", jPanel6);
+        estadisticas_otropanelporque.addTab("IV", jPanel6);
+
+        jPanel10.setBackground(new java.awt.Color(22, 26, 33));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -289,7 +306,37 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             .addGap(0, 212, Short.MAX_VALUE)
         );
 
-        estadisticas_otropanelporque.addTab("tab4", jPanel10);
+        estadisticas_otropanelporque.addTab("IVS", jPanel10);
+
+        jPanel3.setBackground(new java.awt.Color(22, 26, 33));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 434, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 212, Short.MAX_VALUE)
+        );
+
+        estadisticas_otropanelporque.addTab("EV", jPanel3);
+
+        jPanel11.setBackground(new java.awt.Color(22, 26, 33));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 434, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 212, Short.MAX_VALUE)
+        );
+
+        estadisticas_otropanelporque.addTab("EVS", jPanel11);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -322,7 +369,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addGap(61, 61, 61))
         );
 
-        estadisticas_otropanelporque.getAccessibleContext().setAccessibleName("Base");
+        estadisticas_otropanelporque.getAccessibleContext().setAccessibleName("Estadisticas");
 
         opciones.addTab("Estadisticas", jPanel8);
 
@@ -334,6 +381,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Movimientos del pokemon");
 
+        movimietos_tabla.setBackground(new java.awt.Color(13, 17, 23));
+        movimietos_tabla.setForeground(new java.awt.Color(13, 17, 23));
         movimietos_tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -354,6 +403,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             }
         });
         movimietos_tabla.setRowHeight(60);
+        movimietos_tabla.setSelectionBackground(new java.awt.Color(13, 17, 23));
+        movimietos_tabla.setSelectionForeground(new java.awt.Color(255, 255, 255));
         contenedor_movimientos.setViewportView(movimietos_tabla);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -598,7 +649,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
