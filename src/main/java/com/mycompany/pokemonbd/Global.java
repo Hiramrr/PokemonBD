@@ -387,6 +387,9 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         }if(evt.getSource() == desafiar){
             int usuario1 = desafio();
             int usuario2 = desafio();
+            Peleandogif pelea = new Peleandogif(this,true);
+            pelea.setVisible(true);
+
             if(usuario1 > usuario2) {
                 ganar();
                 mostrarDatos(idEntrenadorSeleccionado);

@@ -7,12 +7,18 @@ import javax.swing.ImageIcon;
  *
  * @author hiram
  */
-public class peleandogif extends javax.swing.JDialog {
+public class Peleandogif extends javax.swing.JDialog {
 
     /** Creates new form peleandogif */
-    public peleandogif(java.awt.Frame parent, boolean modal) {
+    public Peleandogif(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setLocation(450, 261);
+        Image foto = new ImageIcon(getClass().getResource("/images/pelea.gif")).getImage();
+        ImageIcon icono = new ImageIcon(foto.getScaledInstance(pelea.getWidth(), pelea.getHeight(), Image.SCALE_SMOOTH));
+        gif.setIcon(icono);
+        this.setTitle("Peleando");
+        setIconImage(new ImageIcon("Icono.png").getImage());
         peleando();
     }
 
@@ -58,7 +64,7 @@ public class peleandogif extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -72,20 +78,20 @@ public class peleandogif extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(peleandogif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Peleandogif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(peleandogif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Peleandogif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(peleandogif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Peleandogif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(peleandogif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Peleandogif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                peleandogif dialog = new peleandogif(new javax.swing.JFrame(), true);
+                Peleandogif dialog = new Peleandogif(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -101,11 +107,16 @@ public class peleandogif extends javax.swing.JDialog {
     private javax.swing.JLabel gif;
     private javax.swing.JPanel pelea;
     // End of variables declaration//GEN-END:variables
-    
-    
-    public void peleando(){         
-        Image foto = new ImageIcon("src/main/resources/images/pelea.gif").getImage();        
-        ImageIcon icono =  new ImageIcon(foto.getScaledInstance(pelea.getWidth(),pelea.getHeight(),Image.SCALE_SMOOTH));         
-        gif.setIcon(icono);     
+
+
+    public void peleando(){
+        new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+                this.dispose();
+            } catch (InterruptedException e) {
+                System.out.println("Error en el hilo");
+            }
+        }).start();
     }
 }

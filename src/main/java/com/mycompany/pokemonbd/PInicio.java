@@ -270,4 +270,4 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         }
     }
 }
-
+ 
