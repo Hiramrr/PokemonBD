@@ -13,8 +13,8 @@ public class BD {
     private static ResultSet resultado;
 
 
-    private String SQL_AGREGAR = "INSERT INTO Entrenador (ID, Nombre, Contraseña, Imagen) VALUES (?, ?, ?, ?)";
-    private String SQL_CONSULTA = "SELECT * FROM Entrenador";
+    private final String SQL_AGREGAR = "INSERT INTO Entrenador (ID, Nombre, Contraseña, Imagen) VALUES (?, ?, ?, ?)";
+    private final String SQL_CONSULTA = "SELECT * FROM Entrenador";
 
 
     public BD() {
