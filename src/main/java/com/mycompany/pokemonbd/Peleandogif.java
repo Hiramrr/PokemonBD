@@ -14,9 +14,6 @@ public class Peleandogif extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setLocation(450, 261);
-        Image foto = new ImageIcon(getClass().getResource("/images/pelea.gif")).getImage();
-        ImageIcon icono = new ImageIcon(foto.getScaledInstance(pelea.getWidth(), pelea.getHeight(), Image.SCALE_SMOOTH));
-        gif.setIcon(icono);
         this.setTitle("Peleando");
         setIconImage(new ImageIcon("Icono.png").getImage());
         peleando();
@@ -36,15 +33,17 @@ public class Peleandogif extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pelea.gif"))); // NOI18N
+
         javax.swing.GroupLayout peleaLayout = new javax.swing.GroupLayout(pelea);
         pelea.setLayout(peleaLayout);
         peleaLayout.setHorizontalGroup(
             peleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gif, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+            .addComponent(gif, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         peleaLayout.setVerticalGroup(
             peleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gif, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+            .addComponent(gif, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
