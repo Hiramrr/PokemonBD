@@ -408,11 +408,12 @@ public class UsuarioEditar extends javax.swing.JPanel implements ActionListener{
         }
         if(evt.getSource() == actualizar) {
             actualizarEntrenador();
+            cargarImagenPerfil();
+            cargarDatos();
         } if(evt.getSource() == eliminar){
             mBD.eliminarEntrenador(idEntrenador);
             System.out.println("Se elimino el usuario de la base de datos");
-            PInicio pInicio = new PInicio();
-            pInicio.setVisible(true);
+            ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).cerrar();
         }
     }
     

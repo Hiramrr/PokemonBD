@@ -53,6 +53,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         tabla_usuarios.setModel(dtm);
         llenarTabla();
         agregarListenerSeleccionTabla();
+        primerEntrenador();
     }
 
     /**
@@ -413,6 +414,12 @@ public class Global extends javax.swing.JFrame implements ActionListener{
                 }
             }
         });
+    }
+
+    public void primerEntrenador(){
+        String nombreEntrenadorSeleccionado = tabla_usuarios.getValueAt(0, 1).toString();
+        idEntrenadorSeleccionado = mBD.obtenerID(nombreEntrenadorSeleccionado);
+        mostrarDatos(idEntrenadorSeleccionado);
     }
 
     public void mostrarDatos(String idEntrenadorSeleccionado){

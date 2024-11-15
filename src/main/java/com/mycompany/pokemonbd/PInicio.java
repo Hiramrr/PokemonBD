@@ -239,7 +239,7 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == boton){
-            if(estado == true){
+            if(estado){
                 boton.setText("Inicio de sesion");
                 crear_entrenador crear = new crear_entrenador();
                 crear.setLocation(0, 0);
@@ -270,4 +270,4 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         }
     }
 }
- 
+

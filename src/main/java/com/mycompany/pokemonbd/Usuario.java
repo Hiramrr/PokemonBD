@@ -188,6 +188,12 @@ public class Usuario extends javax.swing.JFrame implements ActionListener {
         System.out.println("Funciono");
     }
 
+    public void cerrar(){
+        PInicio i = new PInicio();
+        i.setVisible(true);
+        this.dispose();
+    }
+
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == cerrar){
