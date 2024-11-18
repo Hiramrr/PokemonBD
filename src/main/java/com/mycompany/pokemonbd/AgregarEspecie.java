@@ -51,8 +51,8 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         numPokedex_label = new javax.swing.JLabel();
         numPokedex_t = new javax.swing.JTextField();
         objeto_label = new javax.swing.JLabel();
-        objeto_combo = new javax.swing.JComboBox<>();
-        objeto_combo1 = new javax.swing.JComboBox<>();
+        region_combo = new javax.swing.JComboBox<>();
+        tipo_combo = new javax.swing.JComboBox<>();
         agregarPK = new javax.swing.JButton();
         tipo_label = new javax.swing.JLabel();
         ps_label = new javax.swing.JLabel();
@@ -71,10 +71,12 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         defespecialBase_t = new javax.swing.JTextField();
         velocidadBase_t = new javax.swing.JTextField();
         tipo_label1 = new javax.swing.JLabel();
-        objeto_combo2 = new javax.swing.JComboBox<>();
+        tipo2_combo = new javax.swing.JComboBox<>();
         cargar = new javax.swing.JButton();
-        tipo_label2 = new javax.swing.JLabel();
-        generacion = new javax.swing.JTextField();
+        generacion_label = new javax.swing.JLabel();
+        generaciont = new javax.swing.JTextField();
+        pkMax = new javax.swing.JLabel();
+        maxPokemon = new javax.swing.JTextField();
 
         Agregar.setBackground(new java.awt.Color(22, 26, 33));
         Agregar.setForeground(new java.awt.Color(22, 26, 33));
@@ -136,7 +138,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             }
         });
         Agregar.add(numPokedex_t);
-        numPokedex_t.setBounds(320, 220, 400, 30);
+        numPokedex_t.setBounds(320, 220, 330, 30);
 
         objeto_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         objeto_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,27 +146,27 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(objeto_label);
         objeto_label.setBounds(320, 270, 140, 29);
 
-        objeto_combo.setBackground(new java.awt.Color(13, 17, 23));
-        objeto_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        objeto_combo.setForeground(new java.awt.Color(255, 255, 255));
-        objeto_combo.addActionListener(new java.awt.event.ActionListener() {
+        region_combo.setBackground(new java.awt.Color(13, 17, 23));
+        region_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        region_combo.setForeground(new java.awt.Color(255, 255, 255));
+        region_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                objeto_comboActionPerformed(evt);
+                region_comboActionPerformed(evt);
             }
         });
-        Agregar.add(objeto_combo);
-        objeto_combo.setBounds(320, 310, 400, 30);
+        Agregar.add(region_combo);
+        region_combo.setBounds(320, 310, 400, 30);
 
-        objeto_combo1.setBackground(new java.awt.Color(13, 17, 23));
-        objeto_combo1.setForeground(new java.awt.Color(255, 255, 255));
-        objeto_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
-        objeto_combo1.addActionListener(new java.awt.event.ActionListener() {
+        tipo_combo.setBackground(new java.awt.Color(13, 17, 23));
+        tipo_combo.setForeground(new java.awt.Color(255, 255, 255));
+        tipo_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
+        tipo_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                objeto_combo1ActionPerformed(evt);
+                tipo_comboActionPerformed(evt);
             }
         });
-        Agregar.add(objeto_combo1);
-        objeto_combo1.setBounds(40, 430, 120, 26);
+        Agregar.add(tipo_combo);
+        tipo_combo.setBounds(40, 430, 120, 26);
 
         agregarPK.setBackground(new java.awt.Color(35, 135, 55));
         agregarPK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -278,16 +280,16 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(tipo_label1);
         tipo_label1.setBounds(210, 390, 100, 29);
 
-        objeto_combo2.setBackground(new java.awt.Color(13, 17, 23));
-        objeto_combo2.setForeground(new java.awt.Color(255, 255, 255));
-        objeto_combo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
-        objeto_combo2.addActionListener(new java.awt.event.ActionListener() {
+        tipo2_combo.setBackground(new java.awt.Color(13, 17, 23));
+        tipo2_combo.setForeground(new java.awt.Color(255, 255, 255));
+        tipo2_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
+        tipo2_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                objeto_combo2ActionPerformed(evt);
+                tipo2_comboActionPerformed(evt);
             }
         });
-        Agregar.add(objeto_combo2);
-        objeto_combo2.setBounds(210, 430, 120, 26);
+        Agregar.add(tipo2_combo);
+        tipo2_combo.setBounds(210, 430, 120, 26);
 
         cargar.setBackground(new java.awt.Color(30, 112, 235));
         cargar.setForeground(new java.awt.Color(255, 255, 255));
@@ -296,27 +298,49 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(cargar);
         cargar.setBounds(40, 360, 250, 27);
 
-        tipo_label2.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        tipo_label2.setForeground(new java.awt.Color(255, 255, 255));
-        tipo_label2.setText("Generación");
-        Agregar.add(tipo_label2);
-        tipo_label2.setBounds(380, 390, 130, 29);
+        generacion_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        generacion_label.setForeground(new java.awt.Color(255, 255, 255));
+        generacion_label.setText("Generación");
+        Agregar.add(generacion_label);
+        generacion_label.setBounds(360, 390, 130, 29);
 
-        generacion.setEditable(false);
-        generacion.setBackground(new java.awt.Color(13, 17, 23));
-        generacion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        generacion.setForeground(new java.awt.Color(255, 255, 255));
-        generacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        generacion.setBorder(null);
-        generacion.setCaretColor(new java.awt.Color(255, 255, 255));
-        generacion.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        generacion.addActionListener(new java.awt.event.ActionListener() {
+        generaciont.setEditable(false);
+        generaciont.setBackground(new java.awt.Color(13, 17, 23));
+        generaciont.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        generaciont.setForeground(new java.awt.Color(255, 255, 255));
+        generaciont.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        generaciont.setBorder(null);
+        generaciont.setCaretColor(new java.awt.Color(255, 255, 255));
+        generaciont.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        generaciont.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generacionActionPerformed(evt);
+                generaciontActionPerformed(evt);
             }
         });
-        Agregar.add(generacion);
-        generacion.setBounds(380, 430, 200, 26);
+        Agregar.add(generaciont);
+        generaciont.setBounds(360, 430, 140, 26);
+
+        pkMax.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        pkMax.setForeground(new java.awt.Color(255, 255, 255));
+        pkMax.setText("Numero de pokemones Disponibles");
+        Agregar.add(pkMax);
+        pkMax.setBounds(360, 480, 360, 30);
+
+        maxPokemon.setEditable(false);
+        maxPokemon.setBackground(new java.awt.Color(13, 17, 23));
+        maxPokemon.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        maxPokemon.setForeground(new java.awt.Color(255, 255, 255));
+        maxPokemon.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        maxPokemon.setBorder(null);
+        maxPokemon.setCaretColor(new java.awt.Color(255, 255, 255));
+        maxPokemon.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        maxPokemon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maxPokemonActionPerformed(evt);
+            }
+        });
+        Agregar.add(maxPokemon);
+        maxPokemon.setBounds(360, 530, 140, 26);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -330,13 +354,13 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void objeto_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_combo1ActionPerformed
+    private void tipo_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo_comboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_objeto_combo1ActionPerformed
+    }//GEN-LAST:event_tipo_comboActionPerformed
 
-    private void objeto_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_comboActionPerformed
+    private void region_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_region_comboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_objeto_comboActionPerformed
+    }//GEN-LAST:event_region_comboActionPerformed
 
     private void numPokedex_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numPokedex_tActionPerformed
         // TODO add your handling code here:
@@ -346,13 +370,13 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         // TODO add your handling code here:
     }//GEN-LAST:event_IDEntrenador1ActionPerformed
 
-    private void objeto_combo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_combo2ActionPerformed
+    private void tipo2_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo2_comboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_objeto_combo2ActionPerformed
+    }//GEN-LAST:event_tipo2_comboActionPerformed
 
-    private void generacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generacionActionPerformed
+    private void generaciontActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generaciontActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_generacionActionPerformed
+    }//GEN-LAST:event_generaciontActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -370,20 +394,22 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     private javax.swing.JLabel defensa_label;
     private javax.swing.JTextField defespecialBase_t;
     private javax.swing.JLabel especie_Label;
-    private javax.swing.JTextField generacion;
+    private javax.swing.JLabel generacion_label;
+    private javax.swing.JTextField generaciont;
     private javax.swing.JPanel imagen;
+    private javax.swing.JTextField maxPokemon;
     private javax.swing.JLabel numPokedex_label;
     private javax.swing.JTextField numPokedex_t;
-    private javax.swing.JComboBox<String> objeto_combo;
-    private javax.swing.JComboBox<String> objeto_combo1;
-    private javax.swing.JComboBox<String> objeto_combo2;
     private javax.swing.JLabel objeto_label;
     private javax.swing.JLabel perfil;
+    private javax.swing.JLabel pkMax;
     private javax.swing.JTextField psBase_t;
     private javax.swing.JLabel ps_label;
+    private javax.swing.JComboBox<String> region_combo;
+    private javax.swing.JComboBox<String> tipo2_combo;
+    private javax.swing.JComboBox<String> tipo_combo;
     private javax.swing.JLabel tipo_label;
     private javax.swing.JLabel tipo_label1;
-    private javax.swing.JLabel tipo_label2;
     private javax.swing.JLabel titulo;
     private javax.swing.JTextField totalBase_t;
     private javax.swing.JLabel total_label;
@@ -413,7 +439,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         for(int i = 0; i < lista.size(); i+= 3){
             regiones[i / 3] = lista.get(i).toString();
         }
-        objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(regiones));
+        region_combo.setModel(new javax.swing.DefaultComboBoxModel<>(regiones));
     }
 
     private byte[] getImagen(String ruta){
