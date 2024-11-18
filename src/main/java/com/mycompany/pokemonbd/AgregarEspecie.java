@@ -71,6 +71,8 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         tipo_label1 = new javax.swing.JLabel();
         objeto_combo2 = new javax.swing.JComboBox<>();
         cargar = new javax.swing.JButton();
+        tipo_label2 = new javax.swing.JLabel();
+        generacion = new javax.swing.JTextField();
 
         Agregar.setBackground(new java.awt.Color(22, 26, 33));
         Agregar.setForeground(new java.awt.Color(22, 26, 33));
@@ -175,7 +177,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         tipo_label.setForeground(new java.awt.Color(255, 255, 255));
         tipo_label.setText("Tipo");
         Agregar.add(tipo_label);
-        tipo_label.setBounds(40, 390, 100, 29);
+        tipo_label.setBounds(40, 400, 100, 29);
 
         ps_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         ps_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -293,6 +295,28 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(cargar);
         cargar.setBounds(40, 360, 250, 27);
 
+        tipo_label2.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        tipo_label2.setForeground(new java.awt.Color(255, 255, 255));
+        tipo_label2.setText("Generación");
+        Agregar.add(tipo_label2);
+        tipo_label2.setBounds(380, 390, 130, 29);
+
+        generacion.setEditable(false);
+        generacion.setBackground(new java.awt.Color(13, 17, 23));
+        generacion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        generacion.setForeground(new java.awt.Color(255, 255, 255));
+        generacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        generacion.setBorder(null);
+        generacion.setCaretColor(new java.awt.Color(255, 255, 255));
+        generacion.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        generacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generacionActionPerformed(evt);
+            }
+        });
+        Agregar.add(generacion);
+        generacion.setBounds(380, 430, 200, 26);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -325,6 +349,10 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         // TODO add your handling code here:
     }//GEN-LAST:event_objeto_combo2ActionPerformed
 
+    private void generacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generacionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
@@ -341,6 +369,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     private javax.swing.JLabel defensa_label;
     private javax.swing.JTextField defespecialBase_t;
     private javax.swing.JLabel especie_Label;
+    private javax.swing.JTextField generacion;
     private javax.swing.JPanel imagen;
     private javax.swing.JLabel numPokedex_label;
     private javax.swing.JTextField numPokedex_t;
@@ -353,6 +382,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     private javax.swing.JLabel ps_label;
     private javax.swing.JLabel tipo_label;
     private javax.swing.JLabel tipo_label1;
+    private javax.swing.JLabel tipo_label2;
     private javax.swing.JLabel titulo;
     private javax.swing.JTextField totalBase_t;
     private javax.swing.JLabel total_label;
