@@ -37,22 +37,18 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         imagen = new javax.swing.JPanel();
         perfil = new javax.swing.JLabel();
         especie_Label = new javax.swing.JLabel();
-        IDEntrenador1 = new javax.swing.JTextField();
         naturalezas_combo = new javax.swing.JComboBox<>();
         mote_label = new javax.swing.JLabel();
         mote = new javax.swing.JTextField();
         naturaleza_label = new javax.swing.JLabel();
-        Naturaleza = new javax.swing.JTextField();
         especies_combo = new javax.swing.JComboBox<>();
         objeto_label = new javax.swing.JLabel();
-        objeto = new javax.swing.JTextField();
         objeto_combo = new javax.swing.JComboBox<>();
         genero_label = new javax.swing.JLabel();
-        genero = new javax.swing.JTextField();
-        objeto_combo1 = new javax.swing.JComboBox<>();
+        genero_combo = new javax.swing.JComboBox<>();
         agregarPK = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        estadisticas = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -91,17 +87,19 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         jTextField25 = new javax.swing.JTextField();
         jTextField28 = new javax.swing.JTextField();
         jTextField24 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
+        movimientos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
         jLabel12 = new javax.swing.JLabel();
-        movimientos = new javax.swing.JTextField();
+        movimientosT = new javax.swing.JTextField();
         especies_combo1 = new javax.swing.JComboBox<>();
         añadirMov = new javax.swing.JButton();
         id_label = new javax.swing.JLabel();
         idT = new javax.swing.JTextField();
+        numPokedex_label = new javax.swing.JLabel();
+        numPokedex = new javax.swing.JTextField();
 
-        setMinimumSize(new java.awt.Dimension(753, 774));
+        setMinimumSize(new java.awt.Dimension(753, 850));
 
         Agregar.setBackground(new java.awt.Color(22, 26, 33));
         Agregar.setForeground(new java.awt.Color(22, 26, 33));
@@ -129,22 +127,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         Agregar.add(especie_Label);
         especie_Label.setBounds(320, 80, 140, 29);
 
-        IDEntrenador1.setEditable(false);
-        IDEntrenador1.setBackground(new java.awt.Color(13, 17, 23));
-        IDEntrenador1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        IDEntrenador1.setForeground(new java.awt.Color(255, 255, 255));
-        IDEntrenador1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        IDEntrenador1.setBorder(null);
-        IDEntrenador1.setCaretColor(new java.awt.Color(255, 255, 255));
-        IDEntrenador1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        IDEntrenador1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IDEntrenador1ActionPerformed(evt);
-            }
-        });
-        Agregar.add(IDEntrenador1);
-        IDEntrenador1.setBounds(320, 120, 400, 30);
-
+        naturalezas_combo.setBackground(new java.awt.Color(13, 17, 23));
+        naturalezas_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        naturalezas_combo.setForeground(new java.awt.Color(255, 255, 255));
         naturalezas_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activa", "Afable", "Agitada", "Alegre", "Alocada", "Amable", "Audaz", "Cauta", "Dócil", "Firme", "Floja", "Fuerte", "Grosera", "Huraña", "Ingenua", "Mansa", "Miedosa", "Modesta", "Osada", "Pícara", "Plácida", "Rara", "Serena", "Seria", "Tímida" }));
         naturalezas_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +137,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             }
         });
         Agregar.add(naturalezas_combo);
-        naturalezas_combo.setBounds(600, 340, 120, 26);
+        naturalezas_combo.setBounds(320, 296, 400, 40);
 
         mote_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         mote_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,22 +166,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         Agregar.add(naturaleza_label);
         naturaleza_label.setBounds(320, 260, 140, 29);
 
-        Naturaleza.setEditable(false);
-        Naturaleza.setBackground(new java.awt.Color(13, 17, 23));
-        Naturaleza.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Naturaleza.setForeground(new java.awt.Color(255, 255, 255));
-        Naturaleza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Naturaleza.setBorder(null);
-        Naturaleza.setCaretColor(new java.awt.Color(255, 255, 255));
-        Naturaleza.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        Naturaleza.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NaturalezaActionPerformed(evt);
-            }
-        });
-        Agregar.add(Naturaleza);
-        Naturaleza.setBounds(320, 300, 400, 30);
-
+        especies_combo.setBackground(new java.awt.Color(13, 17, 23));
+        especies_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        especies_combo.setForeground(new java.awt.Color(255, 255, 255));
         especies_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         especies_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,7 +176,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             }
         });
         Agregar.add(especies_combo);
-        especies_combo.setBounds(600, 160, 120, 26);
+        especies_combo.setBounds(320, 126, 400, 40);
 
         objeto_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         objeto_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,61 +184,35 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         Agregar.add(objeto_label);
         objeto_label.setBounds(40, 360, 140, 29);
 
-        objeto.setEditable(false);
-        objeto.setBackground(new java.awt.Color(13, 17, 23));
-        objeto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        objeto.setForeground(new java.awt.Color(255, 255, 255));
-        objeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        objeto.setBorder(null);
-        objeto.setCaretColor(new java.awt.Color(255, 255, 255));
-        objeto.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        objeto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                objetoActionPerformed(evt);
-            }
-        });
-        Agregar.add(objeto);
-        objeto.setBounds(40, 390, 250, 30);
-
-        objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        objeto_combo.setBackground(new java.awt.Color(13, 17, 23));
+        objeto_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        objeto_combo.setForeground(new java.awt.Color(255, 255, 255));
+        objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Agua fresca", "Agua fresca", "Antihielo", "Antiparalizador", "Antiquemar", "Antídoto", "Ataque X", "Bicicleta", "Bicicleta", "Bono bici", "Calcio", "Calcio", "Caramelo raro", "Caramelo raro", "Carburante", "Carburante", "Caña buena", "Caña vieja", "Correo Oak", "Correo Oak", "Cuerda huida", "Cura total", "Defensa especial X", "Defensa X", "Despertar", "Dientes oro", "Directo", "Elixir", "Especial X", "Fósil domo", "Fósil domo", "Fósil hélix", "Hierro", "Hierro", "Hiperpoción", "Limonada", "Limonada", "Llave ascensor", "Llave magnética", "Llave secreta", "Mapa", "Mapa", "Monedero", "Monedero", "Más PP", "Más PS", "Más PS", "Máximo elixir", "Pepita", "Piedra agua", "Piedra agua", "Piedra fuego", "Piedra fuego", "Piedra hoja", "Piedra hoja", "Piedra lunar", "Piedra lunar", "Piedra trueno", "Piedra trueno", "Poción", "Poción", "Poción máxima", "Poción máxima", "Poké flauta", "Poké flauta", "Poké muñeco", "Poké muñeco", "Precisión X", "Protección especial", "Proteína", "Proteína", "Refresco", "Refresco", "Repartir experiencia", "Repelente", "Repelente máximo", "Repelente máximo", "Restaurar todo", "Revivir", "Revivir máximo", "Revivir máximo", " ", "S", "Scope Silph", "Scope Silph", "Supercaña", "Supercaña", "Superpoción", "Superpoción", "Superrepelente", "Ticket barco", "Velocidad X", "Zahorí", "Zahorí", "Ámbar viejo", "Ámbar viejo", "Éter", "Éter máximo" }));
         objeto_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 objeto_comboActionPerformed(evt);
             }
         });
         Agregar.add(objeto_combo);
-        objeto_combo.setBounds(170, 430, 120, 26);
+        objeto_combo.setBounds(40, 396, 160, 30);
 
         genero_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         genero_label.setForeground(new java.awt.Color(255, 255, 255));
-        genero_label.setText("Genero");
+        genero_label.setText("Género");
         Agregar.add(genero_label);
-        genero_label.setBounds(360, 360, 140, 29);
+        genero_label.setBounds(220, 360, 120, 29);
 
-        genero.setEditable(false);
-        genero.setBackground(new java.awt.Color(13, 17, 23));
-        genero.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        genero.setForeground(new java.awt.Color(255, 255, 255));
-        genero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        genero.setBorder(null);
-        genero.setCaretColor(new java.awt.Color(255, 255, 255));
-        genero.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        genero.addActionListener(new java.awt.event.ActionListener() {
+        genero_combo.setBackground(new java.awt.Color(13, 17, 23));
+        genero_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        genero_combo.setForeground(new java.awt.Color(255, 255, 255));
+        genero_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
+        genero_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generoActionPerformed(evt);
+                genero_comboActionPerformed(evt);
             }
         });
-        Agregar.add(genero);
-        genero.setBounds(360, 390, 250, 30);
-
-        objeto_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
-        objeto_combo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                objeto_combo1ActionPerformed(evt);
-            }
-        });
-        Agregar.add(objeto_combo1);
-        objeto_combo1.setBounds(490, 430, 120, 26);
+        Agregar.add(genero_combo);
+        genero_combo.setBounds(220, 396, 120, 30);
 
         agregarPK.setBackground(new java.awt.Color(35, 135, 55));
         agregarPK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -279,7 +225,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         jTabbedPane1.setBackground(new java.awt.Color(22, 26, 33));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(22, 26, 33));
+        estadisticas.setBackground(new java.awt.Color(22, 26, 33));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -448,14 +394,14 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         jTextField24.setForeground(new java.awt.Color(255, 255, 255));
         jTextField24.setText("0");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout estadisticasLayout = new javax.swing.GroupLayout(estadisticas);
+        estadisticas.setLayout(estadisticasLayout);
+        estadisticasLayout.setHorizontalGroup(
+            estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(estadisticasLayout.createSequentialGroup()
                 .addGap(110, 110, 110)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(estadisticasLayout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
@@ -464,7 +410,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(estadisticasLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90)
                         .addComponent(psBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -474,7 +420,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(estadisticasLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
                         .addComponent(ataqueBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -484,7 +430,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(estadisticasLayout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
                         .addComponent(defensaBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -494,7 +440,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(estadisticasLayout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
                         .addComponent(atqespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -504,7 +450,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(estadisticasLayout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(defespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -514,7 +460,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(estadisticasLayout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -524,7 +470,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(estadisticasLayout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(80, 80, 80)
                         .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -534,59 +480,59 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        estadisticasLayout.setVerticalGroup(
+            estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(estadisticasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
                 .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(psBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ataqueBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(defensaBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(atqespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(defespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -594,9 +540,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Estadisticas", jPanel1);
+        jTabbedPane1.addTab("Estadisticas", estadisticas);
 
-        jPanel2.setBackground(new java.awt.Color(22, 26, 33));
+        movimientos.setBackground(new java.awt.Color(22, 26, 33));
 
         tabla.setBackground(new java.awt.Color(13, 17, 23));
         tabla.setForeground(new java.awt.Color(13, 17, 23));
@@ -620,7 +566,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             }
         });
         tabla.setGridColor(new java.awt.Color(22, 26, 33));
-        tabla.setRowHeight(30);
+        tabla.setRowHeight(60);
         tabla.setSelectionBackground(new java.awt.Color(13, 17, 23));
         tabla.setSelectionForeground(new java.awt.Color(13, 17, 23));
         jScrollPane1.setViewportView(tabla);
@@ -628,17 +574,17 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         jLabel12.setText("Movimientos");
 
-        movimientos.setEditable(false);
-        movimientos.setBackground(new java.awt.Color(13, 17, 23));
-        movimientos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        movimientos.setForeground(new java.awt.Color(255, 255, 255));
-        movimientos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        movimientos.setBorder(null);
-        movimientos.setCaretColor(new java.awt.Color(255, 255, 255));
-        movimientos.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        movimientos.addActionListener(new java.awt.event.ActionListener() {
+        movimientosT.setEditable(false);
+        movimientosT.setBackground(new java.awt.Color(13, 17, 23));
+        movimientosT.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        movimientosT.setForeground(new java.awt.Color(255, 255, 255));
+        movimientosT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        movimientosT.setBorder(null);
+        movimientosT.setCaretColor(new java.awt.Color(255, 255, 255));
+        movimientosT.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        movimientosT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movimientosActionPerformed(evt);
+                movimientosTActionPerformed(evt);
             }
         });
 
@@ -656,34 +602,34 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         añadirMov.setText("Agregar movimiento");
         agregarPK.addActionListener(this);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout movimientosLayout = new javax.swing.GroupLayout(movimientos);
+        movimientos.setLayout(movimientosLayout);
+        movimientosLayout.setHorizontalGroup(
+            movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(movimientosLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(especies_combo1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(movimientosLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
-                            .addComponent(movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(movimientosT, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(añadirMov, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        movimientosLayout.setVerticalGroup(
+            movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(movimientosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(movimientosLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(movimientosT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(especies_combo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -691,12 +637,14 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 .addGap(37, 37, 37))
         );
 
-        jTabbedPane1.addTab("Movimientos", jPanel2);
+        jTabbedPane1.addTab("Movimientos", movimientos);
 
         Agregar.add(jTabbedPane1);
-        jTabbedPane1.setBounds(50, 490, 650, 300);
+        jTabbedPane1.setBounds(50, 470, 650, 300);
 
+        id_label.setBackground(new java.awt.Color(255, 255, 255));
         id_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        id_label.setForeground(new java.awt.Color(255, 255, 255));
         id_label.setText("ID generada: ");
         Agregar.add(id_label);
         id_label.setBounds(30, 810, 120, 25);
@@ -717,6 +665,28 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         Agregar.add(idT);
         idT.setBounds(150, 810, 250, 30);
 
+        numPokedex_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        numPokedex_label.setForeground(new java.awt.Color(255, 255, 255));
+        numPokedex_label.setText("Numero de pokedex");
+        Agregar.add(numPokedex_label);
+        numPokedex_label.setBounds(360, 360, 230, 29);
+
+        numPokedex.setEditable(false);
+        numPokedex.setBackground(new java.awt.Color(13, 17, 23));
+        numPokedex.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        numPokedex.setForeground(new java.awt.Color(255, 255, 255));
+        numPokedex.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        numPokedex.setBorder(null);
+        numPokedex.setCaretColor(new java.awt.Color(255, 255, 255));
+        numPokedex.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        numPokedex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numPokedexActionPerformed(evt);
+            }
+        });
+        Agregar.add(numPokedex);
+        numPokedex.setBounds(360, 400, 210, 20);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -729,10 +699,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IDEntrenador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDEntrenador1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IDEntrenador1ActionPerformed
-
     private void naturalezas_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naturalezas_comboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_naturalezas_comboActionPerformed
@@ -741,33 +707,21 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         // TODO add your handling code here:
     }//GEN-LAST:event_moteActionPerformed
 
-    private void NaturalezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NaturalezaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NaturalezaActionPerformed
-
     private void especies_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especies_comboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_especies_comboActionPerformed
-
-    private void objetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objetoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_objetoActionPerformed
 
     private void objeto_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_comboActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_objeto_comboActionPerformed
 
-    private void generoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generoActionPerformed
+    private void genero_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genero_comboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_generoActionPerformed
+    }//GEN-LAST:event_genero_comboActionPerformed
 
-    private void objeto_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_combo1ActionPerformed
+    private void movimientosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movimientosTActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_objeto_combo1ActionPerformed
-
-    private void movimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movimientosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_movimientosActionPerformed
+    }//GEN-LAST:event_movimientosTActionPerformed
 
     private void especies_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especies_combo1ActionPerformed
         // TODO add your handling code here:
@@ -777,11 +731,13 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         // TODO add your handling code here:
     }//GEN-LAST:event_idTActionPerformed
 
+    private void numPokedexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numPokedexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numPokedexActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
-    private javax.swing.JTextField IDEntrenador1;
-    private javax.swing.JTextField Naturaleza;
     private javax.swing.JButton agregarPK;
     private javax.swing.JTextField ataqueBase_t;
     private javax.swing.JTextField atqespecialBase_t;
@@ -791,7 +747,8 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JLabel especie_Label;
     private javax.swing.JComboBox<String> especies_combo;
     private javax.swing.JComboBox<String> especies_combo1;
-    private javax.swing.JTextField genero;
+    private javax.swing.JPanel estadisticas;
+    private javax.swing.JComboBox<String> genero_combo;
     private javax.swing.JLabel genero_label;
     private javax.swing.JTextField idT;
     private javax.swing.JLabel id_label;
@@ -808,8 +765,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField10;
@@ -834,12 +789,13 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField mote;
     private javax.swing.JLabel mote_label;
-    private javax.swing.JTextField movimientos;
+    private javax.swing.JPanel movimientos;
+    private javax.swing.JTextField movimientosT;
     private javax.swing.JLabel naturaleza_label;
     private javax.swing.JComboBox<String> naturalezas_combo;
-    private javax.swing.JTextField objeto;
+    private javax.swing.JTextField numPokedex;
+    private javax.swing.JLabel numPokedex_label;
     private javax.swing.JComboBox<String> objeto_combo;
-    private javax.swing.JComboBox<String> objeto_combo1;
     private javax.swing.JLabel objeto_label;
     private javax.swing.JLabel perfil;
     private javax.swing.JTextField psBase_t;
