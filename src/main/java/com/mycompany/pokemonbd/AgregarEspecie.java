@@ -227,49 +227,42 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(base_label);
         base_label.setBounds(150, 510, 80, 20);
 
-        totalBase_t.setEditable(false);
         totalBase_t.setBackground(new java.awt.Color(13, 17, 23));
         totalBase_t.setForeground(new java.awt.Color(255, 255, 255));
         totalBase_t.setText("0");
         Agregar.add(totalBase_t);
         totalBase_t.setBounds(150, 720, 80, 26);
 
-        psBase_t.setEditable(false);
         psBase_t.setBackground(new java.awt.Color(13, 17, 23));
         psBase_t.setForeground(new java.awt.Color(255, 255, 255));
         psBase_t.setText("0");
         Agregar.add(psBase_t);
         psBase_t.setBounds(150, 540, 80, 26);
 
-        ataqueBase_t.setEditable(false);
         ataqueBase_t.setBackground(new java.awt.Color(13, 17, 23));
         ataqueBase_t.setForeground(new java.awt.Color(255, 255, 255));
         ataqueBase_t.setText("0");
         Agregar.add(ataqueBase_t);
         ataqueBase_t.setBounds(150, 570, 80, 26);
 
-        defensaBase_t.setEditable(false);
         defensaBase_t.setBackground(new java.awt.Color(13, 17, 23));
         defensaBase_t.setForeground(new java.awt.Color(255, 255, 255));
         defensaBase_t.setText("0");
         Agregar.add(defensaBase_t);
         defensaBase_t.setBounds(150, 600, 80, 26);
 
-        atqespecialBase_t.setEditable(false);
         atqespecialBase_t.setBackground(new java.awt.Color(13, 17, 23));
         atqespecialBase_t.setForeground(new java.awt.Color(255, 255, 255));
         atqespecialBase_t.setText("0");
         Agregar.add(atqespecialBase_t);
         atqespecialBase_t.setBounds(150, 630, 80, 26);
 
-        defespecialBase_t.setEditable(false);
         defespecialBase_t.setBackground(new java.awt.Color(13, 17, 23));
         defespecialBase_t.setForeground(new java.awt.Color(255, 255, 255));
         defespecialBase_t.setText("0");
         Agregar.add(defespecialBase_t);
         defespecialBase_t.setBounds(150, 660, 80, 26);
 
-        velocidadBase_t.setEditable(false);
         velocidadBase_t.setBackground(new java.awt.Color(13, 17, 23));
         velocidadBase_t.setForeground(new java.awt.Color(255, 255, 255));
         velocidadBase_t.setText("0");

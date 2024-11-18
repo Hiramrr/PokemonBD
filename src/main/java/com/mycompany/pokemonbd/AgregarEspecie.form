@@ -442,7 +442,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="totalBase_t">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="17" green="11" red="d" type="rgb"/>
             </Property>
@@ -459,7 +458,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="psBase_t">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="17" green="11" red="d" type="rgb"/>
             </Property>
@@ -476,7 +474,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="ataqueBase_t">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="17" green="11" red="d" type="rgb"/>
             </Property>
@@ -493,7 +490,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="defensaBase_t">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="17" green="11" red="d" type="rgb"/>
             </Property>
@@ -510,7 +506,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="atqespecialBase_t">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="17" green="11" red="d" type="rgb"/>
             </Property>
@@ -527,7 +522,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="defespecialBase_t">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="17" green="11" red="d" type="rgb"/>
             </Property>
@@ -544,7 +538,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="velocidadBase_t">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="17" green="11" red="d" type="rgb"/>
             </Property>
