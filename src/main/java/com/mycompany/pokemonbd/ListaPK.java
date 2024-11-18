@@ -691,7 +691,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         }
 
         if(evt.getSource() == agregar){
-            AgregarPK agregar = new AgregarPK(this,true);
+            AgregarNuevo agregar = new AgregarNuevo(this,true, idEntrenador);
             agregar.setVisible(true);
         }
     }
