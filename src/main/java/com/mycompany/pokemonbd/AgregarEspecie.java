@@ -89,6 +89,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         generaciont = new javax.swing.JTextField();
         pkMax = new javax.swing.JLabel();
         maxPokemon = new javax.swing.JTextField();
+        numPokedex_utilizado = new javax.swing.JLabel();
 
         Agregar.setBackground(new java.awt.Color(22, 26, 33));
         Agregar.setForeground(new java.awt.Color(22, 26, 33));
@@ -171,7 +172,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
 
         tipo_combo.setBackground(new java.awt.Color(13, 17, 23));
         tipo_combo.setForeground(new java.awt.Color(255, 255, 255));
-        tipo_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"}));
+        tipo_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
         tipo_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipo_comboActionPerformed(evt);
@@ -294,7 +295,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
 
         tipo2_combo.setBackground(new java.awt.Color(13, 17, 23));
         tipo2_combo.setForeground(new java.awt.Color(255, 255, 255));
-        tipo2_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Ninguno", "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"}));
+        tipo2_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
         tipo2_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipo2_comboActionPerformed(evt);
@@ -346,18 +347,28 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         maxPokemon.setBorder(null);
         maxPokemon.setCaretColor(new java.awt.Color(255, 255, 255));
         maxPokemon.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        maxPokemon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maxPokemonActionPerformed(evt);
+            }
+        });
         Agregar.add(maxPokemon);
         maxPokemon.setBounds(360, 530, 140, 26);
+
+        numPokedex_utilizado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        numPokedex_utilizado.setForeground(new java.awt.Color(184, 44, 0));
+        Agregar.add(numPokedex_utilizado);
+        numPokedex_utilizado.setBounds(320, 250, 330, 0);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -407,6 +418,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     private javax.swing.JTextField maxPokemon;
     private javax.swing.JLabel numPokedex_label;
     private javax.swing.JTextField numPokedex_t;
+    private javax.swing.JLabel numPokedex_utilizado;
     private javax.swing.JLabel objeto_label;
     private javax.swing.JLabel perfil;
     private javax.swing.JLabel pkMax;
