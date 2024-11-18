@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -29,6 +30,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     public AgregarEspecie(String idEntrenador) {
         initComponents();
         this.idEntrenador = idEntrenador;
+        obtenerRegiones();
     }
 
     /**
@@ -49,7 +51,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         numPokedex_label = new javax.swing.JLabel();
         numPokedex_t = new javax.swing.JTextField();
         objeto_label = new javax.swing.JLabel();
-        objeto_combo = new javax.swing.JComboBox<>();
+        region_combo = new javax.swing.JComboBox<>();
         objeto_combo1 = new javax.swing.JComboBox<>();
         agregarPK = new javax.swing.JButton();
         tipo_label = new javax.swing.JLabel();
@@ -142,17 +144,16 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(objeto_label);
         objeto_label.setBounds(320, 270, 140, 29);
 
-        objeto_combo.setBackground(new java.awt.Color(13, 17, 23));
-        objeto_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        objeto_combo.setForeground(new java.awt.Color(255, 255, 255));
-        objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        objeto_combo.addActionListener(new java.awt.event.ActionListener() {
+        region_combo.setBackground(new java.awt.Color(13, 17, 23));
+        region_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        region_combo.setForeground(new java.awt.Color(255, 255, 255));
+        region_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 objeto_comboActionPerformed(evt);
             }
         });
-        Agregar.add(objeto_combo);
-        objeto_combo.setBounds(320, 310, 400, 30);
+        Agregar.add(region_combo);
+        region_combo.setBounds(320, 310, 400, 30);
 
         objeto_combo1.setBackground(new java.awt.Color(13, 17, 23));
         objeto_combo1.setForeground(new java.awt.Color(255, 255, 255));
@@ -373,7 +374,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     private javax.swing.JPanel imagen;
     private javax.swing.JLabel numPokedex_label;
     private javax.swing.JTextField numPokedex_t;
-    private javax.swing.JComboBox<String> objeto_combo;
+    private javax.swing.JComboBox<String> region_combo;
     private javax.swing.JComboBox<String> objeto_combo1;
     private javax.swing.JComboBox<String> objeto_combo2;
     private javax.swing.JLabel objeto_label;
@@ -406,8 +407,13 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         }
     }
 
-    public String[] obtenerRegiones(){
-
+    public void obtenerRegiones(){
+        ArrayList lista =  mBD.obtenerRegiones();
+        String [] regiones = new String[lista.size()];
+        for(int i = 0; i < lista.size(); i+= 3){
+            regiones[i / 3] = lista.get(i).toString();
+        }
+        region_combo.setModel(new javax.swing.DefaultComboBoxModel<>(regiones));
     }
 
     private byte[] getImagen(String ruta){

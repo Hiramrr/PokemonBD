@@ -312,5 +312,20 @@ public class BD {
         }
     }
 
-
+    public ArrayList obtenerRegiones(){
+        ArrayList regiones = new ArrayList<>();
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL obtenerDatosRegion()");
+            while (resultado.next()){
+                regiones.add(resultado.getString("Nombre"));
+                regiones.add(resultado.getString("Generacion"));
+                regiones.add(resultado.getInt("NumPokemon"));
+            }
+        } catch (Exception e){
+            System.out.println(e);
+            return null;
+        }
+        return regiones;
+    }
 }
