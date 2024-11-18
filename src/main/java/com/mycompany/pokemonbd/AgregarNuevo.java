@@ -117,17 +117,18 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == cambiar) {
-            if (estado) {
-                cambiar.setText("Agregar Pokemon");
-                AgregarEspecie especie = new AgregarEspecie(idEntrenador);
-                especie.setLocation(0, 0);
-                especie.setSize(753, 850);
+           if (estado) {
+            cambiar.setText("Agregar Pokemon");
+            AgregarEspecie especie = new AgregarEspecie(idEntrenador);
+            especie.setLocation(0, 0);
+            especie.setSize(753, 850);
 
-                contenido.removeAll();
-                contenido.add(especie, BorderLayout.CENTER);
-                contenido.revalidate();
-                contenido.repaint();
-                estado = false;
+            contenido.removeAll();
+            contenido.setLayout(new BorderLayout());
+            contenido.add(especie, BorderLayout.CENTER);
+            contenido.revalidate();
+            contenido.repaint();
+            estado = false;
             } else {
                 cambiar.setText("Agregar Especie");
                 AgregarPK agregar = new AgregarPK(idEntrenador);
@@ -135,6 +136,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
                 agregar.setSize(753, 850);
 
                 contenido.removeAll();
+                contenido.setLayout(new BorderLayout());
                 contenido.add(agregar, BorderLayout.CENTER);
                 contenido.revalidate();
                 contenido.repaint();

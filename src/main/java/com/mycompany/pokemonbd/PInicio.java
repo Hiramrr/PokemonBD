@@ -265,7 +265,6 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
                 contenido.repaint();
                 estado = true;
                 boton.setToolTipText("Crear un nuevo usuario en el sistema");
-
             }
         }
     }
