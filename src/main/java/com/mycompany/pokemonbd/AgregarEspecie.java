@@ -4,8 +4,15 @@
  */
 package com.mycompany.pokemonbd;
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -13,6 +20,9 @@ import java.awt.event.ActionListener;
  */
 public class AgregarEspecie extends javax.swing.JPanel implements ActionListener {
     public String idEntrenador;
+    String ruta;
+    BD mBD = new BD();
+    
     /**
      * Creates new form AgregarEspecie
      */
@@ -36,27 +46,21 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         perfil = new javax.swing.JLabel();
         especie_Label = new javax.swing.JLabel();
         IDEntrenador1 = new javax.swing.JTextField();
-        mote_label = new javax.swing.JLabel();
-        mote = new javax.swing.JTextField();
-        naturaleza_label = new javax.swing.JLabel();
-        Naturaleza = new javax.swing.JTextField();
+        numPokedex_label = new javax.swing.JLabel();
+        numPokedex_t = new javax.swing.JTextField();
         objeto_label = new javax.swing.JLabel();
-        objeto = new javax.swing.JTextField();
         objeto_combo = new javax.swing.JComboBox<>();
         objeto_combo1 = new javax.swing.JComboBox<>();
         agregarPK = new javax.swing.JButton();
-        objeto_label1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        tipo_label = new javax.swing.JLabel();
+        ps_label = new javax.swing.JLabel();
+        atq_label = new javax.swing.JLabel();
+        defensa_label = new javax.swing.JLabel();
+        atqEspecial_label = new javax.swing.JLabel();
+        defEspacial_label = new javax.swing.JLabel();
+        velocidad_label = new javax.swing.JLabel();
+        total_label = new javax.swing.JLabel();
+        base_label = new javax.swing.JLabel();
         totalBase_t = new javax.swing.JTextField();
         psBase_t = new javax.swing.JTextField();
         ataqueBase_t = new javax.swing.JTextField();
@@ -64,26 +68,9 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         atqespecialBase_t = new javax.swing.JTextField();
         defespecialBase_t = new javax.swing.JTextField();
         velocidadBase_t = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
+        tipo_label1 = new javax.swing.JLabel();
+        objeto_combo2 = new javax.swing.JComboBox<>();
+        cargar = new javax.swing.JButton();
 
         Agregar.setBackground(new java.awt.Color(22, 26, 33));
         Agregar.setForeground(new java.awt.Color(22, 26, 33));
@@ -126,70 +113,36 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(IDEntrenador1);
         IDEntrenador1.setBounds(320, 120, 400, 30);
 
-        mote_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        mote_label.setForeground(new java.awt.Color(255, 255, 255));
-        mote_label.setText("Num. Pokedex");
-        Agregar.add(mote_label);
-        mote_label.setBounds(320, 180, 170, 29);
+        numPokedex_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        numPokedex_label.setForeground(new java.awt.Color(255, 255, 255));
+        numPokedex_label.setText("Num. Pokedex");
+        Agregar.add(numPokedex_label);
+        numPokedex_label.setBounds(320, 180, 170, 29);
 
-        mote.setBackground(new java.awt.Color(13, 17, 23));
-        mote.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        mote.setForeground(new java.awt.Color(255, 255, 255));
-        mote.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        mote.setBorder(null);
-        mote.setCaretColor(new java.awt.Color(255, 255, 255));
-        mote.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        mote.addActionListener(new java.awt.event.ActionListener() {
+        numPokedex_t.setBackground(new java.awt.Color(13, 17, 23));
+        numPokedex_t.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        numPokedex_t.setForeground(new java.awt.Color(255, 255, 255));
+        numPokedex_t.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        numPokedex_t.setBorder(null);
+        numPokedex_t.setCaretColor(new java.awt.Color(255, 255, 255));
+        numPokedex_t.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        numPokedex_t.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moteActionPerformed(evt);
+                numPokedex_tActionPerformed(evt);
             }
         });
-        Agregar.add(mote);
-        mote.setBounds(320, 220, 400, 30);
-
-        naturaleza_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        naturaleza_label.setForeground(new java.awt.Color(255, 255, 255));
-        naturaleza_label.setText("Naturaleza");
-        Agregar.add(naturaleza_label);
-        naturaleza_label.setBounds(320, 270, 140, 29);
-
-        Naturaleza.setBackground(new java.awt.Color(13, 17, 23));
-        Naturaleza.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Naturaleza.setForeground(new java.awt.Color(255, 255, 255));
-        Naturaleza.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Naturaleza.setBorder(null);
-        Naturaleza.setCaretColor(new java.awt.Color(255, 255, 255));
-        Naturaleza.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        Naturaleza.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NaturalezaActionPerformed(evt);
-            }
-        });
-        Agregar.add(Naturaleza);
-        Naturaleza.setBounds(320, 310, 400, 30);
+        Agregar.add(numPokedex_t);
+        numPokedex_t.setBounds(320, 220, 400, 30);
 
         objeto_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         objeto_label.setForeground(new java.awt.Color(255, 255, 255));
         objeto_label.setText("Región");
         Agregar.add(objeto_label);
-        objeto_label.setBounds(40, 360, 140, 29);
+        objeto_label.setBounds(320, 270, 140, 29);
 
-        objeto.setEditable(false);
-        objeto.setBackground(new java.awt.Color(13, 17, 23));
-        objeto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        objeto.setForeground(new java.awt.Color(255, 255, 255));
-        objeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        objeto.setBorder(null);
-        objeto.setCaretColor(new java.awt.Color(255, 255, 255));
-        objeto.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        objeto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                objetoActionPerformed(evt);
-            }
-        });
-        Agregar.add(objeto);
-        objeto.setBounds(40, 400, 250, 30);
-
+        objeto_combo.setBackground(new java.awt.Color(13, 17, 23));
+        objeto_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        objeto_combo.setForeground(new java.awt.Color(255, 255, 255));
         objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         objeto_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,16 +150,18 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             }
         });
         Agregar.add(objeto_combo);
-        objeto_combo.setBounds(170, 440, 120, 26);
+        objeto_combo.setBounds(320, 310, 400, 30);
 
-        objeto_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        objeto_combo1.setBackground(new java.awt.Color(13, 17, 23));
+        objeto_combo1.setForeground(new java.awt.Color(255, 255, 255));
+        objeto_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
         objeto_combo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 objeto_combo1ActionPerformed(evt);
             }
         });
         Agregar.add(objeto_combo1);
-        objeto_combo1.setBounds(590, 440, 120, 26);
+        objeto_combo1.setBounds(40, 430, 120, 26);
 
         agregarPK.setBackground(new java.awt.Color(35, 135, 55));
         agregarPK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -214,256 +169,136 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         agregarPK.setText("Agregar");
         agregarPK.addActionListener(this);
         Agregar.add(agregarPK);
-        agregarPK.setBounds(510, 730, 240, 40);
+        agregarPK.setBounds(510, 800, 240, 40);
 
-        objeto_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        objeto_label1.setForeground(new java.awt.Color(255, 255, 255));
-        objeto_label1.setText("Tipo");
-        Agregar.add(objeto_label1);
-        objeto_label1.setBounds(320, 360, 140, 29);
+        tipo_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        tipo_label.setForeground(new java.awt.Color(255, 255, 255));
+        tipo_label.setText("Tipo");
+        Agregar.add(tipo_label);
+        tipo_label.setBounds(40, 390, 100, 29);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("PS");
-        Agregar.add(jLabel1);
-        jLabel1.setBounds(80, 520, 20, 20);
+        ps_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ps_label.setForeground(new java.awt.Color(255, 255, 255));
+        ps_label.setText("PS");
+        Agregar.add(ps_label);
+        ps_label.setBounds(40, 540, 20, 20);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Ataque");
-        Agregar.add(jLabel2);
-        jLabel2.setBounds(80, 550, 50, 16);
+        atq_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        atq_label.setForeground(new java.awt.Color(255, 255, 255));
+        atq_label.setText("Ataque");
+        Agregar.add(atq_label);
+        atq_label.setBounds(40, 570, 50, 16);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Defensa");
-        Agregar.add(jLabel3);
-        jLabel3.setBounds(80, 580, 50, 20);
+        defensa_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        defensa_label.setForeground(new java.awt.Color(255, 255, 255));
+        defensa_label.setText("Defensa");
+        Agregar.add(defensa_label);
+        defensa_label.setBounds(40, 600, 50, 20);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Atq. Especial");
-        Agregar.add(jLabel4);
-        jLabel4.setBounds(80, 610, 90, 16);
+        atqEspecial_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        atqEspecial_label.setForeground(new java.awt.Color(255, 255, 255));
+        atqEspecial_label.setText("Atq. Especial");
+        Agregar.add(atqEspecial_label);
+        atqEspecial_label.setBounds(40, 630, 90, 16);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Def. Especial");
-        Agregar.add(jLabel5);
-        jLabel5.setBounds(80, 640, 80, 20);
+        defEspacial_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        defEspacial_label.setForeground(new java.awt.Color(255, 255, 255));
+        defEspacial_label.setText("Def. Especial");
+        Agregar.add(defEspacial_label);
+        defEspacial_label.setBounds(40, 660, 80, 20);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Velocidad");
-        Agregar.add(jLabel6);
-        jLabel6.setBounds(80, 670, 70, 20);
+        velocidad_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        velocidad_label.setForeground(new java.awt.Color(255, 255, 255));
+        velocidad_label.setText("Velocidad");
+        Agregar.add(velocidad_label);
+        velocidad_label.setBounds(40, 690, 70, 20);
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Total");
-        Agregar.add(jLabel7);
-        jLabel7.setBounds(80, 700, 30, 20);
+        total_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        total_label.setForeground(new java.awt.Color(255, 255, 255));
+        total_label.setText("Total");
+        Agregar.add(total_label);
+        total_label.setBounds(40, 720, 30, 20);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Base");
-        Agregar.add(jLabel8);
-        jLabel8.setBounds(190, 490, 30, 20);
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("IVs");
-        Agregar.add(jLabel9);
-        jLabel9.setBounds(280, 490, 37, 16);
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("EVs");
-        Agregar.add(jLabel10);
-        jLabel10.setBounds(360, 490, 30, 20);
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Estadística");
-        Agregar.add(jLabel11);
-        jLabel11.setBounds(440, 490, 70, 20);
+        base_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        base_label.setForeground(new java.awt.Color(255, 255, 255));
+        base_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        base_label.setText("Base");
+        base_label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Agregar.add(base_label);
+        base_label.setBounds(150, 510, 80, 20);
 
         totalBase_t.setEditable(false);
         totalBase_t.setBackground(new java.awt.Color(13, 17, 23));
         totalBase_t.setForeground(new java.awt.Color(255, 255, 255));
         totalBase_t.setText("0");
         Agregar.add(totalBase_t);
-        totalBase_t.setBounds(190, 700, 50, 26);
+        totalBase_t.setBounds(150, 720, 80, 26);
 
         psBase_t.setEditable(false);
         psBase_t.setBackground(new java.awt.Color(13, 17, 23));
         psBase_t.setForeground(new java.awt.Color(255, 255, 255));
         psBase_t.setText("0");
         Agregar.add(psBase_t);
-        psBase_t.setBounds(190, 520, 50, 26);
+        psBase_t.setBounds(150, 540, 80, 26);
 
         ataqueBase_t.setEditable(false);
         ataqueBase_t.setBackground(new java.awt.Color(13, 17, 23));
         ataqueBase_t.setForeground(new java.awt.Color(255, 255, 255));
         ataqueBase_t.setText("0");
         Agregar.add(ataqueBase_t);
-        ataqueBase_t.setBounds(190, 550, 50, 26);
+        ataqueBase_t.setBounds(150, 570, 80, 26);
 
         defensaBase_t.setEditable(false);
         defensaBase_t.setBackground(new java.awt.Color(13, 17, 23));
         defensaBase_t.setForeground(new java.awt.Color(255, 255, 255));
         defensaBase_t.setText("0");
         Agregar.add(defensaBase_t);
-        defensaBase_t.setBounds(190, 580, 50, 26);
+        defensaBase_t.setBounds(150, 600, 80, 26);
 
         atqespecialBase_t.setEditable(false);
         atqespecialBase_t.setBackground(new java.awt.Color(13, 17, 23));
         atqespecialBase_t.setForeground(new java.awt.Color(255, 255, 255));
         atqespecialBase_t.setText("0");
         Agregar.add(atqespecialBase_t);
-        atqespecialBase_t.setBounds(190, 610, 50, 26);
+        atqespecialBase_t.setBounds(150, 630, 80, 26);
 
         defespecialBase_t.setEditable(false);
         defespecialBase_t.setBackground(new java.awt.Color(13, 17, 23));
         defespecialBase_t.setForeground(new java.awt.Color(255, 255, 255));
         defespecialBase_t.setText("0");
         Agregar.add(defespecialBase_t);
-        defespecialBase_t.setBounds(190, 640, 50, 26);
+        defespecialBase_t.setBounds(150, 660, 80, 26);
 
         velocidadBase_t.setEditable(false);
         velocidadBase_t.setBackground(new java.awt.Color(13, 17, 23));
         velocidadBase_t.setForeground(new java.awt.Color(255, 255, 255));
         velocidadBase_t.setText("0");
         Agregar.add(velocidadBase_t);
-        velocidadBase_t.setBounds(190, 670, 50, 26);
+        velocidadBase_t.setBounds(150, 690, 80, 26);
 
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField8.setText("0");
-        Agregar.add(jTextField8);
-        jTextField8.setBounds(270, 700, 50, 26);
+        tipo_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        tipo_label1.setForeground(new java.awt.Color(255, 255, 255));
+        tipo_label1.setText("Tipo 2");
+        Agregar.add(tipo_label1);
+        tipo_label1.setBounds(210, 390, 100, 29);
 
-        jTextField9.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField9.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField9.setText("0");
-        Agregar.add(jTextField9);
-        jTextField9.setBounds(270, 520, 50, 26);
+        objeto_combo2.setBackground(new java.awt.Color(13, 17, 23));
+        objeto_combo2.setForeground(new java.awt.Color(255, 255, 255));
+        objeto_combo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
+        objeto_combo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                objeto_combo2ActionPerformed(evt);
+            }
+        });
+        Agregar.add(objeto_combo2);
+        objeto_combo2.setBounds(210, 430, 120, 26);
 
-        jTextField10.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField10.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField10.setText("0");
-        Agregar.add(jTextField10);
-        jTextField10.setBounds(270, 550, 50, 26);
-
-        jTextField11.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField11.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField11.setText("0");
-        Agregar.add(jTextField11);
-        jTextField11.setBounds(270, 580, 50, 26);
-
-        jTextField12.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField12.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField12.setText("0");
-        Agregar.add(jTextField12);
-        jTextField12.setBounds(270, 610, 50, 26);
-
-        jTextField13.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField13.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField13.setText("0");
-        Agregar.add(jTextField13);
-        jTextField13.setBounds(270, 640, 50, 26);
-
-        jTextField14.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField14.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField14.setText("0");
-        Agregar.add(jTextField14);
-        jTextField14.setBounds(270, 670, 50, 26);
-
-        jTextField15.setEditable(false);
-        jTextField15.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField15.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField15.setText("0");
-        Agregar.add(jTextField15);
-        jTextField15.setBounds(350, 700, 50, 26);
-
-        jTextField16.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField16.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField16.setText("0");
-        Agregar.add(jTextField16);
-        jTextField16.setBounds(350, 640, 50, 26);
-
-        jTextField17.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField17.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField17.setText("0");
-        Agregar.add(jTextField17);
-        jTextField17.setBounds(350, 520, 50, 26);
-
-        jTextField18.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField18.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField18.setText("0");
-        Agregar.add(jTextField18);
-        jTextField18.setBounds(350, 610, 50, 26);
-
-        jTextField19.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField19.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField19.setText("0");
-        Agregar.add(jTextField19);
-        jTextField19.setBounds(350, 550, 50, 26);
-
-        jTextField20.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField20.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField20.setText("0");
-        Agregar.add(jTextField20);
-        jTextField20.setBounds(350, 670, 50, 26);
-
-        jTextField21.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField21.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField21.setText("0");
-        Agregar.add(jTextField21);
-        jTextField21.setBounds(350, 580, 50, 26);
-
-        jTextField22.setEditable(false);
-        jTextField22.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField22.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField22.setText("0");
-        Agregar.add(jTextField22);
-        jTextField22.setBounds(440, 550, 50, 26);
-
-        jTextField23.setEditable(false);
-        jTextField23.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField23.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField23.setText("0");
-        Agregar.add(jTextField23);
-        jTextField23.setBounds(440, 520, 50, 26);
-
-        jTextField24.setEditable(false);
-        jTextField24.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField24.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField24.setText("0");
-        Agregar.add(jTextField24);
-        jTextField24.setBounds(440, 670, 50, 26);
-
-        jTextField25.setEditable(false);
-        jTextField25.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField25.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField25.setText("0");
-        Agregar.add(jTextField25);
-        jTextField25.setBounds(440, 610, 50, 26);
-
-        jTextField26.setEditable(false);
-        jTextField26.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField26.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField26.setText("0");
-        Agregar.add(jTextField26);
-        jTextField26.setBounds(440, 580, 50, 26);
-
-        jTextField28.setEditable(false);
-        jTextField28.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField28.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField28.setText("0");
-        Agregar.add(jTextField28);
-        jTextField28.setBounds(440, 640, 50, 26);
+        cargar.setBackground(new java.awt.Color(30, 112, 235));
+        cargar.setForeground(new java.awt.Color(255, 255, 255));
+        cargar.setText("Cargar imagen");
+        cargar.addActionListener(this);
+        Agregar.add(cargar);
+        cargar.setBounds(40, 360, 250, 27);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -473,94 +308,99 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void IDEntrenador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDEntrenador1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IDEntrenador1ActionPerformed
-
-    private void moteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moteActionPerformed
-
-    private void NaturalezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NaturalezaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NaturalezaActionPerformed
-
-    private void objetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objetoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_objetoActionPerformed
-
-    private void objeto_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_comboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_objeto_comboActionPerformed
 
     private void objeto_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_combo1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_objeto_combo1ActionPerformed
 
+    private void objeto_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_comboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_objeto_comboActionPerformed
+
+    private void numPokedex_tActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numPokedex_tActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numPokedex_tActionPerformed
+
+    private void IDEntrenador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDEntrenador1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDEntrenador1ActionPerformed
+
+    private void objeto_combo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_combo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_objeto_combo2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
     private javax.swing.JTextField IDEntrenador1;
-    private javax.swing.JTextField Naturaleza;
     private javax.swing.JButton agregarPK;
     private javax.swing.JTextField ataqueBase_t;
+    private javax.swing.JLabel atqEspecial_label;
+    private javax.swing.JLabel atq_label;
     private javax.swing.JTextField atqespecialBase_t;
+    private javax.swing.JLabel base_label;
+    private javax.swing.JButton cargar;
+    private javax.swing.JLabel defEspacial_label;
     private javax.swing.JTextField defensaBase_t;
+    private javax.swing.JLabel defensa_label;
     private javax.swing.JTextField defespecialBase_t;
     private javax.swing.JLabel especie_Label;
     private javax.swing.JPanel imagen;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextField mote;
-    private javax.swing.JLabel mote_label;
-    private javax.swing.JLabel naturaleza_label;
-    private javax.swing.JTextField objeto;
+    private javax.swing.JLabel numPokedex_label;
+    private javax.swing.JTextField numPokedex_t;
     private javax.swing.JComboBox<String> objeto_combo;
     private javax.swing.JComboBox<String> objeto_combo1;
+    private javax.swing.JComboBox<String> objeto_combo2;
     private javax.swing.JLabel objeto_label;
-    private javax.swing.JLabel objeto_label1;
     private javax.swing.JLabel perfil;
     private javax.swing.JTextField psBase_t;
+    private javax.swing.JLabel ps_label;
+    private javax.swing.JLabel tipo_label;
+    private javax.swing.JLabel tipo_label1;
     private javax.swing.JLabel titulo;
     private javax.swing.JTextField totalBase_t;
+    private javax.swing.JLabel total_label;
     private javax.swing.JTextField velocidadBase_t;
+    private javax.swing.JLabel velocidad_label;
     // End of variables declaration//GEN-END:variables
 
+    
+    public void cargarImagen(){
+        JFileChooser archivos = new JFileChooser();
+        FileNameExtensionFilter imagenes = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
+        archivos.setFileFilter(imagenes);
+
+        int respuesta = archivos.showOpenDialog(this);
+        if(respuesta == archivos.APPROVE_OPTION){
+            ruta = archivos.getSelectedFile().getPath();
+
+            Image foto = new ImageIcon(ruta).getImage();
+            ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
+            perfil.setIcon(icono);
+        }
+    }
+    
+    private byte[] getImagen(String ruta){
+        File imagen = new File(ruta);
+        try{
+            byte[] icono = new byte[(int)imagen.length()];
+            InputStream input = new FileInputStream(imagen);
+            input.read(icono);
+            return icono;
+        } catch (Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    
     @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void actionPerformed(ActionEvent evt) {
+        if(evt.getSource() == cargar){
+            cargarImagen();
+        }
     }
 }
