@@ -375,7 +375,11 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             perfil.setIcon(icono);
         }
     }
-    
+
+    public String[] obtenerRegiones(){
+
+    }
+
     private byte[] getImagen(String ruta){
         File imagen = new File(ruta);
         try{
