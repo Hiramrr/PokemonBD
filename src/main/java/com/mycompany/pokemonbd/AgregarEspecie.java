@@ -347,11 +347,13 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         maxPokemon.setBorder(null);
         maxPokemon.setCaretColor(new java.awt.Color(255, 255, 255));
         maxPokemon.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        /*
         maxPokemon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 maxPokemonActionPerformed(evt);
             }
         });
+        */
         Agregar.add(maxPokemon);
         maxPokemon.setBounds(360, 530, 140, 26);
 
