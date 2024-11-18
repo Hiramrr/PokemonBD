@@ -1,24 +1,26 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.pokemonbd;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 /**
  *
  * @author hiram
  */
-public class AgregarPK extends javax.swing.JDialog implements ActionListener{
-
+public class AgregarPK extends javax.swing.JPanel implements ActionListener{
+    public String idEntrenador;
     /**
      * Creates new form AgregarPK
      */
-    public AgregarPK(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public AgregarPK(String idEntrenador) {
         initComponents();
+        idT.setText(generarID());
+        this.idEntrenador = idEntrenador;
     }
 
     /**
@@ -30,8 +32,6 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSeparator1 = new javax.swing.JSeparator();
-        panel_tabla = new javax.swing.JPanel();
         Agregar = new javax.swing.JPanel();
         titulo = new javax.swing.JLabel();
         imagen = new javax.swing.JPanel();
@@ -51,11 +51,57 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
         genero = new javax.swing.JTextField();
         objeto_combo1 = new javax.swing.JComboBox<>();
         agregarPK = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        totalBase_t = new javax.swing.JTextField();
+        velocidadBase_t = new javax.swing.JTextField();
+        defespecialBase_t = new javax.swing.JTextField();
+        atqespecialBase_t = new javax.swing.JTextField();
+        defensaBase_t = new javax.swing.JTextField();
+        ataqueBase_t = new javax.swing.JTextField();
+        psBase_t = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jTextField14 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
+        jTextField20 = new javax.swing.JTextField();
+        jTextField16 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        jTextField21 = new javax.swing.JTextField();
+        jTextField19 = new javax.swing.JTextField();
+        jTextField17 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField23 = new javax.swing.JTextField();
+        jTextField22 = new javax.swing.JTextField();
+        jTextField26 = new javax.swing.JTextField();
+        jTextField25 = new javax.swing.JTextField();
+        jTextField28 = new javax.swing.JTextField();
+        jTextField24 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+        jLabel12 = new javax.swing.JLabel();
+        movimientos = new javax.swing.JTextField();
+        especies_combo1 = new javax.swing.JComboBox<>();
+        añadirMov = new javax.swing.JButton();
+        id_label = new javax.swing.JLabel();
+        idT = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        panel_tabla.setBackground(new java.awt.Color(13, 17, 23));
-        panel_tabla.setForeground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(753, 774));
 
         Agregar.setBackground(new java.awt.Color(22, 26, 33));
         Agregar.setForeground(new java.awt.Color(22, 26, 33));
@@ -99,14 +145,14 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
         Agregar.add(IDEntrenador1);
         IDEntrenador1.setBounds(320, 120, 400, 30);
 
-        naturalezas_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        naturalezas_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activa", "Afable", "Agitada", "Alegre", "Alocada", "Amable", "Audaz", "Cauta", "Dócil", "Firme", "Floja", "Fuerte", "Grosera", "Huraña", "Ingenua", "Mansa", "Miedosa", "Modesta", "Osada", "Pícara", "Plácida", "Rara", "Serena", "Seria", "Tímida" }));
         naturalezas_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 naturalezas_comboActionPerformed(evt);
             }
         });
         Agregar.add(naturalezas_combo);
-        naturalezas_combo.setBounds(600, 330, 120, 26);
+        naturalezas_combo.setBounds(600, 340, 120, 26);
 
         mote_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         mote_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,7 +179,7 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
         naturaleza_label.setForeground(new java.awt.Color(255, 255, 255));
         naturaleza_label.setText("Naturaleza");
         Agregar.add(naturaleza_label);
-        naturaleza_label.setBounds(320, 250, 140, 29);
+        naturaleza_label.setBounds(320, 260, 140, 29);
 
         Naturaleza.setEditable(false);
         Naturaleza.setBackground(new java.awt.Color(13, 17, 23));
@@ -149,7 +195,7 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
             }
         });
         Agregar.add(Naturaleza);
-        Naturaleza.setBounds(320, 290, 400, 30);
+        Naturaleza.setBounds(320, 300, 400, 30);
 
         especies_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         especies_combo.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +210,7 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
         objeto_label.setForeground(new java.awt.Color(255, 255, 255));
         objeto_label.setText("Objeto");
         Agregar.add(objeto_label);
-        objeto_label.setBounds(40, 370, 140, 29);
+        objeto_label.setBounds(40, 360, 140, 29);
 
         objeto.setEditable(false);
         objeto.setBackground(new java.awt.Color(13, 17, 23));
@@ -180,7 +226,7 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
             }
         });
         Agregar.add(objeto);
-        objeto.setBounds(40, 400, 250, 30);
+        objeto.setBounds(40, 390, 250, 30);
 
         objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         objeto_combo.addActionListener(new java.awt.event.ActionListener() {
@@ -189,13 +235,13 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
             }
         });
         Agregar.add(objeto_combo);
-        objeto_combo.setBounds(170, 440, 120, 26);
+        objeto_combo.setBounds(170, 430, 120, 26);
 
         genero_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         genero_label.setForeground(new java.awt.Color(255, 255, 255));
         genero_label.setText("Genero");
         Agregar.add(genero_label);
-        genero_label.setBounds(340, 370, 140, 29);
+        genero_label.setBounds(360, 360, 140, 29);
 
         genero.setEditable(false);
         genero.setBackground(new java.awt.Color(13, 17, 23));
@@ -211,16 +257,16 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
             }
         });
         Agregar.add(genero);
-        genero.setBounds(340, 400, 250, 30);
+        genero.setBounds(360, 390, 250, 30);
 
-        objeto_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        objeto_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
         objeto_combo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 objeto_combo1ActionPerformed(evt);
             }
         });
         Agregar.add(objeto_combo1);
-        objeto_combo1.setBounds(470, 440, 120, 26);
+        objeto_combo1.setBounds(490, 430, 120, 26);
 
         agregarPK.setBackground(new java.awt.Color(35, 135, 55));
         agregarPK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -228,37 +274,459 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
         agregarPK.setText("Agregar");
         agregarPK.addActionListener(this);
         Agregar.add(agregarPK);
-        agregarPK.setBounds(260, 730, 240, 40);
+        agregarPK.setBounds(530, 800, 210, 40);
 
-        javax.swing.GroupLayout panel_tablaLayout = new javax.swing.GroupLayout(panel_tabla);
-        panel_tabla.setLayout(panel_tablaLayout);
-        panel_tablaLayout.setHorizontalGroup(
-            panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_tablaLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+        jTabbedPane1.setBackground(new java.awt.Color(22, 26, 33));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(22, 26, 33));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Base");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("PS");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Ataque");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Defensa");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Atq. Especial");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Def. Especial");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Velocidad");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Total");
+
+        totalBase_t.setEditable(false);
+        totalBase_t.setBackground(new java.awt.Color(13, 17, 23));
+        totalBase_t.setForeground(new java.awt.Color(255, 255, 255));
+        totalBase_t.setText("0");
+
+        velocidadBase_t.setEditable(false);
+        velocidadBase_t.setBackground(new java.awt.Color(13, 17, 23));
+        velocidadBase_t.setForeground(new java.awt.Color(255, 255, 255));
+        velocidadBase_t.setText("0");
+
+        defespecialBase_t.setEditable(false);
+        defespecialBase_t.setBackground(new java.awt.Color(13, 17, 23));
+        defespecialBase_t.setForeground(new java.awt.Color(255, 255, 255));
+        defespecialBase_t.setText("0");
+
+        atqespecialBase_t.setEditable(false);
+        atqespecialBase_t.setBackground(new java.awt.Color(13, 17, 23));
+        atqespecialBase_t.setForeground(new java.awt.Color(255, 255, 255));
+        atqespecialBase_t.setText("0");
+
+        defensaBase_t.setEditable(false);
+        defensaBase_t.setBackground(new java.awt.Color(13, 17, 23));
+        defensaBase_t.setForeground(new java.awt.Color(255, 255, 255));
+        defensaBase_t.setText("0");
+
+        ataqueBase_t.setEditable(false);
+        ataqueBase_t.setBackground(new java.awt.Color(13, 17, 23));
+        ataqueBase_t.setForeground(new java.awt.Color(255, 255, 255));
+        ataqueBase_t.setText("0");
+
+        psBase_t.setEditable(false);
+        psBase_t.setBackground(new java.awt.Color(13, 17, 23));
+        psBase_t.setForeground(new java.awt.Color(255, 255, 255));
+        psBase_t.setText("0");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("IVs");
+
+        jTextField9.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField9.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField9.setText("0");
+
+        jTextField10.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField10.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField10.setText("0");
+
+        jTextField11.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField11.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField11.setText("0");
+
+        jTextField12.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField12.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField12.setText("0");
+
+        jTextField13.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField13.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField13.setText("0");
+
+        jTextField14.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField14.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField14.setText("0");
+
+        jTextField8.setEditable(false);
+        jTextField8.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField8.setText("0");
+
+        jTextField15.setEditable(false);
+        jTextField15.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField15.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField15.setText("0");
+
+        jTextField20.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField20.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField20.setText("0");
+
+        jTextField16.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField16.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField16.setText("0");
+
+        jTextField18.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField18.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField18.setText("0");
+
+        jTextField21.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField21.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField21.setText("0");
+
+        jTextField19.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField19.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField19.setText("0");
+
+        jTextField17.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField17.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField17.setText("0");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("EVs");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Estadística");
+
+        jTextField23.setEditable(false);
+        jTextField23.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField23.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField23.setText("0");
+
+        jTextField22.setEditable(false);
+        jTextField22.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField22.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField22.setText("0");
+
+        jTextField26.setEditable(false);
+        jTextField26.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField26.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField26.setText("0");
+
+        jTextField25.setEditable(false);
+        jTextField25.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField25.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField25.setText("0");
+
+        jTextField28.setEditable(false);
+        jTextField28.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField28.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField28.setText("0");
+
+        jTextField24.setEditable(false);
+        jTextField24.setBackground(new java.awt.Color(13, 17, 23));
+        jTextField24.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField24.setText("0");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)
+                        .addComponent(psBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(ataqueBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(defensaBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(atqespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(defespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(80, 80, 80)
+                        .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
-        panel_tablaLayout.setVerticalGroup(
-            panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_tablaLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(psBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ataqueBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(defensaBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(atqespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(defespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        jTabbedPane1.addTab("Estadisticas", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(22, 26, 33));
+
+        tabla.setBackground(new java.awt.Color(13, 17, 23));
+        tabla.setForeground(new java.awt.Color(13, 17, 23));
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "1"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabla.setGridColor(new java.awt.Color(22, 26, 33));
+        tabla.setRowHeight(30);
+        tabla.setSelectionBackground(new java.awt.Color(13, 17, 23));
+        tabla.setSelectionForeground(new java.awt.Color(13, 17, 23));
+        jScrollPane1.setViewportView(tabla);
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        jLabel12.setText("Movimientos");
+
+        movimientos.setEditable(false);
+        movimientos.setBackground(new java.awt.Color(13, 17, 23));
+        movimientos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        movimientos.setForeground(new java.awt.Color(255, 255, 255));
+        movimientos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        movimientos.setBorder(null);
+        movimientos.setCaretColor(new java.awt.Color(255, 255, 255));
+        movimientos.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        movimientos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                movimientosActionPerformed(evt);
+            }
+        });
+
+        especies_combo1.setForeground(new java.awt.Color(255, 255, 255));
+        especies_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Burbuja", "Cascada", "Hidrobomba", "Martillazo", "Pistola agua", "Rayo burbuja", "Refugio", "Surf", "Tenaza", "Chupavidas", "Disparo demora", "Doble ataque", "Pin misil", "Furia dragón", "Impactrueno", "Onda trueno", "Puño trueno", "Rayo", "Trueno", "Lengüetazo", "Rayo confuso", "Tinieblas", "Ascuas", "Giro fuego", "Lanzallamas", "Llamarada", "Puño fuego", "Neblina", "Niebla", "Puño hielo", "Rayo aurora", "Rayo hielo", "Ventisca", "Contraataque", "Doble patada", "Movimiento sísmico", "Patada baja", "Patada giro", "Patada salto", "Patada salto alta", "Sumisión", "Afilar", "Agarre", "Ovocuración", "Anulación", "Arañazo", "Atadura", "Ataque arena (1ª gen.)", "Ataque furia", "Ataque rápido", "Autodestrucción", "Beso amoroso", "Bomba huevo", "Bomba sónica", "Cabezazo", "Canto", "Chirrido", "Clavo cañón", "Conversión", "Cornada", "Corte", "Cuchillada", "Danza espada", "Derribo", "Desarrollo", "Deslumbrar", "Destello", "Destructor", "Día de pago", "Doble equipo", "Doble filo", "Doblebofetón", "Explosión", "Foco energía", "Fortaleza", "Fuerza", "Furia", "Golpe", "Golpe cabeza", "Golpe cuerpo", "Golpe kárate (1ª gen.)", "Golpes furia", "Gruñido", "Guillotina", "Hiper colmillo", "Hiperrayo", "Látigo", "Malicioso", "Megapatada", "Megapuño", "Metrónomo", "Mimético", "Mordisco (1ª gen.)", "Pantalla de humo", "Perforador", "Pisotón", "Placaje", "Atizar", "Presa", "Puño cometa", "Puño mareo", "Rapidez", "Recuperación", "Reducción", "Remolino", "Constricción", "Restricción", "Rizo defensa", "Rugido", "Salpicadura", "Superdiente", "Supersónico", "Sustituto", "Tornado (1ª gen.)", "Transformación", "Triataque", "Venganza", "Viento cortante", "Absorber", "Danza pétalo", "Drenadoras", "Espora", "Hoja afilada", "Látigo cepa", "Megaagotar", "Paralizador", "Rayo solar", "Somnífero", "Agilidad", "Amnesia", "Barrera", "Come sueños", "Confusión", "Descanso", "Hipnosis", "Kinético", "Meditación", "Pantalla de luz", "Psicoonda", "Psicorrayo", "Psíquico", "Reflejo", "Teletransporte", "Avalancha", "Lanzarrocas", "Excavar", "Fisura", "Hueso palo", "Huesomerang", "Terremoto", "Ácido", "Armadura ácida", "Gas venenoso", "Picotazo venenoso", "Polución", "Polvo veneno", "Residuos", "Tóxico", "Ataque aéreo", "Ataque ala", "Movimiento espejo", "Pico taladro", "Picotazo", "Vuelo" }));
+        especies_combo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                especies_combo1ActionPerformed(evt);
+            }
+        });
+
+        añadirMov.setBackground(new java.awt.Color(30, 112, 235));
+        añadirMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        añadirMov.setForeground(new java.awt.Color(255, 255, 255));
+        añadirMov.setText("Agregar movimiento");
+        agregarPK.addActionListener(this);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(especies_combo1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(añadirMov, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(especies_combo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(añadirMov)
+                .addGap(37, 37, 37))
+        );
+
+        jTabbedPane1.addTab("Movimientos", jPanel2);
+
+        Agregar.add(jTabbedPane1);
+        jTabbedPane1.setBounds(50, 490, 650, 300);
+
+        id_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        id_label.setText("ID generada: ");
+        Agregar.add(id_label);
+        id_label.setBounds(30, 810, 120, 25);
+
+        idT.setEditable(false);
+        idT.setBackground(new java.awt.Color(13, 17, 23));
+        idT.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        idT.setForeground(new java.awt.Color(255, 255, 255));
+        idT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        idT.setBorder(null);
+        idT.setCaretColor(new java.awt.Color(255, 255, 255));
+        idT.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        idT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idTActionPerformed(evt);
+            }
+        });
+        Agregar.add(idT);
+        idT.setBounds(150, 810, 250, 30);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_tabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_tabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void IDEntrenador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDEntrenador1ActionPerformed
@@ -297,76 +765,103 @@ public class AgregarPK extends javax.swing.JDialog implements ActionListener{
         // TODO add your handling code here:
     }//GEN-LAST:event_objeto_combo1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AgregarPK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AgregarPK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AgregarPK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AgregarPK.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void movimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movimientosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_movimientosActionPerformed
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                AgregarPK dialog = new AgregarPK(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    private void especies_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especies_combo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_especies_combo1ActionPerformed
+
+    private void idTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idTActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
     private javax.swing.JTextField IDEntrenador1;
     private javax.swing.JTextField Naturaleza;
     private javax.swing.JButton agregarPK;
+    private javax.swing.JTextField ataqueBase_t;
+    private javax.swing.JTextField atqespecialBase_t;
+    private javax.swing.JButton añadirMov;
+    private javax.swing.JTextField defensaBase_t;
+    private javax.swing.JTextField defespecialBase_t;
     private javax.swing.JLabel especie_Label;
     private javax.swing.JComboBox<String> especies_combo;
+    private javax.swing.JComboBox<String> especies_combo1;
     private javax.swing.JTextField genero;
     private javax.swing.JLabel genero_label;
+    private javax.swing.JTextField idT;
+    private javax.swing.JLabel id_label;
     private javax.swing.JPanel imagen;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField mote;
     private javax.swing.JLabel mote_label;
+    private javax.swing.JTextField movimientos;
     private javax.swing.JLabel naturaleza_label;
     private javax.swing.JComboBox<String> naturalezas_combo;
     private javax.swing.JTextField objeto;
     private javax.swing.JComboBox<String> objeto_combo;
     private javax.swing.JComboBox<String> objeto_combo1;
     private javax.swing.JLabel objeto_label;
-    private javax.swing.JPanel panel_tabla;
     private javax.swing.JLabel perfil;
+    private javax.swing.JTextField psBase_t;
+    private javax.swing.JTable tabla;
     private javax.swing.JLabel titulo;
+    private javax.swing.JTextField totalBase_t;
+    private javax.swing.JTextField velocidadBase_t;
     // End of variables declaration//GEN-END:variables
 
+    
+    public String generarID(){
+        Random random = new Random();
+        int limiteInferior = 10000;
+        int limiteSuperior = 65535;
+        int limiteSuperiorAbierto = limiteSuperior + 1;
+        int numeroAleatorio = limiteInferior + random.nextInt(limiteSuperiorAbierto - limiteInferior);
+ 
+        return String.valueOf(numeroAleatorio);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent evt) {
-        if(evt.getSource() == agregarPK){
-            this.dispose();
-        }
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
