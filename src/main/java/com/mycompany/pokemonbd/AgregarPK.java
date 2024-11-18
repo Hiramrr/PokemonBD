@@ -572,6 +572,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         jScrollPane1.setViewportView(tabla);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Movimientos");
 
         movimientosT.setEditable(false);
