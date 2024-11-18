@@ -441,4 +441,5 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         ganadas_label.setText("Peleas ganadas: " + ganadas);
         perdidas_label.setText("Peleas perdidas: " + perdidas);
     }
+
 }

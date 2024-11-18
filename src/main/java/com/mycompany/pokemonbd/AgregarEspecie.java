@@ -13,6 +13,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -31,7 +33,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     int velocidadbase;
     int totalbase;
     int sumatoria;
-    
+
     /**
      * Creates new form AgregarEspecie
      */
@@ -39,6 +41,8 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         initComponents();
         this.idEntrenador = idEntrenador;
         obtenerRegiones();
+        agregarListenerSeleccionRegion();
+        agregarListenerEstadisticas();
     }
 
     /**
@@ -167,7 +171,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
 
         tipo_combo.setBackground(new java.awt.Color(13, 17, 23));
         tipo_combo.setForeground(new java.awt.Color(255, 255, 255));
-        tipo_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
+        tipo_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"}));
         tipo_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipo_comboActionPerformed(evt);
@@ -290,7 +294,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
 
         tipo2_combo.setBackground(new java.awt.Color(13, 17, 23));
         tipo2_combo.setForeground(new java.awt.Color(255, 255, 255));
-        tipo2_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador" }));
+        tipo2_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Ninguno", "Acero", "Agua", "Bicho", "Dragón", "Eléctrico", "Fantasma", "Fuego", "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca", "Siniestro", "Tierra", "Veneno", "Volador"}));
         tipo2_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipo2_comboActionPerformed(evt);
@@ -348,12 +352,12 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -420,64 +424,216 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     private javax.swing.JLabel velocidad_label;
     // End of variables declaration//GEN-END:variables
 
-    
-    public void cargarImagen(){
+
+    public void cargarImagen() {
         JFileChooser archivos = new JFileChooser();
         FileNameExtensionFilter imagenes = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
         archivos.setFileFilter(imagenes);
 
         int respuesta = archivos.showOpenDialog(this);
-        if(respuesta == archivos.APPROVE_OPTION){
+        if (respuesta == archivos.APPROVE_OPTION) {
             ruta = archivos.getSelectedFile().getPath();
 
             Image foto = new ImageIcon(ruta).getImage();
-            ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
+            ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(), imagen.getHeight(), Image.SCALE_SMOOTH));
             perfil.setIcon(icono);
         }
     }
 
-    public void obtenerRegiones(){
-        ArrayList lista =  mBD.obtenerRegiones();
-        String [] regiones = new String[lista.size() / 3];
-        for(int i = 0; i < lista.size(); i+= 3){
+    public void obtenerRegiones() {
+        ArrayList lista = mBD.obtenerRegiones();
+        String[] regiones = new String[lista.size() / 3];
+        for (int i = 0; i < lista.size(); i += 3) {
             regiones[i / 3] = lista.get(i).toString();
         }
         region_combo.removeAllItems();
         region_combo.setModel(new javax.swing.DefaultComboBoxModel<>(regiones));
     }
 
-    private byte[] getImagen(String ruta){
+    private byte[] getImagen(String ruta) {
         File imagen = new File(ruta);
-        try{
-            byte[] icono = new byte[(int)imagen.length()];
+        try {
+            byte[] icono = new byte[(int) imagen.length()];
             InputStream input = new FileInputStream(imagen);
             input.read(icono);
             return icono;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return null;
         }
     }
 
-    public void validar(){
-        psbase = Integer.parseInt(psBase_t.getText());
-        ataquebase = Integer.parseInt(ataqueBase_t.getText());
-        defensabase = Integer.parseInt(defensaBase_t.getText());
-        atqespecialbase = Integer.parseInt(atqespecialBase_t.getText());
-        defespecialbase = Integer.parseInt(defespecialBase_t.getText());
-        velocidadbase = Integer.parseInt(velocidadBase_t.getText());
-        sumatoria = psbase + ataquebase + defensabase + atqespecialbase + defespecialbase + velocidadbase;
-        if (sumatoria > 780 ){
+    public void validar() {
+        try {
+            psbase = Integer.parseInt(psBase_t.getText());
+            ataquebase = Integer.parseInt(ataqueBase_t.getText());
+            defensabase = Integer.parseInt(defensaBase_t.getText());
+            atqespecialbase = Integer.parseInt(atqespecialBase_t.getText());
+            defespecialbase = Integer.parseInt(defespecialBase_t.getText());
+            velocidadbase = Integer.parseInt(velocidadBase_t.getText());
+            sumatoria = psbase + ataquebase + defensabase + atqespecialbase + defespecialbase + velocidadbase;
+            if (sumatoria > 780) {
+                totalBase_t.setText("Error");
+            } else {
+                totalBase_t.setText(Integer.toString(sumatoria));
+            }
+        } catch (NumberFormatException e) {
             totalBase_t.setText("Error");
-        } else {
-            totalBase_t.setText(Integer.toString(sumatoria));
         }
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent evt) {
-        if(evt.getSource() == cargar){
+        if (evt.getSource() == cargar) {
             cargarImagen();
         }
+        if(evt.getSource() == agregarPK){
+            crearEspecie();
+        }
+    }
+
+
+    private void agregarListenerSeleccionRegion() {
+        region_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                int filaSeleccionada = region_combo.getSelectedIndex();
+                ArrayList datos = mBD.obtenerDatosRegion(region_combo.getItemAt(filaSeleccionada));
+
+                if (filaSeleccionada != -1) {
+                    generaciont.setText(datos.get(0).toString());
+                    maxPokemon.setText(mBD.obtenerEspaciosDisponiblesPokemon(region_combo.getItemAt(filaSeleccionada)) + "/" + datos.get(1).toString());
+                }
+            }
+        });
+    }
+
+    private void agregarListenerEstadisticas() {
+        psBase_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validar();
+            }
+        });
+
+        ataqueBase_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validar();
+            }
+        });
+
+        defensaBase_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validar();
+            }
+        });
+
+        atqespecialBase_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validar();
+            }
+        });
+
+        defespecialBase_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validar();
+            }
+        });
+
+        velocidadBase_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validar();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validar();
+            }
+        });
+    }
+
+    public void crearEspecie() {
+        try {
+            int numPokedex = Integer.parseInt(numPokedex_t.getText());
+            String nombre = IDEntrenador1.getText();
+            String region = region_combo.getSelectedItem().toString();
+            String tipo1 = tipo_combo.getSelectedItem().toString();
+            String tipo2 = tipo2_combo.getSelectedItem().toString();
+            int psBase = Integer.parseInt(psBase_t.getText());
+            int ataqueBase = Integer.parseInt(ataqueBase_t.getText());
+            int defensaBase = Integer.parseInt(defensaBase_t.getText());
+            int atqespecialBase = Integer.parseInt(atqespecialBase_t.getText());
+            int defespecialBase = Integer.parseInt(defespecialBase_t.getText());
+            int velocidadBase = Integer.parseInt(velocidadBase_t.getText());
+            AlmacenEspecie especie = new AlmacenEspecie();
+            especie.setNumPokedex(numPokedex);
+            especie.setNombre(nombre);
+            especie.setPSBase(psBase);
+            especie.setATKBase(ataqueBase);
+            especie.setDEFBase(defensaBase);
+            especie.setVELBase(velocidadBase);
+            especie.setSDEFBase(defespecialBase);
+            especie.setSATKBase(atqespecialBase);
+            especie.setTipo1(tipo1);
+            especie.setTipo2(tipo2);
+            especie.setNomRegion(region);
+            try {
+                especie.setImagen(getImagen(ruta));
+            } catch (NullPointerException e) {
+                especie.setImagen(getImagen("src/main/resources/images/MissingNO.png"));
+            }
+            if (mBD.agregarEspecie(especie)) {
+                ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).EspecieCreadaExito();
+                vaciarTexto();
+            } else {
+                ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).EspecieCreadaError("El numero de pokedex es invalido!");
+            }
+        } catch (NumberFormatException e) {
+            ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).EspecieCreadaError("¡Las estadisticas y numero de pokedex deben ser numeros!");
+        }
+    }
+
+    public void vaciarTexto(){
+        IDEntrenador1.setText("");
+        numPokedex_t.setText("");
+        psBase_t.setText("0");
+        ataqueBase_t.setText("0");
+        defensaBase_t.setText("0");
+        atqespecialBase_t.setText("0");
+        defespecialBase_t.setText("0");
+        velocidadBase_t.setText("0");
+        totalBase_t.setText("0");
+        perfil.setIcon(null);
     }
 }
+

@@ -12,8 +12,8 @@ public class BD {
     private static Statement consulta;
     private static ResultSet resultado;
 
-
-    private final String SQL_AGREGAR = "INSERT INTO Entrenador (ID, Nombre, Contraseña, Imagen) VALUES (?, ?, ?, ?)";
+    private final String SQL_AGREGAR_ESPECIE = "INSERT INTO Especie (NumPokedex, Nombre, PSBase, ATKBase, DEFBase, VELBase, SDEFBase, SATKBase, Tipo1, Tipo2, NomRegion, Imagen) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+    private final String SQL_AGREGAR_ENTRENADOR = "INSERT INTO Entrenador (ID, Nombre, Contraseña, Imagen) VALUES (?, ?, ?, ?)";
     private final String SQL_CONSULTA = "SELECT * FROM Entrenador";
 
 
@@ -54,7 +54,7 @@ public class BD {
     public boolean AgregarEntrenador(ImagenAlmacenEntrenador mImagen){
         PreparedStatement ps = null;
         try{
-            ps = con.prepareStatement(SQL_AGREGAR);
+            ps = con.prepareStatement(SQL_AGREGAR_ENTRENADOR);
             ps.setInt(1, mImagen.getID());
             ps.setString(2, mImagen.getNombre());
             ps.setString(3, mImagen.getContraseña());
@@ -327,5 +327,66 @@ public class BD {
             return null;
         }
         return regiones;
+    }
+
+    public String obtenerEspaciosDisponiblesPokemon(String Region){
+        try{
+            consulta = con.createStatement();
+            consulta.executeQuery("CALL contarDisponibles('" + Region + "', @disponibles)");
+            resultado = consulta.executeQuery("SELECT @disponibles as Disponibles");
+            if (resultado.next()) {
+                return resultado.getString("Disponibles");
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
+
+    public ArrayList obtenerDatosRegion(String Region){
+        ArrayList datos = new ArrayList<>();
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT Generacion, NumPokemon FROM Region WHERE Nombre = '" + Region + "'");
+            while(resultado.next()){
+                datos.add(resultado.getString("Generacion"));
+                datos.add(resultado.getInt("NumPokemon"));
+            }
+            return datos;
+        }catch (Exception e){
+            System.out.println(e);
+            System.out.println("Error al obtener la generacion");
+        }
+        return null;
+    }
+
+    public boolean agregarEspecie(AlmacenEspecie mEspecie){
+        PreparedStatement ps = null;
+        try{
+            ps = con.prepareStatement(SQL_AGREGAR_ESPECIE);
+            ps.setInt(1, mEspecie.getNumPokedex());
+            ps.setString(2, mEspecie.getNombre());
+            ps.setInt(3, mEspecie.getPSBase());
+            ps.setInt(4, mEspecie.getATKBase());
+            ps.setInt(5, mEspecie.getDEFBase());
+            ps.setInt(6, mEspecie.getVELBase());
+            ps.setInt(7, mEspecie.getSDEFBase());
+            ps.setInt(8, mEspecie.getSATKBase());
+            ps.setString(9, mEspecie.getTipo1());
+            ps.setString(10, mEspecie.getTipo2());
+            ps.setString(11, mEspecie.getNomRegion());
+            ps.setBytes(12, mEspecie.getImagen());
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e){
+            System.out.println(e);
+            return false;
+        } finally {
+            try {
+                ps.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
     }
 }
