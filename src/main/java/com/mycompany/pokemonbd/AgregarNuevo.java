@@ -23,7 +23,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
         initComponents();
         AgregarPK agregar = new AgregarPK(idEntrenador);
         agregar.setLocation(0,0);
-        agregar.setSize(704, 502);
+        agregar.setSize(753, 850);
           
         contenido.removeAll();
         contenido.add(agregar,BorderLayout.CENTER);
@@ -121,7 +121,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
                 cambiar.setText("Agregar Pokemon");
                 AgregarEspecie especie = new AgregarEspecie(idEntrenador);
                 especie.setLocation(0, 0);
-                especie.setSize(704, 502);
+                especie.setSize(753, 850);
 
                 contenido.removeAll();
                 contenido.add(especie, BorderLayout.CENTER);
@@ -132,7 +132,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
                 cambiar.setText("Agregar Especie");
                 AgregarPK agregar = new AgregarPK(idEntrenador);
                 agregar.setLocation(0, 0);
-                agregar.setSize(704, 502);
+                agregar.setSize(753, 850);
 
                 contenido.removeAll();
                 contenido.add(agregar, BorderLayout.CENTER);
