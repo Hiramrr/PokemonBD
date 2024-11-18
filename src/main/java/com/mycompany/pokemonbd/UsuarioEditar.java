@@ -326,6 +326,8 @@ public class UsuarioEditar extends javax.swing.JPanel implements ActionListener{
         String nombre = IDEntrenador1.getText();
         String contraseñaAntigua = contraseñaA_text.getText();
         if(!comprobarContraseña(contraseñaAntigua,idEntrenador)){
+            System.out.println("Contraseña antigua ingresada: " + contraseñaAntigua);
+            System.out.println("Contraseña en la base de datos: " + mBD.getContraseña(idEntrenador));
             ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("La contraseña anterior no coincide con la contraseña del usuario");
             return;
         }
@@ -368,6 +370,7 @@ public class UsuarioEditar extends javax.swing.JPanel implements ActionListener{
             ((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarUsuarioError("El nombre "  +  nombre + " ya existe en la base de datos");
         }
     }
+
 
     public void actualizarEntrenador(){
         if(pedirContraseña == false && imagen_nueva == false){

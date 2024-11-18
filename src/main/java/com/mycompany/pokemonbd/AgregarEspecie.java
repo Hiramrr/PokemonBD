@@ -23,6 +23,14 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     public String idEntrenador;
     String ruta;
     BD mBD = new BD();
+    int psbase;
+    int ataquebase;
+    int defensabase;
+    int atqespecialbase;
+    int defespecialbase;
+    int velocidadbase;
+    int totalbase;
+    int sumatoria;
     
     /**
      * Creates new form AgregarEspecie
@@ -334,11 +342,6 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         maxPokemon.setBorder(null);
         maxPokemon.setCaretColor(new java.awt.Color(255, 255, 255));
         maxPokemon.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        maxPokemon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                maxPokemonActionPerformed(evt);
-            }
-        });
         Agregar.add(maxPokemon);
         maxPokemon.setBounds(360, 530, 140, 26);
 
@@ -435,10 +438,11 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
 
     public void obtenerRegiones(){
         ArrayList lista =  mBD.obtenerRegiones();
-        String [] regiones = new String[lista.size()];
+        String [] regiones = new String[lista.size() / 3];
         for(int i = 0; i < lista.size(); i+= 3){
             regiones[i / 3] = lista.get(i).toString();
         }
+        region_combo.removeAllItems();
         region_combo.setModel(new javax.swing.DefaultComboBoxModel<>(regiones));
     }
 
@@ -454,7 +458,21 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             return null;
         }
     }
-    
+
+    public void validar(){
+        psbase = Integer.parseInt(psBase_t.getText());
+        ataquebase = Integer.parseInt(ataqueBase_t.getText());
+        defensabase = Integer.parseInt(defensaBase_t.getText());
+        atqespecialbase = Integer.parseInt(atqespecialBase_t.getText());
+        defespecialbase = Integer.parseInt(defespecialBase_t.getText());
+        velocidadbase = Integer.parseInt(velocidadBase_t.getText());
+        sumatoria = psbase + ataquebase + defensabase + atqespecialbase + defespecialbase + velocidadbase;
+        if (sumatoria > 780 ){
+            totalBase_t.setText("Error");
+        } else {
+            totalBase_t.setText(Integer.toString(sumatoria));
+        }
+    }
     
     @Override
     public void actionPerformed(ActionEvent evt) {
