@@ -49,14 +49,14 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         agregarPK = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         estadisticas = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        base_label = new javax.swing.JLabel();
+        ps_label = new javax.swing.JLabel();
+        atq_label = new javax.swing.JLabel();
+        defensa_label = new javax.swing.JLabel();
+        atqEspecial_label = new javax.swing.JLabel();
+        defEspecial_label = new javax.swing.JLabel();
+        velocidad_label = new javax.swing.JLabel();
+        total_label = new javax.swing.JLabel();
         totalBase_t = new javax.swing.JTextField();
         velocidadBase_t = new javax.swing.JTextField();
         defespecialBase_t = new javax.swing.JTextField();
@@ -64,29 +64,29 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         defensaBase_t = new javax.swing.JTextField();
         ataqueBase_t = new javax.swing.JTextField();
         psBase_t = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
+        IV_label = new javax.swing.JLabel();
+        psIVS_t = new javax.swing.JTextField();
+        atqIVs_t = new javax.swing.JTextField();
+        defIVs_t = new javax.swing.JTextField();
+        atqEspecialIVs_t = new javax.swing.JTextField();
+        defEspecialIVs_t = new javax.swing.JTextField();
+        velocidadIVs_t = new javax.swing.JTextField();
+        totalIVS_t = new javax.swing.JTextField();
+        totalEVs_t = new javax.swing.JTextField();
+        velocidadEVs_t = new javax.swing.JTextField();
+        defEspecialEVs_t = new javax.swing.JTextField();
+        atqEspecialEVs_t = new javax.swing.JTextField();
+        defEVs_t = new javax.swing.JTextField();
+        atqEVs_t = new javax.swing.JTextField();
+        psEVs_t = new javax.swing.JTextField();
+        EVs_label = new javax.swing.JLabel();
+        Estadistica_label = new javax.swing.JLabel();
+        pstotal_t = new javax.swing.JTextField();
+        atqtotal_t = new javax.swing.JTextField();
+        deftotal_t = new javax.swing.JTextField();
+        atqEspecialtotal_t = new javax.swing.JTextField();
+        defEspecialtotal_t = new javax.swing.JTextField();
+        velocidadtotal_t = new javax.swing.JTextField();
         movimientos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
@@ -174,7 +174,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         especies_combo.setBackground(new java.awt.Color(13, 17, 23));
         especies_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         especies_combo.setForeground(new java.awt.Color(255, 255, 255));
-        especies_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         especies_combo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 especies_comboActionPerformed(evt);
@@ -232,37 +231,37 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
 
         estadisticas.setBackground(new java.awt.Color(22, 26, 33));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Base");
+        base_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        base_label.setForeground(new java.awt.Color(255, 255, 255));
+        base_label.setText("Base");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("PS");
+        ps_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ps_label.setForeground(new java.awt.Color(255, 255, 255));
+        ps_label.setText("PS");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Ataque");
+        atq_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        atq_label.setForeground(new java.awt.Color(255, 255, 255));
+        atq_label.setText("Ataque");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Defensa");
+        defensa_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        defensa_label.setForeground(new java.awt.Color(255, 255, 255));
+        defensa_label.setText("Defensa");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Atq. Especial");
+        atqEspecial_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        atqEspecial_label.setForeground(new java.awt.Color(255, 255, 255));
+        atqEspecial_label.setText("Atq. Especial");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Def. Especial");
+        defEspecial_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        defEspecial_label.setForeground(new java.awt.Color(255, 255, 255));
+        defEspecial_label.setText("Def. Especial");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Velocidad");
+        velocidad_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        velocidad_label.setForeground(new java.awt.Color(255, 255, 255));
+        velocidad_label.setText("Velocidad");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Total");
+        total_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        total_label.setForeground(new java.awt.Color(255, 255, 255));
+        total_label.setText("Total");
 
         totalBase_t.setEditable(false);
         totalBase_t.setBackground(new java.awt.Color(13, 17, 23));
@@ -299,105 +298,105 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         psBase_t.setForeground(new java.awt.Color(255, 255, 255));
         psBase_t.setText("0");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("IVs");
+        IV_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        IV_label.setForeground(new java.awt.Color(255, 255, 255));
+        IV_label.setText("IVs");
 
-        jTextField9.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField9.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField9.setText("0");
+        psIVS_t.setBackground(new java.awt.Color(13, 17, 23));
+        psIVS_t.setForeground(new java.awt.Color(255, 255, 255));
+        psIVS_t.setText("0");
 
-        jTextField10.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField10.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField10.setText("0");
+        atqIVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        atqIVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        atqIVs_t.setText("0");
 
-        jTextField11.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField11.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField11.setText("0");
+        defIVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        defIVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        defIVs_t.setText("0");
 
-        jTextField12.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField12.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField12.setText("0");
+        atqEspecialIVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        atqEspecialIVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        atqEspecialIVs_t.setText("0");
 
-        jTextField13.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField13.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField13.setText("0");
+        defEspecialIVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        defEspecialIVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        defEspecialIVs_t.setText("0");
 
-        jTextField14.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField14.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField14.setText("0");
+        velocidadIVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        velocidadIVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        velocidadIVs_t.setText("0");
 
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField8.setText("0");
+        totalIVS_t.setEditable(false);
+        totalIVS_t.setBackground(new java.awt.Color(13, 17, 23));
+        totalIVS_t.setForeground(new java.awt.Color(255, 255, 255));
+        totalIVS_t.setText("0");
 
-        jTextField15.setEditable(false);
-        jTextField15.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField15.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField15.setText("0");
+        totalEVs_t.setEditable(false);
+        totalEVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        totalEVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        totalEVs_t.setText("0");
 
-        jTextField20.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField20.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField20.setText("0");
+        velocidadEVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        velocidadEVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        velocidadEVs_t.setText("0");
 
-        jTextField16.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField16.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField16.setText("0");
+        defEspecialEVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        defEspecialEVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        defEspecialEVs_t.setText("0");
 
-        jTextField18.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField18.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField18.setText("0");
+        atqEspecialEVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        atqEspecialEVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        atqEspecialEVs_t.setText("0");
 
-        jTextField21.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField21.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField21.setText("0");
+        defEVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        defEVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        defEVs_t.setText("0");
 
-        jTextField19.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField19.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField19.setText("0");
+        atqEVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        atqEVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        atqEVs_t.setText("0");
 
-        jTextField17.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField17.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField17.setText("0");
+        psEVs_t.setBackground(new java.awt.Color(13, 17, 23));
+        psEVs_t.setForeground(new java.awt.Color(255, 255, 255));
+        psEVs_t.setText("0");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("EVs");
+        EVs_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        EVs_label.setForeground(new java.awt.Color(255, 255, 255));
+        EVs_label.setText("EVs");
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Estadística");
+        Estadistica_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Estadistica_label.setForeground(new java.awt.Color(255, 255, 255));
+        Estadistica_label.setText("Estadística");
 
-        jTextField23.setEditable(false);
-        jTextField23.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField23.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField23.setText("0");
+        pstotal_t.setEditable(false);
+        pstotal_t.setBackground(new java.awt.Color(13, 17, 23));
+        pstotal_t.setForeground(new java.awt.Color(255, 255, 255));
+        pstotal_t.setText("0");
 
-        jTextField22.setEditable(false);
-        jTextField22.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField22.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField22.setText("0");
+        atqtotal_t.setEditable(false);
+        atqtotal_t.setBackground(new java.awt.Color(13, 17, 23));
+        atqtotal_t.setForeground(new java.awt.Color(255, 255, 255));
+        atqtotal_t.setText("0");
 
-        jTextField26.setEditable(false);
-        jTextField26.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField26.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField26.setText("0");
+        deftotal_t.setEditable(false);
+        deftotal_t.setBackground(new java.awt.Color(13, 17, 23));
+        deftotal_t.setForeground(new java.awt.Color(255, 255, 255));
+        deftotal_t.setText("0");
 
-        jTextField25.setEditable(false);
-        jTextField25.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField25.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField25.setText("0");
+        atqEspecialtotal_t.setEditable(false);
+        atqEspecialtotal_t.setBackground(new java.awt.Color(13, 17, 23));
+        atqEspecialtotal_t.setForeground(new java.awt.Color(255, 255, 255));
+        atqEspecialtotal_t.setText("0");
 
-        jTextField28.setEditable(false);
-        jTextField28.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField28.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField28.setText("0");
+        defEspecialtotal_t.setEditable(false);
+        defEspecialtotal_t.setBackground(new java.awt.Color(13, 17, 23));
+        defEspecialtotal_t.setForeground(new java.awt.Color(255, 255, 255));
+        defEspecialtotal_t.setText("0");
 
-        jTextField24.setEditable(false);
-        jTextField24.setBackground(new java.awt.Color(13, 17, 23));
-        jTextField24.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField24.setText("0");
+        velocidadtotal_t.setEditable(false);
+        velocidadtotal_t.setBackground(new java.awt.Color(13, 17, 23));
+        velocidadtotal_t.setForeground(new java.awt.Color(255, 255, 255));
+        velocidadtotal_t.setText("0");
 
         javax.swing.GroupLayout estadisticasLayout = new javax.swing.GroupLayout(estadisticas);
         estadisticas.setLayout(estadisticasLayout);
@@ -408,81 +407,81 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(estadisticasLayout.createSequentialGroup()
                         .addGap(110, 110, 110)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(base_label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(IV_label, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(EVs_label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Estadistica_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ps_label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90)
                         .addComponent(psBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(psIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(psEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
-                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pstotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(atq_label, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
                         .addComponent(ataqueBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(atqIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(atqEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
-                        .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(atqtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(defensa_label, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
                         .addComponent(defensaBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(defIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(defEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
-                        .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(deftotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(atqEspecial_label, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
                         .addComponent(atqespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(atqEspecialIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(atqEspecialEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
-                        .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(atqEspecialtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(defEspecial_label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(defespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(defEspecialIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(defEspecialEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
-                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(defEspecialtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(velocidad_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(velocidadIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(velocidadEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
-                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(velocidadtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
+                        .addComponent(total_label)
                         .addGap(80, 80, 80)
                         .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(totalIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(totalEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
         estadisticasLayout.setVerticalGroup(
@@ -490,58 +489,58 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             .addGroup(estadisticasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11))
+                    .addComponent(base_label)
+                    .addComponent(IV_label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EVs_label)
+                    .addComponent(Estadistica_label))
                 .addGap(10, 10, 10)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(ps_label)
                     .addComponent(psBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(psIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(psEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pstotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(atq_label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ataqueBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(atqIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(atqEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(atqtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
+                    .addComponent(defensa_label)
                     .addComponent(defensaBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(defIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(defEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deftotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(atqEspecial_label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(atqespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(atqEspecialIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(atqEspecialEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(atqEspecialtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
+                    .addComponent(defEspecial_label)
                     .addComponent(defespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(defEspecialIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(defEspecialEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(defEspecialtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
+                    .addComponent(velocidad_label)
                     .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(velocidadIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(velocidadEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(velocidadtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
+                    .addComponent(total_label)
                     .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(totalIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(totalEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -818,12 +817,32 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
+    private javax.swing.JLabel EVs_label;
+    private javax.swing.JLabel Estadistica_label;
+    private javax.swing.JLabel IV_label;
     private javax.swing.JButton agregarPK;
     private javax.swing.JTextField ataqueBase_t;
+    private javax.swing.JTextField atqEVs_t;
+    private javax.swing.JTextField atqEspecialEVs_t;
+    private javax.swing.JTextField atqEspecialIVs_t;
+    private javax.swing.JLabel atqEspecial_label;
+    private javax.swing.JTextField atqEspecialtotal_t;
+    private javax.swing.JTextField atqIVs_t;
+    private javax.swing.JLabel atq_label;
     private javax.swing.JTextField atqespecialBase_t;
+    private javax.swing.JTextField atqtotal_t;
     private javax.swing.JButton añadirMov;
+    private javax.swing.JLabel base_label;
+    private javax.swing.JTextField defEVs_t;
+    private javax.swing.JTextField defEspecialEVs_t;
+    private javax.swing.JTextField defEspecialIVs_t;
+    private javax.swing.JLabel defEspecial_label;
+    private javax.swing.JTextField defEspecialtotal_t;
+    private javax.swing.JTextField defIVs_t;
     private javax.swing.JTextField defensaBase_t;
+    private javax.swing.JLabel defensa_label;
     private javax.swing.JTextField defespecialBase_t;
+    private javax.swing.JTextField deftotal_t;
     private javax.swing.JLabel especie_Label;
     private javax.swing.JComboBox<String> especies_combo;
     private javax.swing.JComboBox<String> especies_combo1;
@@ -833,41 +852,10 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JTextField idT;
     private javax.swing.JLabel id_label;
     private javax.swing.JPanel imagen;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel maspp_label;
     private javax.swing.JTextField mote;
     private javax.swing.JLabel mote_label;
@@ -884,10 +872,21 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JLabel perfil;
     private javax.swing.JLabel pp_label;
     private javax.swing.JTextField psBase_t;
+    private javax.swing.JTextField psEVs_t;
+    private javax.swing.JTextField psIVS_t;
+    private javax.swing.JLabel ps_label;
+    private javax.swing.JTextField pstotal_t;
     private javax.swing.JTable tabla;
     private javax.swing.JLabel titulo;
     private javax.swing.JTextField totalBase_t;
+    private javax.swing.JTextField totalEVs_t;
+    private javax.swing.JTextField totalIVS_t;
+    private javax.swing.JLabel total_label;
     private javax.swing.JTextField velocidadBase_t;
+    private javax.swing.JTextField velocidadEVs_t;
+    private javax.swing.JTextField velocidadIVs_t;
+    private javax.swing.JLabel velocidad_label;
+    private javax.swing.JTextField velocidadtotal_t;
     // End of variables declaration//GEN-END:variables
 
     

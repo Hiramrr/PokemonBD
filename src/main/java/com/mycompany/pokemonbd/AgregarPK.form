@@ -236,12 +236,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <Events>
@@ -506,88 +501,88 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="110" pref="110" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="base_label" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Component id="IV_label" min="-2" pref="37" max="-2" attributes="0"/>
                                   <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="EVs_label" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Component id="Estadistica_label" min="-2" pref="70" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel1" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="ps_label" min="-2" pref="20" max="-2" attributes="0"/>
                                   <EmptySpace min="90" pref="90" max="-2" attributes="0"/>
                                   <Component id="psBase_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField9" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="psIVS_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField17" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="psEVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Component id="jTextField23" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="pstotal_t" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel2" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="atq_label" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
                                   <Component id="ataqueBase_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField10" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="atqIVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField19" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="atqEVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Component id="jTextField22" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="atqtotal_t" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="defensa_label" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
                                   <Component id="defensaBase_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField11" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="defIVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField21" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="defEVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Component id="jTextField26" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="deftotal_t" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel4" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="atqEspecial_label" min="-2" pref="90" max="-2" attributes="0"/>
                                   <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                                   <Component id="atqespecialBase_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField12" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="atqEspecialIVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField18" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="atqEspecialEVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Component id="jTextField25" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="atqEspecialtotal_t" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel5" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="defEspecial_label" min="-2" pref="80" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                                   <Component id="defespecialBase_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField13" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="defEspecialIVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField16" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="defEspecialEVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Component id="jTextField28" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="defEspecialtotal_t" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel6" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Component id="velocidad_label" min="-2" pref="70" max="-2" attributes="0"/>
                                   <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
                                   <Component id="velocidadBase_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField14" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="velocidadIVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField20" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="velocidadEVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Component id="jTextField24" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="velocidadtotal_t" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="total_label" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
                                   <Component id="totalBase_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField8" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="totalIVS_t" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jTextField15" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="totalEVs_t" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="110" max="32767" attributes="0"/>
@@ -599,65 +594,65 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel9" min="-2" pref="16" max="-2" attributes="0"/>
-                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                              <Component id="base_label" min="-2" max="-2" attributes="0"/>
+                              <Component id="IV_label" min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="EVs_label" min="-2" max="-2" attributes="0"/>
+                              <Component id="Estadistica_label" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="ps_label" min="-2" max="-2" attributes="0"/>
                               <Component id="psBase_t" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField9" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField17" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField23" min="-2" max="-2" attributes="0"/>
+                              <Component id="psIVS_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="psEVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="pstotal_t" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="atq_label" min="-2" pref="16" max="-2" attributes="0"/>
                               <Component id="ataqueBase_t" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField10" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField19" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField22" min="-2" max="-2" attributes="0"/>
+                              <Component id="atqIVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="atqEVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="atqtotal_t" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="defensa_label" min="-2" max="-2" attributes="0"/>
                               <Component id="defensaBase_t" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField11" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField21" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField26" min="-2" max="-2" attributes="0"/>
+                              <Component id="defIVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="defEVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="deftotal_t" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel4" min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="atqEspecial_label" min="-2" pref="16" max="-2" attributes="0"/>
                               <Component id="atqespecialBase_t" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField12" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField18" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField25" min="-2" max="-2" attributes="0"/>
+                              <Component id="atqEspecialIVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="atqEspecialEVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="atqEspecialtotal_t" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="defEspecial_label" min="-2" max="-2" attributes="0"/>
                               <Component id="defespecialBase_t" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField13" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField16" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField28" min="-2" max="-2" attributes="0"/>
+                              <Component id="defEspecialIVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="defEspecialEVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="defEspecialtotal_t" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <Component id="velocidad_label" min="-2" max="-2" attributes="0"/>
                               <Component id="velocidadBase_t" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField14" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField20" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField24" min="-2" max="-2" attributes="0"/>
+                              <Component id="velocidadIVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="velocidadEVs_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="velocidadtotal_t" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <Component id="total_label" min="-2" max="-2" attributes="0"/>
                               <Component id="totalBase_t" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField8" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField15" min="-2" max="-2" attributes="0"/>
+                              <Component id="totalIVS_t" min="-2" max="-2" attributes="0"/>
+                              <Component id="totalEVs_t" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -665,7 +660,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel8">
+                <Component class="javax.swing.JLabel" name="base_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -676,7 +671,7 @@
                     <Property name="text" type="java.lang.String" value="Base"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="ps_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -687,7 +682,7 @@
                     <Property name="text" type="java.lang.String" value="PS"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel2">
+                <Component class="javax.swing.JLabel" name="atq_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -698,7 +693,7 @@
                     <Property name="text" type="java.lang.String" value="Ataque"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel3">
+                <Component class="javax.swing.JLabel" name="defensa_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -709,7 +704,7 @@
                     <Property name="text" type="java.lang.String" value="Defensa"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel4">
+                <Component class="javax.swing.JLabel" name="atqEspecial_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -720,7 +715,7 @@
                     <Property name="text" type="java.lang.String" value="Atq. Especial"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel5">
+                <Component class="javax.swing.JLabel" name="defEspecial_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -731,7 +726,7 @@
                     <Property name="text" type="java.lang.String" value="Def. Especial"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel6">
+                <Component class="javax.swing.JLabel" name="velocidad_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -742,7 +737,7 @@
                     <Property name="text" type="java.lang.String" value="Velocidad"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
+                <Component class="javax.swing.JLabel" name="total_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -837,7 +832,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
+                <Component class="javax.swing.JLabel" name="IV_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -848,7 +843,7 @@
                     <Property name="text" type="java.lang.String" value="IVs"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField9">
+                <Component class="javax.swing.JTextField" name="psIVS_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -859,7 +854,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField10">
+                <Component class="javax.swing.JTextField" name="atqIVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -870,7 +865,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField11">
+                <Component class="javax.swing.JTextField" name="defIVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -881,7 +876,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField12">
+                <Component class="javax.swing.JTextField" name="atqEspecialIVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -892,7 +887,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField13">
+                <Component class="javax.swing.JTextField" name="defEspecialIVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -903,7 +898,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField14">
+                <Component class="javax.swing.JTextField" name="velocidadIVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -914,19 +909,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField8">
-                  <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="17" green="11" red="d" type="rgb"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField15">
+                <Component class="javax.swing.JTextField" name="totalIVS_t">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -938,7 +921,19 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField20">
+                <Component class="javax.swing.JTextField" name="totalEVs_t">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="17" green="11" red="d" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="velocidadEVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -949,7 +944,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField16">
+                <Component class="javax.swing.JTextField" name="defEspecialEVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -960,7 +955,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField18">
+                <Component class="javax.swing.JTextField" name="atqEspecialEVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -971,7 +966,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField21">
+                <Component class="javax.swing.JTextField" name="defEVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -982,7 +977,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField19">
+                <Component class="javax.swing.JTextField" name="atqEVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -993,7 +988,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField17">
+                <Component class="javax.swing.JTextField" name="psEVs_t">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="17" green="11" red="d" type="rgb"/>
@@ -1004,7 +999,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel10">
+                <Component class="javax.swing.JLabel" name="EVs_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1015,7 +1010,7 @@
                     <Property name="text" type="java.lang.String" value="EVs"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
+                <Component class="javax.swing.JLabel" name="Estadistica_label">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1026,7 +1021,7 @@
                     <Property name="text" type="java.lang.String" value="Estad&#xed;stica"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField23">
+                <Component class="javax.swing.JTextField" name="pstotal_t">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1038,7 +1033,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField22">
+                <Component class="javax.swing.JTextField" name="atqtotal_t">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1050,7 +1045,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField26">
+                <Component class="javax.swing.JTextField" name="deftotal_t">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1062,7 +1057,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField25">
+                <Component class="javax.swing.JTextField" name="atqEspecialtotal_t">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1074,7 +1069,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField28">
+                <Component class="javax.swing.JTextField" name="defEspecialtotal_t">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1086,7 +1081,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField24">
+                <Component class="javax.swing.JTextField" name="velocidadtotal_t">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

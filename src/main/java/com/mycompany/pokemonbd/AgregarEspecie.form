@@ -437,6 +437,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="totalBase_t">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="17" green="11" red="d" type="rgb"/>
             </Property>
@@ -737,7 +738,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="320" y="250" width="330" height="-1"/>
+              <AbsoluteConstraints x="320" y="250" width="330" height="15"/>
             </Constraint>
           </Constraints>
         </Component>

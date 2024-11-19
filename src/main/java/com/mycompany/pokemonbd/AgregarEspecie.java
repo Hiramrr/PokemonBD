@@ -1,4 +1,4 @@
-/*
+  /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
@@ -245,6 +245,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(base_label);
         base_label.setBounds(150, 510, 80, 20);
 
+        totalBase_t.setEditable(false);
         totalBase_t.setBackground(new java.awt.Color(13, 17, 23));
         totalBase_t.setForeground(new java.awt.Color(255, 255, 255));
         totalBase_t.setText("0");
