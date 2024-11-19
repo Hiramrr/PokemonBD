@@ -23,7 +23,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
         initComponents();
         AgregarPK agregar = new AgregarPK(idEntrenador);
         agregar.setLocation(0,0);
-        agregar.setSize(753, 634);
+        agregar.setSize(716, 703);
           
         contenido.removeAll();
         contenido.add(agregar,BorderLayout.CENTER);
@@ -70,7 +70,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
                 .addGap(70, 70, 70)
                 .addGroup(panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(cambiar)
-                    .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
         panel_tablaLayout.setVerticalGroup(
@@ -79,8 +79,8 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
                 .addGap(11, 11, 11)
                 .addComponent(cambiar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -121,7 +121,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
                 cambiar.setText("Agregar Pokemon");
                 AgregarEspecie especie = new AgregarEspecie(idEntrenador);
                 especie.setLocation(0, 0);
-                especie.setSize(753, 634);
+                especie.setSize(716, 703);
 
                 contenido.removeAll();
                 contenido.setLayout(new BorderLayout());
@@ -134,7 +134,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
                 cambiar.setText("Agregar Especie");
                 AgregarPK agregar = new AgregarPK(idEntrenador);
                 agregar.setLocation(0, 0);
-                agregar.setSize(753, 634);
+                agregar.setSize(716, 703);
 
                 contenido.removeAll();
                 contenido.setLayout(new BorderLayout());

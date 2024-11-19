@@ -57,7 +57,7 @@
                   <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="cambiar" min="-2" max="-2" attributes="0"/>
-                      <Component id="contenido" min="-2" pref="753" max="-2" attributes="0"/>
+                      <Component id="contenido" min="-2" pref="716" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="70" max="32767" attributes="0"/>
               </Group>
@@ -69,8 +69,8 @@
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="cambiar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="contenido" min="-2" pref="634" max="-2" attributes="0"/>
-                  <EmptySpace pref="33" max="32767" attributes="0"/>
+                  <Component id="contenido" min="-2" pref="703" max="-2" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
