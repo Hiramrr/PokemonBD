@@ -130,7 +130,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             }
         });
         Agregar.add(IDEntrenador1);
-        IDEntrenador1.setBounds(320, 120, 400, 30);
+        IDEntrenador1.setBounds(320, 120, 370, 30);
 
         numPokedex_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         numPokedex_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,7 +168,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             }
         });
         Agregar.add(region_combo);
-        region_combo.setBounds(320, 310, 400, 30);
+        region_combo.setBounds(320, 310, 370, 30);
 
         tipo_combo.setBackground(new java.awt.Color(13, 17, 23));
         tipo_combo.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,7 +179,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             }
         });
         Agregar.add(tipo_combo);
-        tipo_combo.setBounds(40, 430, 120, 26);
+        tipo_combo.setBounds(40, 420, 120, 26);
 
         agregarPK.setBackground(new java.awt.Color(35, 135, 55));
         agregarPK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -187,55 +187,55 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         agregarPK.setText("Agregar");
         agregarPK.addActionListener(this);
         Agregar.add(agregarPK);
-        agregarPK.setBounds(510, 800, 240, 40);
+        agregarPK.setBounds(500, 650, 240, 40);
 
         tipo_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         tipo_label.setForeground(new java.awt.Color(255, 255, 255));
         tipo_label.setText("Tipo");
         Agregar.add(tipo_label);
-        tipo_label.setBounds(40, 400, 100, 29);
+        tipo_label.setBounds(40, 390, 100, 29);
 
         ps_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         ps_label.setForeground(new java.awt.Color(255, 255, 255));
         ps_label.setText("PS");
         Agregar.add(ps_label);
-        ps_label.setBounds(40, 540, 20, 20);
+        ps_label.setBounds(50, 480, 20, 20);
 
         atq_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         atq_label.setForeground(new java.awt.Color(255, 255, 255));
         atq_label.setText("Ataque");
         Agregar.add(atq_label);
-        atq_label.setBounds(40, 570, 50, 16);
+        atq_label.setBounds(50, 510, 50, 16);
 
         defensa_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         defensa_label.setForeground(new java.awt.Color(255, 255, 255));
         defensa_label.setText("Defensa");
         Agregar.add(defensa_label);
-        defensa_label.setBounds(40, 600, 50, 20);
+        defensa_label.setBounds(50, 540, 50, 20);
 
         atqEspecial_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         atqEspecial_label.setForeground(new java.awt.Color(255, 255, 255));
         atqEspecial_label.setText("Atq. Especial");
         Agregar.add(atqEspecial_label);
-        atqEspecial_label.setBounds(40, 630, 90, 16);
+        atqEspecial_label.setBounds(50, 570, 90, 16);
 
         defEspacial_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         defEspacial_label.setForeground(new java.awt.Color(255, 255, 255));
         defEspacial_label.setText("Def. Especial");
         Agregar.add(defEspacial_label);
-        defEspacial_label.setBounds(40, 660, 80, 20);
+        defEspacial_label.setBounds(50, 600, 80, 20);
 
         velocidad_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         velocidad_label.setForeground(new java.awt.Color(255, 255, 255));
         velocidad_label.setText("Velocidad");
         Agregar.add(velocidad_label);
-        velocidad_label.setBounds(40, 690, 70, 20);
+        velocidad_label.setBounds(50, 630, 70, 20);
 
         total_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         total_label.setForeground(new java.awt.Color(255, 255, 255));
         total_label.setText("Total");
         Agregar.add(total_label);
-        total_label.setBounds(40, 720, 30, 20);
+        total_label.setBounds(50, 660, 30, 20);
 
         base_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         base_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -243,50 +243,50 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         base_label.setText("Base");
         base_label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Agregar.add(base_label);
-        base_label.setBounds(150, 510, 80, 20);
+        base_label.setBounds(160, 450, 80, 20);
 
         totalBase_t.setEditable(false);
         totalBase_t.setBackground(new java.awt.Color(13, 17, 23));
         totalBase_t.setForeground(new java.awt.Color(255, 255, 255));
         totalBase_t.setText("0");
         Agregar.add(totalBase_t);
-        totalBase_t.setBounds(150, 720, 80, 26);
+        totalBase_t.setBounds(160, 660, 80, 26);
 
         psBase_t.setBackground(new java.awt.Color(13, 17, 23));
         psBase_t.setForeground(new java.awt.Color(255, 255, 255));
         psBase_t.setText("0");
         Agregar.add(psBase_t);
-        psBase_t.setBounds(150, 540, 80, 26);
+        psBase_t.setBounds(160, 480, 80, 26);
 
         ataqueBase_t.setBackground(new java.awt.Color(13, 17, 23));
         ataqueBase_t.setForeground(new java.awt.Color(255, 255, 255));
         ataqueBase_t.setText("0");
         Agregar.add(ataqueBase_t);
-        ataqueBase_t.setBounds(150, 570, 80, 26);
+        ataqueBase_t.setBounds(160, 510, 80, 26);
 
         defensaBase_t.setBackground(new java.awt.Color(13, 17, 23));
         defensaBase_t.setForeground(new java.awt.Color(255, 255, 255));
         defensaBase_t.setText("0");
         Agregar.add(defensaBase_t);
-        defensaBase_t.setBounds(150, 600, 80, 26);
+        defensaBase_t.setBounds(160, 540, 80, 26);
 
         atqespecialBase_t.setBackground(new java.awt.Color(13, 17, 23));
         atqespecialBase_t.setForeground(new java.awt.Color(255, 255, 255));
         atqespecialBase_t.setText("0");
         Agregar.add(atqespecialBase_t);
-        atqespecialBase_t.setBounds(150, 630, 80, 26);
+        atqespecialBase_t.setBounds(160, 570, 80, 26);
 
         defespecialBase_t.setBackground(new java.awt.Color(13, 17, 23));
         defespecialBase_t.setForeground(new java.awt.Color(255, 255, 255));
         defespecialBase_t.setText("0");
         Agregar.add(defespecialBase_t);
-        defespecialBase_t.setBounds(150, 660, 80, 26);
+        defespecialBase_t.setBounds(160, 600, 80, 26);
 
         velocidadBase_t.setBackground(new java.awt.Color(13, 17, 23));
         velocidadBase_t.setForeground(new java.awt.Color(255, 255, 255));
         velocidadBase_t.setText("0");
         Agregar.add(velocidadBase_t);
-        velocidadBase_t.setBounds(150, 690, 80, 26);
+        velocidadBase_t.setBounds(160, 630, 80, 26);
 
         tipo_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         tipo_label1.setForeground(new java.awt.Color(255, 255, 255));
@@ -303,7 +303,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             }
         });
         Agregar.add(tipo2_combo);
-        tipo2_combo.setBounds(210, 430, 120, 26);
+        tipo2_combo.setBounds(210, 420, 120, 26);
 
         cargar.setBackground(new java.awt.Color(30, 112, 235));
         cargar.setForeground(new java.awt.Color(255, 255, 255));
@@ -332,13 +332,13 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             }
         });
         Agregar.add(generaciont);
-        generaciont.setBounds(360, 430, 140, 26);
+        generaciont.setBounds(360, 420, 140, 26);
 
         pkMax.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         pkMax.setForeground(new java.awt.Color(255, 255, 255));
-        pkMax.setText("Numero de pokemones Disponibles");
+        pkMax.setText("Disponibles");
         Agregar.add(pkMax);
-        pkMax.setBounds(360, 480, 360, 30);
+        pkMax.setBounds(520, 390, 130, 30);
 
         maxPokemon.setEditable(false);
         maxPokemon.setBackground(new java.awt.Color(13, 17, 23));
@@ -356,7 +356,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         });
         */
         Agregar.add(maxPokemon);
-        maxPokemon.setBounds(360, 530, 140, 26);
+        maxPokemon.setBounds(520, 420, 140, 26);
 
         numPokedex_utilizado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         numPokedex_utilizado.setForeground(new java.awt.Color(184, 44, 0));
@@ -367,11 +367,13 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
