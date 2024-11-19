@@ -665,20 +665,26 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         perfil.setIcon(null);
     }
 
-    public void numPokedexValido(){
-        try{
-            ArrayList lista = mBD.numPokedexValido(region_combo.getSelectedItem().toString());
-            if(lista == null || lista.isEmpty()){
+    public void numPokedexValido() {
+        try {
+            Object selectedItem = region_combo.getSelectedItem();
+            if (selectedItem == null) {
                 numPokedex_utilizado.setText("");
+                return;
             }
-            for(int i = 0; i < lista.size(); i++){
-                if(numPokedex_t.getText().equals(lista.get(i).toString())){
+            ArrayList lista = mBD.numPokedexValido(selectedItem.toString());
+            if (lista == null || lista.isEmpty()) {
+                numPokedex_utilizado.setText("");
+                return;
+            }
+            for (Object item : lista) {
+                if (numPokedex_t.getText().equals(item.toString())) {
                     numPokedex_utilizado.setText("Este número de pokedex ya esta en uso");
                     return;
                 }
-                numPokedex_utilizado.setText("");
             }
-        }catch(NumberFormatException e){
+            numPokedex_utilizado.setText("");
+        } catch (NumberFormatException e) {
             numPokedex_utilizado.setText("");
         }
     }

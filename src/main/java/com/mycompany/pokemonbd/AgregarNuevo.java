@@ -20,6 +20,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
      */
     public AgregarNuevo(java.awt.Frame parent, boolean modal,String idEntrenador) {
         super(parent, modal);
+        this.setUndecorated(true);
         initComponents();
         AgregarPK agregar = new AgregarPK(idEntrenador);
         agregar.setLocation(0,0);
