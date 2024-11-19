@@ -224,7 +224,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         agregarPK.setText("Agregar");
         agregarPK.addActionListener(this);
         Agregar.add(agregarPK);
-        agregarPK.setBounds(530, 800, 210, 40);
+        agregarPK.setBounds(520, 740, 210, 40);
 
         jTabbedPane1.setBackground(new java.awt.Color(22, 26, 33));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
@@ -707,14 +707,14 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         jTabbedPane1.addTab("Movimientos", movimientos);
 
         Agregar.add(jTabbedPane1);
-        jTabbedPane1.setBounds(50, 470, 650, 300);
+        jTabbedPane1.setBounds(50, 440, 650, 300);
 
         id_label.setBackground(new java.awt.Color(255, 255, 255));
         id_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         id_label.setForeground(new java.awt.Color(255, 255, 255));
         id_label.setText("ID generada: ");
         Agregar.add(id_label);
-        id_label.setBounds(30, 810, 120, 25);
+        id_label.setBounds(30, 740, 120, 25);
 
         idT.setEditable(false);
         idT.setBackground(new java.awt.Color(13, 17, 23));
@@ -730,7 +730,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             }
         });
         Agregar.add(idT);
-        idT.setBounds(150, 810, 250, 30);
+        idT.setBounds(150, 740, 250, 30);
 
         numPokedex_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         numPokedex_label.setForeground(new java.awt.Color(255, 255, 255));

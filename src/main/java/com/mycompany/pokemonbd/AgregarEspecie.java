@@ -187,7 +187,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         agregarPK.setText("Agregar");
         agregarPK.addActionListener(this);
         Agregar.add(agregarPK);
-        agregarPK.setBounds(500, 650, 240, 40);
+        agregarPK.setBounds(500, 640, 190, 40);
 
         tipo_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         tipo_label.setForeground(new java.awt.Color(255, 255, 255));
