@@ -236,6 +236,7 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
         System.out.println("fallo");
     }
 
+
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == boton){
