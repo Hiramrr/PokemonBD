@@ -389,4 +389,19 @@ public class BD {
             }
         }
     }
+
+    public ArrayList numPokedexValido(String Region) {
+        ArrayList datos = new ArrayList<>();
+        try {
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL numPokedexLista('" + Region + "')");
+            while(resultado.next()){
+                datos.add(resultado.getString("total"));
+            }
+            return datos;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
 }

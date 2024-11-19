@@ -360,7 +360,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         numPokedex_utilizado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         numPokedex_utilizado.setForeground(new java.awt.Color(184, 44, 0));
         Agregar.add(numPokedex_utilizado);
-        numPokedex_utilizado.setBounds(320, 250, 330, 0);
+        numPokedex_utilizado.setBounds(320, 250, 330, 15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -593,6 +593,18 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
             public void insertUpdate(DocumentEvent e) {
                 validar();
             }
+
+        });
+        numPokedex_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                numPokedexValido();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                numPokedexValido();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                numPokedexValido();
+            }
         });
     }
 
@@ -648,6 +660,24 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         velocidadBase_t.setText("0");
         totalBase_t.setText("0");
         perfil.setIcon(null);
+    }
+
+    public void numPokedexValido(){
+        try{
+            ArrayList lista = mBD.numPokedexValido(region_combo.getSelectedItem().toString());
+            if(lista == null || lista.isEmpty()){
+                numPokedex_utilizado.setText("");
+            }
+            for(int i = 0; i < lista.size(); i++){
+                if(numPokedex_t.getText().equals(lista.get(i).toString())){
+                    numPokedex_utilizado.setText("Este número de pokedex ya esta en uso");
+                    return;
+                }
+                numPokedex_utilizado.setText("");
+            }
+        }catch(NumberFormatException e){
+            numPokedex_utilizado.setText("");
+        }
     }
 }
 
