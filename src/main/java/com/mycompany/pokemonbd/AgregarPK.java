@@ -126,79 +126,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         numPokedex_label = new javax.swing.JLabel();
         numPokedex = new javax.swing.JTextField();
         agregarPK = new javax.swing.JButton();
-        Agregar1 = new javax.swing.JPanel();
-        titulo1 = new javax.swing.JLabel();
-        imagen1 = new javax.swing.JPanel();
-        perfil1 = new javax.swing.JLabel();
-        especie_Label1 = new javax.swing.JLabel();
-        naturalezas_combo1 = new javax.swing.JComboBox<>();
-        mote_label1 = new javax.swing.JLabel();
-        mote1 = new javax.swing.JTextField();
-        naturaleza_label1 = new javax.swing.JLabel();
-        especies_combo1 = new javax.swing.JComboBox<>();
-        objeto_label1 = new javax.swing.JLabel();
-        objeto_combo1 = new javax.swing.JComboBox<>();
-        genero_label1 = new javax.swing.JLabel();
-        genero_combo1 = new javax.swing.JComboBox<>();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        estadisticas1 = new javax.swing.JPanel();
-        base_label1 = new javax.swing.JLabel();
-        ps_label1 = new javax.swing.JLabel();
-        atq_label1 = new javax.swing.JLabel();
-        defensa_label1 = new javax.swing.JLabel();
-        atqEspecial_label1 = new javax.swing.JLabel();
-        defEspecial_label1 = new javax.swing.JLabel();
-        velocidad_label1 = new javax.swing.JLabel();
-        total_label1 = new javax.swing.JLabel();
-        totalBase_t1 = new javax.swing.JTextField();
-        velocidadBase_t1 = new javax.swing.JTextField();
-        defespecialBase_t1 = new javax.swing.JTextField();
-        atqespecialBase_t1 = new javax.swing.JTextField();
-        defensaBase_t1 = new javax.swing.JTextField();
-        ataqueBase_t1 = new javax.swing.JTextField();
-        psBase_t1 = new javax.swing.JTextField();
-        IV_label1 = new javax.swing.JLabel();
-        psIVS_t1 = new javax.swing.JTextField();
-        atqIVs_t1 = new javax.swing.JTextField();
-        defIVs_t1 = new javax.swing.JTextField();
-        atqEspecialIVs_t1 = new javax.swing.JTextField();
-        defEspecialIVs_t1 = new javax.swing.JTextField();
-        velocidadIVs_t1 = new javax.swing.JTextField();
-        totalIVS_t1 = new javax.swing.JTextField();
-        totalEVs_t1 = new javax.swing.JTextField();
-        velocidadEVs_t1 = new javax.swing.JTextField();
-        defEspecialEVs_t1 = new javax.swing.JTextField();
-        atqEspecialEVs_t1 = new javax.swing.JTextField();
-        defEVs_t1 = new javax.swing.JTextField();
-        atqEVs_t1 = new javax.swing.JTextField();
-        psEVs_t1 = new javax.swing.JTextField();
-        EVs_label1 = new javax.swing.JLabel();
-        Estadistica_label1 = new javax.swing.JLabel();
-        pstotal_t1 = new javax.swing.JTextField();
-        atqtotal_t1 = new javax.swing.JTextField();
-        deftotal_t1 = new javax.swing.JTextField();
-        atqEspecialtotal_t1 = new javax.swing.JTextField();
-        defEspecialtotal_t1 = new javax.swing.JTextField();
-        velocidadtotal_t1 = new javax.swing.JTextField();
-        movimientos1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabla1 = new javax.swing.JTable();
-        movimientos_label1 = new javax.swing.JLabel();
-        movimientos_combo1 = new javax.swing.JComboBox<>();
-        añadirMov1 = new javax.swing.JButton();
-        pp_label1 = new javax.swing.JLabel();
-        pp_text1 = new javax.swing.JTextField();
-        maspp_label1 = new javax.swing.JLabel();
-        maspp_text1 = new javax.swing.JTextField();
-        maspp1 = new javax.swing.JLabel();
-        eliminarMov1 = new javax.swing.JButton();
-        subir1 = new javax.swing.JButton();
-        bajar1 = new javax.swing.JButton();
-        id_label1 = new javax.swing.JLabel();
-        idT1 = new javax.swing.JTextField();
-        numPokedex_label1 = new javax.swing.JLabel();
-        numPokedex1 = new javax.swing.JTextField();
-        agregarPK1 = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(713, 703));
         setPreferredSize(new java.awt.Dimension(713, 703));
@@ -868,722 +795,19 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         Agregar.add(agregarPK);
         agregarPK.setBounds(540, 670, 170, 30);
 
-        Agregar1.setBackground(new java.awt.Color(22, 26, 33));
-        Agregar1.setForeground(new java.awt.Color(255, 255, 255));
-        Agregar1.setMinimumSize(new java.awt.Dimension(548, 411));
-        Agregar1.setLayout(null);
-
-        titulo1.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
-        titulo1.setForeground(new java.awt.Color(255, 255, 255));
-        titulo1.setText("Agregar Pokemón");
-        Agregar1.add(titulo1);
-        titulo1.setBounds(20, 10, 360, 54);
-
-        imagen1.setBackground(new java.awt.Color(13, 17, 23));
-        imagen1.setForeground(new java.awt.Color(13, 17, 23));
-        imagen1.setLayout(null);
-        imagen1.add(perfil1);
-        perfil1.setBounds(0, 0, 210, 210);
-
-        Agregar1.add(imagen1);
-        imagen1.setBounds(40, 90, 210, 210);
-
-        especie_Label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        especie_Label1.setForeground(new java.awt.Color(255, 255, 255));
-        especie_Label1.setText("Elegir especie");
-        Agregar1.add(especie_Label1);
-        especie_Label1.setBounds(270, 80, 140, 29);
-
-        naturalezas_combo1.setBackground(new java.awt.Color(13, 17, 23));
-        naturalezas_combo1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        naturalezas_combo1.setForeground(new java.awt.Color(255, 255, 255));
-        naturalezas_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activa", "Afable", "Agitada", "Alegre", "Alocada", "Amable", "Audaz", "Cauta", "Dócil", "Firme", "Floja", "Fuerte", "Grosera", "Huraña", "Ingenua", "Mansa", "Miedosa", "Modesta", "Osada", "Pícara", "Plácida", "Rara", "Serena", "Seria", "Tímida" }));
-        naturalezas_combo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                naturalezas_combo1ActionPerformed(evt);
-            }
-        });
-        Agregar1.add(naturalezas_combo1);
-        naturalezas_combo1.setBounds(270, 260, 400, 30);
-
-        mote_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        mote_label1.setForeground(new java.awt.Color(255, 255, 255));
-        mote_label1.setText("Mote");
-        Agregar1.add(mote_label1);
-        mote_label1.setBounds(270, 150, 140, 29);
-
-        mote1.setBackground(new java.awt.Color(13, 17, 23));
-        mote1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        mote1.setForeground(new java.awt.Color(255, 255, 255));
-        mote1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        mote1.setBorder(null);
-        mote1.setCaretColor(new java.awt.Color(255, 255, 255));
-        mote1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        mote1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mote1ActionPerformed(evt);
-            }
-        });
-        Agregar1.add(mote1);
-        mote1.setBounds(270, 190, 400, 30);
-
-        naturaleza_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        naturaleza_label1.setForeground(new java.awt.Color(255, 255, 255));
-        naturaleza_label1.setText("Naturaleza");
-        Agregar1.add(naturaleza_label1);
-        naturaleza_label1.setBounds(270, 230, 140, 29);
-
-        especies_combo1.setBackground(new java.awt.Color(13, 17, 23));
-        especies_combo1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        especies_combo1.setForeground(new java.awt.Color(255, 255, 255));
-        especies_combo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                especies_combo1ActionPerformed(evt);
-            }
-        });
-        Agregar1.add(especies_combo1);
-        especies_combo1.setBounds(270, 120, 400, 30);
-
-        objeto_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        objeto_label1.setForeground(new java.awt.Color(255, 255, 255));
-        objeto_label1.setText("Objeto");
-        Agregar1.add(objeto_label1);
-        objeto_label1.setBounds(40, 310, 140, 29);
-
-        objeto_combo1.setBackground(new java.awt.Color(13, 17, 23));
-        objeto_combo1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        objeto_combo1.setForeground(new java.awt.Color(255, 255, 255));
-        objeto_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Agua fresca", "Agua fresca", "Antihielo", "Antiparalizador", "Antiquemar", "Antídoto", "Ataque X", "Bicicleta", "Bicicleta", "Bono bici", "Calcio", "Calcio", "Caramelo raro", "Caramelo raro", "Carburante", "Carburante", "Caña buena", "Caña vieja", "Correo Oak", "Correo Oak", "Cuerda huida", "Cura total", "Defensa especial X", "Defensa X", "Despertar", "Dientes oro", "Directo", "Elixir", "Especial X", "Fósil domo", "Fósil domo", "Fósil hélix", "Hierro", "Hierro", "Hiperpoción", "Limonada", "Limonada", "Llave ascensor", "Llave magnética", "Llave secreta", "Mapa", "Mapa", "Monedero", "Monedero", "Más PP", "Más PS", "Más PS", "Máximo elixir", "Pepita", "Piedra agua", "Piedra agua", "Piedra fuego", "Piedra fuego", "Piedra hoja", "Piedra hoja", "Piedra lunar", "Piedra lunar", "Piedra trueno", "Piedra trueno", "Poción", "Poción", "Poción máxima", "Poción máxima", "Poké flauta", "Poké flauta", "Poké muñeco", "Poké muñeco", "Precisión X", "Protección especial", "Proteína", "Proteína", "Refresco", "Refresco", "Repartir experiencia", "Repelente", "Repelente máximo", "Repelente máximo", "Restaurar todo", "Revivir", "Revivir máximo", "Revivir máximo", " ", "S", "Scope Silph", "Scope Silph", "Supercaña", "Supercaña", "Superpoción", "Superpoción", "Superrepelente", "Ticket barco", "Velocidad X", "Zahorí", "Zahorí", "Ámbar viejo", "Ámbar viejo", "Éter", "Éter máximo" }));
-        objeto_combo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                objeto_combo1ActionPerformed(evt);
-            }
-        });
-        Agregar1.add(objeto_combo1);
-        objeto_combo1.setBounds(40, 350, 160, 30);
-
-        genero_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        genero_label1.setForeground(new java.awt.Color(255, 255, 255));
-        genero_label1.setText("Género");
-        Agregar1.add(genero_label1);
-        genero_label1.setBounds(230, 310, 120, 29);
-
-        genero_combo1.setBackground(new java.awt.Color(13, 17, 23));
-        genero_combo1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        genero_combo1.setForeground(new java.awt.Color(255, 255, 255));
-        genero_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
-        genero_combo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genero_combo1ActionPerformed(evt);
-            }
-        });
-        Agregar1.add(genero_combo1);
-        genero_combo1.setBounds(220, 350, 120, 30);
-
-        jTabbedPane2.setBackground(new java.awt.Color(22, 26, 33));
-        jTabbedPane2.setForeground(new java.awt.Color(255, 255, 255));
-
-        estadisticas1.setBackground(new java.awt.Color(22, 26, 33));
-
-        base_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        base_label1.setForeground(new java.awt.Color(255, 255, 255));
-        base_label1.setText("Base");
-
-        ps_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        ps_label1.setForeground(new java.awt.Color(255, 255, 255));
-        ps_label1.setText("PS");
-
-        atq_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        atq_label1.setForeground(new java.awt.Color(255, 255, 255));
-        atq_label1.setText("Ataque");
-
-        defensa_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        defensa_label1.setForeground(new java.awt.Color(255, 255, 255));
-        defensa_label1.setText("Defensa");
-
-        atqEspecial_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        atqEspecial_label1.setForeground(new java.awt.Color(255, 255, 255));
-        atqEspecial_label1.setText("Atq. Especial");
-
-        defEspecial_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        defEspecial_label1.setForeground(new java.awt.Color(255, 255, 255));
-        defEspecial_label1.setText("Def. Especial");
-
-        velocidad_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        velocidad_label1.setForeground(new java.awt.Color(255, 255, 255));
-        velocidad_label1.setText("Velocidad");
-
-        total_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        total_label1.setForeground(new java.awt.Color(255, 255, 255));
-        total_label1.setText("Total");
-
-        totalBase_t1.setEditable(false);
-        totalBase_t1.setBackground(new java.awt.Color(13, 17, 23));
-        totalBase_t1.setForeground(new java.awt.Color(255, 255, 255));
-        totalBase_t1.setText("0");
-
-        velocidadBase_t1.setEditable(false);
-        velocidadBase_t1.setBackground(new java.awt.Color(13, 17, 23));
-        velocidadBase_t1.setForeground(new java.awt.Color(255, 255, 255));
-        velocidadBase_t1.setText("0");
-
-        defespecialBase_t1.setEditable(false);
-        defespecialBase_t1.setBackground(new java.awt.Color(13, 17, 23));
-        defespecialBase_t1.setForeground(new java.awt.Color(255, 255, 255));
-        defespecialBase_t1.setText("0");
-
-        atqespecialBase_t1.setEditable(false);
-        atqespecialBase_t1.setBackground(new java.awt.Color(13, 17, 23));
-        atqespecialBase_t1.setForeground(new java.awt.Color(255, 255, 255));
-        atqespecialBase_t1.setText("0");
-
-        defensaBase_t1.setEditable(false);
-        defensaBase_t1.setBackground(new java.awt.Color(13, 17, 23));
-        defensaBase_t1.setForeground(new java.awt.Color(255, 255, 255));
-        defensaBase_t1.setText("0");
-
-        ataqueBase_t1.setEditable(false);
-        ataqueBase_t1.setBackground(new java.awt.Color(13, 17, 23));
-        ataqueBase_t1.setForeground(new java.awt.Color(255, 255, 255));
-        ataqueBase_t1.setText("0");
-
-        psBase_t1.setEditable(false);
-        psBase_t1.setBackground(new java.awt.Color(13, 17, 23));
-        psBase_t1.setForeground(new java.awt.Color(255, 255, 255));
-        psBase_t1.setText("0");
-
-        IV_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        IV_label1.setForeground(new java.awt.Color(255, 255, 255));
-        IV_label1.setText("IVs");
-
-        psIVS_t1.setBackground(new java.awt.Color(13, 17, 23));
-        psIVS_t1.setForeground(new java.awt.Color(255, 255, 255));
-        psIVS_t1.setText("0");
-
-        atqIVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        atqIVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        atqIVs_t1.setText("0");
-
-        defIVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        defIVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        defIVs_t1.setText("0");
-
-        atqEspecialIVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        atqEspecialIVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        atqEspecialIVs_t1.setText("0");
-
-        defEspecialIVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        defEspecialIVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        defEspecialIVs_t1.setText("0");
-
-        velocidadIVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        velocidadIVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        velocidadIVs_t1.setText("0");
-
-        totalIVS_t1.setEditable(false);
-        totalIVS_t1.setBackground(new java.awt.Color(13, 17, 23));
-        totalIVS_t1.setForeground(new java.awt.Color(255, 255, 255));
-        totalIVS_t1.setText("0");
-
-        totalEVs_t1.setEditable(false);
-        totalEVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        totalEVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        totalEVs_t1.setText("0");
-
-        velocidadEVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        velocidadEVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        velocidadEVs_t1.setText("0");
-
-        defEspecialEVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        defEspecialEVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        defEspecialEVs_t1.setText("0");
-
-        atqEspecialEVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        atqEspecialEVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        atqEspecialEVs_t1.setText("0");
-
-        defEVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        defEVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        defEVs_t1.setText("0");
-
-        atqEVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        atqEVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        atqEVs_t1.setText("0");
-
-        psEVs_t1.setBackground(new java.awt.Color(13, 17, 23));
-        psEVs_t1.setForeground(new java.awt.Color(255, 255, 255));
-        psEVs_t1.setText("0");
-
-        EVs_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        EVs_label1.setForeground(new java.awt.Color(255, 255, 255));
-        EVs_label1.setText("EVs");
-
-        Estadistica_label1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Estadistica_label1.setForeground(new java.awt.Color(255, 255, 255));
-        Estadistica_label1.setText("Estadística");
-
-        pstotal_t1.setEditable(false);
-        pstotal_t1.setBackground(new java.awt.Color(13, 17, 23));
-        pstotal_t1.setForeground(new java.awt.Color(255, 255, 255));
-        pstotal_t1.setText("0");
-
-        atqtotal_t1.setEditable(false);
-        atqtotal_t1.setBackground(new java.awt.Color(13, 17, 23));
-        atqtotal_t1.setForeground(new java.awt.Color(255, 255, 255));
-        atqtotal_t1.setText("0");
-
-        deftotal_t1.setEditable(false);
-        deftotal_t1.setBackground(new java.awt.Color(13, 17, 23));
-        deftotal_t1.setForeground(new java.awt.Color(255, 255, 255));
-        deftotal_t1.setText("0");
-
-        atqEspecialtotal_t1.setEditable(false);
-        atqEspecialtotal_t1.setBackground(new java.awt.Color(13, 17, 23));
-        atqEspecialtotal_t1.setForeground(new java.awt.Color(255, 255, 255));
-        atqEspecialtotal_t1.setText("0");
-
-        defEspecialtotal_t1.setEditable(false);
-        defEspecialtotal_t1.setBackground(new java.awt.Color(13, 17, 23));
-        defEspecialtotal_t1.setForeground(new java.awt.Color(255, 255, 255));
-        defEspecialtotal_t1.setText("0");
-
-        velocidadtotal_t1.setEditable(false);
-        velocidadtotal_t1.setBackground(new java.awt.Color(13, 17, 23));
-        velocidadtotal_t1.setForeground(new java.awt.Color(255, 255, 255));
-        velocidadtotal_t1.setText("0");
-
-        javax.swing.GroupLayout estadisticas1Layout = new javax.swing.GroupLayout(estadisticas1);
-        estadisticas1.setLayout(estadisticas1Layout);
-        estadisticas1Layout.setHorizontalGroup(
-            estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(estadisticas1Layout.createSequentialGroup()
-                .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(estadisticas1Layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(base_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addComponent(IV_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(EVs_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(Estadistica_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(estadisticas1Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(estadisticas1Layout.createSequentialGroup()
-                                .addComponent(ps_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(90, 90, 90)
-                                .addComponent(psBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(psIVS_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(psEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(pstotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(estadisticas1Layout.createSequentialGroup()
-                                .addComponent(atq_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)
-                                .addComponent(ataqueBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(atqIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(atqEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(atqtotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(estadisticas1Layout.createSequentialGroup()
-                                .addComponent(defensa_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)
-                                .addComponent(defensaBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(defIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(defEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(deftotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(estadisticas1Layout.createSequentialGroup()
-                                .addComponent(atqEspecial_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addComponent(atqespecialBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(atqEspecialIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(atqEspecialEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(atqEspecialtotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(estadisticas1Layout.createSequentialGroup()
-                                .addComponent(defEspecial_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(defespecialBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(defEspecialIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(defEspecialEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(defEspecialtotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(estadisticas1Layout.createSequentialGroup()
-                                .addComponent(velocidad_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(velocidadBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(velocidadIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(velocidadEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(velocidadtotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(estadisticas1Layout.createSequentialGroup()
-                                .addComponent(total_label1)
-                                .addGap(80, 80, 80)
-                                .addComponent(totalBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(totalIVS_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(totalEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(112, Short.MAX_VALUE))
-        );
-        estadisticas1Layout.setVerticalGroup(
-            estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(estadisticas1Layout.createSequentialGroup()
-                .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(base_label1)
-                    .addComponent(IV_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EVs_label1)
-                    .addComponent(Estadistica_label1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ps_label1)
-                    .addComponent(psBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(psIVS_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(psEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pstotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(atq_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ataqueBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(atqIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(atqEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(atqtotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(defensa_label1)
-                    .addComponent(defensaBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(defIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(defEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deftotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(atqEspecial_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(atqespecialBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(atqEspecialIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(atqEspecialEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(atqEspecialtotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(defEspecial_label1)
-                    .addComponent(defespecialBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(defEspecialIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(defEspecialEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(defEspecialtotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(velocidad_label1)
-                    .addComponent(velocidadBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(velocidadIVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(velocidadEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(velocidadtotal_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(estadisticas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(total_label1)
-                    .addComponent(totalBase_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalIVS_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalEVs_t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 13, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("Estadisticas", estadisticas1);
-
-        movimientos1.setBackground(new java.awt.Color(22, 26, 33));
-
-        tabla1.setBackground(new java.awt.Color(13, 17, 23));
-        tabla1.setForeground(new java.awt.Color(255, 255, 255));
-        tabla1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Nombre", "PP"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tabla1.setGridColor(new java.awt.Color(22, 26, 33));
-        tabla1.setRowHeight(60);
-        tabla1.setSelectionBackground(new java.awt.Color(13, 17, 23));
-        tabla1.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        tabla1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(tabla1);
-
-        movimientos_label1.setBackground(new java.awt.Color(255, 255, 255));
-        movimientos_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        movimientos_label1.setForeground(new java.awt.Color(255, 255, 255));
-        movimientos_label1.setText("Movimientos");
-
-        movimientos_combo1.setBackground(new java.awt.Color(13, 17, 23));
-        movimientos_combo1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        movimientos_combo1.setForeground(new java.awt.Color(255, 255, 255));
-
-        añadirMov1.setBackground(new java.awt.Color(30, 112, 235));
-        añadirMov1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        añadirMov1.setForeground(new java.awt.Color(255, 255, 255));
-        añadirMov1.setText("Agregar movimiento");
-        añadirMov.addActionListener(this);
-        /*
-        añadirMov1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                añadirMov1ActionPerformed(evt);
-            }
-        });
-        */
-
-        pp_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        pp_label1.setForeground(new java.awt.Color(255, 255, 255));
-        pp_label1.setText("PP");
-
-        pp_text1.setEditable(false);
-        pp_text1.setBackground(new java.awt.Color(13, 17, 23));
-        pp_text1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        pp_text1.setForeground(new java.awt.Color(255, 255, 255));
-        pp_text1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pp_text1.setText("0");
-        pp_text1.setBorder(null);
-        pp_text1.setCaretColor(new java.awt.Color(255, 255, 255));
-        pp_text1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        /*
-        */
-
-        maspp_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        maspp_label1.setForeground(new java.awt.Color(255, 255, 255));
-        maspp_label1.setText("Más PP");
-
-        maspp_text1.setEditable(false);
-        maspp_text1.setBackground(new java.awt.Color(13, 17, 23));
-        maspp_text1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        maspp_text1.setForeground(new java.awt.Color(255, 255, 255));
-        maspp_text1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        maspp_text1.setText("0");
-        maspp_text1.setBorder(null);
-        maspp_text1.setCaretColor(new java.awt.Color(255, 255, 255));
-        maspp_text1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-
-        maspp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maspp.png"))); // NOI18N
-        maspp.setToolTipText("Aumento de puntos");
-
-        eliminarMov1.setBackground(new java.awt.Color(184, 44, 0));
-        eliminarMov1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        eliminarMov1.setForeground(new java.awt.Color(255, 255, 255));
-        eliminarMov1.setText("Eliminar movimiento");
-        eliminarMov.addActionListener(this);
-        /*
-        eliminarMov1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarMov1ActionPerformed(evt);
-            }
-        });
-        */
-
-        subir1.setBackground(new java.awt.Color(13, 17, 23));
-        subir1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        subir1.setForeground(new java.awt.Color(255, 255, 255));
-        subir1.setText("↑");
-        subir.addActionListener(this);
-
-        bajar1.setBackground(new java.awt.Color(13, 17, 23));
-        bajar1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bajar1.setForeground(new java.awt.Color(255, 255, 255));
-        bajar1.setText("↓");
-        bajar.addActionListener(this);
-
-        javax.swing.GroupLayout movimientos1Layout = new javax.swing.GroupLayout(movimientos1);
-        movimientos1.setLayout(movimientos1Layout);
-        movimientos1Layout.setHorizontalGroup(
-            movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(movimientos1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(movimientos1Layout.createSequentialGroup()
-                            .addComponent(pp_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(añadirMov1, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                .addComponent(eliminarMov1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(movimientos1Layout.createSequentialGroup()
-                                    .addGroup(movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(maspp_label1)
-                                        .addComponent(maspp_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(maspp1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(subir1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(bajar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(movimientos1Layout.createSequentialGroup()
-                            .addComponent(movimientos_label1)
-                            .addGap(160, 160, 160))
-                        .addComponent(movimientos_combo1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pp_label1))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        movimientos1Layout.setVerticalGroup(
-            movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimientos1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(movimientos1Layout.createSequentialGroup()
-                        .addComponent(movimientos_label1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(movimientos_combo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(pp_label1)
-                                .addComponent(maspp_label1))
-                            .addComponent(maspp1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(movimientos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(pp_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(maspp_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(subir1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bajar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)
-                        .addComponent(añadirMov1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(eliminarMov1)))
-                .addGap(49, 49, 49))
-        );
-
-        jTabbedPane2.addTab("Movimientos", movimientos1);
-
-        Agregar1.add(jTabbedPane2);
-        jTabbedPane2.setBounds(40, 390, 650, 280);
-
-        id_label1.setBackground(new java.awt.Color(255, 255, 255));
-        id_label1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        id_label1.setForeground(new java.awt.Color(255, 255, 255));
-        id_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        id_label1.setText("ID generada: ");
-        id_label1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Agregar1.add(id_label1);
-        id_label1.setBounds(0, 680, 120, 20);
-
-        idT1.setEditable(false);
-        idT1.setBackground(new java.awt.Color(13, 17, 23));
-        idT1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        idT1.setForeground(new java.awt.Color(255, 255, 255));
-        idT1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        idT1.setBorder(null);
-        idT1.setCaretColor(new java.awt.Color(255, 255, 255));
-        idT1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        idT1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idT1ActionPerformed(evt);
-            }
-        });
-        Agregar1.add(idT1);
-        idT1.setBounds(120, 670, 130, 30);
-
-        numPokedex_label1.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        numPokedex_label1.setForeground(new java.awt.Color(255, 255, 255));
-        numPokedex_label1.setText("Numero de pokedex");
-        Agregar1.add(numPokedex_label1);
-        numPokedex_label1.setBounds(360, 310, 230, 29);
-
-        numPokedex1.setEditable(false);
-        numPokedex1.setBackground(new java.awt.Color(13, 17, 23));
-        numPokedex1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        numPokedex1.setForeground(new java.awt.Color(255, 255, 255));
-        numPokedex1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        numPokedex1.setBorder(null);
-        numPokedex1.setCaretColor(new java.awt.Color(255, 255, 255));
-        numPokedex1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        numPokedex1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numPokedex1ActionPerformed(evt);
-            }
-        });
-        Agregar1.add(numPokedex1);
-        numPokedex1.setBounds(360, 350, 220, 30);
-
-        agregarPK1.setBackground(new java.awt.Color(35, 135, 55));
-        agregarPK1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        agregarPK1.setForeground(new java.awt.Color(255, 255, 255));
-        agregarPK1.setText("Agregar");
-        agregarPK.addActionListener(this);
-        Agregar1.add(agregarPK1);
-        agregarPK1.setBounds(540, 670, 170, 30);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Agregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Agregar1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(709, 709, 709))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void naturalezas_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naturalezas_combo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_naturalezas_combo1ActionPerformed
-
-    private void mote1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mote1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mote1ActionPerformed
-
-    private void especies_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especies_combo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_especies_combo1ActionPerformed
-
-    private void objeto_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_combo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_objeto_combo1ActionPerformed
-
-    private void genero_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genero_combo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_genero_combo1ActionPerformed
-
-    private void añadirMov1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirMov1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_añadirMov1ActionPerformed
-
-    private void eliminarMov1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMov1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarMov1ActionPerformed
-
-    private void idT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idT1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idT1ActionPerformed
-
-    private void numPokedex1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numPokedex1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_numPokedex1ActionPerformed
 
     private void naturalezas_comboActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
@@ -1630,151 +854,78 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
-    private javax.swing.JPanel Agregar1;
     private javax.swing.JLabel EVs_label;
-    private javax.swing.JLabel EVs_label1;
     private javax.swing.JLabel Estadistica_label;
-    private javax.swing.JLabel Estadistica_label1;
     private javax.swing.JLabel IV_label;
-    private javax.swing.JLabel IV_label1;
     private javax.swing.JButton agregarPK;
-    private javax.swing.JButton agregarPK1;
     private javax.swing.JTextField ataqueBase_t;
-    private javax.swing.JTextField ataqueBase_t1;
     private javax.swing.JTextField atqEVs_t;
-    private javax.swing.JTextField atqEVs_t1;
     private javax.swing.JTextField atqEspecialEVs_t;
-    private javax.swing.JTextField atqEspecialEVs_t1;
     private javax.swing.JTextField atqEspecialIVs_t;
-    private javax.swing.JTextField atqEspecialIVs_t1;
     private javax.swing.JLabel atqEspecial_label;
-    private javax.swing.JLabel atqEspecial_label1;
     private javax.swing.JTextField atqEspecialtotal_t;
-    private javax.swing.JTextField atqEspecialtotal_t1;
     private javax.swing.JTextField atqIVs_t;
-    private javax.swing.JTextField atqIVs_t1;
     private javax.swing.JLabel atq_label;
-    private javax.swing.JLabel atq_label1;
     private javax.swing.JTextField atqespecialBase_t;
-    private javax.swing.JTextField atqespecialBase_t1;
     private javax.swing.JTextField atqtotal_t;
-    private javax.swing.JTextField atqtotal_t1;
     private javax.swing.JButton añadirMov;
-    private javax.swing.JButton añadirMov1;
     private javax.swing.JButton bajar;
-    private javax.swing.JButton bajar1;
     private javax.swing.JLabel base_label;
-    private javax.swing.JLabel base_label1;
     private javax.swing.JTextField defEVs_t;
-    private javax.swing.JTextField defEVs_t1;
     private javax.swing.JTextField defEspecialEVs_t;
-    private javax.swing.JTextField defEspecialEVs_t1;
     private javax.swing.JTextField defEspecialIVs_t;
-    private javax.swing.JTextField defEspecialIVs_t1;
     private javax.swing.JLabel defEspecial_label;
-    private javax.swing.JLabel defEspecial_label1;
     private javax.swing.JTextField defEspecialtotal_t;
-    private javax.swing.JTextField defEspecialtotal_t1;
     private javax.swing.JTextField defIVs_t;
-    private javax.swing.JTextField defIVs_t1;
     private javax.swing.JTextField defensaBase_t;
-    private javax.swing.JTextField defensaBase_t1;
     private javax.swing.JLabel defensa_label;
-    private javax.swing.JLabel defensa_label1;
     private javax.swing.JTextField defespecialBase_t;
-    private javax.swing.JTextField defespecialBase_t1;
     private javax.swing.JTextField deftotal_t;
-    private javax.swing.JTextField deftotal_t1;
     private javax.swing.JButton eliminarMov;
-    private javax.swing.JButton eliminarMov1;
     private javax.swing.JLabel especie_Label;
-    private javax.swing.JLabel especie_Label1;
     private javax.swing.JComboBox<String> especies_combo;
-    private javax.swing.JComboBox<String> especies_combo1;
     private javax.swing.JPanel estadisticas;
-    private javax.swing.JPanel estadisticas1;
     private javax.swing.JComboBox<String> genero_combo;
-    private javax.swing.JComboBox<String> genero_combo1;
     private javax.swing.JLabel genero_label;
-    private javax.swing.JLabel genero_label1;
     private javax.swing.JTextField idT;
-    private javax.swing.JTextField idT1;
     private javax.swing.JLabel id_label;
-    private javax.swing.JLabel id_label1;
     private javax.swing.JPanel imagen;
-    private javax.swing.JPanel imagen1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel maspp;
-    private javax.swing.JLabel maspp1;
     private javax.swing.JLabel maspp_label;
-    private javax.swing.JLabel maspp_label1;
     private javax.swing.JTextField maspp_text;
-    private javax.swing.JTextField maspp_text1;
     private javax.swing.JTextField mote;
-    private javax.swing.JTextField mote1;
     private javax.swing.JLabel mote_label;
-    private javax.swing.JLabel mote_label1;
     private javax.swing.JPanel movimientos;
-    private javax.swing.JPanel movimientos1;
     private javax.swing.JComboBox<String> movimientos_combo;
-    private javax.swing.JComboBox<String> movimientos_combo1;
     private javax.swing.JLabel movimientos_label;
-    private javax.swing.JLabel movimientos_label1;
     private javax.swing.JLabel naturaleza_label;
-    private javax.swing.JLabel naturaleza_label1;
     private javax.swing.JComboBox<String> naturalezas_combo;
-    private javax.swing.JComboBox<String> naturalezas_combo1;
     private javax.swing.JTextField numPokedex;
-    private javax.swing.JTextField numPokedex1;
     private javax.swing.JLabel numPokedex_label;
-    private javax.swing.JLabel numPokedex_label1;
     private javax.swing.JComboBox<String> objeto_combo;
-    private javax.swing.JComboBox<String> objeto_combo1;
     private javax.swing.JLabel objeto_label;
-    private javax.swing.JLabel objeto_label1;
     private javax.swing.JLabel perfil;
-    private javax.swing.JLabel perfil1;
     private javax.swing.JLabel pp_label;
-    private javax.swing.JLabel pp_label1;
     private javax.swing.JTextField pp_text;
-    private javax.swing.JTextField pp_text1;
     private javax.swing.JTextField psBase_t;
-    private javax.swing.JTextField psBase_t1;
     private javax.swing.JTextField psEVs_t;
-    private javax.swing.JTextField psEVs_t1;
     private javax.swing.JTextField psIVS_t;
-    private javax.swing.JTextField psIVS_t1;
     private javax.swing.JLabel ps_label;
-    private javax.swing.JLabel ps_label1;
     private javax.swing.JTextField pstotal_t;
-    private javax.swing.JTextField pstotal_t1;
     private javax.swing.JButton subir;
-    private javax.swing.JButton subir1;
     private javax.swing.JTable tabla;
-    private javax.swing.JTable tabla1;
     private javax.swing.JLabel titulo;
-    private javax.swing.JLabel titulo1;
     private javax.swing.JTextField totalBase_t;
-    private javax.swing.JTextField totalBase_t1;
     private javax.swing.JTextField totalEVs_t;
-    private javax.swing.JTextField totalEVs_t1;
     private javax.swing.JTextField totalIVS_t;
-    private javax.swing.JTextField totalIVS_t1;
     private javax.swing.JLabel total_label;
-    private javax.swing.JLabel total_label1;
     private javax.swing.JTextField velocidadBase_t;
-    private javax.swing.JTextField velocidadBase_t1;
     private javax.swing.JTextField velocidadEVs_t;
-    private javax.swing.JTextField velocidadEVs_t1;
     private javax.swing.JTextField velocidadIVs_t;
-    private javax.swing.JTextField velocidadIVs_t1;
     private javax.swing.JLabel velocidad_label;
-    private javax.swing.JLabel velocidad_label1;
     private javax.swing.JTextField velocidadtotal_t;
-    private javax.swing.JTextField velocidadtotal_t1;
     // End of variables declaration//GEN-END:variables
 
     
