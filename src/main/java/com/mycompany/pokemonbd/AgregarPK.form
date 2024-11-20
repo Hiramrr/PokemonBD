@@ -1103,21 +1103,21 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="movimientosT1" min="-2" pref="84" max="-2" attributes="0"/>
+                                      <Component id="pp_text" min="-2" pref="84" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="maspp_label" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jLabel13" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="maspp" min="-2" pref="30" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="añadirMov" pref="156" max="32767" attributes="0"/>
-                                          <Component id="movimientosT2" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
+                                          <Component id="maspp_text" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
                                           <Component id="eliminarMov" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                      <Component id="movimientos_label" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="movimientos_combo" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
@@ -1135,7 +1135,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jScrollPane1" min="-2" pref="225" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                  <Component id="movimientos_label" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="movimientos_combo" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -1144,12 +1144,12 @@
                                           <Component id="pp_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="maspp_label" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jLabel13" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="maspp" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="movimientosT1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="movimientosT2" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="pp_text" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="maspp_text" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                   <Component id="añadirMov" min="-2" max="-2" attributes="0"/>
@@ -1179,12 +1179,18 @@
                           <Color blue="17" green="11" red="d" type="rgb"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="1" rowCount="4">
-                            <Column editable="false" title="1" type="java.lang.Object"/>
+                          <Table columnCount="2" rowCount="4">
+                            <Column editable="false" title="Nombre" type="java.lang.Object"/>
+                            <Column editable="false" title="PP" type="java.lang.Object"/>
                           </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                               <Title/>
                               <Editor/>
@@ -1209,7 +1215,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JLabel" name="jLabel12">
+                <Component class="javax.swing.JLabel" name="movimientos_label">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1276,7 +1282,7 @@
                     <Property name="text" type="java.lang.String" value="PP"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="movimientosT1">
+                <Component class="javax.swing.JTextField" name="pp_text">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1301,7 +1307,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="movimientosT1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pp_textActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="maspp_label">
@@ -1315,7 +1321,7 @@
                     <Property name="text" type="java.lang.String" value="M&#xe1;s PP"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="movimientosT2">
+                <Component class="javax.swing.JTextField" name="maspp_text">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1340,10 +1346,10 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="movimientosT2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="maspp_textActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel13">
+                <Component class="javax.swing.JLabel" name="maspp">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/images/maspp.png"/>

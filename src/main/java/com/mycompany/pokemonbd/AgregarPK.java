@@ -34,7 +34,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         movimientos.remove(eliminarMov);
         llenarMovimientos();
         agregarListenerSeleccionMovimientos();
-        movimientosT1.setText(mBD.obtenerPP(movimientos_combo.getItemAt(0)));
+        pp_text.setText(mBD.obtenerPP(movimientos_combo.getItemAt(0)));
     }
 
     /**
@@ -103,14 +103,14 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         movimientos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
-        jLabel12 = new javax.swing.JLabel();
+        movimientos_label = new javax.swing.JLabel();
         movimientos_combo = new javax.swing.JComboBox<>();
         añadirMov = new javax.swing.JButton();
         pp_label = new javax.swing.JLabel();
-        movimientosT1 = new javax.swing.JTextField();
+        pp_text = new javax.swing.JTextField();
         maspp_label = new javax.swing.JLabel();
-        movimientosT2 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
+        maspp_text = new javax.swing.JTextField();
+        maspp = new javax.swing.JLabel();
         eliminarMov = new javax.swing.JButton();
         id_label = new javax.swing.JLabel();
         idT = new javax.swing.JTextField();
@@ -560,17 +560,17 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         tabla.setForeground(new java.awt.Color(13, 17, 23));
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "1"
+                "Nombre", "PP"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -583,15 +583,19 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         tabla.setSelectionForeground(new java.awt.Color(13, 17, 23));
         jScrollPane1.setViewportView(tabla);
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Movimientos");
+        movimientos_label.setBackground(new java.awt.Color(255, 255, 255));
+        movimientos_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        movimientos_label.setForeground(new java.awt.Color(255, 255, 255));
+        movimientos_label.setText("Movimientos");
 
         movimientos_combo.setBackground(new java.awt.Color(13, 17, 23));
         movimientos_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         movimientos_combo.setForeground(new java.awt.Color(255, 255, 255));
-
+        movimientos_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                movimientos_comboActionPerformed(evt);
+            }
+        });
 
         añadirMov.setBackground(new java.awt.Color(30, 112, 235));
         añadirMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -608,18 +612,18 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         pp_label.setForeground(new java.awt.Color(255, 255, 255));
         pp_label.setText("PP");
 
-        movimientosT1.setEditable(false);
-        movimientosT1.setBackground(new java.awt.Color(13, 17, 23));
-        movimientosT1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        movimientosT1.setForeground(new java.awt.Color(255, 255, 255));
-        movimientosT1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        movimientosT1.setText("0");
-        movimientosT1.setBorder(null);
-        movimientosT1.setCaretColor(new java.awt.Color(255, 255, 255));
-        movimientosT1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        movimientosT1.addActionListener(new java.awt.event.ActionListener() {
+        pp_text.setEditable(false);
+        pp_text.setBackground(new java.awt.Color(13, 17, 23));
+        pp_text.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        pp_text.setForeground(new java.awt.Color(255, 255, 255));
+        pp_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pp_text.setText("0");
+        pp_text.setBorder(null);
+        pp_text.setCaretColor(new java.awt.Color(255, 255, 255));
+        pp_text.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        pp_text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movimientosT1ActionPerformed(evt);
+                pp_textActionPerformed(evt);
             }
         });
 
@@ -627,22 +631,22 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         maspp_label.setForeground(new java.awt.Color(255, 255, 255));
         maspp_label.setText("Más PP");
 
-        movimientosT2.setEditable(false);
-        movimientosT2.setBackground(new java.awt.Color(13, 17, 23));
-        movimientosT2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        movimientosT2.setForeground(new java.awt.Color(255, 255, 255));
-        movimientosT2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        movimientosT2.setText("0");
-        movimientosT2.setBorder(null);
-        movimientosT2.setCaretColor(new java.awt.Color(255, 255, 255));
-        movimientosT2.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        movimientosT2.addActionListener(new java.awt.event.ActionListener() {
+        maspp_text.setEditable(false);
+        maspp_text.setBackground(new java.awt.Color(13, 17, 23));
+        maspp_text.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        maspp_text.setForeground(new java.awt.Color(255, 255, 255));
+        maspp_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        maspp_text.setText("0");
+        maspp_text.setBorder(null);
+        maspp_text.setCaretColor(new java.awt.Color(255, 255, 255));
+        maspp_text.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        maspp_text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movimientosT2ActionPerformed(evt);
+                maspp_textActionPerformed(evt);
             }
         });
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maspp.png"))); // NOI18N
+        maspp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maspp.png"))); // NOI18N
 
         eliminarMov.setBackground(new java.awt.Color(184, 44, 0));
         eliminarMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -666,18 +670,18 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(movimientosLayout.createSequentialGroup()
-                            .addComponent(movimientosT1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(movimientosLayout.createSequentialGroup()
                                     .addComponent(maspp_label)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(maspp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(añadirMov, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                                .addComponent(movimientosT2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(maspp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(eliminarMov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(movimientosLayout.createSequentialGroup()
-                            .addComponent(jLabel12)
+                            .addComponent(movimientos_label)
                             .addGap(160, 160, 160))
                         .addComponent(movimientos_combo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(pp_label))
@@ -690,7 +694,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(movimientosLayout.createSequentialGroup()
-                        .addComponent(jLabel12)
+                        .addComponent(movimientos_label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(movimientos_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -698,11 +702,11 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                             .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(pp_label)
                                 .addComponent(maspp_label))
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(maspp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(movimientosT1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(movimientosT2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(pp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(maspp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)
                         .addComponent(añadirMov)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -866,17 +870,16 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JTextField idT;
     private javax.swing.JLabel id_label;
     private javax.swing.JPanel imagen;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel maspp;
     private javax.swing.JLabel maspp_label;
+    private javax.swing.JTextField maspp_text;
     private javax.swing.JTextField mote;
     private javax.swing.JLabel mote_label;
     private javax.swing.JPanel movimientos;
-    private javax.swing.JTextField movimientosT1;
-    private javax.swing.JTextField movimientosT2;
     private javax.swing.JComboBox<String> movimientos_combo;
+    private javax.swing.JLabel movimientos_label;
     private javax.swing.JLabel naturaleza_label;
     private javax.swing.JComboBox<String> naturalezas_combo;
     private javax.swing.JTextField numPokedex;
@@ -885,6 +888,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JLabel objeto_label;
     private javax.swing.JLabel perfil;
     private javax.swing.JLabel pp_label;
+    private javax.swing.JTextField pp_text;
     private javax.swing.JTextField psBase_t;
     private javax.swing.JTextField psEVs_t;
     private javax.swing.JTextField psIVS_t;
@@ -1020,7 +1024,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 int filaSeleccionada = movimientos_combo.getSelectedIndex();
 
                 if (filaSeleccionada != -1) {
-                    movimientosT1.setText(mBD.obtenerPP(movimientos_combo.getItemAt(filaSeleccionada)));
+                    pp_text.setText(mBD.obtenerPP(movimientos_combo.getItemAt(filaSeleccionada)));
                 }
             }
         });
