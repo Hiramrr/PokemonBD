@@ -1,6 +1,8 @@
 package com.mycompany.pokemonbd;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -38,6 +40,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         llenarMovimientos();
         agregarListenerSeleccionMovimientos();
         pp_text.setText(mBD.obtenerPP(movimientos_combo.getItemAt(0)));
+        agregarListenerEstadisticas();
+        agregarListenerSeleccionNaturaleza();
+        calcularEstadisticas();
     }
 
     /**
@@ -943,6 +948,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             }
             ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Error("No puedes subir el PP a menos de 0");
         }
+        if(evt.getSource() == agregarPK){
+            ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Error("Aun no se puede guardar xd");
+        }
     }
 
     public void botonEliminar(){
@@ -1005,6 +1013,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 if (filaSeleccionada != -1) {
                     llenarDatosEspecie();
                     sumar();
+                    calcularEstadisticas();
                 }
             }
         });
@@ -1031,5 +1040,550 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 }
             }
         });
+    }
+
+    public void agregarListenerSeleccionNaturaleza(){
+        naturalezas_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                int filaSeleccionada = naturalezas_combo.getSelectedIndex();
+
+                if (filaSeleccionada != -1) {
+                    calcularEstadisticas();
+                }
+            }
+        });
+    }
+
+    private void agregarListenerEstadisticas() {
+        psIVS_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+        });
+
+        atqIVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+        });
+
+        defIVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+        });
+
+        atqEspecialIVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+        });
+
+        defEspecialIVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+        });
+
+        velocidadIVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarIVS();
+                calcularEstadisticas();
+            }
+        });
+        //EVs
+        psEVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+        });
+
+        atqEVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+        });
+
+        defEVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+        });
+
+        atqEspecialEVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+        });
+
+        defEspecialEVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+        });
+
+        velocidadEVs_t.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                validarEVS();
+                calcularEstadisticas();
+            }
+        });
+    }
+
+    public void validarIVS(){
+        try {
+            int psIVs = Integer.parseInt(psIVS_t.getText());
+            if(psIVs < 0 || psIVs > 31){
+                totalIVS_t.setText("Error");
+                return;
+            }
+            int atqIVs = Integer.parseInt(atqIVs_t.getText());
+            if(atqIVs < 0 || atqIVs > 31){
+                totalIVS_t.setText("Error");
+                return;
+            }
+            int defIVs = Integer.parseInt(defIVs_t.getText());
+            if(defIVs < 0 || defIVs > 31){
+                totalIVS_t.setText("Error");
+                return;
+            }
+            int atqEspecialIVs = Integer.parseInt(atqEspecialIVs_t.getText());
+            if(atqEspecialIVs < 0 || atqEspecialIVs > 31){
+                totalIVS_t.setText("Error");
+                return;
+            }
+            int defEspecialIVs = Integer.parseInt(defEspecialIVs_t.getText());
+            if(defEspecialIVs < 0 || defEspecialIVs > 31){
+                totalIVS_t.setText("Error");
+                return;
+            }
+            int velocidadIVs = Integer.parseInt(velocidadIVs_t.getText());
+            if(velocidadIVs < 0 || velocidadIVs > 31){
+                totalIVS_t.setText("Error");
+                return;
+            }
+            int sumatoria = psIVs + atqIVs + defIVs + atqEspecialIVs + defEspecialIVs + velocidadIVs;
+            if (sumatoria > 186) {
+                totalIVS_t.setText("Error");
+            } else {
+                totalIVS_t.setText(Integer.toString(sumatoria));
+            }
+        } catch (NumberFormatException e) {
+            totalIVS_t.setText("Error");
+        }
+    }
+
+    public void validarEVS(){
+        try {
+            int psEVs = Integer.parseInt(psEVs_t.getText());
+            if(psEVs < 0 || psEVs > 255){
+                totalEVs_t.setText("Error");
+                return;
+            }
+            int atqEVs = Integer.parseInt(atqEVs_t.getText());
+            if(atqEVs < 0 || atqEVs > 31){
+                totalEVs_t.setText("Error");
+                return;
+            }
+            int defEVs = Integer.parseInt(defEVs_t.getText());
+            if(defEVs < 0 || defEVs > 31){
+                totalEVs_t.setText("Error");
+                return;
+            }
+            int atqEspecialEVs = Integer.parseInt(atqEspecialEVs_t.getText());
+            if(atqEspecialEVs < 0 || atqEspecialEVs > 31){
+                totalEVs_t.setText("Error");
+                return;
+            }
+            int defEspecialEVs = Integer.parseInt(defEspecialEVs_t.getText());
+            if(defEspecialEVs < 0 || defEspecialEVs > 31){
+                totalEVs_t.setText("Error");
+                return;
+            }
+            int velocidadEVs = Integer.parseInt(velocidadEVs_t.getText());
+            if(velocidadEVs < 0 || velocidadEVs > 31){
+                totalEVs_t.setText("Error");
+                return;
+            }
+            int sumatoria = psEVs + atqEVs + defEVs + atqEspecialEVs + defEspecialEVs + velocidadEVs;
+            if (sumatoria > 510) {
+                totalEVs_t.setText("Error");
+            } else {
+                totalEVs_t.setText(Integer.toString(sumatoria));
+            }
+        } catch (NumberFormatException e) {
+            totalEVs_t.setText("Error");
+        }
+    }
+
+    public void calcularEstadisticas(){
+        try{
+            int psBase = Integer.parseInt(psBase_t.getText());
+            int ataqueBase = Integer.parseInt(ataqueBase_t.getText());
+            int defensaBase = Integer.parseInt(defensaBase_t.getText());
+            int atqespecialBase = Integer.parseInt(atqespecialBase_t.getText());
+            int defespecialBase = Integer.parseInt(defespecialBase_t.getText());
+            int velocidadBase = Integer.parseInt(velocidadBase_t.getText());
+            int psIVs = Integer.parseInt(psIVS_t.getText());
+            int atqIVs = Integer.parseInt(atqIVs_t.getText());
+            int defIVs = Integer.parseInt(defIVs_t.getText());
+            int atqEspecialIVs = Integer.parseInt(atqEspecialIVs_t.getText());
+            int defEspecialIVs = Integer.parseInt(defEspecialIVs_t.getText());
+            int velocidadIVs = Integer.parseInt(velocidadIVs_t.getText());
+            int psEVs = Integer.parseInt(psEVs_t.getText());
+            int atqEVs = Integer.parseInt(atqEVs_t.getText());
+            int defEVs = Integer.parseInt(defEVs_t.getText());
+            int atqEspecialEVs = Integer.parseInt(atqEspecialEVs_t.getText());
+            int defEspecialEVs = Integer.parseInt(defEspecialEVs_t.getText());
+            int velocidadEVs = Integer.parseInt(velocidadEVs_t.getText());
+            float ps = 10 + (50.0f / 100 * (2 * psBase + psIVs + psEVs)) + 50;
+            int ataque = (5 + ( 50 / 100 * (ataqueBase * 2) + atqIVs + atqEVs));
+            int defensa = (5 + ( 50 / 100 * (defensaBase * 2) + defIVs + defEVs));
+            int atqespecial = (5 + ( 50 / 100 * (atqespecialBase * 2) + atqEspecialIVs+ atqEspecialEVs));
+            int defespecial = (5 + ( 50 / 100 * (defespecialBase* 2) + defEspecialIVs + defEspecialEVs));
+            int velocidad = (5 + ( 50 / 100 * (velocidadBase * 2) + velocidadIVs + velocidadEVs));
+            multiplicadorNaturaleza(ps,ataque,defensa,atqespecial,defespecial,velocidad);
+        }catch (NumberFormatException e) {
+            pstotal_t.setText("Error");
+            atqtotal_t.setText("Error");
+            deftotal_t.setText("Error");
+            atqEspecialtotal_t.setText("Error");
+            defEspecialtotal_t.setText("Error");
+            velocidadtotal_t.setText("Error");
+        }
+    }
+
+    public void multiplicadorNaturaleza(float ps, int ataque, int defensa, int atqespecial, int defespecial, int velocidad){
+        float Nataque;
+        float Ndefensa;
+        float Natqespecial;
+        float Ndefespecial;
+        float Nvelocidad;
+        /*
+
+
+        Serena
+
+            0.9 desfavorable 1 neutral 1.1 favorable
+                */
+        int filaSeleccionada = naturalezas_combo.getSelectedIndex();
+        String naturaleza = naturalezas_combo.getItemAt(filaSeleccionada);
+        switch (naturaleza) {
+            case "Activa":
+                Nvelocidad = (float) (velocidad * 1.1);
+                Ndefensa = (float) (defensa * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Float.toString(Ndefensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(Nvelocidad));
+                break;
+            case "Afable":
+                Natqespecial = (float) (atqespecial * 1.1);
+                Ndefensa = (float) (defensa * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Float.toString(Ndefensa));
+                atqEspecialtotal_t.setText(Float.toString(Natqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case"Agitada":
+                Ndefensa = (float) (defensa * 1.1);
+                Natqespecial = (float) (atqespecial * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Float.toString(Ndefensa));
+                atqEspecialtotal_t.setText(Float.toString(Natqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Alegre":
+                Nvelocidad = (float) (velocidad * 1.1);
+                Natqespecial = (float) (atqespecial * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(Natqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(Nvelocidad));
+                break;
+            case "Alocada":
+                Natqespecial = (float) (atqespecial * 1.1);
+                Ndefespecial = (float) (defespecial * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(Natqespecial));
+                defEspecialtotal_t.setText(Float.toString(Ndefespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Amable":
+                Ndefespecial = (float) (defespecial * 1.1);
+                Ndefensa = (float) (defensa * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Float.toString(Ndefensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(Ndefespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Audaz":
+                Nataque = (float) (ataque * 1.1);
+                Nvelocidad = (float) (velocidad * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Float.toString(Nataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(Nvelocidad));
+                break;
+            case "Cauta":
+                Ndefespecial = (float) (defespecial * 1.1);
+                Natqespecial = (float) (atqespecial * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(Natqespecial));
+                defEspecialtotal_t.setText(Float.toString(Ndefespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Fuerte", "Dócil", "Tímida", "Rara", "Seria":
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Firme":
+                Nataque = (float) (ataque * 1.1);
+                Natqespecial = (float) (atqespecial * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Float.toString(Nataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(Natqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Floja":
+                Ndefensa = (float) (defensa * 1.1);
+                Ndefespecial = (float) (defespecial * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Float.toString(Ndefensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(Ndefespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Grosera":
+                Ndefespecial = (float) (defespecial * 1.1);
+                Nvelocidad = (float) (velocidad * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(Ndefespecial));
+                velocidadtotal_t.setText(Float.toString(Nvelocidad));
+                break;
+            case "Huraña":
+                Nataque = (float) (ataque * 1.1);
+                Ndefensa = (float) (defensa * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Float.toString(Nataque));
+                deftotal_t.setText(Float.toString(Ndefensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Ingenua":
+                Nvelocidad = (float) (velocidad * 1.1);
+                Ndefespecial = (float) (defespecial * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(Ndefespecial));
+                velocidadtotal_t.setText(Float.toString(Nvelocidad));
+                break;
+            case "Mansa":
+                Natqespecial = (float) (atqespecial * 1.1);
+                Nvelocidad = (float) (velocidad * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(Natqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defensa));
+                velocidadtotal_t.setText(Float.toString(Nvelocidad));
+                break;
+            case "Miedosa":
+                Nvelocidad = (float) (velocidad * 1.1);
+                Nataque = (float) (ataque * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Float.toString(Nataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(Nvelocidad));
+                break;
+            case "Modesta":
+                Natqespecial = (float) (atqespecial * 1.1);
+                Nataque = (float) (ataque * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Float.toString(Nataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(Natqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Osada":
+                Ndefensa = (float) (defensa * 1.1);
+                Nataque = (float) (ataque * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Float.toString(Nataque));
+                deftotal_t.setText(Float.toString(Ndefensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Pícara":
+                Nataque = (float) (ataque * 1.1);
+                Ndefespecial = (float) (defespecial * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Float.toString(Nataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(Ndefespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+            case "Plácida":
+                Ndefensa = (float) (defensa * 1.1);
+                Nvelocidad = (float) (velocidad * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Integer.toString(ataque));
+                deftotal_t.setText(Float.toString(Ndefensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(Nvelocidad));
+                break;
+            case "Serena":
+                Ndefespecial = (float) (defespecial * 1.1);
+                Nataque = (float) (ataque * 0.9);
+                pstotal_t.setText(Float.toString(ps));
+                atqtotal_t.setText(Float.toString(Nataque));
+                deftotal_t.setText(Integer.toString(defensa));
+                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(Ndefespecial));
+                velocidadtotal_t.setText(Integer.toString(velocidad));
+                break;
+        }
     }
 }
