@@ -143,9 +143,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
                 contenido.repaint();
                 estado = true;
             }
-        } if(evt.getSource() == Salir){
-            this.dispose();
-        }
+        } 
 
     }
 
