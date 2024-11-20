@@ -39,7 +39,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         llenarDatosEspecie();
         dtm = (DefaultTableModel) tabla.getModel();
         tabla.setModel(dtm);
-        movimientos.remove(eliminarMov);
         llenarMovimientos();
         agregarListenerSeleccionMovimientos();
         pp_text.setText(mBD.obtenerPP(movimientos_combo.getItemAt(0)));
@@ -599,17 +598,13 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         movimientos_combo.setBackground(new java.awt.Color(13, 17, 23));
         movimientos_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         movimientos_combo.setForeground(new java.awt.Color(255, 255, 255));
-        movimientos_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movimientos_comboActionPerformed(evt);
-            }
-        });
+
 
         añadirMov.setBackground(new java.awt.Color(30, 112, 235));
         añadirMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         añadirMov.setForeground(new java.awt.Color(255, 255, 255));
         añadirMov.setText("Agregar movimiento");
-        agregarPK.addActionListener(this);
+        añadirMov.addActionListener(this);
         añadirMov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 añadirMovActionPerformed(evt);
@@ -629,11 +624,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         pp_text.setBorder(null);
         pp_text.setCaretColor(new java.awt.Color(255, 255, 255));
         pp_text.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        pp_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pp_textActionPerformed(evt);
-            }
-        });
+
 
         maspp_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         maspp_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -648,11 +639,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         maspp_text.setBorder(null);
         maspp_text.setCaretColor(new java.awt.Color(255, 255, 255));
         maspp_text.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        maspp_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                maspp_textActionPerformed(evt);
-            }
-        });
 
         maspp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maspp.png"))); // NOI18N
 
@@ -660,7 +646,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         eliminarMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         eliminarMov.setForeground(new java.awt.Color(255, 255, 255));
         eliminarMov.setText("Eliminar movimiento");
-        agregarPK.addActionListener(this);
+        eliminarMov.addActionListener(this);
         eliminarMov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarMovActionPerformed(evt);
@@ -928,13 +914,14 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent evt) {
-        if(evt.getSource() == añadirMov){
+        if (evt.getSource() == añadirMov) {
             String movimiento = movimientos_combo.getItemAt(movimientos_combo.getSelectedIndex());
-            System.out.println(movimiento);
-            for (int row = 0; row < 4; row++) {
-                if (dtm.getValueAt(row, 0) == null) {
-                    dtm.setValueAt(movimiento, row, 0);
-                    dtm.setValueAt("PP", row, 1);
+            String pp = pp_text.getText();
+            for (int i = 0; i < 4; i++) {
+                Object celda = dtm.getValueAt(i, 0);
+                if (celda == null || celda.toString().isEmpty()) {
+                    dtm.setValueAt(movimiento, i, 0);
+                    dtm.setValueAt(pp, i, 1);
                     System.out.println("Añadido");
                     break;
                 }
