@@ -119,6 +119,8 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         maspp_text = new javax.swing.JTextField();
         maspp = new javax.swing.JLabel();
         eliminarMov = new javax.swing.JButton();
+        subir = new javax.swing.JButton();
+        bajar = new javax.swing.JButton();
         id_label = new javax.swing.JLabel();
         idT = new javax.swing.JTextField();
         numPokedex_label = new javax.swing.JLabel();
@@ -588,6 +590,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         tabla.setRowHeight(60);
         tabla.setSelectionBackground(new java.awt.Color(13, 17, 23));
         tabla.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        tabla.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabla);
 
         movimientos_label.setBackground(new java.awt.Color(255, 255, 255));
@@ -599,17 +602,18 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         movimientos_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         movimientos_combo.setForeground(new java.awt.Color(255, 255, 255));
 
-
         añadirMov.setBackground(new java.awt.Color(30, 112, 235));
         añadirMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         añadirMov.setForeground(new java.awt.Color(255, 255, 255));
         añadirMov.setText("Agregar movimiento");
         añadirMov.addActionListener(this);
+        /*
         añadirMov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 añadirMovActionPerformed(evt);
             }
         });
+        */
 
         pp_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         pp_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -624,7 +628,8 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         pp_text.setBorder(null);
         pp_text.setCaretColor(new java.awt.Color(255, 255, 255));
         pp_text.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-
+        /*
+        */
 
         maspp_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         maspp_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -647,11 +652,25 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         eliminarMov.setForeground(new java.awt.Color(255, 255, 255));
         eliminarMov.setText("Eliminar movimiento");
         eliminarMov.addActionListener(this);
+        /*
         eliminarMov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarMovActionPerformed(evt);
             }
         });
+        */
+
+        subir.setBackground(new java.awt.Color(13, 17, 23));
+        subir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        subir.setForeground(new java.awt.Color(255, 255, 255));
+        subir.setText("↑");
+        subir.addActionListener(this);
+
+        bajar.setBackground(new java.awt.Color(13, 17, 23));
+        bajar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bajar.setForeground(new java.awt.Color(255, 255, 255));
+        bajar.setText("↓");
+        bajar.addActionListener(this);
 
         javax.swing.GroupLayout movimientosLayout = new javax.swing.GroupLayout(movimientos);
         movimientos.setLayout(movimientosLayout);
@@ -667,13 +686,19 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                             .addComponent(pp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(añadirMov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(eliminarMov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(movimientosLayout.createSequentialGroup()
-                                    .addComponent(maspp_label)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(maspp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(añadirMov, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                                .addComponent(maspp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(eliminarMov, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(maspp_label)
+                                        .addComponent(maspp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(maspp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(movimientosLayout.createSequentialGroup()
+                                            .addComponent(subir, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(bajar))))))
                         .addGroup(movimientosLayout.createSequentialGroup()
                             .addComponent(movimientos_label)
                             .addGap(160, 160, 160))
@@ -690,17 +715,24 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                     .addGroup(movimientosLayout.createSequentialGroup()
                         .addComponent(movimientos_label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(movimientos_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(pp_label)
-                                .addComponent(maspp_label))
-                            .addComponent(maspp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(pp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(maspp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(movimientosLayout.createSequentialGroup()
+                                .addComponent(movimientos_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(pp_label)
+                                        .addComponent(maspp_label))
+                                    .addComponent(maspp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(pp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(maspp_text, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(movimientosLayout.createSequentialGroup()
+                                .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(subir, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bajar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(3, 3, 3)))
                         .addGap(20, 20, 20)
                         .addComponent(añadirMov)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -844,6 +876,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JTextField atqespecialBase_t;
     private javax.swing.JTextField atqtotal_t;
     private javax.swing.JButton añadirMov;
+    private javax.swing.JButton bajar;
     private javax.swing.JLabel base_label;
     private javax.swing.JTextField defEVs_t;
     private javax.swing.JTextField defEspecialEVs_t;
@@ -888,6 +921,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JTextField psIVS_t;
     private javax.swing.JLabel ps_label;
     private javax.swing.JTextField pstotal_t;
+    private javax.swing.JButton subir;
     private javax.swing.JTable tabla;
     private javax.swing.JLabel titulo;
     private javax.swing.JTextField totalBase_t;
