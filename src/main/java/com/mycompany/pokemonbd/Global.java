@@ -374,10 +374,6 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         }
     }
 
-
-
-
-
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == regresar){

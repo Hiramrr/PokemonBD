@@ -20,7 +20,13 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     public String idEntrenador;
     BD mBD = new BD();
     ArrayList lista = mBD.obtenerEspecies();
-
+    String[] modelo = new String[]{"Nombre", "PP"};
+    DefaultTableModel dtm = new DefaultTableModel(modelo, 4) {
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    };
     /**
      * Creates new form AgregarPK
      */
@@ -31,6 +37,8 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         llenarEspecies();
         agregarListenerSeleccionEspecie();
         llenarDatosEspecie();
+        dtm = (DefaultTableModel) tabla.getModel();
+        tabla.setModel(dtm);
         movimientos.remove(eliminarMov);
         llenarMovimientos();
         agregarListenerSeleccionMovimientos();
@@ -591,17 +599,13 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         movimientos_combo.setBackground(new java.awt.Color(13, 17, 23));
         movimientos_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         movimientos_combo.setForeground(new java.awt.Color(255, 255, 255));
-        movimientos_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movimientos_comboActionPerformed(evt);
-            }
-        });
+
 
         añadirMov.setBackground(new java.awt.Color(30, 112, 235));
         añadirMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         añadirMov.setForeground(new java.awt.Color(255, 255, 255));
         añadirMov.setText("Agregar movimiento");
-        agregarPK.addActionListener(this);
+        añadirMov.addActionListener(this);
         añadirMov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 añadirMovActionPerformed(evt);
@@ -621,11 +625,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         pp_text.setBorder(null);
         pp_text.setCaretColor(new java.awt.Color(255, 255, 255));
         pp_text.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        pp_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pp_textActionPerformed(evt);
-            }
-        });
+
 
         maspp_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         maspp_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -640,11 +640,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         maspp_text.setBorder(null);
         maspp_text.setCaretColor(new java.awt.Color(255, 255, 255));
         maspp_text.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        maspp_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                maspp_textActionPerformed(evt);
-            }
-        });
+
 
         maspp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maspp.png"))); // NOI18N
 
@@ -652,12 +648,8 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         eliminarMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         eliminarMov.setForeground(new java.awt.Color(255, 255, 255));
         eliminarMov.setText("Eliminar movimiento");
-        agregarPK.addActionListener(this);
-        eliminarMov.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarMovActionPerformed(evt);
-            }
-        });
+        eliminarMov.addActionListener(this);
+
 
         javax.swing.GroupLayout movimientosLayout = new javax.swing.GroupLayout(movimientos);
         movimientos.setLayout(movimientosLayout);
@@ -920,25 +912,22 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent evt) {
-        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
         if(evt.getSource() == añadirMov){
-            if(tabla.getRowCount() == 4){
-                if(tabla.getRowCount() < 4){
-                    String movimiento = movimientos_combo.getItemAt(movimientos_combo.getSelectedIndex());
-                    int row = tabla.getRowCount();
-                    modelo.setValueAt(movimiento, row, 0);
-                    modelo.setValueAt("PP", row, 1);
+            String movimiento = movimientos_combo.getItemAt(movimientos_combo.getSelectedIndex());
+            System.out.println(movimiento);
+            for (int row = 0; row < 4; row++) {
+                if (dtm.getValueAt(row, 0) == null) {
+                    dtm.setValueAt(movimiento, row, 0);
+                    dtm.setValueAt("PP", row, 1);
+                    System.out.println("Añadido");
+                    break;
                 }
-                botonEliminar();
             }
+            botonEliminar();
         }if(evt.getSource() == eliminarMov){
-            if(tabla.getRowCount() > 0){
-                modelo.removeRow(tabla.getSelectedRow());
-                tabla.setModel(modelo);
-                if(tabla.getRowCount() == 0){
-                    movimientos.remove(eliminarMov);
-                }
-            }
+            int fila = tabla.getSelectedRow();
+            dtm.removeRow(fila);
+            dtm.addRow(new Object[]{null, null});
         }
     }
 
