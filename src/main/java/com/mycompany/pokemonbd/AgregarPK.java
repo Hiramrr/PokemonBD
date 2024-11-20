@@ -402,10 +402,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         estadisticasLayout.setHorizontalGroup(
             estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(estadisticasLayout.createSequentialGroup()
-                .addGap(108, 108, 108)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addGap(110, 110, 110)
+                        .addGap(218, 218, 218)
                         .addComponent(base_label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
                         .addComponent(IV_label, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -414,73 +413,76 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addGap(50, 50, 50)
                         .addComponent(Estadistica_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(ps_label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addComponent(psBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(psIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(psEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(pstotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(atq_label, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addComponent(ataqueBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(atqIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(atqEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(atqtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(defensa_label, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addComponent(defensaBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(defIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(defEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(deftotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(atqEspecial_label, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(atqespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(atqEspecialIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(atqEspecialEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(atqEspecialtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(defEspecial_label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(defespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(defEspecialIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(defEspecialEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(defEspecialtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(velocidad_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(velocidadIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(velocidadEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(velocidadtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(estadisticasLayout.createSequentialGroup()
-                        .addComponent(total_label)
-                        .addGap(80, 80, 80)
-                        .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(totalIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(totalEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(106, 106, 106)
+                        .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(estadisticasLayout.createSequentialGroup()
+                                .addComponent(ps_label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(90, 90, 90)
+                                .addComponent(psBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(psIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(psEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(pstotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(estadisticasLayout.createSequentialGroup()
+                                .addComponent(atq_label, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(60, 60, 60)
+                                .addComponent(ataqueBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(atqIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(atqEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(atqtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(estadisticasLayout.createSequentialGroup()
+                                .addComponent(defensa_label, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(60, 60, 60)
+                                .addComponent(defensaBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(defIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(defEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(deftotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(estadisticasLayout.createSequentialGroup()
+                                .addComponent(atqEspecial_label, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(atqespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(atqEspecialIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(atqEspecialEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(atqEspecialtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(estadisticasLayout.createSequentialGroup()
+                                .addComponent(defEspecial_label, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(defespecialBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(defEspecialIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(defEspecialEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(defEspecialtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(estadisticasLayout.createSequentialGroup()
+                                .addComponent(velocidad_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(velocidadIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(velocidadEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(velocidadtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(estadisticasLayout.createSequentialGroup()
+                                .addComponent(total_label)
+                                .addGap(80, 80, 80)
+                                .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(totalIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(totalEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
         estadisticasLayout.setVerticalGroup(
@@ -491,7 +493,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                     .addComponent(IV_label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EVs_label)
                     .addComponent(Estadistica_label))
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ps_label)
                     .addComponent(psBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -539,7 +541,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                     .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(totalIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(totalEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Estadisticas", estadisticas);
@@ -579,7 +581,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         jLabel12.setText("Movimientos");
 
         especies_combo1.setForeground(new java.awt.Color(255, 255, 255));
-        especies_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Burbuja", "Cascada", "Hidrobomba", "Martillazo", "Pistola agua", "Rayo burbuja", "Refugio", "Surf", "Tenaza", "Chupavidas", "Disparo demora", "Doble ataque", "Pin misil", "Furia dragón", "Impactrueno", "Onda trueno", "Puño trueno", "Rayo", "Trueno", "Lengüetazo", "Rayo confuso", "Tinieblas", "Ascuas", "Giro fuego", "Lanzallamas", "Llamarada", "Puño fuego", "Neblina", "Niebla", "Puño hielo", "Rayo aurora", "Rayo hielo", "Ventisca", "Contraataque", "Doble patada", "Movimiento sísmico", "Patada baja", "Patada giro", "Patada salto", "Patada salto alta", "Sumisión", "Afilar", "Agarre", "Ovocuración", "Anulación", "Arañazo", "Atadura", "Ataque arena (1ª gen.)", "Ataque furia", "Ataque rápido", "Autodestrucción", "Beso amoroso", "Bomba huevo", "Bomba sónica", "Cabezazo", "Canto", "Chirrido", "Clavo cañón", "Conversión", "Cornada", "Corte", "Cuchillada", "Danza espada", "Derribo", "Desarrollo", "Deslumbrar", "Destello", "Destructor", "Día de pago", "Doble equipo", "Doble filo", "Doblebofetón", "Explosión", "Foco energía", "Fortaleza", "Fuerza", "Furia", "Golpe", "Golpe cabeza", "Golpe cuerpo", "Golpe kárate (1ª gen.)", "Golpes furia", "Gruñido", "Guillotina", "Hiper colmillo", "Hiperrayo", "Látigo", "Malicioso", "Megapatada", "Megapuño", "Metrónomo", "Mimético", "Mordisco (1ª gen.)", "Pantalla de humo", "Perforador", "Pisotón", "Placaje", "Atizar", "Presa", "Puño cometa", "Puño mareo", "Rapidez", "Recuperación", "Reducción", "Remolino", "Constricción", "Restricción", "Rizo defensa", "Rugido", "Salpicadura", "Superdiente", "Supersónico", "Sustituto", "Tornado (1ª gen.)", "Transformación", "Triataque", "Venganza", "Viento cortante", "Absorber", "Danza pétalo", "Drenadoras", "Espora", "Hoja afilada", "Látigo cepa", "Megaagotar", "Paralizador", "Rayo solar", "Somnífero", "Agilidad", "Amnesia", "Barrera", "Come sueños", "Confusión", "Descanso", "Hipnosis", "Kinético", "Meditación", "Pantalla de luz", "Psicoonda", "Psicorrayo", "Psíquico", "Reflejo", "Teletransporte", "Avalancha", "Lanzarrocas", "Excavar", "Fisura", "Hueso palo", "Huesomerang", "Terremoto", "Ácido", "Armadura ácida", "Gas venenoso", "Picotazo venenoso", "Polución", "Polvo veneno", "Residuos", "Tóxico", "Ataque aéreo", "Ataque ala", "Movimiento espejo", "Pico taladro", "Picotazo", "Vuelo" }));
         especies_combo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 especies_combo1ActionPerformed(evt);
@@ -690,12 +691,14 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         jTabbedPane1.addTab("Movimientos", movimientos);
 
         Agregar.add(jTabbedPane1);
-        jTabbedPane1.setBounds(40, 390, 650, 270);
+        jTabbedPane1.setBounds(40, 390, 650, 280);
 
         id_label.setBackground(new java.awt.Color(255, 255, 255));
         id_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         id_label.setForeground(new java.awt.Color(255, 255, 255));
+        id_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         id_label.setText("ID generada: ");
+        id_label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Agregar.add(id_label);
         id_label.setBounds(0, 680, 120, 20);
 
@@ -743,7 +746,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         agregarPK.setText("Agregar");
         agregarPK.addActionListener(this);
         Agregar.add(agregarPK);
-        agregarPK.setBounds(520, 660, 170, 30);
+        agregarPK.setBounds(540, 670, 170, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

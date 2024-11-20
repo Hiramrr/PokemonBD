@@ -76,11 +76,11 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
         panel_tablaLayout.setVerticalGroup(
             panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_tablaLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(cambiar)
+                .addContainerGap()
+                .addComponent(cambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
