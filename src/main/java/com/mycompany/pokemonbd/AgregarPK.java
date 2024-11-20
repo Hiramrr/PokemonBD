@@ -5,6 +5,7 @@
 package com.mycompany.pokemonbd;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,6 +20,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     public String idEntrenador;
     BD mBD = new BD();
     ArrayList lista = mBD.obtenerEspecies();
+
     /**
      * Creates new form AgregarPK
      */
@@ -30,6 +32,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         agregarListenerSeleccionEspecie();
         llenarDatosEspecie();
         movimientos.remove(eliminarMov);
+        llenarMovimientos();
+        agregarListenerSeleccionMovimientos();
+        movimientosT1.setText(mBD.obtenerPP(movimientos_combo.getItemAt(0)));
     }
 
     /**
@@ -586,11 +591,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         movimientos_combo.setBackground(new java.awt.Color(13, 17, 23));
         movimientos_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         movimientos_combo.setForeground(new java.awt.Color(255, 255, 255));
-        movimientos_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movimientos_comboActionPerformed(evt);
-            }
-        });
+
 
         añadirMov.setBackground(new java.awt.Color(30, 112, 235));
         añadirMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -915,7 +916,35 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent evt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        if(evt.getSource() == añadirMov){
+            if(tabla.getRowCount() == 4){
+                if(tabla.getRowCount() < 4){
+                    String movimiento = movimientos_combo.getItemAt(movimientos_combo.getSelectedIndex());
+                    int row = tabla.getRowCount();
+                    modelo.setValueAt(movimiento, row, 0);
+                    modelo.setValueAt("PP", row, 1);
+                }
+                botonEliminar();
+            }
+        }if(evt.getSource() == eliminarMov){
+            if(tabla.getRowCount() > 0){
+                modelo.removeRow(tabla.getSelectedRow());
+                tabla.setModel(modelo);
+                if(tabla.getRowCount() == 0){
+                    movimientos.remove(eliminarMov);
+                }
+            }
+        }
+    }
+
+    public void botonEliminar(){
+        eliminarMov.setBackground(new java.awt.Color(184, 44, 0));
+        eliminarMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        eliminarMov.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarMov.setText("Eliminar movimiento");
+        agregarPK.addActionListener(this);
+        movimientos.add(eliminarMov);
     }
 
     public void llenarEspecies(){
@@ -982,5 +1011,18 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         }
         movimientos_combo.removeAllItems();
         movimientos_combo.setModel(new javax.swing.DefaultComboBoxModel<>(movimientos));
+    }
+
+    public void agregarListenerSeleccionMovimientos(){
+        movimientos_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                int filaSeleccionada = movimientos_combo.getSelectedIndex();
+
+                if (filaSeleccionada != -1) {
+                    movimientosT1.setText(mBD.obtenerPP(movimientos_combo.getItemAt(filaSeleccionada)));
+                }
+            }
+        });
     }
 }

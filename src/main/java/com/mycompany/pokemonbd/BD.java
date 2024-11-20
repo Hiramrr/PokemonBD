@@ -456,4 +456,17 @@ public class BD {
         }
         return null;
     }
+
+    public String obtenerPP(String movimiento){
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL obtenerPP('" + movimiento + "')");
+            while(resultado.next()){
+                return resultado.getString("PP");
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
 }
