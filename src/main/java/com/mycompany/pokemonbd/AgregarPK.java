@@ -565,7 +565,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         movimientos.setBackground(new java.awt.Color(22, 26, 33));
 
         tabla.setBackground(new java.awt.Color(13, 17, 23));
-        tabla.setForeground(new java.awt.Color(13, 17, 23));
+        tabla.setForeground(new java.awt.Color(255, 255, 255));
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -588,7 +588,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         tabla.setGridColor(new java.awt.Color(22, 26, 33));
         tabla.setRowHeight(60);
         tabla.setSelectionBackground(new java.awt.Color(13, 17, 23));
-        tabla.setSelectionForeground(new java.awt.Color(13, 17, 23));
+        tabla.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tabla);
 
         movimientos_label.setBackground(new java.awt.Color(255, 255, 255));
@@ -599,13 +599,17 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         movimientos_combo.setBackground(new java.awt.Color(13, 17, 23));
         movimientos_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         movimientos_combo.setForeground(new java.awt.Color(255, 255, 255));
-
+        movimientos_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                movimientos_comboActionPerformed(evt);
+            }
+        });
 
         añadirMov.setBackground(new java.awt.Color(30, 112, 235));
         añadirMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         añadirMov.setForeground(new java.awt.Color(255, 255, 255));
         añadirMov.setText("Agregar movimiento");
-        añadirMov.addActionListener(this);
+        agregarPK.addActionListener(this);
         añadirMov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 añadirMovActionPerformed(evt);
@@ -625,7 +629,11 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         pp_text.setBorder(null);
         pp_text.setCaretColor(new java.awt.Color(255, 255, 255));
         pp_text.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-
+        pp_text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pp_textActionPerformed(evt);
+            }
+        });
 
         maspp_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         maspp_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -640,7 +648,11 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         maspp_text.setBorder(null);
         maspp_text.setCaretColor(new java.awt.Color(255, 255, 255));
         maspp_text.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-
+        maspp_text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maspp_textActionPerformed(evt);
+            }
+        });
 
         maspp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maspp.png"))); // NOI18N
 
@@ -648,8 +660,12 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         eliminarMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         eliminarMov.setForeground(new java.awt.Color(255, 255, 255));
         eliminarMov.setText("Eliminar movimiento");
-        eliminarMov.addActionListener(this);
-
+        agregarPK.addActionListener(this);
+        eliminarMov.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarMovActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout movimientosLayout = new javax.swing.GroupLayout(movimientos);
         movimientos.setLayout(movimientosLayout);
