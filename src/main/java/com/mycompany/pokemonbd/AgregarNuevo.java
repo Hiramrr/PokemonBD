@@ -20,7 +20,6 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
      */
     public AgregarNuevo(java.awt.Frame parent, boolean modal,String idEntrenador) {
         super(parent, modal);
-        this.setUndecorated(true);
         initComponents();
         AgregarPK agregar = new AgregarPK(idEntrenador);
         agregar.setLocation(0,0);
@@ -45,7 +44,6 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
         panel_tabla = new javax.swing.JPanel();
         contenido = new javax.swing.JPanel();
         cambiar = new javax.swing.JButton();
-        Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -64,11 +62,6 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
         cambiar.addActionListener(this);
         cambiar.setToolTipText("contenido una especie al sistema");
 
-        Salir.setBackground(new java.awt.Color(13, 17, 23));
-        Salir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Salir.setText("X");
-        Salir.addActionListener(this);
-
         javax.swing.GroupLayout panel_tablaLayout = new javax.swing.GroupLayout(panel_tabla);
         panel_tabla.setLayout(panel_tablaLayout);
         panel_tablaLayout.setHorizontalGroup(
@@ -76,24 +69,15 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
             .addGroup(panel_tablaLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addGroup(panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panel_tablaLayout.createSequentialGroup()
-                        .addGap(352, 352, 352)
-                        .addComponent(cambiar))
+                    .addComponent(cambiar)
                     .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         panel_tablaLayout.setVerticalGroup(
             panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_tablaLayout.createSequentialGroup()
-                .addGroup(panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_tablaLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(cambiar))
-                    .addGroup(panel_tablaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Salir)))
+                .addGap(11, 11, 11)
+                .addComponent(cambiar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(44, Short.MAX_VALUE))
@@ -120,7 +104,6 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Salir;
     private javax.swing.JButton cambiar;
     private javax.swing.JPanel contenido;
     private javax.swing.JSeparator jSeparator1;
