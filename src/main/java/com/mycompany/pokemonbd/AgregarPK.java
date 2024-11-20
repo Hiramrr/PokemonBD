@@ -4,8 +4,11 @@
  */
 package com.mycompany.pokemonbd;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -14,6 +17,8 @@ import java.util.Random;
  */
 public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     public String idEntrenador;
+    BD mBD = new BD();
+    ArrayList lista = mBD.obtenerEspecies();
     /**
      * Creates new form AgregarPK
      */
@@ -21,6 +26,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         initComponents();
         idT.setText(generarID());
         this.idEntrenador = idEntrenador;
+        llenarEspecies();
+        agregarListenerSeleccionEspecie();
+        llenarDatosEspecie();
     }
 
     /**
@@ -650,6 +658,8 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         });
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maspp.png"))); // NOI18N
+        jLabel13.setToolTipText("El más PP (Aumento de puntos) es" +
+                " \n un objeto introducido en la primera generación. Se trata de una de las vitaminas");
 
         javax.swing.GroupLayout movimientosLayout = new javax.swing.GroupLayout(movimientos);
         movimientos.setLayout(movimientosLayout);
@@ -903,5 +913,61 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent evt) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void llenarEspecies(){
+        String especies[] = new String [lista.size()];
+        for(int i = 0; i < lista.size(); i ++){
+            especies[i] = lista.get(i).toString();
+        }
+        especies_combo.removeAllItems();
+        especies_combo.setModel(new javax.swing.DefaultComboBoxModel<>(especies));
+    }
+
+    public void sumar() {
+        int psBase = Integer.parseInt(psBase_t.getText());
+        int ataqueBase = Integer.parseInt(ataqueBase_t.getText());
+        int defensaBase = Integer.parseInt(defensaBase_t.getText());
+        int atqespecialBase = Integer.parseInt(atqespecialBase_t.getText());
+        int defespecialBase = Integer.parseInt(defespecialBase_t.getText());
+        int velocidadBase = Integer.parseInt(velocidadBase_t.getText());
+        int sumatoria = psBase + ataqueBase + defensaBase + atqespecialBase + defespecialBase + velocidadBase;
+        totalBase_t.setText(Integer.toString(sumatoria));
+    }
+
+    public void llenarDatosEspecie(){
+        int filaSeleccionada = especies_combo.getSelectedIndex();
+
+        ArrayList datos = mBD.obtenerDatosEspecie(especies_combo.getItemAt(filaSeleccionada));
+        numPokedex.setText(datos.get(0).toString());
+        psBase_t.setText(datos.get(1).toString());
+        ataqueBase_t.setText(datos.get(2).toString());
+        defensaBase_t.setText(datos.get(3).toString());
+        atqespecialBase_t.setText(datos.get(4).toString());
+        defespecialBase_t.setText(datos.get(5).toString());
+        velocidadBase_t.setText(datos.get(6).toString());
+        sumar();
+        cargarImagen(datos);
+    }
+
+    public void cargarImagen(ArrayList dato ){
+        byte[] datos = (byte[]) dato.get(7);
+        Image foto = new ImageIcon(datos).getImage();
+        ImageIcon icono = new ImageIcon(foto.getScaledInstance(265,265,Image.SCALE_SMOOTH));
+        perfil.setIcon(icono);
+    }
+
+    public void agregarListenerSeleccionEspecie(){
+        especies_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                int filaSeleccionada = especies_combo.getSelectedIndex();
+
+                if (filaSeleccionada != -1) {
+                    llenarDatosEspecie();
+                    sumar();
+                }
+            }
+        });
     }
 }

@@ -404,4 +404,41 @@ public class BD {
         }
         return null;
     }
+
+    public ArrayList obtenerEspecies(){
+        ArrayList especies = new ArrayList<>();
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL obtenerEspecies()");
+            while (resultado.next()) {
+                especies.add(resultado.getString("Nombre"));
+            }
+            return especies;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
+
+    public ArrayList obtenerDatosEspecie(String nombre){
+        ArrayList datos = new ArrayList<>();
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL obtenerDatosEspecie('" + nombre + "')");
+            while(resultado.next()){
+                datos.add(resultado.getInt("numPokedex"));
+                datos.add(resultado.getString("PSBase"));
+                datos.add(resultado.getInt("ATKBase"));
+                datos.add(resultado.getInt("DEFBase"));
+                datos.add(resultado.getInt("VELBase"));
+                datos.add(resultado.getInt("SDEFBase"));
+                datos.add(resultado.getInt("SATKBase"));
+                datos.add(resultado.getBytes("Imagen"));
+            }
+            return datos;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
 }
