@@ -642,13 +642,13 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
                 especie.setImagen(getImagen("src/main/resources/images/MissingNO.png"));
             }
             if (mBD.agregarEspecie(especie)) {
-                ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).EspecieCreadaExito();
+                ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Exito();
                 vaciarTexto();
             } else {
-                ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).EspecieCreadaError("El numero de pokedex es invalido!");
+                ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Error("El numero de pokedex es invalido!");
             }
         } catch (NumberFormatException e) {
-            ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).EspecieCreadaError("¡Las estadisticas y numero de pokedex deben ser numeros!");
+            ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Error("¡Las estadisticas y numero de pokedex deben ser numeros!");
         }
     }
 

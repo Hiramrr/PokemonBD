@@ -951,20 +951,37 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         if (evt.getSource() == añadirMov) {
             String movimiento = movimientos_combo.getItemAt(movimientos_combo.getSelectedIndex());
             String pp = pp_text.getText();
+            String masPP = maspp_text.getText();
+            int ppfinal = Integer.parseInt(pp) + Integer.parseInt(masPP);
             for (int i = 0; i < 4; i++) {
                 Object celda = dtm.getValueAt(i, 0);
                 if (celda == null || celda.toString().isEmpty()) {
                     dtm.setValueAt(movimiento, i, 0);
-                    dtm.setValueAt(pp, i, 1);
+                    dtm.setValueAt(ppfinal, i, 1);
                     System.out.println("Añadido");
                     break;
                 }
             }
             botonEliminar();
-        }if(evt.getSource() == eliminarMov){
+        }
+        if(evt.getSource() == eliminarMov){
             int fila = tabla.getSelectedRow();
             dtm.removeRow(fila);
             dtm.addRow(new Object[]{null, null});
+        }
+        if(evt.getSource() == subir){
+            if(Integer.parseInt(maspp_text.getText()) >= 0 && Integer.parseInt(maspp_text.getText()) < 3 ){
+                maspp_text.setText(Integer.toString(Integer.parseInt(maspp_text.getText()) + 1));
+                return;
+            }
+            ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Error("No puedes subir el PP a más de 3");
+        }
+        if (evt.getSource() == bajar){
+            if(Integer.parseInt(maspp_text.getText()) != 0 && Integer.parseInt(maspp_text.getText()) <= 3 ){
+                maspp_text.setText(Integer.toString(Integer.parseInt(maspp_text.getText()) - 1));
+                return;
+            }
+            ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Error("No puedes subir el PP a menos de 0");
         }
     }
 

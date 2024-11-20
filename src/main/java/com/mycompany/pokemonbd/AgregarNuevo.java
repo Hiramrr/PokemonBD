@@ -147,7 +147,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
 
     }
 
-    public void EspecieCreadaExito(){
+    public void Exito(){
         Dialogo dialogo = new Dialogo((java.awt.Frame) this.getParent(),true);
         dialogo.setMensaje("Especie creada con éxito");
         dialogo.setLocation(450, 261);
@@ -155,11 +155,12 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
         dialogo.setVisible(true);
     }
 
-    public void EspecieCreadaError(String mensaje){
+    public void Error(String mensaje){
         Dialogo dialogo = new Dialogo((java.awt.Frame) this.getParent(),true);
         dialogo.setMensaje(mensaje);
         dialogo.setLocation(450, 261);
         dialogo.setTitle("Error");
         dialogo.setVisible(true);
     }
+
 }
