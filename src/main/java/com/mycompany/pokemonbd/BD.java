@@ -441,4 +441,19 @@ public class BD {
         }
         return null;
     }
+
+    public ArrayList obtenerMovimientos(){
+        ArrayList movimientos = new ArrayList<>();
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL obtenerMovimientos()");
+            while (resultado.next()) {
+                movimientos.add(resultado.getString("Nombre"));
+            }
+            return movimientos;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
 }

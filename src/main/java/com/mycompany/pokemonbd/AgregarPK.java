@@ -780,55 +780,53 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void naturalezas_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naturalezas_comboActionPerformed
+    private void naturalezas_comboActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_naturalezas_comboActionPerformed
+    }
 
-    private void moteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moteActionPerformed
+    private void moteActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_moteActionPerformed
+    }
 
-    private void especies_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especies_comboActionPerformed
+    private void especies_comboActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_especies_comboActionPerformed
+    }
 
-    private void objeto_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_objeto_comboActionPerformed
+    private void objeto_comboActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_objeto_comboActionPerformed
+    }
 
-    private void genero_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genero_comboActionPerformed
+    private void genero_comboActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_genero_comboActionPerformed
+    }
 
-    private void especies_combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especies_combo1ActionPerformed
+    private void especies_combo1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_especies_combo1ActionPerformed
+    }
 
-    private void idTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTActionPerformed
+    private void idTActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_idTActionPerformed
+    }
 
-    private void numPokedexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numPokedexActionPerformed
+    private void numPokedexActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_numPokedexActionPerformed
+    }
 
-    private void movimientosT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movimientosT1ActionPerformed
+    private void movimientosT1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_movimientosT1ActionPerformed
+    }
 
-    private void añadirMovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirMovActionPerformed
+    private void añadirMovActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_añadirMovActionPerformed
+    }
 
-    private void movimientosT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movimientosT2ActionPerformed
+    private void movimientosT2ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_movimientosT2ActionPerformed
+    }
 
-    private void eliminarMovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMovActionPerformed
+    private void eliminarMovActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarMovActionPerformed
-
-
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
     private javax.swing.JLabel EVs_label;
@@ -973,5 +971,15 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 }
             }
         });
+    }
+
+    public void llenarMovimientos(){
+        ArrayList movimientosLista = mBD.obtenerMovimientos();
+        String movimientos[] = new String [movimientosLista.size()];
+        for(int i = 0; i < movimientosLista.size(); i ++){
+            movimientos[i] = movimientosLista.get(i).toString();
+        }
+        especies_combo1.removeAllItems();
+        especies_combo1.setModel(new javax.swing.DefaultComboBoxModel<>(movimientos));
     }
 }
