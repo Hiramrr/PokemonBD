@@ -19,7 +19,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
- * @author sasuk
+ * @author hiram
  */
 public class AgregarEspecie extends javax.swing.JPanel implements ActionListener {
     public String idEntrenador;
