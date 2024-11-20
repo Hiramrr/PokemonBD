@@ -1103,14 +1103,12 @@
                           <Component id="jScrollPane1" min="-2" pref="309" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="pp_text" min="-2" pref="84" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="añadirMov" pref="158" max="32767" attributes="0"/>
-                                          <Component id="eliminarMov" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="pp_text" min="-2" pref="84" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="maspp_label" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="maspp_text" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
@@ -1118,22 +1116,31 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="maspp" max="32767" attributes="0"/>
-                                                  <Component id="subir" max="32767" attributes="0"/>
+                                                  <Component id="subir" min="-2" pref="30" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="bajar" min="-2" pref="30" max="-2" attributes="0"/>
                                           </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="movimientos_label" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="movimientos_combo" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="pp_label" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="movimientos_label" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="movimientos_combo" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="pp_label" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="añadirMov" min="-2" pref="158" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="eliminarMov" min="-2" pref="158" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="21" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
