@@ -657,13 +657,13 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         */
 
         subir.setBackground(new java.awt.Color(13, 17, 23));
-        subir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        subir.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         subir.setForeground(new java.awt.Color(255, 255, 255));
         subir.setText("↑");
         subir.addActionListener(this);
 
         bajar.setBackground(new java.awt.Color(13, 17, 23));
-        bajar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bajar.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         bajar.setForeground(new java.awt.Color(255, 255, 255));
         bajar.setText("↓");
         bajar.addActionListener(this);
