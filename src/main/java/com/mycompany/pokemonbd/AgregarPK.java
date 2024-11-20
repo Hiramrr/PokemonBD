@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.mycompany.pokemonbd;
 
 import javax.swing.*;
@@ -160,11 +156,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         naturalezas_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         naturalezas_combo.setForeground(new java.awt.Color(255, 255, 255));
         naturalezas_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activa", "Afable", "Agitada", "Alegre", "Alocada", "Amable", "Audaz", "Cauta", "Dócil", "Firme", "Floja", "Fuerte", "Grosera", "Huraña", "Ingenua", "Mansa", "Miedosa", "Modesta", "Osada", "Pícara", "Plácida", "Rara", "Serena", "Seria", "Tímida" }));
-        naturalezas_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                naturalezas_comboActionPerformed(evt);
-            }
-        });
         Agregar.add(naturalezas_combo);
         naturalezas_combo.setBounds(270, 260, 400, 30);
 
@@ -181,11 +172,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         mote.setBorder(null);
         mote.setCaretColor(new java.awt.Color(255, 255, 255));
         mote.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        mote.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moteActionPerformed(evt);
-            }
-        });
         Agregar.add(mote);
         mote.setBounds(270, 190, 400, 30);
 
@@ -211,11 +197,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         objeto_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         objeto_combo.setForeground(new java.awt.Color(255, 255, 255));
         objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Agua fresca", "Agua fresca", "Antihielo", "Antiparalizador", "Antiquemar", "Antídoto", "Ataque X", "Bicicleta", "Bicicleta", "Bono bici", "Calcio", "Calcio", "Caramelo raro", "Caramelo raro", "Carburante", "Carburante", "Caña buena", "Caña vieja", "Correo Oak", "Correo Oak", "Cuerda huida", "Cura total", "Defensa especial X", "Defensa X", "Despertar", "Dientes oro", "Directo", "Elixir", "Especial X", "Fósil domo", "Fósil domo", "Fósil hélix", "Hierro", "Hierro", "Hiperpoción", "Limonada", "Limonada", "Llave ascensor", "Llave magnética", "Llave secreta", "Mapa", "Mapa", "Monedero", "Monedero", "Más PP", "Más PS", "Más PS", "Máximo elixir", "Pepita", "Piedra agua", "Piedra agua", "Piedra fuego", "Piedra fuego", "Piedra hoja", "Piedra hoja", "Piedra lunar", "Piedra lunar", "Piedra trueno", "Piedra trueno", "Poción", "Poción", "Poción máxima", "Poción máxima", "Poké flauta", "Poké flauta", "Poké muñeco", "Poké muñeco", "Precisión X", "Protección especial", "Proteína", "Proteína", "Refresco", "Refresco", "Repartir experiencia", "Repelente", "Repelente máximo", "Repelente máximo", "Restaurar todo", "Revivir", "Revivir máximo", "Revivir máximo", " ", "S", "Scope Silph", "Scope Silph", "Supercaña", "Supercaña", "Superpoción", "Superpoción", "Superrepelente", "Ticket barco", "Velocidad X", "Zahorí", "Zahorí", "Ámbar viejo", "Ámbar viejo", "Éter", "Éter máximo" }));
-        objeto_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                objeto_comboActionPerformed(evt);
-            }
-        });
         Agregar.add(objeto_combo);
         objeto_combo.setBounds(40, 350, 160, 30);
 
@@ -229,11 +210,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         genero_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         genero_combo.setForeground(new java.awt.Color(255, 255, 255));
         genero_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
-        genero_combo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genero_comboActionPerformed(evt);
-            }
-        });
         Agregar.add(genero_combo);
         genero_combo.setBounds(220, 350, 120, 30);
 
@@ -773,11 +749,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         numPokedex.setBorder(null);
         numPokedex.setCaretColor(new java.awt.Color(255, 255, 255));
         numPokedex.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        numPokedex.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numPokedexActionPerformed(evt);
-            }
-        });
         Agregar.add(numPokedex);
         numPokedex.setBounds(360, 350, 220, 30);
 
@@ -1021,7 +992,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     public void cargarImagen(ArrayList dato ){
         byte[] datos = (byte[]) dato.get(7);
         Image foto = new ImageIcon(datos).getImage();
-        ImageIcon icono = new ImageIcon(foto.getScaledInstance(265,265,Image.SCALE_SMOOTH));
+        ImageIcon icono = new ImageIcon(foto.getScaledInstance(210,210,Image.SCALE_SMOOTH));
         perfil.setIcon(icono);
     }
 
