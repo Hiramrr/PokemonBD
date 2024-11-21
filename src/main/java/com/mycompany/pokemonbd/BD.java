@@ -481,13 +481,13 @@ public class BD {
             ps.setString(3, (String) datos.get(2)); //Mote
             ps.setString(4, (String) datos.get(3)); //genero
             ps.setString(5, (String) datos.get(4)); //habEspecial
-            ps.setInt(6, (int) datos.get(5)); //numPokedex
-            ps.setInt(7, (int) datos.get(6)); //ps
-            ps.setInt(8, (int) datos.get(7)); //atk
-            ps.setInt(9, (int) datos.get(8));  //def
-            ps.setInt(10, (int) datos.get(9)); //vel
-            ps.setInt(11, (int) datos.get(10)); //sdef
-            ps.setInt(12, (int) datos.get(11)); //satk
+            ps.setFloat(6, (Float) datos.get(5)); //numPokedex
+            ps.setFloat(7, (Float) datos.get(6)); //ps
+            ps.setFloat(8, (Float) datos.get(7)); //atk
+            ps.setFloat(9, (Float) datos.get(8));  //def
+            ps.setFloat(10, (Float) datos.get(9)); //vel
+            ps.setFloat(11, (Float) datos.get(10)); //sdef
+            ps.setFloat(12, (Float) datos.get(11)); //satk
             ps.setString(13, (String) datos.get(12)); //objeto
             ps.setString(14, (String) datos.get(13)); //naturaleza
             ps.setInt(15, (int) datos.get(14)); //ivps

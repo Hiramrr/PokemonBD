@@ -978,7 +978,45 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
 
 
     public void guardarPokemon(){
-
+        ArrayList datos = new ArrayList();
+        int idPokemon = Integer.parseInt(idT.getText());
+        String mote_t = mote.getText();
+        String genero = (String) genero_combo.getSelectedItem();
+        String HabEspecial = (String) habilidad_combo.getSelectedItem();
+        int numPokedex_t = Integer.parseInt(numPokedex.getText());
+        float ps = Float.parseFloat(pstotal_t.getText());
+        float atk = Float.parseFloat(atqtotal_t.getText());
+        float def = Float.parseFloat(deftotal_t.getText());
+        float vel = Float.parseFloat(velocidadtotal_t.getText());
+        float sdef = Float.parseFloat(defEspecialtotal_t.getText());
+        float satk = Float.parseFloat(atqEspecialtotal_t.getText());
+        String objeto = (String) objeto_combo.getSelectedItem();
+        String naturaleza = (String) naturalezas_combo.getSelectedItem();
+        int ivps = Integer.parseInt(psIVS_t.getText());
+        int ivatk = Integer.parseInt(atqIVs_t.getText());
+        int ivdef = Integer.parseInt(defIVs_t.getText());
+        int ivvel = Integer.parseInt(velocidadIVs_t.getText());
+        int ivsatk = Integer.parseInt(atqEspecialIVs_t.getText());
+        int ivsdef = Integer.parseInt(defEspecialIVs_t.getText());
+        datos.add(idPokemon);
+        datos.add(idEntrenador);
+        datos.add(mote_t);
+        datos.add(genero);
+        datos.add(HabEspecial);
+        datos.add(numPokedex_t);
+        datos.add(ps);
+        datos.add(atk);
+        datos.add(def);
+        datos.add(vel);
+        datos.add(sdef);
+        datos.add(satk);
+        datos.add(objeto);
+        datos.add(naturaleza);
+        datos.add(ivps);
+        datos.add(ivatk);
+        datos.add(ivdef);
+        datos.add(ivvel);
+        datos.add(ivsatk);
     }
 
     public void botonEliminar(){
