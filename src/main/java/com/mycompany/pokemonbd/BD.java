@@ -12,6 +12,7 @@ public class BD {
     private static Statement consulta;
     private static ResultSet resultado;
 
+    private final String SQL_AGREGAR_POKEMON = "INSERT INTO Pokemon(ID, IDEntrenador, Mote, Genero, )";
     private final String SQL_AGREGAR_ESPECIE = "INSERT INTO Especie (NumPokedex, Nombre, PSBase, ATKBase, DEFBase, VELBase, SDEFBase, SATKBase, Tipo1, Tipo2, NomRegion, Imagen) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
     private final String SQL_AGREGAR_ENTRENADOR = "INSERT INTO Entrenador (ID, Nombre, Contraseña, Imagen) VALUES (?, ?, ?, ?)";
     private final String SQL_CONSULTA = "SELECT * FROM Entrenador";
