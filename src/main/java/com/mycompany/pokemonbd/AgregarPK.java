@@ -127,6 +127,8 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         numPokedex_label = new javax.swing.JLabel();
         numPokedex = new javax.swing.JTextField();
         agregarPK = new javax.swing.JButton();
+        hab_especial_label = new javax.swing.JLabel();
+        habilidad_combo = new javax.swing.JComboBox<>();
 
         setMinimumSize(new java.awt.Dimension(713, 703));
         setPreferredSize(new java.awt.Dimension(713, 703));
@@ -203,20 +205,20 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         objeto_combo.setForeground(new java.awt.Color(255, 255, 255));
         objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Agua fresca", "Agua fresca", "Antihielo", "Antiparalizador", "Antiquemar", "Antídoto", "Ataque X", "Bicicleta", "Bicicleta", "Bono bici", "Calcio", "Calcio", "Caramelo raro", "Caramelo raro", "Carburante", "Carburante", "Caña buena", "Caña vieja", "Correo Oak", "Correo Oak", "Cuerda huida", "Cura total", "Defensa especial X", "Defensa X", "Despertar", "Dientes oro", "Directo", "Elixir", "Especial X", "Fósil domo", "Fósil domo", "Fósil hélix", "Hierro", "Hierro", "Hiperpoción", "Limonada", "Limonada", "Llave ascensor", "Llave magnética", "Llave secreta", "Mapa", "Mapa", "Monedero", "Monedero", "Más PP", "Más PS", "Más PS", "Máximo elixir", "Pepita", "Piedra agua", "Piedra agua", "Piedra fuego", "Piedra fuego", "Piedra hoja", "Piedra hoja", "Piedra lunar", "Piedra lunar", "Piedra trueno", "Piedra trueno", "Poción", "Poción", "Poción máxima", "Poción máxima", "Poké flauta", "Poké flauta", "Poké muñeco", "Poké muñeco", "Precisión X", "Protección especial", "Proteína", "Proteína", "Refresco", "Refresco", "Repartir experiencia", "Repelente", "Repelente máximo", "Repelente máximo", "Restaurar todo", "Revivir", "Revivir máximo", "Revivir máximo", " ", "S", "Scope Silph", "Scope Silph", "Supercaña", "Supercaña", "Superpoción", "Superpoción", "Superrepelente", "Ticket barco", "Velocidad X", "Zahorí", "Zahorí", "Ámbar viejo", "Ámbar viejo", "Éter", "Éter máximo" }));
         Agregar.add(objeto_combo);
-        objeto_combo.setBounds(40, 350, 160, 30);
+        objeto_combo.setBounds(30, 350, 140, 30);
 
         genero_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         genero_label.setForeground(new java.awt.Color(255, 255, 255));
         genero_label.setText("Género");
         Agregar.add(genero_label);
-        genero_label.setBounds(230, 310, 120, 29);
+        genero_label.setBounds(190, 310, 120, 29);
 
         genero_combo.setBackground(new java.awt.Color(13, 17, 23));
         genero_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         genero_combo.setForeground(new java.awt.Color(255, 255, 255));
         genero_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
         Agregar.add(genero_combo);
-        genero_combo.setBounds(220, 350, 120, 30);
+        genero_combo.setBounds(190, 350, 120, 30);
 
         jTabbedPane1.setBackground(new java.awt.Color(22, 26, 33));
         jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
@@ -633,15 +635,21 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         */
 
         subir.setBackground(new java.awt.Color(13, 17, 23));
-        subir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        subir.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         subir.setForeground(new java.awt.Color(255, 255, 255));
         subir.setText("↑");
+        subir.setMaximumSize(new java.awt.Dimension(30, 27));
+        subir.setMinimumSize(new java.awt.Dimension(30, 27));
+        subir.setPreferredSize(new java.awt.Dimension(30, 27));
         subir.addActionListener(this);
 
         bajar.setBackground(new java.awt.Color(13, 17, 23));
-        bajar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bajar.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         bajar.setForeground(new java.awt.Color(255, 255, 255));
         bajar.setText("↓");
+        bajar.setMaximumSize(new java.awt.Dimension(30, 27));
+        bajar.setMinimumSize(new java.awt.Dimension(30, 27));
+        bajar.setPreferredSize(new java.awt.Dimension(30, 27));
         bajar.addActionListener(this);
 
         javax.swing.GroupLayout movimientosLayout = new javax.swing.GroupLayout(movimientos);
@@ -742,9 +750,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
 
         numPokedex_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         numPokedex_label.setForeground(new java.awt.Color(255, 255, 255));
-        numPokedex_label.setText("Numero de pokedex");
+        numPokedex_label.setText("Num Pokedex");
         Agregar.add(numPokedex_label);
-        numPokedex_label.setBounds(360, 310, 230, 29);
+        numPokedex_label.setBounds(330, 310, 140, 29);
 
         numPokedex.setEditable(false);
         numPokedex.setBackground(new java.awt.Color(13, 17, 23));
@@ -755,7 +763,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         numPokedex.setCaretColor(new java.awt.Color(255, 255, 255));
         numPokedex.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         Agregar.add(numPokedex);
-        numPokedex.setBounds(360, 350, 220, 30);
+        numPokedex.setBounds(330, 350, 140, 30);
 
         agregarPK.setBackground(new java.awt.Color(35, 135, 55));
         agregarPK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -764,6 +772,19 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         agregarPK.addActionListener(this);
         Agregar.add(agregarPK);
         agregarPK.setBounds(540, 670, 170, 30);
+
+        hab_especial_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
+        hab_especial_label.setForeground(new java.awt.Color(255, 255, 255));
+        hab_especial_label.setText("Hab. Especial");
+        Agregar.add(hab_especial_label);
+        hab_especial_label.setBounds(510, 310, 130, 29);
+
+        habilidad_combo.setBackground(new java.awt.Color(13, 17, 23));
+        habilidad_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        habilidad_combo.setForeground(new java.awt.Color(255, 255, 255));
+        habilidad_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Absorbe agua", "Absorbe electricidad", "Absorbe fuego", "Aclimatación", "Agallas", "Armadura batalla", "Cabeza roca", "Cacofonía", "Calco", "Cambio color", "Caparazón", "Chorro arena", "Clorofila", "Corte fuerte", "Cuerpo llama", "Cuerpo puro", "Cura lluvia", "Cura natural", "Despiste", "Dicha", "Efecto espora", "Electricidad estática", "Energía pura", "Enjambre", "Entusiasmo", "Escama especial", "Esclusa de aire", "Escudo magma", "Espesura", "Espíritu vital", "Flexibilidad", "Fuerza mental", "Fuga", "Gran encanto", "Hedor", "Humedad", "Humo blanco", "Iluminación", "Imán", "Impulso", "Inmunidad", "Insomnio", "Insonorizar", "Intimidación", "Levitación", "Llovizna", "Madrugar", "Mar llamas", "Más", "Menos", "Mudar", "Nado rápido", "Ojo compuesto", "Pararrayos", "Pereza", "Piel tosca", "Polvo escudo", "Potencia", "Predicción", "Presión", "Punto tóxico", "Recogida", "Ritmo propio", "Robustez", "Sebo", "Sequía", "Sincronía", "Sombra trampa", "Superguarda", "Torrente", "Trampa arena", "Velo agua", "Velo arena", "Ventosas", "Viscosecreción", "Viscosidad", "Vista lince" }));
+        Agregar.add(habilidad_combo);
+        habilidad_combo.setBounds(510, 350, 140, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -859,6 +880,8 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JPanel estadisticas;
     private javax.swing.JComboBox<String> genero_combo;
     private javax.swing.JLabel genero_label;
+    private javax.swing.JLabel hab_especial_label;
+    private javax.swing.JComboBox<String> habilidad_combo;
     private javax.swing.JTextField idT;
     private javax.swing.JLabel id_label;
     private javax.swing.JPanel imagen;
