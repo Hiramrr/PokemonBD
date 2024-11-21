@@ -1288,27 +1288,27 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 return;
             }
             int atqEVs = Integer.parseInt(atqEVs_t.getText());
-            if(atqEVs < 0 || atqEVs > 31){
+            if(atqEVs < 0 || atqEVs > 255){
                 totalEVs_t.setText("Error");
                 return;
             }
             int defEVs = Integer.parseInt(defEVs_t.getText());
-            if(defEVs < 0 || defEVs > 31){
+            if(defEVs < 0 || defEVs > 255){
                 totalEVs_t.setText("Error");
                 return;
             }
             int atqEspecialEVs = Integer.parseInt(atqEspecialEVs_t.getText());
-            if(atqEspecialEVs < 0 || atqEspecialEVs > 31){
+            if(atqEspecialEVs < 0 || atqEspecialEVs > 255){
                 totalEVs_t.setText("Error");
                 return;
             }
             int defEspecialEVs = Integer.parseInt(defEspecialEVs_t.getText());
-            if(defEspecialEVs < 0 || defEspecialEVs > 31){
+            if(defEspecialEVs < 0 || defEspecialEVs > 255){
                 totalEVs_t.setText("Error");
                 return;
             }
             int velocidadEVs = Integer.parseInt(velocidadEVs_t.getText());
-            if(velocidadEVs < 0 || velocidadEVs > 31){
+            if(velocidadEVs < 0 || velocidadEVs > 255){
                 totalEVs_t.setText("Error");
                 return;
             }
