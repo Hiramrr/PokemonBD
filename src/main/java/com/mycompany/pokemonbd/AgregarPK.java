@@ -976,6 +976,11 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         }
     }
 
+
+    public void guardarPokemon(){
+
+    }
+
     public void botonEliminar(){
         eliminarMov.setBackground(new java.awt.Color(184, 44, 0));
         eliminarMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N

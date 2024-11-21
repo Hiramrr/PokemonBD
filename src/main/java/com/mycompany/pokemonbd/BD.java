@@ -12,7 +12,8 @@ public class BD {
     private static Statement consulta;
     private static ResultSet resultado;
 
-    private final String SQL_AGREGAR_POKEMON = "INSERT INTO Pokemon(ID, IDEntrenador, Mote, Genero, )";
+    private final String SQL_AGREGAR_POKEMON = "INSERT INTO Pokemon(ID, IDEntrenador, Mote, Genero, HabEspecial, NumPokedex, PS, ATK, DEF, VEL, SDEF, SATK, Objeto, " +
+            "Naturaleza, IVPS, IVATK, IVDEF, IVVEL, IVSDEF, IVSATK, EVPS, EVATK, EVDEF, EVVEL, EVSDEF, EVSATK ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private final String SQL_AGREGAR_ESPECIE = "INSERT INTO Especie (NumPokedex, Nombre, PSBase, ATKBase, DEFBase, VELBase, SDEFBase, SATKBase, Tipo1, Tipo2, NomRegion, Imagen) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
     private final String SQL_AGREGAR_ENTRENADOR = "INSERT INTO Entrenador (ID, Nombre, Contraseña, Imagen) VALUES (?, ?, ?, ?)";
     private final String SQL_CONSULTA = "SELECT * FROM Entrenador";
@@ -469,5 +470,49 @@ public class BD {
             System.out.println(e);
         }
         return null;
+    }
+
+    public boolean agregarPokemon(ArrayList datos) {
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(SQL_AGREGAR_POKEMON);
+            ps.setInt(1, (int) datos.get(0)); //id
+            ps.setInt(2, (int) datos.get(1)); //identrenador
+            ps.setString(3, (String) datos.get(2)); //Mote
+            ps.setString(4, (String) datos.get(3)); //genero
+            ps.setString(5, (String) datos.get(4)); //habEspecial
+            ps.setInt(6, (int) datos.get(5)); //numPokedex
+            ps.setInt(7, (int) datos.get(6)); //ps
+            ps.setInt(8, (int) datos.get(7)); //atk
+            ps.setInt(9, (int) datos.get(8));  //def
+            ps.setInt(10, (int) datos.get(9)); //vel
+            ps.setInt(11, (int) datos.get(10)); //sdef
+            ps.setInt(12, (int) datos.get(11)); //satk
+            ps.setString(13, (String) datos.get(12)); //objeto
+            ps.setString(14, (String) datos.get(13)); //naturaleza
+            ps.setInt(15, (int) datos.get(14)); //ivps
+            ps.setInt(16, (int) datos.get(15)); //ivatk
+            ps.setInt(17, (int) datos.get(16)); //ivdef
+            ps.setInt(18, (int) datos.get(17)); //ivvel
+            ps.setInt(19, (int) datos.get(18)); //ivsdef
+            ps.setInt(20, (int) datos.get(19)); //ivsatk
+            ps.setInt(21, (int) datos.get(20)); //evps
+            ps.setInt(22, (int) datos.get(21)); //evatk
+            ps.setInt(23, (int) datos.get(22)); //evdef
+            ps.setInt(24, (int) datos.get(23)); //evvel
+            ps.setInt(25, (int) datos.get(24)); //evsdef
+            ps.setInt(26, (int) datos.get(25)); //evsatk
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        } finally {
+            try {
+                ps.close();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
     }
 }
