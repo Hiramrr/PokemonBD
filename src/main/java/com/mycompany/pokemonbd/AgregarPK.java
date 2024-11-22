@@ -973,6 +973,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         }
         if(evt.getSource() == agregarPK){
             ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Error("Aun no se puede guardar xd");
+            guardarPokemon();
         }
     }
 
@@ -998,6 +999,12 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         int ivvel = Integer.parseInt(velocidadIVs_t.getText());
         int ivsatk = Integer.parseInt(atqEspecialIVs_t.getText());
         int ivsdef = Integer.parseInt(defEspecialIVs_t.getText());
+        int evps = Integer.parseInt(psEVs_t.getText());
+        int evatk = Integer.parseInt(atqEVs_t.getText());
+        int evdef = Integer.parseInt(defEVs_t.getText());
+        int evvel = Integer.parseInt(velocidadEVs_t.getText());
+        int evsatk = Integer.parseInt(atqEspecialEVs_t.getText());
+        int evsdef = Integer.parseInt(defEspecialEVs_t.getText());
         datos.add(idPokemon);
         datos.add(idEntrenador);
         datos.add(mote_t);
@@ -1016,7 +1023,18 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         datos.add(ivatk);
         datos.add(ivdef);
         datos.add(ivvel);
+        datos.add(ivsdef);
         datos.add(ivsatk);
+        datos.add(evps);
+        datos.add(evatk);
+        datos.add(evdef);
+        datos.add(evvel);
+        datos.add(evsdef);
+        datos.add(evsatk);
+    }
+
+    public void guardarMovimientos(){
+
     }
 
     public void botonEliminar(){
