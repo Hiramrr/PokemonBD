@@ -12,6 +12,8 @@ public class BD {
     private static Statement consulta;
     private static ResultSet resultado;
 
+
+    private final String SQL_AGREGAR_MOVMIENTOS = "INSERT INTO Posee (NomMovimiento, IDPokemon, masPP) VALUES (?, ?, ?)";
     private final String SQL_AGREGAR_POKEMON = "INSERT INTO Pokemon(ID, IDEntrenador, Mote, Genero, HabEspecial, NumPokedex, PS, ATK, DEF, VEL, SDEF, SATK, Objeto, " +
             "Naturaleza, IVPS, IVATK, IVDEF, IVVEL, IVSDEF, IVSATK, EVPS, EVATK, EVDEF, EVVEL, EVSDEF, EVSATK ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private final String SQL_AGREGAR_ESPECIE = "INSERT INTO Especie (NumPokedex, Nombre, PSBase, ATKBase, DEFBase, VELBase, SDEFBase, SATKBase, Tipo1, Tipo2, NomRegion, Imagen) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -513,6 +515,15 @@ public class BD {
             } catch (Exception e) {
                 System.out.println(e);
             }
+        }
+    }
+
+    public void agregarMovimientos(ArrayList informacion){
+        try{
+            consulta = con.createStatement();
+            consulta.executeUpdate("CALL agregarMovimientos(" + informacion.get(0) + ", '" + informacion.get(1) + "')");
+        } catch (Exception e){
+            System.out.println(e);
         }
     }
 }
