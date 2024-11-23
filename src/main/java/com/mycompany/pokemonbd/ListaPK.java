@@ -7,8 +7,13 @@ package com.mycompany.pokemonbd;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,6 +21,7 @@ import javax.swing.plaf.ColorUIResource;
  */
 public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private static String idEntrenador;
+    BD mBD = new BD();
     /**
      * Creates new form ListaPK
      */
@@ -30,6 +36,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         initComponents();
         setIconImage(new ImageIcon("Icono.png").getImage());
         this.setTitle("Lista de Pokemones");
+        llenarTabla();
     }
 
     /**
@@ -951,7 +958,45 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JPanel ventana;
     // End of variables declaration//GEN-END:variables
 
+    public void llenarTabla(){
+        tabla.setDefaultRenderer(Object.class, new RenderImagen());
+        ArrayList<PokemonAlmacen> datos = mBD.obtenerPokemon(idEntrenador);
+        if(datos != null){
+            for (int i = 0; i < datos.size(); i++) {
+                String NombreF;
+                PokemonAlmacen pokemon = datos.get(i);
+                Object[] informacion = new Object[4];
 
+                try {
+                    byte[] perfilFoto = pokemon.getImagen();
+                    BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(perfilFoto));
+                    ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(120, 120, bufferedImage.SCALE_SMOOTH));
+                    informacion[0] = new JLabel(mFoto); // Foto del pokemon
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+
+                informacion[3] = pokemon.getIDPokemon(); // ID del pokemon
+
+                if(pokemon.getMote().equals("")) {
+                    NombreF = pokemon.getNombre();
+                }
+                else {
+                    NombreF = pokemon.getMote();
+                }
+                if (i < tabla.getRowCount()) {
+                    // Coloca la información en la fila existente
+                    tabla.setValueAt(informacion[0], i, 0); // Foto de perfil
+                    tabla.setValueAt(NombreF, i, 1);
+                    tabla.setValueAt(informacion[3], i, 2); // ID del pokemon
+                } else {
+                    // Añade una nueva fila
+                    ((DefaultTableModel) tabla.getModel()).addRow(informacion);
+                }
+            }
+        }
+
+    }
 
     @Override
     public void actionPerformed(ActionEvent evt) {
