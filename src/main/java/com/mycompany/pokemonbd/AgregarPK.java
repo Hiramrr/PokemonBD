@@ -32,6 +32,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         initComponents();
         idT.setText(generarID());
         this.idEntrenador = idEntrenador;
+        System.out.println(idEntrenador + "En agregarPK");
         llenarEspecies();
         agregarListenerSeleccionEspecie();
         llenarDatosEspecie();
@@ -1014,6 +1015,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         int evsdef = Integer.parseInt(defEspecialEVs_t.getText());
         System.out.println("No fue ninguna estadistica");
         datos.add(idPokemon);
+        System.out.println(idEntrenador);
         datos.add(Integer.parseInt(idEntrenador));
         datos.add(mote_t);
         datos.add(genero);

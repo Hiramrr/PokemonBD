@@ -7,6 +7,7 @@ package com.mycompany.pokemonbd;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLOutput;
 
 /**
  *
@@ -21,6 +22,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
     public AgregarNuevo(java.awt.Frame parent, boolean modal,String idEntrenador) {
         super(parent, modal);
         initComponents();
+        this.idEntrenador = idEntrenador;
         AgregarPK agregar = new AgregarPK(idEntrenador);
         agregar.setLocation(0,0);
         agregar.setSize(716, 703);
@@ -119,7 +121,8 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
         if(evt.getSource() == cambiar) {
             if (estado) {
                 cambiar.setText("Agregar Pokemon");
-                AgregarEspecie especie = new AgregarEspecie(idEntrenador);
+                AgregarEspecie especie = new AgregarEspecie(this.idEntrenador);
+                System.out.println("Intento en AgregarNuevo" + idEntrenador);
                 especie.setLocation(0, 0);
                 especie.setSize(716, 703);
 
@@ -132,7 +135,8 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
             
             } else {
                 cambiar.setText("Agregar Especie");
-                AgregarPK agregar = new AgregarPK(idEntrenador);
+                AgregarPK agregar = new AgregarPK(this.idEntrenador);
+                System.out.println("Intento en AgregarNuevo" + idEntrenador);
                 agregar.setLocation(0, 0);
                 agregar.setSize(716, 703);
 
