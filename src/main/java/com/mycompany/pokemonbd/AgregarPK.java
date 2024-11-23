@@ -1150,6 +1150,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         });
     }
 
+
     private void agregarListenerEstadisticas() {
         psIVS_t.getDocument().addDocumentListener(new DocumentListener() {
             public void changedUpdate(DocumentEvent e) {
