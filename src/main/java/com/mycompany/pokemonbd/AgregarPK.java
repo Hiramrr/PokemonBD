@@ -950,7 +950,6 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                     break;
                 }
             }
-            botonEliminar();
         }
         if(evt.getSource() == eliminarMov){
             int fila = tabla.getSelectedRow();
@@ -971,14 +970,21 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             }
             ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Error("No puedes subir el PP a menos de 0");
         }
-        if(evt.getSource() == agregarPK){
-            ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).Error("Aun no se puede guardar xd");
-            guardarPokemon();
+        if(evt.getSource() == agregarPK) {
+            if (guardarPokemon()) {
+                ((AgregarNuevo) javax.swing.SwingUtilities.getWindowAncestor(this)).Error("Se ha agregado el pokemon correctamente");
+                guardarMovimientos();
+            } else {
+                ((AgregarNuevo) javax.swing.SwingUtilities.getWindowAncestor(this)).Error("No se ha podido agregar el pokemon");
+            }
         }
     }
 
 
-    public void guardarPokemon(){
+    public boolean guardarPokemon(){
+        if(tabla.getValueAt(0, 0) == null){
+            return false;
+        }
         ArrayList datos = new ArrayList();
         int idPokemon = Integer.parseInt(idT.getText());
         String mote_t = mote.getText();
@@ -993,6 +999,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         float satk = Float.parseFloat(atqEspecialtotal_t.getText());
         String objeto = (String) objeto_combo.getSelectedItem();
         String naturaleza = (String) naturalezas_combo.getSelectedItem();
+        System.out.println("Nof fue ningun objeto ni naturaleza");
         int ivps = Integer.parseInt(psIVS_t.getText());
         int ivatk = Integer.parseInt(atqIVs_t.getText());
         int ivdef = Integer.parseInt(defIVs_t.getText());
@@ -1005,8 +1012,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         int evvel = Integer.parseInt(velocidadEVs_t.getText());
         int evsatk = Integer.parseInt(atqEspecialEVs_t.getText());
         int evsdef = Integer.parseInt(defEspecialEVs_t.getText());
+        System.out.println("No fue ninguna estadistica");
         datos.add(idPokemon);
-        datos.add(idEntrenador);
+        datos.add(Integer.parseInt(idEntrenador));
         datos.add(mote_t);
         datos.add(genero);
         datos.add(HabEspecial);
@@ -1031,19 +1039,20 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         datos.add(evvel);
         datos.add(evsdef);
         datos.add(evsatk);
+        mBD.agregarPokemon(datos);
+        return true;
     }
 
     public void guardarMovimientos(){
-
-    }
-
-    public void botonEliminar(){
-        eliminarMov.setBackground(new java.awt.Color(184, 44, 0));
-        eliminarMov.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        eliminarMov.setForeground(new java.awt.Color(255, 255, 255));
-        eliminarMov.setText("Eliminar movimiento");
-        agregarPK.addActionListener(this);
-        movimientos.add(eliminarMov);
+        for(int i = 0; i < 4; i++){
+            if(tabla.getValueAt(i, 0) != null){
+                ArrayList informacion = new ArrayList();
+                informacion.add(tabla.getValueAt(i, 0)); //nombre del movimiento la llave foranea
+                informacion.add(Integer.parseInt(idT.getText()));     //id del pokemon
+                informacion.add(Integer.parseInt(maspp_text.getText()));  //el pp agregado?
+                mBD.agregarMovimientos(informacion);
+            }
+        }
     }
 
     public void llenarEspecies(){
@@ -1464,105 +1473,105 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 Nvelocidad = (float) (velocidad * 1.1);
                 Ndefensa = (float) (defensa * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
+                atqtotal_t.setText(Float.toString(ataque));
                 deftotal_t.setText(Float.toString(Ndefensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
                 velocidadtotal_t.setText(Float.toString(Nvelocidad));
                 break;
             case "Afable":
                 Natqespecial = (float) (atqespecial * 1.1);
                 Ndefensa = (float) (defensa * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
+                atqtotal_t.setText(Float.toString(ataque));
                 deftotal_t.setText(Float.toString(Ndefensa));
                 atqEspecialtotal_t.setText(Float.toString(Natqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case"Agitada":
                 Ndefensa = (float) (defensa * 1.1);
                 Natqespecial = (float) (atqespecial * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
+                atqtotal_t.setText(Float.toString(ataque));
                 deftotal_t.setText(Float.toString(Ndefensa));
                 atqEspecialtotal_t.setText(Float.toString(Natqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Alegre":
                 Nvelocidad = (float) (velocidad * 1.1);
                 Natqespecial = (float) (atqespecial * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
-                deftotal_t.setText(Integer.toString(defensa));
+                atqtotal_t.setText(Float.toString(ataque));
+                deftotal_t.setText(Float.toString(defensa));
                 atqEspecialtotal_t.setText(Float.toString(Natqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
                 velocidadtotal_t.setText(Float.toString(Nvelocidad));
                 break;
             case "Alocada":
                 Natqespecial = (float) (atqespecial * 1.1);
                 Ndefespecial = (float) (defespecial * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
-                deftotal_t.setText(Integer.toString(defensa));
+                atqtotal_t.setText(Float.toString(ataque));
+                deftotal_t.setText(Float.toString(defensa));
                 atqEspecialtotal_t.setText(Float.toString(Natqespecial));
                 defEspecialtotal_t.setText(Float.toString(Ndefespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Amable":
                 Ndefespecial = (float) (defespecial * 1.1);
                 Ndefensa = (float) (defensa * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
+                atqtotal_t.setText(Float.toString(ataque));
                 deftotal_t.setText(Float.toString(Ndefensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
                 defEspecialtotal_t.setText(Float.toString(Ndefespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Audaz":
                 Nataque = (float) (ataque * 1.1);
                 Nvelocidad = (float) (velocidad * 0.9);
                 pstotal_t.setText(Float.toString(ps));
                 atqtotal_t.setText(Float.toString(Nataque));
-                deftotal_t.setText(Integer.toString(defensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                deftotal_t.setText(Float.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
                 velocidadtotal_t.setText(Float.toString(Nvelocidad));
                 break;
             case "Cauta":
                 Ndefespecial = (float) (defespecial * 1.1);
                 Natqespecial = (float) (atqespecial * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
-                deftotal_t.setText(Integer.toString(defensa));
+                atqtotal_t.setText(Float.toString(ataque));
+                deftotal_t.setText(Float.toString(defensa));
                 atqEspecialtotal_t.setText(Float.toString(Natqespecial));
                 defEspecialtotal_t.setText(Float.toString(Ndefespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Fuerte", "Dócil", "Tímida", "Rara", "Seria":
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
-                deftotal_t.setText(Integer.toString(defensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                atqtotal_t.setText(Float.toString(ataque));
+                deftotal_t.setText(Float.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Firme":
                 Nataque = (float) (ataque * 1.1);
                 Natqespecial = (float) (atqespecial * 0.9);
                 pstotal_t.setText(Float.toString(ps));
                 atqtotal_t.setText(Float.toString(Nataque));
-                deftotal_t.setText(Integer.toString(defensa));
+                deftotal_t.setText(Float.toString(defensa));
                 atqEspecialtotal_t.setText(Float.toString(Natqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Floja":
                 Ndefensa = (float) (defensa * 1.1);
                 Ndefespecial = (float) (defespecial * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
+                atqtotal_t.setText(Float.toString(ataque));
                 deftotal_t.setText(Float.toString(Ndefensa));
                 atqEspecialtotal_t.setText(Integer.toString(atqespecial));
                 defEspecialtotal_t.setText(Float.toString(Ndefespecial));
@@ -1572,9 +1581,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 Ndefespecial = (float) (defespecial * 1.1);
                 Nvelocidad = (float) (velocidad * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
-                deftotal_t.setText(Integer.toString(defensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                atqtotal_t.setText(Float.toString(ataque));
+                deftotal_t.setText(Float.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
                 defEspecialtotal_t.setText(Float.toString(Ndefespecial));
                 velocidadtotal_t.setText(Float.toString(Nvelocidad));
                 break;
@@ -1584,17 +1593,17 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 pstotal_t.setText(Float.toString(ps));
                 atqtotal_t.setText(Float.toString(Nataque));
                 deftotal_t.setText(Float.toString(Ndefensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Ingenua":
                 Nvelocidad = (float) (velocidad * 1.1);
                 Ndefespecial = (float) (defespecial * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
-                deftotal_t.setText(Integer.toString(defensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                atqtotal_t.setText(Float.toString(ataque));
+                deftotal_t.setText(Float.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
                 defEspecialtotal_t.setText(Float.toString(Ndefespecial));
                 velocidadtotal_t.setText(Float.toString(Nvelocidad));
                 break;
@@ -1602,10 +1611,10 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 Natqespecial = (float) (atqespecial * 1.1);
                 Nvelocidad = (float) (velocidad * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
-                deftotal_t.setText(Integer.toString(defensa));
+                atqtotal_t.setText(Float.toString(ataque));
+                deftotal_t.setText(Float.toString(defensa));
                 atqEspecialtotal_t.setText(Float.toString(Natqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defensa));
+                defEspecialtotal_t.setText(Float.toString(defensa));
                 velocidadtotal_t.setText(Float.toString(Nvelocidad));
                 break;
             case "Miedosa":
@@ -1613,9 +1622,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 Nataque = (float) (ataque * 0.9);
                 pstotal_t.setText(Float.toString(ps));
                 atqtotal_t.setText(Float.toString(Nataque));
-                deftotal_t.setText(Integer.toString(defensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                deftotal_t.setText(Float.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
                 velocidadtotal_t.setText(Float.toString(Nvelocidad));
                 break;
             case "Modesta":
@@ -1623,10 +1632,10 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 Nataque = (float) (ataque * 0.9);
                 pstotal_t.setText(Float.toString(ps));
                 atqtotal_t.setText(Float.toString(Nataque));
-                deftotal_t.setText(Integer.toString(defensa));
+                deftotal_t.setText(Float.toString(defensa));
                 atqEspecialtotal_t.setText(Float.toString(Natqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Osada":
                 Ndefensa = (float) (defensa * 1.1);
@@ -1634,28 +1643,28 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 pstotal_t.setText(Float.toString(ps));
                 atqtotal_t.setText(Float.toString(Nataque));
                 deftotal_t.setText(Float.toString(Ndefensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Pícara":
                 Nataque = (float) (ataque * 1.1);
                 Ndefespecial = (float) (defespecial * 0.9);
                 pstotal_t.setText(Float.toString(ps));
                 atqtotal_t.setText(Float.toString(Nataque));
-                deftotal_t.setText(Integer.toString(defensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                deftotal_t.setText(Float.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
                 defEspecialtotal_t.setText(Float.toString(Ndefespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
             case "Plácida":
                 Ndefensa = (float) (defensa * 1.1);
                 Nvelocidad = (float) (velocidad * 0.9);
                 pstotal_t.setText(Float.toString(ps));
-                atqtotal_t.setText(Integer.toString(ataque));
+                atqtotal_t.setText(Float.toString(ataque));
                 deftotal_t.setText(Float.toString(Ndefensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
-                defEspecialtotal_t.setText(Integer.toString(defespecial));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
+                defEspecialtotal_t.setText(Float.toString(defespecial));
                 velocidadtotal_t.setText(Float.toString(Nvelocidad));
                 break;
             case "Serena":
@@ -1663,10 +1672,10 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                 Nataque = (float) (ataque * 0.9);
                 pstotal_t.setText(Float.toString(ps));
                 atqtotal_t.setText(Float.toString(Nataque));
-                deftotal_t.setText(Integer.toString(defensa));
-                atqEspecialtotal_t.setText(Integer.toString(atqespecial));
+                deftotal_t.setText(Float.toString(defensa));
+                atqEspecialtotal_t.setText(Float.toString(atqespecial));
                 defEspecialtotal_t.setText(Float.toString(Ndefespecial));
-                velocidadtotal_t.setText(Integer.toString(velocidad));
+                velocidadtotal_t.setText(Float.toString(velocidad));
                 break;
         }
     }

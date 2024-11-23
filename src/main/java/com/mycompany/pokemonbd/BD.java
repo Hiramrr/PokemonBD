@@ -477,13 +477,20 @@ public class BD {
     public boolean agregarPokemon(ArrayList datos) {
         PreparedStatement ps = null;
         try {
+            System.out.println("Intento de agregar pokemon");
             ps = con.prepareStatement(SQL_AGREGAR_POKEMON);
             ps.setInt(1, (int) datos.get(0)); //id
+            System.out.println("ID no fue");
             ps.setInt(2, (int) datos.get(1)); //identrenador
+            System.out.println("IDEntrenador no fue");
             ps.setString(3, (String) datos.get(2)); //Mote
+            System.out.println("Mote no fue");
             ps.setString(4, (String) datos.get(3)); //genero
+            System.out.println("Genero no fue");
             ps.setString(5, (String) datos.get(4)); //habEspecial
-            ps.setFloat(6, (Float) datos.get(5)); //numPokedex
+            System.out.println("HabEspecial no fue");
+            ps.setFloat(6, (int) datos.get(5)); //numPokedex
+            System.out.println("NumPokedex no fue");
             ps.setFloat(7, (Float) datos.get(6)); //ps
             ps.setFloat(8, (Float) datos.get(7)); //atk
             ps.setFloat(9, (Float) datos.get(8));  //def
@@ -492,6 +499,7 @@ public class BD {
             ps.setFloat(12, (Float) datos.get(11)); //satk
             ps.setString(13, (String) datos.get(12)); //objeto
             ps.setString(14, (String) datos.get(13)); //naturaleza
+            System.out.println("Estadisticas no");
             ps.setInt(15, (int) datos.get(14)); //ivps
             ps.setInt(16, (int) datos.get(15)); //ivatk
             ps.setInt(17, (int) datos.get(16)); //ivdef
@@ -508,6 +516,7 @@ public class BD {
             return true;
         } catch (Exception e) {
             System.out.println(e);
+            System.out.println("Error al agregar pokemon");
             return false;
         } finally {
             try {
@@ -518,12 +527,29 @@ public class BD {
         }
     }
 
-    public void agregarMovimientos(ArrayList informacion){
-        try{
-            consulta = con.createStatement();
-            consulta.executeUpdate("CALL agregarMovimientos(" + informacion.get(0) + ", '" + informacion.get(1) + "')");
-        } catch (Exception e){
+    public boolean agregarMovimientos(ArrayList informacion) {
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(SQL_AGREGAR_MOVMIENTOS);
+            ps.setString(1, (String) informacion.get(0)); // Nombre del movimiento llave foranea
+            ps.setInt(2, (int) informacion.get(1)); // IDPokemon llave foranea
+            ps.setInt(3, (int) informacion.get(2)); // masPP
+            ps.executeUpdate();
+            return true;
+        } catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println("Foreign key constraint violation: " + e.getMessage());
+            return false;
+        } catch (Exception e) {
             System.out.println(e);
+            return false;
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 }
