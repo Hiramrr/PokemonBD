@@ -717,7 +717,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             }
         });
         tabla.setGridColor(new java.awt.Color(22, 26, 33));
-        tabla.setRowHeight(130);
+        tabla.setRowHeight(140);
         tabla.setSelectionBackground(new java.awt.Color(13, 17, 23));
         tabla.setSelectionForeground(new java.awt.Color(255, 255, 255));
         tabla.getTableHeader().setReorderingAllowed(false);
