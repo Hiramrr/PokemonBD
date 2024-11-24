@@ -115,10 +115,17 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         atq_especial_total_t = new javax.swing.JTextField();
         def_especial_total_t = new javax.swing.JTextField();
         vel_total_t = new javax.swing.JTextField();
+        mote_label1 = new javax.swing.JLabel();
+        idPokemon_label1 = new javax.swing.JLabel();
         movimientos = new javax.swing.JPanel();
         titutlo_mov = new javax.swing.JLabel();
         contenedor_movimientos = new javax.swing.JScrollPane();
         movimietos_tabla = new javax.swing.JTable();
+        imagen2 = new javax.swing.JPanel();
+        perfil2 = new javax.swing.JLabel();
+        idPokemon_label2 = new javax.swing.JLabel();
+        nombre_label2 = new javax.swing.JLabel();
+        mote_label2 = new javax.swing.JLabel();
         panel_tabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
@@ -509,6 +516,18 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         vel_total_t.setForeground(new java.awt.Color(255, 255, 255));
         vel_total_t.setText("0");
 
+        mote_label1.setBackground(new java.awt.Color(255, 255, 255));
+        mote_label1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mote_label1.setForeground(new java.awt.Color(255, 255, 255));
+        mote_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mote_label1.setText("Mote:");
+
+        idPokemon_label1.setBackground(new java.awt.Color(255, 255, 255));
+        idPokemon_label1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        idPokemon_label1.setForeground(new java.awt.Color(255, 255, 255));
+        idPokemon_label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        idPokemon_label1.setText("IDPokemon:");
+
         javax.swing.GroupLayout estadisticasLayout = new javax.swing.GroupLayout(estadisticas);
         estadisticas.setLayout(estadisticasLayout);
         estadisticasLayout.setHorizontalGroup(
@@ -522,7 +541,10 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                         .addGap(24, 24, 24)
                         .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nombre_label1)
-                            .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(estadisticasLayout.createSequentialGroup()
+                                .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idPokemon_label1))
                             .addGroup(estadisticasLayout.createSequentialGroup()
                                 .addGap(110, 110, 110)
                                 .addComponent(base_label, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -599,7 +621,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                                 .addGap(30, 30, 30)
                                 .addComponent(total_ivs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
-                                .addComponent(total_evs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(total_evs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mote_label1))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         estadisticasLayout.setVerticalGroup(
@@ -608,10 +631,14 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addGap(28, 28, 28)
                 .addComponent(tituloes)
                 .addGap(38, 38, 38)
-                .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idPokemon_label1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nombre_label1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(mote_label1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(base_label)
                     .addComponent(ivs_label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -706,17 +733,53 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         movimietos_tabla.getTableHeader().setReorderingAllowed(false);
         contenedor_movimientos.setViewportView(movimietos_tabla);
 
+        imagen2.setBackground(new java.awt.Color(13, 17, 23));
+        imagen2.setForeground(new java.awt.Color(13, 17, 23));
+        imagen2.setLayout(null);
+        imagen2.add(perfil2);
+        perfil2.setBounds(0, 0, 210, 210);
+
+        idPokemon_label2.setBackground(new java.awt.Color(255, 255, 255));
+        idPokemon_label2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        idPokemon_label2.setForeground(new java.awt.Color(255, 255, 255));
+        idPokemon_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        idPokemon_label2.setText("IDPokemon:");
+
+        nombre_label2.setBackground(new java.awt.Color(255, 255, 255));
+        nombre_label2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nombre_label2.setForeground(new java.awt.Color(255, 255, 255));
+        nombre_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nombre_label2.setText("Nombre:");
+
+        mote_label2.setBackground(new java.awt.Color(255, 255, 255));
+        mote_label2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mote_label2.setForeground(new java.awt.Color(255, 255, 255));
+        mote_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mote_label2.setText("Mote:");
+
         javax.swing.GroupLayout movimientosLayout = new javax.swing.GroupLayout(movimientos);
         movimientos.setLayout(movimientosLayout);
         movimientosLayout.setHorizontalGroup(
             movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(movimientosLayout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(titutlo_mov)
-                .addContainerGap(124, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimientosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(contenedor_movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(movimientosLayout.createSequentialGroup()
+                        .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(movimientosLayout.createSequentialGroup()
+                                .addGap(134, 134, 134)
+                                .addComponent(titutlo_mov))
+                            .addGroup(movimientosLayout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(imagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idPokemon_label2)
+                                    .addComponent(nombre_label2)
+                                    .addComponent(mote_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimientosLayout.createSequentialGroup()
+                        .addGap(0, 23, Short.MAX_VALUE)
+                        .addComponent(contenedor_movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         movimientosLayout.setVerticalGroup(
@@ -724,9 +787,18 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             .addGroup(movimientosLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(titutlo_mov)
-                .addGap(112, 112, 112)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimientosLayout.createSequentialGroup()
+                        .addComponent(idPokemon_label2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nombre_label2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mote_label2)))
+                .addGap(18, 18, 18)
                 .addComponent(contenedor_movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addGap(170, 170, 170))
         );
 
         opciones.addTab("Movimientos", movimientos);
@@ -970,24 +1042,31 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel genero_label;
     private javax.swing.JLabel habEspecial_label;
     private javax.swing.JLabel idPokemon_label;
+    private javax.swing.JLabel idPokemon_label1;
+    private javax.swing.JLabel idPokemon_label2;
     private javax.swing.JPanel imagen;
     private javax.swing.JPanel imagen1;
+    private javax.swing.JPanel imagen2;
     private javax.swing.JPanel informacion;
     private javax.swing.JLabel ivs_label;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel mote_label;
+    private javax.swing.JLabel mote_label1;
+    private javax.swing.JLabel mote_label2;
     private javax.swing.JPanel movimientos;
     private javax.swing.JTable movimietos_tabla;
     private javax.swing.JLabel naturaleza_label;
     private javax.swing.JLabel nombre_label;
     private javax.swing.JLabel nombre_label1;
+    private javax.swing.JLabel nombre_label2;
     private javax.swing.JLabel num_label;
     private javax.swing.JLabel objeto_label;
     private javax.swing.JTabbedPane opciones;
     private javax.swing.JPanel panel_tabla;
     private javax.swing.JLabel perfil;
     private javax.swing.JLabel perfil1;
+    private javax.swing.JLabel perfil2;
     private javax.swing.JButton personas;
     private javax.swing.JTextField psBase_t;
     private javax.swing.JTextField ps_evs_t;
