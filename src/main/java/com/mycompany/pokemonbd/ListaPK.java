@@ -71,6 +71,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         tipo1_label = new javax.swing.JLabel();
         tipo2_label = new javax.swing.JLabel();
         habEspecial_label = new javax.swing.JLabel();
+        favorito_icono = new javax.swing.JLabel();
         estadisticas = new javax.swing.JPanel();
         tituloes = new javax.swing.JLabel();
         imagen1 = new javax.swing.JPanel();
@@ -215,6 +216,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         eliminar.setForeground(new java.awt.Color(255, 255, 255));
         eliminar.setText("Liberar Pokemon");
         eliminar.addActionListener(this);
+        eliminar.setToolTipText("Liberar al pokemon");
 
         idPokemon_label.setBackground(new java.awt.Color(255, 255, 255));
         idPokemon_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -268,7 +270,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                                 .addComponent(tipo1_label)
                                 .addComponent(tipo2_label)
                                 .addComponent(habEspecial_label)))))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
         datosLayout.setVerticalGroup(
             datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,7 +282,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addGap(38, 38, 38)
                 .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(idPokemon_label))
+                    .addComponent(idPokemon_label)
+                    .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nombre_label)
                 .addGap(18, 18, 18)
@@ -674,7 +679,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         titutlo_mov.setText("Movimientos del pokemon");
 
         movimietos_tabla.setBackground(new java.awt.Color(13, 17, 23));
-        movimietos_tabla.setForeground(new java.awt.Color(13, 17, 23));
+        movimietos_tabla.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        movimietos_tabla.setForeground(new java.awt.Color(255, 255, 255));
         movimietos_tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -694,7 +700,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 return canEdit [columnIndex];
             }
         });
-        movimietos_tabla.setRowHeight(70);
+        movimietos_tabla.setRowHeight(90);
         movimietos_tabla.setSelectionBackground(new java.awt.Color(13, 17, 23));
         movimietos_tabla.setSelectionForeground(new java.awt.Color(255, 255, 255));
         movimietos_tabla.getTableHeader().setReorderingAllowed(false);
@@ -803,7 +809,6 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         favorito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Favorito.png"))); // NOI18N
         favorito.setBorder(null);
         favorito.setToolTipText("Asignar pokemon como favorito");
-        favorito.addActionListener(this);
         favorito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favoritoActionPerformed(evt);
@@ -961,6 +966,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JPanel estadisticas;
     private javax.swing.JLabel evs_label;
     private javax.swing.JButton favorito;
+    private javax.swing.JLabel favorito_icono;
     private javax.swing.JLabel genero_label;
     private javax.swing.JLabel habEspecial_label;
     private javax.swing.JLabel idPokemon_label;
