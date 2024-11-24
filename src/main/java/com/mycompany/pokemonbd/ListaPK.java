@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
@@ -37,6 +38,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         setIconImage(new ImageIcon("Icono.png").getImage());
         this.setTitle("Lista de Pokemones");
         llenarTabla();
+        agregarListenerSeleccionTabla();
+        primerPokemon();
     }
 
     /**
@@ -800,6 +803,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         favorito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Favorito.png"))); // NOI18N
         favorito.setBorder(null);
         favorito.setToolTipText("Asignar pokemon como favorito");
+        favorito.addActionListener(this);
         favorito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favoritoActionPerformed(evt);
@@ -1054,8 +1058,13 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 int filaSeleccionada = tabla.getSelectedRow();
 
                 if (filaSeleccionada != -1) {
+                    try{
                     String idPokemon = tabla.getValueAt(filaSeleccionada, 2).toString();
-
+                    llenarDatos(idPokemon);
+                    llenarEstadisticas(idPokemon);
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
                 }
             }
         });
@@ -1065,13 +1074,81 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         ArrayList datos = mBD.obtenerDatosPokemon(idPokemon);
         if(datos != null){
             PokemonAlmacen imagen = new PokemonAlmacen();
-
+            imagen.setImagen((byte[]) datos.get(1));
+            try {
+                byte[] perfilFoto = imagen.getImagen();
+                BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(perfilFoto));
+                ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(210, 210, bufferedImage.SCALE_SMOOTH));
+                perfil.setIcon(mFoto);
+                perfil1.setIcon(mFoto);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            idPokemon_label.setText("ID: " + datos.get(0).toString());
+            nombre_label.setText("Nombre: " + datos.get(2).toString());
+            mote_label.setText("Mote: " + datos.get(3).toString());
+            tipo1_label.setText("Tipo: " + datos.get(4).toString());
+            tipo2_label.setText("Tipo: " + datos.get(5).toString());
+            objeto_label.setText("Objeto: " + datos.get(6).toString());
+            naturaleza_label.setText("Naturaleza: " + datos.get(7).toString());
+            genero_label.setText("Genero: " + datos.get(8).toString());
+            habEspecial_label.setText("Habilidad especial: " + datos.get(9).toString());
+            num_label.setText("Número Pokedex: " + datos.get(10).toString());
+            region_label.setText("Región: " + datos.get(11).toString());
         }
     }
 
+    public void llenarEstadisticas(String idPokemon){
+        ArrayList estadisticas = mBD.obtenerEstadisticasPokemon(idPokemon);
+        if(datos != null){
+            psBase_t.setText(estadisticas.get(1).toString());
+            ataqueBase_t.setText(estadisticas.get(2).toString());
+            defensaBase_t.setText(estadisticas.get(3).toString());
+            velocidadBase_t.setText(estadisticas.get(4).toString());
+            defespecialBase_t.setText(estadisticas.get(5).toString());
+            atqespecialBase_t.setText(estadisticas.get(6).toString());
+            totalBase_t.setText("por agregar");
+            ps_ivs_t.setText(estadisticas.get(7).toString());
+            atq_ivs_t.setText(estadisticas.get(8).toString());
+            def_ivs_t.setText(estadisticas.get(9).toString());
+            vel_ivs_t.setText(estadisticas.get(10).toString());
+            def_especial_ivs.setText(estadisticas.get(11).toString());
+            atq_especial_ivs_t.setText(estadisticas.get(12).toString());
+            total_ivs_t.setText("por agregar");
+            ps_evs_t.setText(estadisticas.get(13).toString());
+            atq_evs_t.setText(estadisticas.get(14).toString());
+            def_evs_t.setText(estadisticas.get(15).toString());
+            vel_evs_t.setText(estadisticas.get(16).toString());
+            def_especial_evs_t.setText(estadisticas.get(17).toString());
+            atq_especial_evs_t.setText(estadisticas.get(18).toString());
+            total_evs_t.setText("por agregar");
+            ps_total_t.setText(estadisticas.get(19).toString());
+            atq_total_t.setText(estadisticas.get(20).toString());
+            def_total_t.setText(estadisticas.get(21).toString());
+            vel_total_t.setText(estadisticas.get(22).toString());
+            def_especial_total_t.setText(estadisticas.get(23).toString());
+            atq_especial_total_t.setText(estadisticas.get(24).toString());
+        }
+    }
+
+    public void primerPokemon(){
+        if(mBD.cuantos_Pokemon(idEntrenador) == 0) {
+            pokemonDefault();
+            llenarTabla();
+        }
+        if (tabla.getRowCount() > 0) {
+            String idPokemon = tabla.getValueAt(0, 2).toString();
+            llenarDatos(idPokemon);
+            llenarEstadisticas(idPokemon);
+        }
+    }
 
     @Override
     public void actionPerformed(ActionEvent evt) {
+        if(evt.getSource() == favorito){
+            String idPokemon = idPokemon_label.getText().substring(4);
+            mBD.asignarFavorito(idPokemon, idEntrenador);
+        }
         if(evt.getSource() == user){
             Usuario usuario = new Usuario(idEntrenador);
             usuario.setVisible(true);
@@ -1089,4 +1166,56 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         }
     }
 
+
+    public String generarID(){
+        Random random = new Random();
+        int limiteInferior = 10000;
+        int limiteSuperior = 65535;
+        int limiteSuperiorAbierto = limiteSuperior + 1;
+        int numeroAleatorio = limiteInferior + random.nextInt(limiteSuperiorAbierto - limiteInferior);
+
+        return String.valueOf(numeroAleatorio);
+    }
+
+    public void pokemonDefault(){
+        ArrayList pokemon = new ArrayList();
+        int idPokemon = Integer.parseInt(generarID());
+        pokemon.add(idPokemon); //IDPokemon
+        pokemon.add(Integer.parseInt(this.idEntrenador)); //IDEntrenador
+        pokemon.add(""); //Mote
+        pokemon.add("Femenino"); //Genero
+        pokemon.add("Gran encanto"); //Habilidad Especial
+        pokemon.add(25); //NumPokedex
+        pokemon.add(35f); //PS
+        pokemon.add(55f); //Ataque
+        pokemon.add(40f); //Defensa
+        pokemon.add(90f); //Velocidad
+        pokemon.add(50f); //Defensa Especial
+        pokemon.add(50f); //Ataque Especial
+        pokemon.add("Agua fresca"); //Objeto
+        pokemon.add("Amable"); //Naturaleza
+        pokemon.add(31);  // IV PS
+        pokemon.add(15);  // IV ATK
+        pokemon.add(24);  // IV DEF
+        pokemon.add(20);  // IV VEL
+        pokemon.add(18);  // IV SDEF
+        pokemon.add(28);  // IV SATK
+        pokemon.add(200); // EV PS
+        pokemon.add(100); // EV ATK
+        pokemon.add(80);  // EV DEF
+        pokemon.add(50);  // EV VEL
+        pokemon.add(40);  // EV SDEF
+        pokemon.add(40);  // EV SATK
+        mBD.agregarPokemon(pokemon);
+
+        ArrayList movimientos = new ArrayList();
+        movimientos.add("Rayo"); //Nombre movimiento
+        movimientos.add(idPokemon); //IDPokemon
+        movimientos.add(1); //Maspp
+
+        mBD.agregarMovimientos(movimientos);
+
+        mBD.asignarFavorito(String.valueOf(idPokemon), idEntrenador);
+    }
 }
+

@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -247,7 +249,7 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
         return String.valueOf(numeroAleatorio);
     }
 
-    public void crearEntrenador(){
+    public boolean crearEntrenador(){
         String nombre = IDEntrenador1.getText();
         String pass = contraseña.getText();
         String id = entrenadorID.getText();
@@ -265,8 +267,10 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
         if(mBD.AgregarEntrenador(entrenador)) {
             ((PInicio) javax.swing.SwingUtilities.getWindowAncestor(this)).crearUsuarioExitoso();
             vaciarTexto();
+            return true;
         } else {
             ((PInicio) javax.swing.SwingUtilities.getWindowAncestor(this)).crearUsuarioError("El nombre "  +  nombre + " ya existe en la base de datos");
+            return false;
         }
     }
 
@@ -297,10 +301,7 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == crear){
-            if(mBD.conectar()) {
-                crearEntrenador();
-                return;
-            }
+            crearEntrenador();
         }
 
         if(evt.getSource() == cargar){
@@ -320,4 +321,5 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
             return null;
         }
     }
+
 }

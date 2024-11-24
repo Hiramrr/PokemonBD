@@ -413,9 +413,14 @@ public class Global extends javax.swing.JFrame implements ActionListener{
     }
 
     public void primerEntrenador(){
-        String nombreEntrenadorSeleccionado = tabla_usuarios.getValueAt(0, 1).toString();
-        idEntrenadorSeleccionado = mBD.obtenerID(nombreEntrenadorSeleccionado);
-        mostrarDatos(idEntrenadorSeleccionado);
+        try {
+            String nombreEntrenadorSeleccionado = tabla_usuarios.getValueAt(0, 1).toString();
+            idEntrenadorSeleccionado = mBD.obtenerID(nombreEntrenadorSeleccionado);
+            mostrarDatos(idEntrenadorSeleccionado);
+        } catch (Exception e) {
+            Dialogo dialogo = new Dialogo(this,true);
+            dialogo.setMensaje("No hay otros entrenadores registrados");
+        }
     }
 
     public void mostrarDatos(String idEntrenadorSeleccionado){

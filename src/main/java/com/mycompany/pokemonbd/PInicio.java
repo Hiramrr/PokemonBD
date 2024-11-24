@@ -251,7 +251,6 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
                 contenido.repaint();
                 estado = false;
                 boton.setToolTipText("Iniciar sesion en la aplicacion");
-
             }
             else {
                 boton.setText("Crear entrenador");
