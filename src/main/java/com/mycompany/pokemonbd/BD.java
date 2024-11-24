@@ -158,13 +158,9 @@ public class BD {
             while (resultado.next()) {
                 tabla.add(resultado.getBytes("Imagen")); // 0
                 tabla.add(resultado.getString("EntrenadorNombre")); // 1
-                tabla.add(resultado.getString("Ganadas")); // 2
-                tabla.add(resultado.getString("Perdidas")); // 3
-                tabla.add(resultado.getInt("Favorito")); // 4
-                tabla.add(resultado.getInt("Nombre")); // 5
-                tabla.add(resultado.getString("Mote")); // 6
-                tabla.add(resultado.getString("NumPokedex")); // 7
-                tabla.add(resultado.getBytes("FotoPk")); // 8
+                tabla.add(resultado.getInt("Favorito")); // 2
+                tabla.add(resultado.getString("Nombre")); // 3
+                tabla.add(resultado.getString("Mote")); // 4
             }
             return tabla;
         } catch (Exception e) {
@@ -487,6 +483,7 @@ public class BD {
             ps.setInt(25, (int) datos.get(24)); //evsdef
             ps.setInt(26, (int) datos.get(25)); //evsatk
             ps.executeUpdate();
+            System.out.println("Pokemon agregado");
             return true;
         } catch (Exception e) {
             System.out.println(e);
@@ -508,6 +505,7 @@ public class BD {
             ps.setInt(2, (int) informacion.get(1)); // IDPokemon llave foranea
             ps.setInt(3, (int) informacion.get(2)); // masPP
             ps.executeUpdate();
+            System.out.println("Movimiento agregado");
             return true;
         } catch (SQLIntegrityConstraintViolationException e) {
             System.out.println("Foreign key constraint violation: " + e.getMessage());

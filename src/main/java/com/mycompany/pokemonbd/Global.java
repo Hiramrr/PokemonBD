@@ -363,30 +363,42 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         ArrayList datos = mBD.obtenerTabla(idEntrenador);
 
         if (datos != null) {
-            for (int i = 0; i < datos.size() && i < 21; i += 8) {
+            for (int i = 0; i < datos.size() && i < 21; i += 5) {
                 ImagenAlmacenEntrenador fotoP = new ImagenAlmacenEntrenador();
-                fotoP.setImagen((byte[]) datos.get(0));
+                System.out.println(datos.get(i));
+                fotoP.setImagen((byte[]) datos.get(i));
+                Object[] informacion = new Object[3];
+
                 try {
                     byte[] perfilFoto = fotoP.getImagen();
                     BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(perfilFoto));
-                    ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(250, 250, bufferedImage.SCALE_SMOOTH));
-                    perfil.setIcon(mFoto);
+                    ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(50, 50, bufferedImage.SCALE_SMOOTH));
+                    informacion[0] = new JLabel(mFoto); // Foto de perfil
                 } catch (Exception e) {
                     System.out.println(e);
                 }
-                nombre_label.setText("Nombre: " + datos.get(1));
-                ganadas_label.setText("Peleas ganadas: " + datos.get(2));
-                perdidas_label.setText("Peleas perdidas: " + datos.get(3));
-                pokemon_favorito.setText("Pokemon favorito: " + datos.get(4));
-                String nombre = datos.get(5).toString();
-                String mote = datos.get(6).toString();
+                informacion[1] = datos.get(i + 1); // Nombre del entrenador
+                String nombrePokemon = datos.get(i + 2).toString();
+                String Mote = datos.get(i + 3).toString();
                 String NombreF;
-                if(mote.equals("")){
-                    NombreF = nombre;
-                } else{
-                    NombreF = mote;
+                if(Mote.equals("")) {
+                    NombreF = nombrePokemon;
                 }
-
+                else{
+                    NombreF = Mote;
+                }
+                informacion[1] = datos.get(2);
+                informacion[2] = NombreF;
+                if(i / 4 < tabla_usuarios.getRowCount()) {
+                    dtm.setValueAt(informacion[0], i / 4, 0);
+                    dtm.setValueAt(informacion[1], i / 4, 1);
+                    dtm.setValueAt(informacion[2], i / 4, 2);
+                } else{
+                    ((DefaultTableModel) tabla_usuarios.getModel()).addRow(informacion);
+                    dtm.setValueAt(informacion[0], i / 4, 0);
+                    dtm.setValueAt(informacion[1], i / 4, 1);
+                    dtm.setValueAt(informacion[2], i / 4, 2);
+                }
             }
         }
     }
