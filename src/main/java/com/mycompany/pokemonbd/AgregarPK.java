@@ -975,6 +975,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             if (guardarPokemon()) {
                 ((AgregarNuevo) javax.swing.SwingUtilities.getWindowAncestor(this)).Error("Se ha agregado el pokemon correctamente");
                 guardarMovimientos();
+                ((AgregarNuevo) javax.swing.SwingUtilities.getWindowAncestor(this)).actualizarTabla();
             } else {
                 ((AgregarNuevo) javax.swing.SwingUtilities.getWindowAncestor(this)).Error("No se ha podido agregar el pokemon");
             }

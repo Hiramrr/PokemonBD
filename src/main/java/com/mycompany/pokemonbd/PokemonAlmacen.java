@@ -30,5 +30,7 @@ public class PokemonAlmacen {
     public void setImagen(byte[] imagen) {
         this.imagen = imagen;
     }
+
+
 }
 

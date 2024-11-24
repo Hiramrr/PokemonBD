@@ -573,4 +573,30 @@ public class BD {
         }
         return tabla;
     }
+
+    public ArrayList obtenerDatosPokemon(String idPokemon){
+        ArrayList datos = new ArrayList<>();
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL obtener_InformacionPK(" + idPokemon + ")");
+            while(resultado.next()){
+                datos.add(resultado.getInt("IDPokemon"));
+                datos.add(resultado.getBytes("ImagenEspecie"));
+                datos.add(resultado.getString("NombreEspecie"));
+                datos.add(resultado.getString("MotePokemon"));
+                datos.add(resultado.getString("Tipo1"));
+                datos.add(resultado.getString("Tipo2"));
+                datos.add(resultado.getString("Objeto"));
+                datos.add(resultado.getString("Naturaleza"));
+                datos.add(resultado.getString("Genero"));
+                datos.add(resultado.getString("HabEspecial"));
+                datos.add(resultado.getInt("NumPokedex"));
+                datos.add(resultado.getString("NombreRegion"));
+            }
+            return datos;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
 }

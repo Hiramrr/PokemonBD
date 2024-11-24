@@ -167,4 +167,8 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
         dialogo.setVisible(true);
     }
 
+    public void actualizarTabla(){
+        ((ListaPK)javax.swing.SwingUtilities.getWindowAncestor(this)).llenarTabla();
+    }
+
 }

@@ -959,6 +959,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     // End of variables declaration//GEN-END:variables
 
     public void llenarTabla(){
+        tabla.removeAll();
         tabla.setDefaultRenderer(Object.class, new RenderImagen());
         ArrayList<PokemonAlmacen> datos = mBD.obtenerPokemon(idEntrenador);
         if(datos != null){
@@ -970,7 +971,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 try {
                     byte[] perfilFoto = pokemon.getImagen();
                     BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(perfilFoto));
-                    ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(120, 120, bufferedImage.SCALE_SMOOTH));
+                    ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(130, 130, bufferedImage.SCALE_SMOOTH));
                     informacion[0] = new JLabel(mFoto); // Foto del pokemon
                 } catch (Exception e) {
                     System.out.println(e);
@@ -992,11 +993,36 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 } else {
                     // Añade una nueva fila
                     ((DefaultTableModel) tabla.getModel()).addRow(informacion);
+                    tabla.setValueAt(informacion[0], i, 0); // Foto de perfil
+                    tabla.setValueAt(NombreF, i, 1);
+                    tabla.setValueAt(informacion[3], i, 2); // ID del pokemon
                 }
             }
         }
-
     }
+
+    private void agregarListenerSeleccionTabla() {
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+
+                int filaSeleccionada = tabla.getSelectedRow();
+
+                if (filaSeleccionada != -1) {
+                    String idPokemon = tabla.getValueAt(filaSeleccionada, 2).toString();
+
+                }
+            }
+        });
+    }
+
+    public void llenarDatos(String idPokemon){
+        ArrayList datos = mBD.obtenerDatosPokemon(idPokemon);
+        if(datos != null){
+            PokemonAlmacen imagen = new PokemonAlmacen();
+
+        }
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent evt) {
