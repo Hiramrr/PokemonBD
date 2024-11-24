@@ -136,7 +136,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         imagen1.setForeground(new java.awt.Color(13, 17, 23));
         imagen1.setLayout(null);
         imagen1.add(perfil1);
-        perfil1.setBounds(0, 0, 180, 190);
+        perfil1.setBounds(0, 0, 190, 190);
 
         pokemon_favorito.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         pokemon_favorito.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,7 +163,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
                         .addComponent(num_pokedex)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(usuario_panelLayout.createSequentialGroup()
-                        .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(desafiar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16))
@@ -189,10 +189,10 @@ public class Global extends javax.swing.JFrame implements ActionListener{
                 .addComponent(perdidas_label)
                 .addGap(18, 18, 18)
                 .addComponent(pokemon_favorito)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(num_pokedex)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, usuario_panelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -204,7 +204,8 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         usuario_panel.setBounds(0, 0, 502, 760);
 
         tabla_usuarios.setBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setForeground(new java.awt.Color(13, 17, 23));
+        tabla_usuarios.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tabla_usuarios.setForeground(new java.awt.Color(255, 255, 255));
         tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -244,7 +245,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         tabla_usuarios.setGridColor(new java.awt.Color(22, 26, 33));
         tabla_usuarios.setRowHeight(50);
         tabla_usuarios.setSelectionBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setSelectionForeground(new java.awt.Color(13, 17, 23));
+        tabla_usuarios.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tabla_usuarios);
 
         jPanel1.add(jScrollPane1);
