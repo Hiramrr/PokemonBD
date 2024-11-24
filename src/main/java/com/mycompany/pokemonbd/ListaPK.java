@@ -64,6 +64,10 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         num_label = new javax.swing.JLabel();
         region_label = new javax.swing.JLabel();
         eliminar = new javax.swing.JButton();
+        idPokemon_label = new javax.swing.JLabel();
+        tipo1_label = new javax.swing.JLabel();
+        tipo2_label = new javax.swing.JLabel();
+        habEspecial_label = new javax.swing.JLabel();
         estadisticas = new javax.swing.JPanel();
         tituloes = new javax.swing.JLabel();
         imagen1 = new javax.swing.JPanel();
@@ -209,6 +213,30 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         eliminar.setText("Liberar Pokemon");
         eliminar.addActionListener(this);
 
+        idPokemon_label.setBackground(new java.awt.Color(255, 255, 255));
+        idPokemon_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        idPokemon_label.setForeground(new java.awt.Color(255, 255, 255));
+        idPokemon_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        idPokemon_label.setText("IDPokemon:");
+
+        tipo1_label.setBackground(new java.awt.Color(255, 255, 255));
+        tipo1_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tipo1_label.setForeground(new java.awt.Color(255, 255, 255));
+        tipo1_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tipo1_label.setText("Tipo:");
+
+        tipo2_label.setBackground(new java.awt.Color(255, 255, 255));
+        tipo2_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tipo2_label.setForeground(new java.awt.Color(255, 255, 255));
+        tipo2_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tipo2_label.setText("Tipo2:");
+
+        habEspecial_label.setBackground(new java.awt.Color(255, 255, 255));
+        habEspecial_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        habEspecial_label.setForeground(new java.awt.Color(255, 255, 255));
+        habEspecial_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        habEspecial_label.setText("HabEspecial:");
+
         javax.swing.GroupLayout datosLayout = new javax.swing.GroupLayout(datos);
         datos.setLayout(datosLayout);
         datosLayout.setHorizontalGroup(
@@ -224,14 +252,20 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                             .addGap(24, 24, 24)
                             .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(nombre_label)
-                                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(datosLayout.createSequentialGroup()
+                                    .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(idPokemon_label))
                                 .addComponent(mote_label)
                                 .addComponent(objeto_label)
                                 .addComponent(naturaleza_label)
                                 .addComponent(genero_label)
                                 .addComponent(num_label)
-                                .addComponent(region_label)))))
-                .addContainerGap(156, Short.MAX_VALUE))
+                                .addComponent(region_label)
+                                .addComponent(tipo1_label)
+                                .addComponent(tipo2_label)
+                                .addComponent(habEspecial_label)))))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         datosLayout.setVerticalGroup(
             datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +273,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addGap(28, 28, 28)
                 .addComponent(titulo)
                 .addGap(38, 38, 38)
-                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idPokemon_label))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nombre_label)
                 .addGap(18, 18, 18)
@@ -250,11 +286,17 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addComponent(naturaleza_label)
                 .addGap(18, 18, 18)
                 .addComponent(genero_label)
-                .addGap(80, 80, 80)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tipo1_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tipo2_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(habEspecial_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(num_label)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(region_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGap(7, 7, 7)
                 .addComponent(eliminar))
         );
 
@@ -673,9 +715,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             .addGroup(movimientosLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(titutlo_mov)
-                .addGap(114, 114, 114)
+                .addGap(112, 112, 112)
                 .addComponent(contenedor_movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         opciones.addTab("Movimientos", movimientos);
@@ -712,7 +754,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 {null, null, null}
             },
             new String [] {
-                "Imagen", "Nombre / Especie", "ID"
+                "Imagen", "Nombre / Especie", "IDPokemon"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -916,6 +958,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JLabel evs_label;
     private javax.swing.JButton favorito;
     private javax.swing.JLabel genero_label;
+    private javax.swing.JLabel habEspecial_label;
+    private javax.swing.JLabel idPokemon_label;
     private javax.swing.JPanel imagen;
     private javax.swing.JPanel imagen1;
     private javax.swing.JPanel informacion;
@@ -942,6 +986,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JTextField ps_total_t;
     private javax.swing.JLabel region_label;
     private javax.swing.JTable tabla;
+    private javax.swing.JLabel tipo1_label;
+    private javax.swing.JLabel tipo2_label;
     private javax.swing.JLabel titulo;
     private javax.swing.JLabel tituloes;
     private javax.swing.JLabel titutlo_mov;
