@@ -662,4 +662,22 @@ public class BD {
         }
         return null;
     }
+
+    public ArrayList obtener_pokemon(String idEntrenador){
+        ArrayList pokemon = new ArrayList<>();
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL obtener_pokemon(" + idEntrenador + ")");
+            while(resultado.next()){
+                pokemon.add(resultado.getString("Nombre"));
+                pokemon.add(resultado.getString("Mote"));
+                pokemon.add((resultado.getInt("NumPokedex")));
+                pokemon.add(resultado.getBytes("Imagen"));
+            }
+            return pokemon;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
 }

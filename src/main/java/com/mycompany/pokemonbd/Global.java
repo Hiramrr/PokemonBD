@@ -388,7 +388,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
                 else{
                     NombreF = Mote;
                 }
-                informacion[1] = datos.get(2);
+                informacion[1] = datos.get(i + 1); // Nombre del entrenador
                 informacion[2] = NombreF;
                 if(i / 4 < tabla_usuarios.getRowCount()) {
                     dtm.setValueAt(informacion[0], i / 4, 0);
@@ -471,6 +471,26 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         nombre_label.setText("Nombre: " + nombre);
         ganadas_label.setText("Peleas ganadas: " + ganadas);
         perdidas_label.setText("Peleas perdidas: " + perdidas);
+        ArrayList pokemon = mBD.obtener_pokemon(idEntrenadorSeleccionado);
+        String nombrePokemon = pokemon.get(0).toString();
+        String Mote = pokemon.get(1).toString();
+        String NombreF;
+        if(Mote.equals("")) {
+            NombreF = nombrePokemon;
+        }
+        else{
+            NombreF = Mote;
+        }
+        pokemon_favorito.setText("Pokemon favorito: " + NombreF);
+        num_pokedex.setText("Num Pokedex: " + pokemon.get(2).toString());
+        try {
+            byte[] perfilFoto = (byte[]) pokemon.get(3);
+            BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(perfilFoto));
+            ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(190, 190, bufferedImage.SCALE_SMOOTH));
+            perfil1.setIcon(mFoto);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
 }
