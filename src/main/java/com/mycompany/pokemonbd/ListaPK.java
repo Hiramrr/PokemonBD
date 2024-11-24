@@ -727,7 +727,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 return canEdit [columnIndex];
             }
         });
-        movimietos_tabla.setRowHeight(90);
+        movimietos_tabla.setRowHeight(100);
         movimietos_tabla.setSelectionBackground(new java.awt.Color(13, 17, 23));
         movimietos_tabla.setSelectionForeground(new java.awt.Color(255, 255, 255));
         movimietos_tabla.getTableHeader().setReorderingAllowed(false);
