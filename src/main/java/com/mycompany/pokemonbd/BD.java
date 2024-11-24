@@ -653,4 +653,21 @@ public class BD {
             System.out.println(e);
         }
     }
+
+    public ArrayList obtenerMovimientosPokemon(String idPokemon){
+        ArrayList movimientos = new ArrayList<>();
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL obtener_movimientos_PK(" + idPokemon + ")");
+            while(resultado.next()){
+                movimientos.add(resultado.getString("Movimiento"));
+                movimientos.add(resultado.getInt("PP"));
+                movimientos.add(resultado.getInt("masPP"));
+            }
+            return movimientos;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
 }

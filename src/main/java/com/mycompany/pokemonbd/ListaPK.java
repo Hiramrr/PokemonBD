@@ -1062,6 +1062,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                     String idPokemon = tabla.getValueAt(filaSeleccionada, 2).toString();
                     llenarDatos(idPokemon);
                     llenarEstadisticas(idPokemon);
+                    llenarMovimientos(idPokemon);
                     } catch (Exception e) {
                         System.out.println(e);
                     }
@@ -1131,6 +1132,19 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         }
     }
 
+    public void llenarMovimientos(String idPokemon){
+        ArrayList movimientos = mBD.obtenerMovimientosPokemon(idPokemon);
+        if(movimientos != null){
+            for(int i = 0; i <movimientos.size() ; i+=3){
+                movimietos_tabla.setValueAt(movimientos.get(i), i, 0);
+                int pp = (int) movimientos.get(i+1);
+                int maspp = (int) movimientos.get(i+2);
+                int total = pp + maspp;
+                movimietos_tabla.setValueAt(total, i, 1);
+            }
+        }
+    }
+
     public void primerPokemon(){
         if(mBD.cuantos_Pokemon(idEntrenador) == 0) {
             pokemonDefault();
@@ -1140,6 +1154,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             String idPokemon = tabla.getValueAt(0, 2).toString();
             llenarDatos(idPokemon);
             llenarEstadisticas(idPokemon);
+            llenarMovimientos(idPokemon);
         }
     }
 
