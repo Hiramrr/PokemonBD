@@ -78,29 +78,6 @@ public class BD {
     }
 
 
-    /*
-    Este seria mas para cargar los pokemons guardados en la base de datos
-     */
-    public ArrayList CargarImagen(){
-        ArrayList imagenes = new ArrayList<>();
-        try{
-            consulta = con.createStatement();
-            resultado = consulta.executeQuery(SQL_CONSULTA);
-            while (resultado.next()){
-                ImagenAlmacenEntrenador imagen = new ImagenAlmacenEntrenador();
-                imagen.setID(resultado.getInt("ID"));
-                imagen.setNombre(resultado.getString("Nombre"));
-                imagen.setContraseña(resultado.getString("Contraseña"));
-                imagen.setImagen(resultado.getBytes("Imagen"));
-                imagenes.add(imagen);
-            }
-        } catch (Exception e){
-            System.out.println(e);
-            return null;
-        }
-        return imagenes;
-    }
-
     public boolean inicioSesion(String nombre, String contraseña) {
         try {
             consulta = con.createStatement();
@@ -172,24 +149,28 @@ public class BD {
         }
     }
 
-    public ArrayList<ImagenAlmacenEntrenador> obtenerTabla(String idEntrenador) {
-        ArrayList<ImagenAlmacenEntrenador> tabla = new ArrayList<>();
+    public ArrayList obtenerTabla(String idEntrenador) {
+        ArrayList tabla = new ArrayList<>();
         try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtener_tablaEntrenador(" + idEntrenador + ")");
 
             while (resultado.next()) {
-                ImagenAlmacenEntrenador entrenador = new ImagenAlmacenEntrenador();
-                entrenador.setID(resultado.getInt("ID"));
-                entrenador.setNombre(resultado.getString("Nombre"));
-                entrenador.setImagen(resultado.getBytes("Imagen"));
-
-                tabla.add(entrenador);
+                tabla.add(resultado.getBytes("Imagen")); // 0
+                tabla.add(resultado.getString("EntrenadorNombre")); // 1
+                tabla.add(resultado.getString("Ganadas")); // 2
+                tabla.add(resultado.getString("Perdidas")); // 3
+                tabla.add(resultado.getInt("Favorito")); // 4
+                tabla.add(resultado.getInt("Nombre")); // 5
+                tabla.add(resultado.getString("Mote")); // 6
+                tabla.add(resultado.getString("NumPokedex")); // 7
+                tabla.add(resultado.getBytes("FotoPk")); // 8
             }
+            return tabla;
         } catch (Exception e) {
             System.out.println(e);
         }
-        return tabla;
+        return null;
     }
 
     public String obtenerID(String nombre) {
@@ -665,6 +646,19 @@ public class BD {
                 movimientos.add(resultado.getInt("masPP"));
             }
             return movimientos;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
+
+    public String obtenerFavorito(String idEntrenador){
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL obtener_favorito(" + idEntrenador + ")");
+            if (resultado.next()) {
+                return resultado.getString("Pokemon_favorito");
+            }
         } catch (Exception e){
             System.out.println(e);
         }

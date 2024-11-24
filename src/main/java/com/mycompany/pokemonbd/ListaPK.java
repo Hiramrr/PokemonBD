@@ -4,7 +4,7 @@
  */
 package com.mycompany.pokemonbd;
 
-import java.awt.Color;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -881,6 +881,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         favorito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Favorito.png"))); // NOI18N
         favorito.setBorder(null);
         favorito.setToolTipText("Asignar pokemon como favorito");
+        favorito.addActionListener(this);
         favorito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favoritoActionPerformed(evt);
@@ -1158,7 +1159,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
 
     public void llenarDatos(String idPokemon){
         ArrayList datos = mBD.obtenerDatosPokemon(idPokemon);
-        if(datos != null){
+        favorito_icono.setIcon(null);
+        if(datos != null) {
             PokemonAlmacen imagen = new PokemonAlmacen();
             imagen.setImagen((byte[]) datos.get(1));
             try {
@@ -1167,12 +1169,19 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(210, 210, bufferedImage.SCALE_SMOOTH));
                 perfil.setIcon(mFoto);
                 perfil1.setIcon(mFoto);
+                perfil2.setIcon(mFoto);
             } catch (Exception e) {
                 System.out.println(e);
             }
             idPokemon_label.setText("ID: " + datos.get(0).toString());
+            idPokemon_label1.setText("ID: " + datos.get(0).toString());
+            idPokemon_label2.setText("ID: " + datos.get(0).toString());
             nombre_label.setText("Nombre: " + datos.get(2).toString());
+            nombre_label1.setText("Nombre: " + datos.get(2).toString());
+            nombre_label2.setText("Nombre: " + datos.get(2).toString());
             mote_label.setText("Mote: " + datos.get(3).toString());
+            mote_label1.setText("Mote: " + datos.get(3).toString());
+            mote_label2.setText("Mote: " + datos.get(3).toString());
             tipo1_label.setText("Tipo: " + datos.get(4).toString());
             tipo2_label.setText("Tipo: " + datos.get(5).toString());
             objeto_label.setText("Objeto: " + datos.get(6).toString());
@@ -1181,6 +1190,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             habEspecial_label.setText("Habilidad especial: " + datos.get(9).toString());
             num_label.setText("Número Pokedex: " + datos.get(10).toString());
             region_label.setText("Región: " + datos.get(11).toString());
+            esFavorito();
         }
     }
 
@@ -1193,39 +1203,49 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             velocidadBase_t.setText(estadisticas.get(4).toString());
             defespecialBase_t.setText(estadisticas.get(5).toString());
             atqespecialBase_t.setText(estadisticas.get(6).toString());
-            totalBase_t.setText("por agregar");
             ps_ivs_t.setText(estadisticas.get(7).toString());
             atq_ivs_t.setText(estadisticas.get(8).toString());
             def_ivs_t.setText(estadisticas.get(9).toString());
             vel_ivs_t.setText(estadisticas.get(10).toString());
             def_especial_ivs.setText(estadisticas.get(11).toString());
             atq_especial_ivs_t.setText(estadisticas.get(12).toString());
-            total_ivs_t.setText("por agregar");
             ps_evs_t.setText(estadisticas.get(13).toString());
             atq_evs_t.setText(estadisticas.get(14).toString());
             def_evs_t.setText(estadisticas.get(15).toString());
             vel_evs_t.setText(estadisticas.get(16).toString());
             def_especial_evs_t.setText(estadisticas.get(17).toString());
             atq_especial_evs_t.setText(estadisticas.get(18).toString());
-            total_evs_t.setText("por agregar");
             ps_total_t.setText(estadisticas.get(19).toString());
             atq_total_t.setText(estadisticas.get(20).toString());
             def_total_t.setText(estadisticas.get(21).toString());
             vel_total_t.setText(estadisticas.get(22).toString());
             def_especial_total_t.setText(estadisticas.get(23).toString());
             atq_especial_total_t.setText(estadisticas.get(24).toString());
+            sumatoria();
+        }
+    }
+
+    public void esFavorito(){
+        String idPokemon = idPokemon_label.getText().substring(4);
+        if(mBD.obtenerFavorito(idEntrenador).equals(idPokemon)){
+            Image favorito = new ImageIcon(getClass().getResource("/images/esFavorito.png")).getImage();
+            ImageIcon mFoto = new ImageIcon(favorito.getScaledInstance(29, 29, favorito.SCALE_SMOOTH));
+            favorito_icono.setIcon(mFoto);
+        } else {
+            System.out.println("No es favorito");
         }
     }
 
     public void llenarMovimientos(String idPokemon){
         ArrayList movimientos = mBD.obtenerMovimientosPokemon(idPokemon);
+        System.out.println(movimientos.size());
         if(movimientos != null){
             for(int i = 0; i <movimientos.size() ; i+=3){
-                movimietos_tabla.setValueAt(movimientos.get(i), i, 0);
-                int pp = (int) movimientos.get(i+1);
-                int maspp = (int) movimientos.get(i+2);
+                movimietos_tabla.setValueAt(movimientos.get(i), i / 3 , 0);
+                int pp = (int) movimientos.get(i + 1);
+                int maspp = (int) movimientos.get(i + 2);
                 int total = pp + maspp;
-                movimietos_tabla.setValueAt(total, i, 1);
+                movimietos_tabla.setValueAt(total, i / 3, 1);
             }
         }
     }
@@ -1246,8 +1266,10 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == favorito){
+            System.out.println("Intento asignar favorito");
             String idPokemon = idPokemon_label.getText().substring(4);
             mBD.asignarFavorito(idPokemon, idEntrenador);
+            esFavorito();
         }
         if(evt.getSource() == user){
             Usuario usuario = new Usuario(idEntrenador);
@@ -1316,6 +1338,18 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         mBD.agregarMovimientos(movimientos);
 
         mBD.asignarFavorito(String.valueOf(idPokemon), idEntrenador);
+    }
+
+    public void sumatoria(){
+        int base_total = Integer.parseInt(psBase_t.getText()) + Integer.parseInt(ataqueBase_t.getText()) + Integer.parseInt(defensaBase_t.getText()) +
+                Integer.parseInt(velocidadBase_t.getText()) + Integer.parseInt(defespecialBase_t.getText()) + Integer.parseInt(atqespecialBase_t.getText());
+        totalBase_t.setText(String.valueOf(base_total));
+        int ivs_total = Integer.parseInt(ps_ivs_t.getText()) + Integer.parseInt(atq_ivs_t.getText()) + Integer.parseInt(def_ivs_t.getText()) +
+                Integer.parseInt(vel_ivs_t.getText()) + Integer.parseInt(def_especial_ivs.getText()) + Integer.parseInt(atq_especial_ivs_t.getText());
+        total_ivs_t.setText(String.valueOf(ivs_total));
+        int evs_total = Integer.parseInt(ps_evs_t.getText()) + Integer.parseInt(atq_evs_t.getText()) + Integer.parseInt(def_evs_t.getText()) +
+                Integer.parseInt(vel_evs_t.getText()) + Integer.parseInt(def_especial_evs_t.getText()) + Integer.parseInt(atq_especial_evs_t.getText());
+        total_evs_t.setText(String.valueOf(evs_total));
     }
 }
 

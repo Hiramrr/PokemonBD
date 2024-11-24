@@ -347,29 +347,33 @@ public class Global extends javax.swing.JFrame implements ActionListener{
 
     public void llenarTabla() {
         tabla_usuarios.setDefaultRenderer(Object.class, new RenderImagen());
-        ArrayList<ImagenAlmacenEntrenador> datos = mBD.obtenerTabla(idEntrenador);
+        ArrayList datos = mBD.obtenerTabla(idEntrenador);
 
         if (datos != null) {
-            for (int i = 0; i < datos.size() && i < 21; i++) { // Solo llena hasta 21 filas
-                ImagenAlmacenEntrenador imagen = datos.get(i);
-                Object[] informacion = new Object[3];
-
+            for (int i = 0; i < datos.size() && i < 21; i += 8) {
+                ImagenAlmacenEntrenador fotoP = new ImagenAlmacenEntrenador();
+                fotoP.setImagen((byte[]) datos.get(0));
                 try {
-                    byte[] perfilFoto = imagen.getImagen();
+                    byte[] perfilFoto = fotoP.getImagen();
                     BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(perfilFoto));
-                    ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(50, 50, bufferedImage.SCALE_SMOOTH));
-                    informacion[0] = new JLabel(mFoto); // Foto de perfil
+                    ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(250, 250, bufferedImage.SCALE_SMOOTH));
+                    perfil.setIcon(mFoto);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
+                nombre_label.setText("Nombre: " + datos.get(1));
+                ganadas_label.setText("Peleas ganadas: " + datos.get(2));
+                perdidas_label.setText("Peleas perdidas: " + datos.get(3));
+                pokemon_favorito.setText("Pokemon favorito: " + datos.get(4));
+                String nombre = datos.get(5).toString();
+                String mote = datos.get(6).toString();
+                String NombreF;
+                if(mote.equals("")){
+                    NombreF = nombre;
+                } else{
+                    NombreF = mote;
+                }
 
-                informacion[1] = imagen.getNombre(); // Nombre Entrenador
-                informacion[2] = "Pikachu"; // Pokemon favorito (temporalmente "Pikachu")
-
-                // Coloca la información en la fila existente sin añadir nuevas filas
-                dtm.setValueAt(informacion[0], i, 0); // Foto de perfil
-                dtm.setValueAt(informacion[1], i, 1); // Nombre Entrenador
-                dtm.setValueAt(informacion[2], i, 2); // Pokemon favorito
             }
         }
     }
