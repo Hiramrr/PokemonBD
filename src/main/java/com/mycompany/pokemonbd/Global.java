@@ -78,6 +78,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         perfil1 = new javax.swing.JLabel();
         pokemon_favorito = new javax.swing.JLabel();
         desafiar = new javax.swing.JButton();
+        num_pokedex = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_usuarios = new javax.swing.JTable();
         usuariosTotales = new javax.swing.JLabel();
@@ -135,7 +136,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         imagen1.setForeground(new java.awt.Color(13, 17, 23));
         imagen1.setLayout(null);
         imagen1.add(perfil1);
-        perfil1.setBounds(0, 0, 160, 150);
+        perfil1.setBounds(0, 0, 180, 190);
 
         pokemon_favorito.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         pokemon_favorito.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,26 +148,33 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         desafiar.setText("Desafiar");
         desafiar.addActionListener(this);
 
+        num_pokedex.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        num_pokedex.setForeground(new java.awt.Color(255, 255, 255));
+        num_pokedex.setText("Num Pokedex:");
+
         javax.swing.GroupLayout usuario_panelLayout = new javax.swing.GroupLayout(usuario_panel);
         usuario_panel.setLayout(usuario_panelLayout);
         usuario_panelLayout.setHorizontalGroup(
             usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(usuario_panelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addGroup(usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(usuario_panelLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addComponent(num_pokedex)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(usuario_panelLayout.createSequentialGroup()
+                        .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(desafiar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))
+                    .addGroup(usuario_panelLayout.createSequentialGroup()
                         .addGroup(usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(perdidas_label)
                             .addComponent(ganadas_label)
                             .addComponent(nombre_label)
                             .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(imagen1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pokemon_favorito, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(usuario_panelLayout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(desafiar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(180, Short.MAX_VALUE))
+                            .addComponent(pokemon_favorito))
+                        .addContainerGap(218, Short.MAX_VALUE))))
         );
         usuario_panelLayout.setVerticalGroup(
             usuario_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,18 +189,22 @@ public class Global extends javax.swing.JFrame implements ActionListener{
                 .addComponent(perdidas_label)
                 .addGap(18, 18, 18)
                 .addComponent(pokemon_favorito)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(num_pokedex)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, usuario_panelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(desafiar)
-                .addGap(114, 114, 114))
+                .addContainerGap())
         );
 
         jPanel1.add(usuario_panel);
         usuario_panel.setBounds(0, 0, 502, 760);
 
         tabla_usuarios.setBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setForeground(new java.awt.Color(255,255,255));
+        tabla_usuarios.setForeground(new java.awt.Color(13, 17, 23));
         tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -232,7 +244,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         tabla_usuarios.setGridColor(new java.awt.Color(22, 26, 33));
         tabla_usuarios.setRowHeight(50);
         tabla_usuarios.setSelectionBackground(new java.awt.Color(13, 17, 23));
-        tabla_usuarios.setSelectionForeground(new java.awt.Color(255,255,255));
+        tabla_usuarios.setSelectionForeground(new java.awt.Color(13, 17, 23));
         jScrollPane1.setViewportView(tabla_usuarios);
 
         jPanel1.add(jScrollPane1);
@@ -305,6 +317,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nombre_label;
+    private javax.swing.JLabel num_pokedex;
     private javax.swing.JLabel perdidas_label;
     private javax.swing.JLabel perfil;
     private javax.swing.JLabel perfil1;
