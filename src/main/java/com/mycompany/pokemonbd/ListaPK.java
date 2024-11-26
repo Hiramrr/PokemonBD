@@ -754,7 +754,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         idPokemon_label2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         idPokemon_label2.setForeground(new java.awt.Color(255, 255, 255));
         idPokemon_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        idPokemon_label2.setText("IDPokemon:");
+        idPokemon_label2.setText("ID Pokemon:");
 
         nombre_label2.setBackground(new java.awt.Color(255, 255, 255));
         nombre_label2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

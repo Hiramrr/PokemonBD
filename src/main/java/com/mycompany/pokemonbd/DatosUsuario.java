@@ -46,6 +46,8 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
         perfil = new javax.swing.JLabel();
         pk_favorito_nombre = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(22, 26, 33));
+        setForeground(new java.awt.Color(22, 26, 33));
         setMinimumSize(new java.awt.Dimension(1150, 690));
 
         jPanel2.setBackground(new java.awt.Color(22, 26, 33));
@@ -153,7 +155,7 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
                 .addComponent(pk_favorito, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pk_favorito_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
