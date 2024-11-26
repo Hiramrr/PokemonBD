@@ -34,27 +34,16 @@ public class Adios extends javax.swing.JDialog implements ActionListener {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        foto = new javax.swing.JLabel();
+        nombre = new javax.swing.JLabel();
         despedirse = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 385));
-        setPreferredSize(new java.awt.Dimension(400, 385));
 
         jPanel1.setLayout(null);
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PikachuPrueba.png"))); // NOI18N
-        jLabel4.setText("Pikachu");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(0, 100, 400, 190);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -62,7 +51,18 @@ public class Adios extends javax.swing.JDialog implements ActionListener {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Adios....");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(0, 60, 400, 32);
+        jLabel2.setBounds(0, 40, 400, 32);
+        jPanel1.add(foto);
+        foto.setBounds(120, 100, 160, 160);
+
+        nombre.setBackground(new java.awt.Color(255, 255, 255));
+        nombre.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        nombre.setForeground(new java.awt.Color(255, 255, 255));
+        nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nombre.setText("Nombre");
+        nombre.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(nombre);
+        nombre.setBounds(0, 270, 400, 30);
 
         despedirse.setBackground(new java.awt.Color(42, 122, 239));
         despedirse.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -123,10 +123,11 @@ public class Adios extends javax.swing.JDialog implements ActionListener {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton despedirse;
+    private javax.swing.JLabel foto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel nombre;
     // End of variables declaration//GEN-END:variables
 
     @Override
