@@ -284,34 +284,39 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         datosLayout.setVerticalGroup(
             datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(datosLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(titulo)
-                .addGap(38, 38, 38)
                 .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(idPokemon_label)
-                    .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nombre_label)
-                .addGap(18, 18, 18)
-                .addComponent(mote_label)
-                .addGap(18, 18, 18)
-                .addComponent(objeto_label)
-                .addGap(18, 18, 18)
-                .addComponent(naturaleza_label)
-                .addGap(18, 18, 18)
-                .addComponent(genero_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tipo1_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tipo2_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(habEspecial_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(num_label)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(region_label)
-                .addGap(7, 7, 7)
+                    .addGroup(datosLayout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(titulo)
+                        .addGap(18, 18, 18)
+                        .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idPokemon_label))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nombre_label)
+                        .addGap(18, 18, 18)
+                        .addComponent(mote_label)
+                        .addGap(18, 18, 18)
+                        .addComponent(objeto_label)
+                        .addGap(18, 18, 18)
+                        .addComponent(naturaleza_label)
+                        .addGap(18, 18, 18)
+                        .addComponent(genero_label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tipo1_label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tipo2_label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(habEspecial_label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(num_label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(region_label)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(eliminar))
         );
 
@@ -630,7 +635,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             .addGroup(estadisticasLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(tituloes)
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(idPokemon_label1))
@@ -638,7 +643,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addComponent(nombre_label1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mote_label1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(base_label)
                     .addComponent(ivs_label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -861,7 +866,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         );
         panel_tablaLayout.setVerticalGroup(
             panel_tablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
+            .addGroup(panel_tablaLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 40, Short.MAX_VALUE))
         );
 
         user.setBackground(new java.awt.Color(13, 17, 23));
@@ -881,7 +888,6 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         favorito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Favorito.png"))); // NOI18N
         favorito.setBorder(null);
         favorito.setToolTipText("Asignar pokemon como favorito");
-        favorito.addActionListener(this);
         favorito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favoritoActionPerformed(evt);
