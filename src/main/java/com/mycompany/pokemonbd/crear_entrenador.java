@@ -82,7 +82,8 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
         entrenadorID.setForeground(new java.awt.Color(255, 255, 255));
         entrenadorID.setBorder(null);
         entrenadorID.setCaretColor(new java.awt.Color(13, 17, 23));
-        entrenadorID.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        entrenadorID.setDisabledTextColor(new java.awt.Color(13, 17, 23));
+        entrenadorID.setEnabled(false);
         entrenadorID.setSelectedTextColor(new java.awt.Color(13, 17, 23));
         entrenadorID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
