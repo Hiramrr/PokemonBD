@@ -901,7 +901,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
 
         agregar.setBackground(new java.awt.Color(13, 17, 23));
         agregar.setForeground(new java.awt.Color(13, 17, 23));
-        agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Agregar.png"))); // NOI18N
+        agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pk.png"))); // NOI18N
         agregar.setBorder(null);
         agregar.setToolTipText("Agregar un nuevo pokemon a la lista");
         agregar.addActionListener(new java.awt.event.ActionListener() {
