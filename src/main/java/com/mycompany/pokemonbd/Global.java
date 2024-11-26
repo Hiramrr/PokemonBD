@@ -474,7 +474,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         nombre_label.setText("Nombre: " + nombre);
         ganadas_label.setText("Peleas ganadas: " + ganadas);
         perdidas_label.setText("Peleas perdidas: " + perdidas);
-        ArrayList pokemon = mBD.obtener_pokemon(idEntrenadorSeleccionado);
+        ArrayList pokemon = mBD.obtener_pokemon_favorito(idEntrenadorSeleccionado);
         String nombrePokemon = pokemon.get(0).toString();
         String Mote = pokemon.get(1).toString();
         String NombreF;

@@ -22,6 +22,7 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
         initComponents();
         cargarImagen();
         cargarDatos();
+        pokemon_favorito();
     }
 
     /**
@@ -195,6 +196,22 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
         }
     }
 
+    public void pokemon_favorito(){
+        ArrayList datos = mBD.obtener_pokemon_favorito(idEntrenador);
+        String nombre = datos.get(0).toString();
+        String mote = datos.get(1).toString();
+        String NombreF;
+        if (mote.equals("")) {
+            NombreF = nombre;
+        } else {
+            NombreF = mote;
+        }
+        pk_favorito_nombre.setText(NombreF);
+        byte[] datosImagen = (byte[]) datos.get(3);
+        Image foto = new ImageIcon(datosImagen).getImage();
+        ImageIcon icono = new ImageIcon(foto.getScaledInstance(151,151,Image.SCALE_SMOOTH));
+        pk_favorito.setIcon(icono);
+    }
 
     public void cargarDatos(){
         ArrayList datos = mBD.obtenerDatos(idEntrenador);

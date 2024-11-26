@@ -663,7 +663,7 @@ public class BD {
         return null;
     }
 
-    public ArrayList obtener_pokemon(String idEntrenador){
+    public ArrayList obtener_pokemon_favorito(String idEntrenador){
         ArrayList pokemon = new ArrayList<>();
         try{
             consulta = con.createStatement();
