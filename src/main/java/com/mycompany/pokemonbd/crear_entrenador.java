@@ -81,7 +81,7 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
         entrenadorID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         entrenadorID.setForeground(new java.awt.Color(255, 255, 255));
         entrenadorID.setBorder(null);
-        entrenadorID.setCaretColor(new java.awt.Color(255, 255, 255));
+        entrenadorID.setCaretColor(new java.awt.Color(13, 17, 23));
         entrenadorID.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         entrenadorID.setEnabled(false);
         entrenadorID.addActionListener(new java.awt.event.ActionListener() {
@@ -194,8 +194,6 @@ public class crear_entrenador extends javax.swing.JPanel implements ActionListen
                 .addComponent(crear)
                 .addGap(15, 15, 15))
         );
-
-        ID_label.getAccessibleContext().setAccessibleName("ID Entrenador");
 
         javax.swing.GroupLayout principalLayout = new javax.swing.GroupLayout(principal);
         principal.setLayout(principalLayout);

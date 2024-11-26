@@ -177,7 +177,7 @@
                   <Border info="null"/>
                 </Property>
                 <Property name="caretColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="17" green="11" red="d" type="rgb"/>
                 </Property>
                 <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -201,9 +201,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="ID Entrenador"/>
               </Properties>
-              <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="ID Entrenador"/>
-              </AccessibilityProperties>
             </Component>
             <Component class="javax.swing.JLabel" name="contrase&#xf1;a_label">
               <Properties>

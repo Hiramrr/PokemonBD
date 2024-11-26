@@ -739,7 +739,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         idT.setForeground(new java.awt.Color(255, 255, 255));
         idT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         idT.setBorder(null);
-        idT.setCaretColor(new java.awt.Color(255, 255, 255));
+        idT.setCaretColor(new java.awt.Color(13, 17, 23));
         idT.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         idT.setEnabled(false);
         idT.addActionListener(new java.awt.event.ActionListener() {
