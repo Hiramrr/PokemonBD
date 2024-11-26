@@ -680,4 +680,13 @@ public class BD {
         }
         return null;
     }
+
+    public void eliminarPokemon(String idPokemon, String idEntrenador){
+        try{
+            consulta = con.createStatement();
+            consulta.executeUpdate("CALL eliminar_Pokemon(" + idPokemon + " , " + idEntrenador + ")");
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }

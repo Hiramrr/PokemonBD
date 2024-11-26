@@ -216,9 +216,7 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent evt) {
         if(evt.getSource() == adios){
-            Acciones msg = new Acciones(((Usuario) javax.swing.SwingUtilities.getWindowAncestor(this)), true);
-            msg.setMensaje("¿Estas seguro que quieres liberar a este pokemon?");
-            msg.setVisible(true);
+            System.out.println("Adios");
         }
     }
 }

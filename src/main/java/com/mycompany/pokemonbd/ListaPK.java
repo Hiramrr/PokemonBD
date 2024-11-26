@@ -1094,6 +1094,15 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JPanel ventana;
     // End of variables declaration//GEN-END:variables
 
+    public void Error(String mensaje) {
+        Dialogo acciones = new Dialogo(this,false);
+        acciones.setVisible(true);
+        acciones.setMensaje(mensaje);
+        acciones.setLocation(450, 261);
+        System.out.println("fallo");
+    }
+
+
     public void llenarTabla(){
         tabla.removeAll();
         tabla.setDefaultRenderer(Object.class, new RenderImagen());
@@ -1286,8 +1295,28 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
             AgregarNuevo agregar = new AgregarNuevo(this,true, idEntrenador);
             agregar.setVisible(true);
         }
+        if(evt.getSource() == eliminar){
+            String idPokemon = idPokemon_label.getText().substring(4);
+            if(idPokemon.equals(mBD.obtenerFavorito(idEntrenador))){
+                Error("No puedes liberar a tu pokemon favorito!");
+                return;
+            }
+            mBD.eliminarPokemon(idPokemon, idEntrenador);
+            llenarTabla();
+            primerPokemon();
+        }
     }
 
+    public boolean liberar(){
+        Acciones msg = new Acciones(this, true, nombre_label.getText().substring(8));
+        msg.setMensaje("¿Estas seguro que quieres liberar a este pokemon?");
+        msg.setVisible(true);
+        return true;
+    }
+
+    public boolean noLiberar(){
+        return false;
+    }
 
     public String generarID(){
         Random random = new Random();
