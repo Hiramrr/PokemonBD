@@ -55,23 +55,6 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         ventana = new javax.swing.JPanel();
         informacion = new javax.swing.JPanel();
         opciones = new javax.swing.JTabbedPane();
-        datos = new javax.swing.JPanel();
-        titulo = new javax.swing.JLabel();
-        imagen = new javax.swing.JPanel();
-        perfil = new javax.swing.JLabel();
-        nombre_label = new javax.swing.JLabel();
-        mote_label = new javax.swing.JLabel();
-        objeto_label = new javax.swing.JLabel();
-        naturaleza_label = new javax.swing.JLabel();
-        genero_label = new javax.swing.JLabel();
-        num_label = new javax.swing.JLabel();
-        region_label = new javax.swing.JLabel();
-        eliminar = new javax.swing.JButton();
-        idPokemon_label = new javax.swing.JLabel();
-        tipo1_label = new javax.swing.JLabel();
-        tipo2_label = new javax.swing.JLabel();
-        habEspecial_label = new javax.swing.JLabel();
-        favorito_icono = new javax.swing.JLabel();
         estadisticas = new javax.swing.JPanel();
         tituloes = new javax.swing.JLabel();
         imagen1 = new javax.swing.JPanel();
@@ -126,6 +109,23 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         idPokemon_label2 = new javax.swing.JLabel();
         nombre_label2 = new javax.swing.JLabel();
         mote_label2 = new javax.swing.JLabel();
+        datos = new javax.swing.JPanel();
+        titulo = new javax.swing.JLabel();
+        imagen = new javax.swing.JPanel();
+        perfil = new javax.swing.JLabel();
+        nombre_label = new javax.swing.JLabel();
+        mote_label = new javax.swing.JLabel();
+        objeto_label = new javax.swing.JLabel();
+        naturaleza_label = new javax.swing.JLabel();
+        genero_label = new javax.swing.JLabel();
+        num_label = new javax.swing.JLabel();
+        region_label = new javax.swing.JLabel();
+        eliminar = new javax.swing.JButton();
+        idPokemon_label = new javax.swing.JLabel();
+        tipo1_label = new javax.swing.JLabel();
+        tipo2_label = new javax.swing.JLabel();
+        habEspecial_label = new javax.swing.JLabel();
+        favorito_icono = new javax.swing.JLabel();
         panel_tabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
@@ -161,166 +161,6 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         opciones.setBackground(new java.awt.Color(22, 26, 33));
         opciones.setForeground(new java.awt.Color(255, 255, 255));
         opciones.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        datos.setBackground(new java.awt.Color(22, 26, 33));
-
-        titulo.setBackground(new java.awt.Color(255, 255, 255));
-        titulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        titulo.setForeground(new java.awt.Color(255, 255, 255));
-        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo.setText("Datos del pokemon");
-
-        imagen.setBackground(new java.awt.Color(13, 17, 23));
-        imagen.setForeground(new java.awt.Color(13, 17, 23));
-        imagen.setLayout(null);
-        imagen.add(perfil);
-        perfil.setBounds(0, 0, 210, 210);
-
-        nombre_label.setBackground(new java.awt.Color(255, 255, 255));
-        nombre_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        nombre_label.setForeground(new java.awt.Color(255, 255, 255));
-        nombre_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nombre_label.setText("Nombre:");
-
-        mote_label.setBackground(new java.awt.Color(255, 255, 255));
-        mote_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        mote_label.setForeground(new java.awt.Color(255, 255, 255));
-        mote_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mote_label.setText("Mote:");
-
-        objeto_label.setBackground(new java.awt.Color(255, 255, 255));
-        objeto_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        objeto_label.setForeground(new java.awt.Color(255, 255, 255));
-        objeto_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        objeto_label.setText("Objeto:");
-
-        naturaleza_label.setBackground(new java.awt.Color(255, 255, 255));
-        naturaleza_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        naturaleza_label.setForeground(new java.awt.Color(255, 255, 255));
-        naturaleza_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        naturaleza_label.setText("Naturaleza:");
-
-        genero_label.setBackground(new java.awt.Color(255, 255, 255));
-        genero_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        genero_label.setForeground(new java.awt.Color(255, 255, 255));
-        genero_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        genero_label.setText("Género:");
-
-        num_label.setBackground(new java.awt.Color(255, 255, 255));
-        num_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        num_label.setForeground(new java.awt.Color(255, 255, 255));
-        num_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        num_label.setText("Número Pokedex:");
-
-        region_label.setBackground(new java.awt.Color(255, 255, 255));
-        region_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        region_label.setForeground(new java.awt.Color(255, 255, 255));
-        region_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        region_label.setText("Región:");
-
-        eliminar.setBackground(new java.awt.Color(184, 44, 0));
-        eliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        eliminar.setForeground(new java.awt.Color(255, 255, 255));
-        eliminar.setText("Liberar Pokemon");
-        eliminar.addActionListener(this);
-        eliminar.setToolTipText("Liberar al pokemon");
-
-        idPokemon_label.setBackground(new java.awt.Color(255, 255, 255));
-        idPokemon_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        idPokemon_label.setForeground(new java.awt.Color(255, 255, 255));
-        idPokemon_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        idPokemon_label.setText("IDPokemon:");
-
-        tipo1_label.setBackground(new java.awt.Color(255, 255, 255));
-        tipo1_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        tipo1_label.setForeground(new java.awt.Color(255, 255, 255));
-        tipo1_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tipo1_label.setText("Tipo:");
-
-        tipo2_label.setBackground(new java.awt.Color(255, 255, 255));
-        tipo2_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        tipo2_label.setForeground(new java.awt.Color(255, 255, 255));
-        tipo2_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tipo2_label.setText("Tipo2:");
-
-        habEspecial_label.setBackground(new java.awt.Color(255, 255, 255));
-        habEspecial_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        habEspecial_label.setForeground(new java.awt.Color(255, 255, 255));
-        habEspecial_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        habEspecial_label.setText("HabEspecial:");
-
-        javax.swing.GroupLayout datosLayout = new javax.swing.GroupLayout(datos);
-        datos.setLayout(datosLayout);
-        datosLayout.setHorizontalGroup(
-            datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(datosLayout.createSequentialGroup()
-                .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(datosLayout.createSequentialGroup()
-                            .addGap(164, 164, 164)
-                            .addComponent(titulo))
-                        .addGroup(datosLayout.createSequentialGroup()
-                            .addGap(24, 24, 24)
-                            .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(nombre_label)
-                                .addGroup(datosLayout.createSequentialGroup()
-                                    .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(idPokemon_label))
-                                .addComponent(mote_label)
-                                .addComponent(objeto_label)
-                                .addComponent(naturaleza_label)
-                                .addComponent(genero_label)
-                                .addComponent(num_label)
-                                .addComponent(region_label)
-                                .addComponent(tipo1_label)
-                                .addComponent(tipo2_label)
-                                .addComponent(habEspecial_label)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-        );
-        datosLayout.setVerticalGroup(
-            datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(datosLayout.createSequentialGroup()
-                .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(datosLayout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(titulo)
-                        .addGap(18, 18, 18)
-                        .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idPokemon_label))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nombre_label)
-                        .addGap(18, 18, 18)
-                        .addComponent(mote_label)
-                        .addGap(18, 18, 18)
-                        .addComponent(objeto_label)
-                        .addGap(18, 18, 18)
-                        .addComponent(naturaleza_label)
-                        .addGap(18, 18, 18)
-                        .addComponent(genero_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tipo1_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tipo2_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(habEspecial_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(num_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(region_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(eliminar))
-        );
-
-        opciones.addTab("Datos", datos);
 
         estadisticas.setBackground(new java.awt.Color(22, 26, 33));
 
@@ -643,7 +483,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addComponent(nombre_label1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mote_label1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(base_label)
                     .addComponent(ivs_label, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -808,6 +648,172 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
 
         opciones.addTab("Movimientos", movimientos);
 
+        datos.setBackground(new java.awt.Color(22, 26, 33));
+
+        titulo.setBackground(new java.awt.Color(255, 255, 255));
+        titulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titulo.setForeground(new java.awt.Color(255, 255, 255));
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setText("Datos del pokemon");
+
+        imagen.setBackground(new java.awt.Color(13, 17, 23));
+        imagen.setForeground(new java.awt.Color(13, 17, 23));
+        imagen.setLayout(null);
+        imagen.add(perfil);
+        perfil.setBounds(0, 0, 210, 210);
+
+        nombre_label.setBackground(new java.awt.Color(255, 255, 255));
+        nombre_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nombre_label.setForeground(new java.awt.Color(255, 255, 255));
+        nombre_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nombre_label.setText("Nombre:");
+
+        mote_label.setBackground(new java.awt.Color(255, 255, 255));
+        mote_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mote_label.setForeground(new java.awt.Color(255, 255, 255));
+        mote_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mote_label.setText("Mote:");
+
+        objeto_label.setBackground(new java.awt.Color(255, 255, 255));
+        objeto_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        objeto_label.setForeground(new java.awt.Color(255, 255, 255));
+        objeto_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        objeto_label.setText("Objeto:");
+
+        naturaleza_label.setBackground(new java.awt.Color(255, 255, 255));
+        naturaleza_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        naturaleza_label.setForeground(new java.awt.Color(255, 255, 255));
+        naturaleza_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        naturaleza_label.setText("Naturaleza:");
+
+        genero_label.setBackground(new java.awt.Color(255, 255, 255));
+        genero_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        genero_label.setForeground(new java.awt.Color(255, 255, 255));
+        genero_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        genero_label.setText("Género:");
+
+        num_label.setBackground(new java.awt.Color(255, 255, 255));
+        num_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        num_label.setForeground(new java.awt.Color(255, 255, 255));
+        num_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        num_label.setText("Número Pokedex:");
+
+        region_label.setBackground(new java.awt.Color(255, 255, 255));
+        region_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        region_label.setForeground(new java.awt.Color(255, 255, 255));
+        region_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        region_label.setText("Región:");
+
+        eliminar.setBackground(new java.awt.Color(184, 44, 0));
+        eliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        eliminar.setForeground(new java.awt.Color(255, 255, 255));
+        eliminar.setText("Liberar Pokemon");
+        eliminar.addActionListener(this);
+        eliminar.setToolTipText("Liberar al pokemon");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
+
+        idPokemon_label.setBackground(new java.awt.Color(255, 255, 255));
+        idPokemon_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        idPokemon_label.setForeground(new java.awt.Color(255, 255, 255));
+        idPokemon_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        idPokemon_label.setText("IDPokemon:");
+
+        tipo1_label.setBackground(new java.awt.Color(255, 255, 255));
+        tipo1_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tipo1_label.setForeground(new java.awt.Color(255, 255, 255));
+        tipo1_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tipo1_label.setText("Tipo:");
+
+        tipo2_label.setBackground(new java.awt.Color(255, 255, 255));
+        tipo2_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tipo2_label.setForeground(new java.awt.Color(255, 255, 255));
+        tipo2_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tipo2_label.setText("Tipo2:");
+
+        habEspecial_label.setBackground(new java.awt.Color(255, 255, 255));
+        habEspecial_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        habEspecial_label.setForeground(new java.awt.Color(255, 255, 255));
+        habEspecial_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        habEspecial_label.setText("HabEspecial:");
+
+        javax.swing.GroupLayout datosLayout = new javax.swing.GroupLayout(datos);
+        datos.setLayout(datosLayout);
+        datosLayout.setHorizontalGroup(
+            datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(datosLayout.createSequentialGroup()
+                .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(datosLayout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(titulo))
+                    .addGroup(datosLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombre_label)
+                            .addGroup(datosLayout.createSequentialGroup()
+                                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idPokemon_label))
+                            .addComponent(mote_label)
+                            .addComponent(objeto_label)
+                            .addComponent(naturaleza_label)
+                            .addComponent(genero_label)
+                            .addComponent(num_label)
+                            .addComponent(tipo1_label)
+                            .addComponent(tipo2_label)
+                            .addComponent(habEspecial_label)
+                            .addComponent(region_label))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+            .addGroup(datosLayout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        datosLayout.setVerticalGroup(
+            datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(datosLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(titulo)
+                .addGap(18, 18, 18)
+                .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idPokemon_label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nombre_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(mote_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(objeto_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(naturaleza_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(genero_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tipo1_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tipo2_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(habEspecial_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(num_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(region_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(eliminar)
+                .addGap(29, 29, 29))
+        );
+
+        opciones.addTab("Datos", datos);
+
         javax.swing.GroupLayout informacionLayout = new javax.swing.GroupLayout(informacion);
         informacion.setLayout(informacionLayout);
         informacionLayout.setHorizontalGroup(
@@ -820,9 +826,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         informacionLayout.setVerticalGroup(
             informacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(informacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 761, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 765, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 26, Short.MAX_VALUE))
         );
 
         panel_tabla.setBackground(new java.awt.Color(13, 17, 23));
@@ -979,6 +984,10 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private void personasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_personasActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
