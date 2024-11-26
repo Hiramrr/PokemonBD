@@ -765,7 +765,6 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         mote_label2.setBackground(new java.awt.Color(255, 255, 255));
         mote_label2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         mote_label2.setForeground(new java.awt.Color(255, 255, 255));
-        mote_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mote_label2.setText("Mote:");
 
         javax.swing.GroupLayout movimientosLayout = new javax.swing.GroupLayout(movimientos);
@@ -786,8 +785,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                                 .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(idPokemon_label2)
                                     .addComponent(nombre_label2)
-                                    .addComponent(mote_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(mote_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 54, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimientosLayout.createSequentialGroup()
                         .addGap(0, 23, Short.MAX_VALUE)
                         .addComponent(contenedor_movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -799,14 +798,14 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 .addGap(23, 23, 23)
                 .addComponent(titutlo_mov)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimientosLayout.createSequentialGroup()
+                .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(movimientosLayout.createSequentialGroup()
                         .addComponent(idPokemon_label2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nombre_label2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mote_label2)))
+                        .addComponent(mote_label2))
+                    .addComponent(imagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(contenedor_movimientos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(170, 170, 170))

@@ -731,7 +731,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         id_label.setText("IDPokemon generada: ");
         id_label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Agregar.add(id_label);
-        id_label.setBounds(0, 680, 120, 20);
+        id_label.setBounds(0, 670, 210, 30);
 
         idT.setEditable(false);
         idT.setBackground(new java.awt.Color(13, 17, 23));
@@ -740,7 +740,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         idT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         idT.setBorder(null);
         idT.setCaretColor(new java.awt.Color(255, 255, 255));
-        idT.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        idT.setDisabledTextColor(new java.awt.Color(13, 17, 23));
         idT.setEnabled(false);
         idT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -748,7 +748,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             }
         });
         Agregar.add(idT);
-        idT.setBounds(120, 670, 130, 30);
+        idT.setBounds(210, 670, 130, 30);
 
         numPokedex_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         numPokedex_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -762,8 +762,8 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         numPokedex.setForeground(new java.awt.Color(255, 255, 255));
         numPokedex.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         numPokedex.setBorder(null);
-        numPokedex.setCaretColor(new java.awt.Color(255, 255, 255));
-        numPokedex.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        numPokedex.setCaretColor(new java.awt.Color(13, 17, 23));
+        numPokedex.setDisabledTextColor(new java.awt.Color(13, 17, 23));
         numPokedex.setEnabled(false);
         Agregar.add(numPokedex);
         numPokedex.setBounds(330, 350, 140, 30);
