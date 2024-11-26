@@ -1120,6 +1120,8 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
 
     public void llenarTabla(){
         tabla.removeAll();
+        tabla.repaint();
+        tabla.revalidate();
         tabla.setDefaultRenderer(Object.class, new RenderImagen());
         ArrayList<PokemonAlmacen> datos = mBD.obtenerPokemon(idEntrenador);
         if(datos != null){
@@ -1332,8 +1334,12 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     public void eliminarPK(){
         String idPokemon = idPokemon_label.getText().substring(4);
         if(mBD.eliminarPokemon(idPokemon, idEntrenador)) {
+            ((DefaultTableModel) tabla.getModel()).setRowCount(0);
+            ((DefaultTableModel) tabla.getModel()).setRowCount(5);
             llenarTabla();
             primerPokemon();
+            tabla.repaint();
+            tabla.revalidate();
         }
     }
 

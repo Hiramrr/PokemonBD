@@ -141,7 +141,11 @@ public class Adios extends javax.swing.JDialog implements ActionListener {
 
 
     public void obtenerPK() {
-        this.nombre.setText(this.mote);
+        if(this.mote.equals("")){
+            this.nombre.setText(this.especie);
+        } else {
+            this.nombre.setText(this.mote);
+        }
         try {
             byte[] imagen = mBD.obtenerImagenEspecie(this.especie);
             BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(imagen));
