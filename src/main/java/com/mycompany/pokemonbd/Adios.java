@@ -4,22 +4,31 @@
  */
 package com.mycompany.pokemonbd;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 /**
  *
  * @author Hiram
  */
 public class Adios extends javax.swing.JDialog implements ActionListener {
-
+    String especie;
+    String mote;
+    BD mBD = new BD();
     /**
      * Creates new form Adios
      */
-    public Adios(java.awt.Frame parent, boolean modal, String nombre) {
+    public Adios(java.awt.Frame parent, boolean modal, String especie, String mote) {
         super(parent, modal);
+        this.especie = especie;
+        this.mote = mote;
         initComponents();
+        obtenerPK();
         setIconImage(new ImageIcon("Icono.jpg").getImage());
         this.setTitle("Adios....");
     }
@@ -129,6 +138,20 @@ public class Adios extends javax.swing.JDialog implements ActionListener {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nombre;
     // End of variables declaration//GEN-END:variables
+
+
+    public void obtenerPK() {
+        this.nombre.setText(this.mote);
+        try {
+            byte[] imagen = mBD.obtenerImagenEspecie(this.especie);
+            BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(imagen));
+            ImageIcon mFoto = new ImageIcon(bufferedImage.getScaledInstance(160, 160, bufferedImage.SCALE_SMOOTH));
+            foto.setIcon(mFoto);
+        } catch (IOException ex) {
+            System.out.println("Error al cargar la imagen");
+        }
+
+    }
 
     @Override
     public void actionPerformed(ActionEvent evt) {

@@ -681,12 +681,27 @@ public class BD {
         return null;
     }
 
-    public void eliminarPokemon(String idPokemon, String idEntrenador){
+    public boolean eliminarPokemon(String idPokemon, String idEntrenador){
         try{
             consulta = con.createStatement();
             consulta.executeUpdate("CALL eliminar_Pokemon(" + idPokemon + " , " + idEntrenador + ")");
+            return true;
         } catch (Exception e){
             System.out.println(e);
         }
+        return false;
+    }
+
+    public byte[] obtenerImagenEspecie(String especie){
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT Imagen FROM Especie WHERE Nombre = '" + especie + "'");
+            if (resultado.next()) {
+                return resultado.getBytes("Imagen");
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
     }
 }

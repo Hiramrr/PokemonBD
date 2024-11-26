@@ -13,13 +13,15 @@ import java.awt.event.ActionEvent;
  */
 public class Acciones extends javax.swing.JDialog implements ActionListener {
     String especie;
+    String mote;
     /**
      * Creates new form Acciones
      */
-    public Acciones(ListaPK parent, boolean modal, String especie) {
+    public Acciones(ListaPK parent, boolean modal, String especie, String mote) {
         super(parent, modal);
-        this.especie = especie;
         initComponents();
+        this.especie = especie;
+        this.mote = mote;
         setIconImage(new ImageIcon("Icono.jpg").getImage());
         this.setTitle("PokeDialogo");
     }
@@ -126,9 +128,11 @@ public class Acciones extends javax.swing.JDialog implements ActionListener {
     
     public void actionPerformed(ActionEvent evt){
         if(evt.getSource() == aceptar){
+            ListaPK parent = (ListaPK) this.getParent();
+            parent.liberar();
+            Adios adios = new Adios(parent, true, this.especie, this.mote);
+            adios.setVisible(true);
             this.dispose();
-            Adios bye = new Adios(new javax.swing.JFrame(), true, especie );
-            bye.setVisible(true);
         } else if(evt.getSource() == rechazar){
             this.dispose();
         }

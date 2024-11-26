@@ -1301,22 +1301,31 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 Error("No puedes liberar a tu pokemon favorito!");
                 return;
             }
-            mBD.eliminarPokemon(idPokemon, idEntrenador);
+            Acciones msg = new Acciones(this, true, nombre_label.getText().substring(8), mote_label.getText().substring(6));
+            if(mote_label.getText().substring(6).equals("")) {
+                msg.setMensaje("¿Estas seguro que quieres liberar a " + nombre_label.getText().substring(8) + "?");
+            } else {
+                msg.setMensaje("¿Estas seguro que quieres liberar a " + mote_label.getText().substring(6) + "?");
+            }
+            msg.setVisible(true);
+            if(liberar()) {
+                eliminarPK();
+            }
+        }
+    }
+
+    public void eliminarPK(){
+        String idPokemon = idPokemon_label.getText().substring(4);
+        if(mBD.eliminarPokemon(idPokemon, idEntrenador)) {
             llenarTabla();
             primerPokemon();
         }
     }
 
     public boolean liberar(){
-        Acciones msg = new Acciones(this, true, nombre_label.getText().substring(8));
-        msg.setMensaje("¿Estas seguro que quieres liberar a este pokemon?");
-        msg.setVisible(true);
         return true;
     }
 
-    public boolean noLiberar(){
-        return false;
-    }
 
     public String generarID(){
         Random random = new Random();
