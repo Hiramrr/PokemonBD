@@ -38,12 +38,12 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
         nombre_label = new javax.swing.JLabel();
         idEntrenador_label = new javax.swing.JLabel();
         pk_favorito = new javax.swing.JLabel();
-        adios = new javax.swing.JButton();
         favorito_label = new javax.swing.JLabel();
         ganadas_label = new javax.swing.JLabel();
         perdidas_label = new javax.swing.JLabel();
         imagen = new javax.swing.JPanel();
         perfil = new javax.swing.JLabel();
+        pk_favorito_nombre = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(1150, 690));
 
@@ -63,23 +63,13 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
         idEntrenador_label.setBackground(new java.awt.Color(255, 255, 255));
         idEntrenador_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         idEntrenador_label.setForeground(new java.awt.Color(255, 255, 255));
-        idEntrenador_label.setText("ID Entrenador:");
+        idEntrenador_label.setText("IDPokemon Entrenador:");
 
         pk_favorito.setBackground(new java.awt.Color(255, 255, 255));
         pk_favorito.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         pk_favorito.setForeground(new java.awt.Color(255, 255, 255));
         pk_favorito.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pk_favorito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PikachuPrueba.png"))); // NOI18N
-        pk_favorito.setText("Pikachu");
-        pk_favorito.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         pk_favorito.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        pk_favorito.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        adios.setBackground(new java.awt.Color(184, 44, 0));
-        adios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        adios.setForeground(new java.awt.Color(255, 255, 255));
-        adios.setText("Decir Adios");
-        adios.addActionListener(this);
 
         favorito_label.setBackground(new java.awt.Color(255, 255, 255));
         favorito_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -102,20 +92,14 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
         imagen.add(perfil);
         perfil.setBounds(0, 0, 260, 260);
 
+        pk_favorito_nombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pk_favorito_nombre.setForeground(new java.awt.Color(255, 255, 255));
+        pk_favorito_nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(favorito_label)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(adios)
-                            .addComponent(pk_favorito))))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,6 +117,16 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(saludo_label)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(favorito_label)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pk_favorito, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                            .addComponent(pk_favorito_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,10 +149,10 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
                 .addGap(9, 9, 9)
                 .addComponent(favorito_label)
                 .addGap(15, 15, 15)
-                .addComponent(pk_favorito)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(adios)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addComponent(pk_favorito, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pk_favorito_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -179,7 +173,6 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton adios;
     private javax.swing.JLabel favorito_label;
     private javax.swing.JLabel ganadas_label;
     private javax.swing.JLabel idEntrenador_label;
@@ -189,6 +182,7 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JLabel perdidas_label;
     private javax.swing.JLabel perfil;
     private javax.swing.JLabel pk_favorito;
+    private javax.swing.JLabel pk_favorito_nombre;
     private javax.swing.JLabel saludo_label;
     // End of variables declaration//GEN-END:variables
     public void cargarImagen(){
@@ -215,8 +209,5 @@ public class DatosUsuario extends javax.swing.JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent evt) {
-        if(evt.getSource() == adios){
-            System.out.println("Adios");
-        }
     }
 }

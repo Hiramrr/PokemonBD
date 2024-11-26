@@ -1567,7 +1567,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="favoritoActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="favorito.setToolTipText(&quot;Asignar pokemon como favorito&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="favorito.setToolTipText(&quot;Asignar pokemon como favorito&quot;);&#xa;favorito.addActionListener(this);"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="agregar">

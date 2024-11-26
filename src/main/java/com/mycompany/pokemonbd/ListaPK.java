@@ -893,6 +893,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         favorito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Favorito.png"))); // NOI18N
         favorito.setBorder(null);
         favorito.setToolTipText("Asignar pokemon como favorito");
+        favorito.addActionListener(this);
         favorito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favoritoActionPerformed(evt);

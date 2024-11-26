@@ -566,7 +566,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             }
         });
         tabla.setGridColor(new java.awt.Color(22, 26, 33));
-        tabla.setRowHeight(60);
+        tabla.setRowHeight(50);
         tabla.setSelectionBackground(new java.awt.Color(13, 17, 23));
         tabla.setSelectionForeground(new java.awt.Color(255, 255, 255));
         tabla.getTableHeader().setReorderingAllowed(false);
@@ -695,7 +695,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimientosLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(movimientosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(movimientosLayout.createSequentialGroup()
                         .addComponent(movimientos_label)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -716,7 +716,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                         .addComponent(añadirMov)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(eliminarMov)))
-                .addGap(49, 49, 49))
+                .addGap(50, 50, 50))
         );
 
         jTabbedPane1.addTab("Movimientos", movimientos);
@@ -728,7 +728,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         id_label.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         id_label.setForeground(new java.awt.Color(255, 255, 255));
         id_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        id_label.setText("ID generada: ");
+        id_label.setText("IDPokemon generada: ");
         id_label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Agregar.add(id_label);
         id_label.setBounds(0, 680, 120, 20);
@@ -741,6 +741,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         idT.setBorder(null);
         idT.setCaretColor(new java.awt.Color(255, 255, 255));
         idT.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        idT.setEnabled(false);
         idT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idTActionPerformed(evt);
@@ -763,6 +764,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         numPokedex.setBorder(null);
         numPokedex.setCaretColor(new java.awt.Color(255, 255, 255));
         numPokedex.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        numPokedex.setEnabled(false);
         Agregar.add(numPokedex);
         numPokedex.setBounds(330, 350, 140, 30);
 

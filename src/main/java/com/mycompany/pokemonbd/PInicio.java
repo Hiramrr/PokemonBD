@@ -215,7 +215,7 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
     public void iniciarSesionError() {
         Dialogo acciones = new Dialogo(this,false);
         acciones.setVisible(true);
-        acciones.setMensaje("No existe el usuario en la base de datos");
+        acciones.setMensaje("No existe el entrenador en la base de datos");
         acciones.setLocation(450, 261);
         System.out.println("fallo");
     }
@@ -223,7 +223,7 @@ public class PInicio extends javax.swing.JFrame implements ActionListener {
     public void crearUsuarioExitoso() {
         Dialogo acciones = new Dialogo(this,false);
         acciones.setVisible(true);
-        acciones.setMensaje("Usuario creado exitosamente");
+        acciones.setMensaje("Entrenador creado exitosamente");
         acciones.setLocation(450, 261);
         System.out.println("Funciono");
     }
