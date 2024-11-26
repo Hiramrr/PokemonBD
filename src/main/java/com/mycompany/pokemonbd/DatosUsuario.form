@@ -60,7 +60,7 @@
                               <Component id="nombre_label" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="idEntrenador_label" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="296" max="32767" attributes="0"/>
+                          <EmptySpace pref="216" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="ganadas_label" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="perdidas_label" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -118,7 +118,7 @@
                   <Component id="pk_favorito" min="-2" pref="151" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="pk_favorito_nombre" min="-2" pref="24" max="-2" attributes="0"/>
-                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                  <EmptySpace pref="74" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
