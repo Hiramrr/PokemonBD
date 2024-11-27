@@ -1188,7 +1188,6 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                     llenarEstadisticas(idPokemon);
                     llenarMovimientos(idPokemon);
                     } catch (Exception e) {
-                        System.out.println(e);
                     }
                 }
             }
@@ -1337,26 +1336,30 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 msg.setMensaje("¿Estas seguro que quieres liberar a " + mote_label.getText().substring(6) + "?");
             }
             msg.setVisible(true);
-            if(liberar()) {
-                eliminarPK();
-            }
         }
+        if(evt.getSource() == editar){
+            String idPokemon = idPokemon_label.getText().substring(4);
+            Editar_Pokemon editar = new Editar_Pokemon(this,true, idPokemon);
+            editar.setVisible(true);
+        }
+    }
+
+    public void actualizarTabla(){
+        ((DefaultTableModel) tabla.getModel()).setRowCount(0);
+        ((DefaultTableModel) tabla.getModel()).setRowCount(5);
+        llenarTabla();
+        primerPokemon();
+        tabla.repaint();
+        tabla.revalidate();
     }
 
     public void eliminarPK(){
         String idPokemon = idPokemon_label.getText().substring(4);
         if(mBD.eliminarPokemon(idPokemon, idEntrenador)) {
-            ((DefaultTableModel) tabla.getModel()).setRowCount(0);
-            ((DefaultTableModel) tabla.getModel()).setRowCount(5);
-            llenarTabla();
-            primerPokemon();
-            tabla.repaint();
-            tabla.revalidate();
+            actualizarTabla();
+        } else {
+            Error("No se pudo eliminar el pokemon");
         }
-    }
-
-    public boolean liberar(){
-        return true;
     }
 
 

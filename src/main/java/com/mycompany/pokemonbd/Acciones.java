@@ -129,7 +129,7 @@ public class Acciones extends javax.swing.JDialog implements ActionListener {
     public void actionPerformed(ActionEvent evt){
         if(evt.getSource() == aceptar){
             ListaPK parent = (ListaPK) this.getParent();
-            parent.liberar();
+            parent.eliminarPK();
             Adios adios = new Adios(parent, true, this.especie, this.mote);
             adios.setVisible(true);
             this.dispose();

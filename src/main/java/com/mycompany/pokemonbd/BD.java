@@ -55,9 +55,9 @@ public class BD {
         }
     }
 
-    public boolean AgregarEntrenador(ImagenAlmacenEntrenador mImagen){
+    public boolean AgregarEntrenador(ImagenAlmacenEntrenador mImagen) {
         PreparedStatement ps = null;
-        try{
+        try {
             ps = con.prepareStatement(SQL_AGREGAR_ENTRENADOR);
             ps.setInt(1, mImagen.getID());
             ps.setString(2, mImagen.getNombre());
@@ -65,7 +65,7 @@ public class BD {
             ps.setBytes(4, mImagen.getImagen());
             ps.executeUpdate();
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return false;
         } finally {
@@ -184,9 +184,9 @@ public class BD {
         }
     }
 
-    public boolean actualizarDatosContraseñaImagen(ImagenAlmacenEntrenador mImagen){
+    public boolean actualizarDatosContraseñaImagen(ImagenAlmacenEntrenador mImagen) {
         PreparedStatement ps = null;
-        try{
+        try {
             System.out.println("intento de actualizacion");
             ps = con.prepareStatement("UPDATE Entrenador SET Nombre = ?, Contraseña = ?, Imagen = ? WHERE ID = ?");
             ps.setString(1, mImagen.getNombre());
@@ -195,7 +195,7 @@ public class BD {
             ps.setInt(4, mImagen.getID());
             ps.executeUpdate();
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return false;
         } finally {
@@ -248,6 +248,7 @@ public class BD {
             }
         }
     }
+
     public boolean actualizarDatosSinContraseña(ImagenAlmacenEntrenador mImagen) {
         PreparedStatement ps = null;
         try {
@@ -272,7 +273,8 @@ public class BD {
     public String getContraseña(String idEntrenador) {
         try {
             consulta = con.createStatement();
-            resultado = consulta.executeQuery("CALL obtener_contraseña(" + idEntrenador + ")");;
+            resultado = consulta.executeQuery("CALL obtener_contraseña(" + idEntrenador + ")");
+            ;
             if (resultado.next()) {
                 return resultado.getString("Contraseña");
             } else {
@@ -293,57 +295,57 @@ public class BD {
         }
     }
 
-    public ArrayList obtenerRegiones(){
+    public ArrayList obtenerRegiones() {
         ArrayList regiones = new ArrayList<>();
-        try{
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtenerDatosRegion()");
-            while (resultado.next()){
+            while (resultado.next()) {
                 regiones.add(resultado.getString("Nombre"));
                 regiones.add(resultado.getString("Generacion"));
                 regiones.add(resultado.getInt("NumPokemon"));
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return null;
         }
         return regiones;
     }
 
-    public String obtenerEspaciosDisponiblesPokemon(String Region){
-        try{
+    public String obtenerEspaciosDisponiblesPokemon(String Region) {
+        try {
             consulta = con.createStatement();
             consulta.executeQuery("CALL contarDisponibles('" + Region + "', @disponibles)");
             resultado = consulta.executeQuery("SELECT @disponibles as Disponibles");
             if (resultado.next()) {
                 return resultado.getString("Disponibles");
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public ArrayList obtenerDatosRegion(String Region){
+    public ArrayList obtenerDatosRegion(String Region) {
         ArrayList datos = new ArrayList<>();
-        try{
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("SELECT Generacion, NumPokemon FROM Region WHERE Nombre = '" + Region + "'");
-            while(resultado.next()){
+            while (resultado.next()) {
                 datos.add(resultado.getString("Generacion"));
                 datos.add(resultado.getInt("NumPokemon"));
             }
             return datos;
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             System.out.println("Error al obtener la generacion");
         }
         return null;
     }
 
-    public boolean agregarEspecie(AlmacenEspecie mEspecie){
+    public boolean agregarEspecie(AlmacenEspecie mEspecie) {
         PreparedStatement ps = null;
-        try{
+        try {
             ps = con.prepareStatement(SQL_AGREGAR_ESPECIE);
             ps.setInt(1, mEspecie.getNumPokedex());
             ps.setString(2, mEspecie.getNombre());
@@ -359,7 +361,7 @@ public class BD {
             ps.setBytes(12, mEspecie.getImagen());
             ps.executeUpdate();
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return false;
         } finally {
@@ -376,7 +378,7 @@ public class BD {
         try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL numPokedexLista('" + Region + "')");
-            while(resultado.next()){
+            while (resultado.next()) {
                 datos.add(resultado.getString("total"));
             }
             return datos;
@@ -386,27 +388,27 @@ public class BD {
         return null;
     }
 
-    public ArrayList obtenerEspecies(){
+    public ArrayList obtenerEspecies() {
         ArrayList especies = new ArrayList<>();
-        try{
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtenerEspecies()");
             while (resultado.next()) {
                 especies.add(resultado.getString("Nombre"));
             }
             return especies;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public ArrayList obtenerDatosEspecie(String nombre){
+    public ArrayList obtenerDatosEspecie(String nombre) {
         ArrayList datos = new ArrayList<>();
-        try{
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtenerDatosEspecie('" + nombre + "')");
-            while(resultado.next()){
+            while (resultado.next()) {
                 datos.add(resultado.getInt("numPokedex"));
                 datos.add(resultado.getString("PSBase"));
                 datos.add(resultado.getInt("ATKBase"));
@@ -417,35 +419,35 @@ public class BD {
                 datos.add(resultado.getBytes("Imagen"));
             }
             return datos;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public ArrayList obtenerMovimientos(){
+    public ArrayList obtenerMovimientos() {
         ArrayList movimientos = new ArrayList<>();
-        try{
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtenerMovimientos()");
             while (resultado.next()) {
                 movimientos.add(resultado.getString("Nombre"));
             }
             return movimientos;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public String obtenerPP(String movimiento){
-        try{
+    public String obtenerPP(String movimiento) {
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtenerPP('" + movimiento + "')");
-            while(resultado.next()){
+            while (resultado.next()) {
                 return resultado.getString("PP");
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
@@ -545,12 +547,12 @@ public class BD {
         return tabla;
     }
 
-    public ArrayList obtenerDatosPokemon(String idPokemon){
+    public ArrayList obtenerDatosPokemon(String idPokemon) {
         ArrayList datos = new ArrayList<>();
-        try{
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtener_InformacionPK(" + idPokemon + ")");
-            while(resultado.next()){
+            while (resultado.next()) {
                 datos.add(resultado.getInt("IDPokemon")); // 0
                 datos.add(resultado.getBytes("ImagenEspecie")); // 1
                 datos.add(resultado.getString("NombreEspecie")); // 2
@@ -565,18 +567,18 @@ public class BD {
                 datos.add(resultado.getString("NombreRegion")); // 11
             }
             return datos;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public ArrayList obtenerEstadisticasPokemon(String idPokemon){
+    public ArrayList obtenerEstadisticasPokemon(String idPokemon) {
         ArrayList estadisticas = new ArrayList<>();
-        try{
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtener_estadisticas_PK(" + idPokemon + ")");
-            while(resultado.next()){
+            while (resultado.next()) {
                 estadisticas.add(resultado.getInt("ID")); // 0
                 estadisticas.add(resultado.getInt("PSBase")); // 1
                 estadisticas.add(resultado.getInt("ATKBase")); // 2
@@ -604,104 +606,126 @@ public class BD {
                 estadisticas.add(resultado.getFloat("SATKFinal")); // 24
             }
             return estadisticas;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public int cuantos_Pokemon(String idEntrenador){
-        try{
+    public int cuantos_Pokemon(String idEntrenador) {
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL cuantos_Pokemon(" + idEntrenador + ")");
             if (resultado.next()) {
                 return resultado.getInt("Total");
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return 0;
     }
 
-    public void asignarFavorito(String idPokemon, String idEntrenador){
-        try{
+    public void asignarFavorito(String idPokemon, String idEntrenador) {
+        try {
             consulta = con.createStatement();
             consulta.executeUpdate("CALL asignar_favorito(" + idPokemon + ", " + idEntrenador + ")");
             System.out.println("Pokemon favorito asignado");
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    public ArrayList obtenerMovimientosPokemon(String idPokemon){
+    public ArrayList obtenerMovimientosPokemon(String idPokemon) {
         ArrayList movimientos = new ArrayList<>();
-        try{
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtener_movimientos_PK(" + idPokemon + ")");
-            while(resultado.next()){
+            while (resultado.next()) {
                 movimientos.add(resultado.getString("Movimiento"));
                 movimientos.add(resultado.getInt("PP"));
                 movimientos.add(resultado.getInt("masPP"));
             }
             return movimientos;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public String obtenerFavorito(String idEntrenador){
-        try{
+    public String obtenerFavorito(String idEntrenador) {
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtener_favorito(" + idEntrenador + ")");
             if (resultado.next()) {
                 return resultado.getString("Pokemon_favorito");
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public ArrayList obtener_pokemon_favorito(String idEntrenador){
+    public ArrayList obtener_pokemon_favorito(String idEntrenador) {
         ArrayList pokemon = new ArrayList<>();
-        try{
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtener_pokemon(" + idEntrenador + ")");
-            while(resultado.next()){
+            while (resultado.next()) {
                 pokemon.add(resultado.getString("Nombre"));
                 pokemon.add(resultado.getString("Mote"));
                 pokemon.add((resultado.getInt("NumPokedex")));
                 pokemon.add(resultado.getBytes("Imagen"));
             }
             return pokemon;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public boolean eliminarPokemon(String idPokemon, String idEntrenador){
-        try{
+    public boolean eliminarPokemon(String idPokemon, String idEntrenador) {
+        try {
             consulta = con.createStatement();
             consulta.executeUpdate("CALL eliminar_Pokemon(" + idPokemon + " , " + idEntrenador + ")");
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return false;
     }
 
-    public byte[] obtenerImagenEspecie(String especie){
-        try{
+    public byte[] obtenerImagenEspecie(String especie) {
+        try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("SELECT Imagen FROM Especie WHERE Nombre = '" + especie + "'");
             if (resultado.next()) {
                 return resultado.getBytes("Imagen");
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
+    }
+
+    public boolean actualizarDatosPokemon(String idPokemon, String mote, String habEspecial, String objeto) {
+        try {
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("CALL actualizar_datos_pokemon(" + idPokemon + ", '" + mote + "', '" + habEspecial + "', '" + objeto + "')");
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+    public boolean eliminar_especie(String numPokedex){
+        try {
+            consulta = con.createStatement();
+            consulta.executeUpdate("CALL eliminar_especie(" + numPokedex + ")");
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
     }
 }

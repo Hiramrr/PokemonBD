@@ -6,19 +6,23 @@ package com.mycompany.pokemonbd;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  *
  * @author hiram
  */
 public class Editar_Pokemon extends javax.swing.JDialog implements ActionListener {
-
+    String idPokemon;
+    BD mBD = new BD();
     /**
      * Creates new form Editar_Pokemon
      */
-    public Editar_Pokemon(java.awt.Frame parent, boolean modal) {
+    public Editar_Pokemon(java.awt.Frame parent, boolean modal, String idPokemon) {
         super(parent, modal);
+        this.idPokemon = idPokemon;
         initComponents();
+        llenarDatos();
     }
 
     /**
@@ -152,47 +156,7 @@ public class Editar_Pokemon extends javax.swing.JDialog implements ActionListene
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Editar_Pokemon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Editar_Pokemon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Editar_Pokemon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Editar_Pokemon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Editar_Pokemon dialog = new Editar_Pokemon(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cambios;
@@ -206,8 +170,23 @@ public class Editar_Pokemon extends javax.swing.JDialog implements ActionListene
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 
+    public void llenarDatos(){
+        ArrayList datos = mBD.obtenerDatosPokemon(idPokemon);
+        mote.setText(datos.get(3).toString());
+        habilidad_combo.setSelectedItem(datos.get(9).toString());
+        objeto_combo.setSelectedItem(datos.get(6).toString());
+    }
+
+    public void actualizar(){
+        mBD.actualizarDatosPokemon(idPokemon, mote.getText(), habilidad_combo.getSelectedItem().toString(), objeto_combo.getSelectedItem().toString());
+    }
+
     @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void actionPerformed(ActionEvent evt) {
+        if(evt.getSource() == cambios){
+            actualizar();
+            ((ListaPK) this.getParent()).actualizarTabla();
+            this.dispose();
+        }
     }
 }
