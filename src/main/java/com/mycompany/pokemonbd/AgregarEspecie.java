@@ -81,6 +81,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         pkMax = new javax.swing.JLabel();
         maxPokemon = new javax.swing.JTextField();
         numPokedex_utilizado = new javax.swing.JLabel();
+        editar = new javax.swing.JButton();
 
         Agregar.setBackground(new java.awt.Color(22, 26, 33));
         Agregar.setForeground(new java.awt.Color(22, 26, 33));
@@ -354,6 +355,11 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(numPokedex_utilizado);
         numPokedex_utilizado.setBounds(320, 250, 330, 15);
 
+        editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editar.png"))); // NOI18N
+        editar.addActionListener(this);
+        Agregar.add(editar);
+        editar.setBounds(660, 20, 41, 41);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -406,6 +412,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     private javax.swing.JTextField defensaBase_t;
     private javax.swing.JLabel defensa_label;
     private javax.swing.JTextField defespecialBase_t;
+    private javax.swing.JButton editar;
     private javax.swing.JLabel especie_Label;
     private javax.swing.JLabel generacion_label;
     private javax.swing.JTextField generaciont;

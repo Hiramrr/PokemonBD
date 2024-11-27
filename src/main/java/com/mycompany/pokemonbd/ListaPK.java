@@ -72,6 +72,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         tipo2_label = new javax.swing.JLabel();
         habEspecial_label = new javax.swing.JLabel();
         favorito_icono = new javax.swing.JLabel();
+        editar = new javax.swing.JButton();
         estadisticas = new javax.swing.JPanel();
         tituloes = new javax.swing.JLabel();
         imagen1 = new javax.swing.JPanel();
@@ -254,6 +255,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         habEspecial_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         habEspecial_label.setText("HabEspecial:");
 
+        editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editar.png"))); // NOI18N
+        editar.addActionListener(this);
+
         javax.swing.GroupLayout datosLayout = new javax.swing.GroupLayout(datos);
         datos.setLayout(datosLayout);
         datosLayout.setHorizontalGroup(
@@ -281,8 +285,13 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                             .addComponent(habEspecial_label)
                             .addComponent(region_label))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addGroup(datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosLayout.createSequentialGroup()
+                        .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosLayout.createSequentialGroup()
+                        .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
             .addGroup(datosLayout.createSequentialGroup()
                 .addGap(162, 162, 162)
                 .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,7 +300,9 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         datosLayout.setVerticalGroup(
             datosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(datosLayout.createSequentialGroup()
-                .addGap(91, 91, 91)
+                .addContainerGap()
+                .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addComponent(favorito_icono, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosLayout.createSequentialGroup()
@@ -1049,6 +1060,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JTextField defensaBase_t;
     private javax.swing.JLabel defensa_label;
     private javax.swing.JTextField defespecialBase_t;
+    private javax.swing.JButton editar;
     private javax.swing.JButton eliminar;
     private javax.swing.JLabel estadistica_label;
     private javax.swing.JPanel estadisticas;
