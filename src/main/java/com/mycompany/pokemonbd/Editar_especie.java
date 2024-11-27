@@ -105,6 +105,7 @@ public class Editar_especie extends javax.swing.JDialog implements ActionListene
         numPokedex_label.setForeground(new java.awt.Color(255, 255, 255));
         numPokedex_label.setText("Num. Pokedex");
 
+        numPokedex_t.setEditable(false);
         numPokedex_t.setBackground(new java.awt.Color(13, 17, 23));
         numPokedex_t.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         numPokedex_t.setForeground(new java.awt.Color(255, 255, 255));
