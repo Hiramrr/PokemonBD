@@ -50,7 +50,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         imagen = new javax.swing.JPanel();
         perfil = new javax.swing.JLabel();
         especie_Label = new javax.swing.JLabel();
-        IDEntrenador1 = new javax.swing.JTextField();
+        nombre_especie = new javax.swing.JTextField();
         numPokedex_label = new javax.swing.JLabel();
         numPokedex_t = new javax.swing.JTextField();
         objeto_label = new javax.swing.JLabel();
@@ -108,20 +108,20 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         Agregar.add(especie_Label);
         especie_Label.setBounds(320, 80, 220, 29);
 
-        IDEntrenador1.setBackground(new java.awt.Color(13, 17, 23));
-        IDEntrenador1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        IDEntrenador1.setForeground(new java.awt.Color(255, 255, 255));
-        IDEntrenador1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        IDEntrenador1.setBorder(null);
-        IDEntrenador1.setCaretColor(new java.awt.Color(255, 255, 255));
-        IDEntrenador1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        IDEntrenador1.addActionListener(new java.awt.event.ActionListener() {
+        nombre_especie.setBackground(new java.awt.Color(13, 17, 23));
+        nombre_especie.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        nombre_especie.setForeground(new java.awt.Color(255, 255, 255));
+        nombre_especie.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nombre_especie.setBorder(null);
+        nombre_especie.setCaretColor(new java.awt.Color(255, 255, 255));
+        nombre_especie.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        nombre_especie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IDEntrenador1ActionPerformed(evt);
+                nombre_especieActionPerformed(evt);
             }
         });
-        Agregar.add(IDEntrenador1);
-        IDEntrenador1.setBounds(320, 120, 370, 30);
+        Agregar.add(nombre_especie);
+        nombre_especie.setBounds(320, 120, 370, 30);
 
         numPokedex_label.setFont(new java.awt.Font("Segoe UI", 1, 21)); // NOI18N
         numPokedex_label.setForeground(new java.awt.Color(255, 255, 255));
@@ -380,9 +380,9 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         // TODO add your handling code here:
     }//GEN-LAST:event_numPokedex_tActionPerformed
 
-    private void IDEntrenador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDEntrenador1ActionPerformed
+    private void nombre_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_especieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IDEntrenador1ActionPerformed
+    }//GEN-LAST:event_nombre_especieActionPerformed
 
     private void tipo2_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo2_comboActionPerformed
         // TODO add your handling code here:
@@ -395,7 +395,6 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Agregar;
-    private javax.swing.JTextField IDEntrenador1;
     private javax.swing.JButton agregarPK;
     private javax.swing.JTextField ataqueBase_t;
     private javax.swing.JLabel atqEspecial_label;
@@ -412,6 +411,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     private javax.swing.JTextField generaciont;
     private javax.swing.JPanel imagen;
     private javax.swing.JTextField maxPokemon;
+    private javax.swing.JTextField nombre_especie;
     private javax.swing.JLabel numPokedex_label;
     private javax.swing.JTextField numPokedex_t;
     private javax.swing.JLabel numPokedex_utilizado;
@@ -605,7 +605,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     public void crearEspecie() {
         try {
             int numPokedex = Integer.parseInt(numPokedex_t.getText());
-            String nombre = IDEntrenador1.getText();
+            String nombre = nombre_especie.getText();
             String region = region_combo.getSelectedItem().toString();
             String tipo1 = tipo_combo.getSelectedItem().toString();
             String tipo2 = tipo2_combo.getSelectedItem().toString();
@@ -644,7 +644,7 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
     }
 
     public void vaciarTexto(){
-        IDEntrenador1.setText("");
+        nombre_especie.setText("");
         numPokedex_t.setText("");
         psBase_t.setText("0");
         ataqueBase_t.setText("0");
