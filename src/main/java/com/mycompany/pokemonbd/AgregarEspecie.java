@@ -505,6 +505,9 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         if(evt.getSource() == agregarPK){
             crearEspecie();
         }
+        if(evt.getSource() == editar){
+            ((AgregarNuevo)javax.swing.SwingUtilities.getWindowAncestor(this)).editarEspecie();
+        }
     }
 
 

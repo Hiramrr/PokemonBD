@@ -20,6 +20,7 @@ public class Editar_especie extends javax.swing.JDialog implements ActionListene
     public Editar_especie(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        llenarEspecies();
     }
 
     /**
@@ -302,6 +303,7 @@ public class Editar_especie extends javax.swing.JDialog implements ActionListene
         }
         especies_combo.removeAllItems();
         especies_combo.setModel(new javax.swing.DefaultComboBoxModel<>(especies));
+
     }
 
     @Override

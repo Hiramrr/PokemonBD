@@ -171,4 +171,7 @@ public class AgregarNuevo extends javax.swing.JDialog implements ActionListener{
         ((ListaPK)javax.swing.SwingUtilities.getWindowAncestor(this)).llenarTabla();
     }
 
+    public void editarEspecie(){
+        ((ListaPK)javax.swing.SwingUtilities.getWindowAncestor(this)).editarEspecie();
+    }
 }

@@ -1433,5 +1433,10 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
                 Integer.parseInt(vel_evs_t.getText()) + Integer.parseInt(def_especial_evs_t.getText()) + Integer.parseInt(atq_especial_evs_t.getText());
         total_evs_t.setText(String.valueOf(evs_total));
     }
+
+    public void editarEspecie(){
+        Editar_especie editar = new Editar_especie(this,true);
+        editar.setVisible(true);
+    }
 }
 
