@@ -403,17 +403,34 @@ public class BD {
         return null;
     }
 
+    public ArrayList obtenerTipoEspecie(String nombre){
+        ArrayList datos = new ArrayList();
+        try{
+            consulta = con.createStatement();
+            resultado = consulta.executeQuery("SELECT Tipo1, Tipo2 FROM Especie WHERE Nombre = '" + nombre + "'");
+            while(resultado.next()){
+                datos.add(resultado.getString("Tipo1"));
+                datos.add(resultado.getString("Tipo2"));
+            }
+            return datos;
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
+
+
     public ArrayList obtenerDatosEspecie(String nombre) {
         ArrayList datos = new ArrayList<>();
         try {
             consulta = con.createStatement();
             resultado = consulta.executeQuery("CALL obtenerDatosEspecie('" + nombre + "')");
             while (resultado.next()) {
-                datos.add(resultado.getInt("numPokedex"));
-                datos.add(resultado.getString("PSBase"));
-                datos.add(resultado.getInt("ATKBase"));
-                datos.add(resultado.getInt("DEFBase"));
-                datos.add(resultado.getInt("VELBase"));
+                datos.add(resultado.getInt("numPokedex")); // 0
+                datos.add(resultado.getString("PSBase")); // 1
+                datos.add(resultado.getInt("ATKBase")); //2
+                datos.add(resultado.getInt("DEFBase")); //3
+                datos.add(resultado.getInt("VELBase")); //4
                 datos.add(resultado.getInt("SDEFBase"));
                 datos.add(resultado.getInt("SATKBase"));
                 datos.add(resultado.getBytes("Imagen"));
@@ -722,6 +739,26 @@ public class BD {
         try {
             consulta = con.createStatement();
             consulta.executeUpdate("CALL eliminar_especie(" + numPokedex + ")");
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+
+
+    public boolean actualizarEspecie(ArrayList informacion) {
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement("CALL actualizar_datos_especie(?, ?, ?, ?, ?)");
+            ps.setInt(1, (int) informacion.get(0)); // numPokedex
+            ps.setString(2, (String) informacion.get(1)); // nombre
+            ps.setString(3, (String) informacion.get(2)); // tipo1
+            ps.setString(4, (String) informacion.get(3)); // tipo2
+            ps.setBytes(5, (byte[]) informacion.get(4)); // imagen
+            ps.executeUpdate();
+            System.out.println("Intento update");
             return true;
         } catch (Exception e) {
             System.out.println(e);

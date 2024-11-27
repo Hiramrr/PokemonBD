@@ -4,8 +4,14 @@
  */
 package com.mycompany.pokemonbd;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 /**
@@ -14,13 +20,18 @@ import java.util.ArrayList;
  */
 public class Editar_especie extends javax.swing.JDialog implements ActionListener{
     BD mBD = new BD();
+    byte [] foto;
+    String ruta;
     /**
      * Creates new form Editar_especie
      */
     public Editar_especie(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.foto = foto;
         llenarEspecies();
+        agregarListenerSeleccionEspecie();
+        llenarDatos();
     }
 
     /**
@@ -289,10 +300,42 @@ public class Editar_especie extends javax.swing.JDialog implements ActionListene
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 
+    public void cargarImagen(ArrayList dato){
+        this.foto = (byte[]) dato.get(7);
+        Image foto = new ImageIcon(this.foto).getImage();
+        ImageIcon icono = new ImageIcon(foto.getScaledInstance(150,150,Image.SCALE_SMOOTH));
+        perfil.setIcon(icono);
+    }
+
+    public void llenarDatos(){
+        ArrayList datos = mBD.obtenerDatosEspecie(especies_combo.getSelectedItem().toString());
+        ArrayList por_alguna_razon_otro_array_para_los_tipos = mBD.obtenerTipoEspecie(especies_combo.getSelectedItem().toString());
+        nombre_especie.setText(especies_combo.getSelectedItem().toString());
+        numPokedex_t.setText(datos.get(0).toString());
+        tipo_combo.setSelectedItem(por_alguna_razon_otro_array_para_los_tipos.get(0).toString());
+        tipo2_combo.setSelectedItem(por_alguna_razon_otro_array_para_los_tipos.get(1).toString());
+        cargarImagen(datos);
+    }
+
+    public void agregarListenerSeleccionEspecie(){
+        especies_combo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                int filaSeleccionada = especies_combo.getSelectedIndex();
+
+                if (filaSeleccionada != -1) {
+                    llenarDatos();
+                }
+            }
+        });
+    }
+
+
     public void eliminarEspecie(){
         String numPokedex = numPokedex_t.getText();
         ListaPK parent = (ListaPK) this.getParent();
-        parent.Exito("Especie eliminada con exito");
+        parent.Exito("Especie eliminada con exito " + numPokedex);
+        mBD.eliminar_especie(numPokedex);
     }
 
     public void llenarEspecies(){
@@ -303,11 +346,64 @@ public class Editar_especie extends javax.swing.JDialog implements ActionListene
         }
         especies_combo.removeAllItems();
         especies_combo.setModel(new javax.swing.DefaultComboBoxModel<>(especies));
+    }
 
+    public void actualizarEspecie(){
+        String nombre = nombre_especie.getText();
+        int numPokedex = Integer.parseInt(numPokedex_t.getText());
+        String tipo = tipo_combo.getSelectedItem().toString();
+        String tipo2 = tipo2_combo.getSelectedItem().toString();
+        ArrayList informacion = new ArrayList();
+        informacion.add(numPokedex);
+        informacion.add(nombre);
+        informacion.add(tipo);
+        informacion.add(tipo2);
+        informacion.add(foto);
+        mBD.actualizarEspecie(informacion);
+        ListaPK parent = (ListaPK) this.getParent();
+        parent.Exito("Especie actualizada con exito " + nombre);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void actionPerformed(ActionEvent evt) {
+        if(evt.getSource() == eliminar){
+            eliminarEspecie();
+            this.dispose();
+        }
+        if(evt.getSource() == cambios){
+            actualizarEspecie();
+            this.dispose();
+        }
+        if(evt.getSource() == cargar){
+            cargarImagen();
+            getImagen(ruta);
+        }
+    }
+
+    public void cargarImagen(){
+        JFileChooser archivos = new JFileChooser();
+        FileNameExtensionFilter imagenes = new FileNameExtensionFilter("JPG, PNG & GIF", "jpg", "png", "gif");
+        archivos.setFileFilter(imagenes);
+
+        int respuesta = archivos.showOpenDialog(this);
+        if(respuesta == archivos.APPROVE_OPTION){
+            ruta = archivos.getSelectedFile().getPath();
+
+            Image foto = new ImageIcon(ruta).getImage();
+            ImageIcon icono = new ImageIcon(foto.getScaledInstance(imagen.getWidth(),imagen.getHeight(),Image.SCALE_SMOOTH));
+            perfil.setIcon(icono);
+        }
+    }
+
+    private void getImagen(String ruta){
+        File imagen = new File(ruta);
+        try{
+            byte[] icono = new byte[(int)imagen.length()];
+            InputStream input = new FileInputStream(imagen);
+            input.read(icono);
+            this.foto = icono;
+        } catch (Exception e){
+            System.out.println(e);
+        }
     }
 }
