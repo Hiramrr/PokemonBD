@@ -6,6 +6,7 @@ package com.mycompany.pokemonbd;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  *
@@ -286,6 +287,22 @@ public class Editar_especie extends javax.swing.JDialog implements ActionListene
     private javax.swing.JLabel tipo_label1;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
+
+    public void eliminarEspecie(){
+        String numPokedex = numPokedex_t.getText();
+        ListaPK parent = (ListaPK) this.getParent();
+        parent.Exito("Especie eliminada con exito");
+    }
+
+    public void llenarEspecies(){
+        ArrayList lista = mBD.obtenerEspecies();
+        String especies[] = new String [lista.size()];
+        for(int i = 0; i < lista.size(); i ++){
+            especies[i] = lista.get(i).toString();
+        }
+        especies_combo.removeAllItems();
+        especies_combo.setModel(new javax.swing.DefaultComboBoxModel<>(especies));
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

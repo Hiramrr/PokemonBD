@@ -1121,6 +1121,14 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JPanel ventana;
     // End of variables declaration//GEN-END:variables
 
+    public void Exito(String mensaje) {
+        Dialogo acciones = new Dialogo(this,false);
+        acciones.setVisible(true);
+        acciones.setMensaje(mensaje);
+        acciones.setLocation(450, 261);
+        System.out.println("algo paso wow");
+    }
+
     public void Error(String mensaje) {
         Dialogo acciones = new Dialogo(this,false);
         acciones.setVisible(true);
