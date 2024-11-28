@@ -276,106 +276,56 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="99">
+              <StringArray count="49">
                 <StringItem index="0" value="Ninguno"/>
                 <StringItem index="1" value="Agua fresca"/>
-                <StringItem index="2" value="Agua fresca"/>
-                <StringItem index="3" value="Antihielo"/>
-                <StringItem index="4" value="Antiparalizador"/>
-                <StringItem index="5" value="Antiquemar"/>
-                <StringItem index="6" value="Ant&#xed;doto"/>
-                <StringItem index="7" value="Ataque X"/>
-                <StringItem index="8" value="Bicicleta"/>
-                <StringItem index="9" value="Bicicleta"/>
-                <StringItem index="10" value="Bono bici"/>
-                <StringItem index="11" value="Calcio"/>
-                <StringItem index="12" value="Calcio"/>
-                <StringItem index="13" value="Caramelo raro"/>
-                <StringItem index="14" value="Caramelo raro"/>
-                <StringItem index="15" value="Carburante"/>
-                <StringItem index="16" value="Carburante"/>
-                <StringItem index="17" value="Ca&#xf1;a buena"/>
-                <StringItem index="18" value="Ca&#xf1;a vieja"/>
-                <StringItem index="19" value="Correo Oak"/>
-                <StringItem index="20" value="Correo Oak"/>
-                <StringItem index="21" value="Cuerda huida"/>
-                <StringItem index="22" value="Cura total"/>
-                <StringItem index="23" value="Defensa especial X"/>
-                <StringItem index="24" value="Defensa X"/>
-                <StringItem index="25" value="Despertar"/>
-                <StringItem index="26" value="Dientes oro"/>
-                <StringItem index="27" value="Directo"/>
-                <StringItem index="28" value="Elixir"/>
-                <StringItem index="29" value="Especial X"/>
-                <StringItem index="30" value="F&#xf3;sil domo"/>
-                <StringItem index="31" value="F&#xf3;sil domo"/>
-                <StringItem index="32" value="F&#xf3;sil h&#xe9;lix"/>
-                <StringItem index="33" value="Hierro"/>
-                <StringItem index="34" value="Hierro"/>
-                <StringItem index="35" value="Hiperpoci&#xf3;n"/>
-                <StringItem index="36" value="Limonada"/>
-                <StringItem index="37" value="Limonada"/>
-                <StringItem index="38" value="Llave ascensor"/>
-                <StringItem index="39" value="Llave magn&#xe9;tica"/>
-                <StringItem index="40" value="Llave secreta"/>
-                <StringItem index="41" value="Mapa"/>
-                <StringItem index="42" value="Mapa"/>
-                <StringItem index="43" value="Monedero"/>
-                <StringItem index="44" value="Monedero"/>
-                <StringItem index="45" value="M&#xe1;s PP"/>
-                <StringItem index="46" value="M&#xe1;s PS"/>
-                <StringItem index="47" value="M&#xe1;s PS"/>
-                <StringItem index="48" value="M&#xe1;ximo elixir"/>
-                <StringItem index="49" value="Pepita"/>
-                <StringItem index="50" value="Piedra agua"/>
-                <StringItem index="51" value="Piedra agua"/>
-                <StringItem index="52" value="Piedra fuego"/>
-                <StringItem index="53" value="Piedra fuego"/>
-                <StringItem index="54" value="Piedra hoja"/>
-                <StringItem index="55" value="Piedra hoja"/>
-                <StringItem index="56" value="Piedra lunar"/>
-                <StringItem index="57" value="Piedra lunar"/>
-                <StringItem index="58" value="Piedra trueno"/>
-                <StringItem index="59" value="Piedra trueno"/>
-                <StringItem index="60" value="Poci&#xf3;n"/>
-                <StringItem index="61" value="Poci&#xf3;n"/>
-                <StringItem index="62" value="Poci&#xf3;n m&#xe1;xima"/>
-                <StringItem index="63" value="Poci&#xf3;n m&#xe1;xima"/>
-                <StringItem index="64" value="Pok&#xe9; flauta"/>
-                <StringItem index="65" value="Pok&#xe9; flauta"/>
-                <StringItem index="66" value="Pok&#xe9; mu&#xf1;eco"/>
-                <StringItem index="67" value="Pok&#xe9; mu&#xf1;eco"/>
-                <StringItem index="68" value="Precisi&#xf3;n X"/>
-                <StringItem index="69" value="Protecci&#xf3;n especial"/>
-                <StringItem index="70" value="Prote&#xed;na"/>
-                <StringItem index="71" value="Prote&#xed;na"/>
-                <StringItem index="72" value="Refresco"/>
-                <StringItem index="73" value="Refresco"/>
-                <StringItem index="74" value="Repartir experiencia"/>
-                <StringItem index="75" value="Repelente"/>
-                <StringItem index="76" value="Repelente m&#xe1;ximo"/>
-                <StringItem index="77" value="Repelente m&#xe1;ximo"/>
-                <StringItem index="78" value="Restaurar todo"/>
-                <StringItem index="79" value="Revivir"/>
-                <StringItem index="80" value="Revivir m&#xe1;ximo"/>
-                <StringItem index="81" value="Revivir m&#xe1;ximo"/>
-                <StringItem index="82" value=" "/>
-                <StringItem index="83" value="S"/>
-                <StringItem index="84" value="Scope Silph"/>
-                <StringItem index="85" value="Scope Silph"/>
-                <StringItem index="86" value="Superca&#xf1;a"/>
-                <StringItem index="87" value="Superca&#xf1;a"/>
-                <StringItem index="88" value="Superpoci&#xf3;n"/>
-                <StringItem index="89" value="Superpoci&#xf3;n"/>
-                <StringItem index="90" value="Superrepelente"/>
-                <StringItem index="91" value="Ticket barco"/>
-                <StringItem index="92" value="Velocidad X"/>
-                <StringItem index="93" value="Zahor&#xed;"/>
-                <StringItem index="94" value="Zahor&#xed;"/>
-                <StringItem index="95" value="&#xc1;mbar viejo"/>
-                <StringItem index="96" value="&#xc1;mbar viejo"/>
-                <StringItem index="97" value="&#xc9;ter"/>
-                <StringItem index="98" value="&#xc9;ter m&#xe1;ximo"/>
+                <StringItem index="2" value="Antihielo"/>
+                <StringItem index="3" value="Antiparalizador"/>
+                <StringItem index="4" value="Antiquemar"/>
+                <StringItem index="5" value="Ant&#xed;doto"/>
+                <StringItem index="6" value="Ataque X"/>
+                <StringItem index="7" value="Calcio"/>
+                <StringItem index="8" value="Caramelo raro"/>
+                <StringItem index="9" value="Carburante"/>
+                <StringItem index="10" value="Cuerda huida"/>
+                <StringItem index="11" value="Cura total"/>
+                <StringItem index="12" value="Defensa especial X"/>
+                <StringItem index="13" value="Defensa X"/>
+                <StringItem index="14" value="Despertar"/>
+                <StringItem index="15" value="Elixir"/>
+                <StringItem index="16" value="Especial X"/>
+                <StringItem index="17" value="F&#xf3;sil domo"/>
+                <StringItem index="18" value="F&#xf3;sil h&#xe9;lix"/>
+                <StringItem index="19" value="Hierro"/>
+                <StringItem index="20" value="Hiperpoci&#xf3;n"/>
+                <StringItem index="21" value="Limonada"/>
+                <StringItem index="22" value="M&#xe1;s PP"/>
+                <StringItem index="23" value="M&#xe1;s PS"/>
+                <StringItem index="24" value="M&#xe1;ximo elixir"/>
+                <StringItem index="25" value="Pepita"/>
+                <StringItem index="26" value="Piedra agua"/>
+                <StringItem index="27" value="Piedra fuego"/>
+                <StringItem index="28" value="Piedra hoja"/>
+                <StringItem index="29" value="Piedra lunar"/>
+                <StringItem index="30" value="Piedra trueno"/>
+                <StringItem index="31" value="Poci&#xf3;n"/>
+                <StringItem index="32" value="Poci&#xf3;n m&#xe1;xima"/>
+                <StringItem index="33" value="Pok&#xe9; mu&#xf1;eco"/>
+                <StringItem index="34" value="Precisi&#xf3;n X"/>
+                <StringItem index="35" value="Prote&#xed;na"/>
+                <StringItem index="36" value="Refresco"/>
+                <StringItem index="37" value="Repartir experiencia"/>
+                <StringItem index="38" value="Repelente"/>
+                <StringItem index="39" value="Repelente m&#xe1;ximo"/>
+                <StringItem index="40" value="Restaurar todo"/>
+                <StringItem index="41" value="Revivir"/>
+                <StringItem index="42" value="Revivir m&#xe1;ximo"/>
+                <StringItem index="43" value="Superpoci&#xf3;n"/>
+                <StringItem index="44" value="Superrepelente"/>
+                <StringItem index="45" value="Velocidad X"/>
+                <StringItem index="46" value="&#xc1;mbar viejo"/>
+                <StringItem index="47" value="&#xc9;ter"/>
+                <StringItem index="48" value="&#xc9;ter m&#xe1;ximo"/>
               </StringArray>
             </Property>
           </Properties>
@@ -416,9 +366,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
+              <StringArray count="3">
                 <StringItem index="0" value="Masculino"/>
                 <StringItem index="1" value="Femenino"/>
+                <StringItem index="2" value="Ninguno"/>
               </StringArray>
             </Property>
           </Properties>

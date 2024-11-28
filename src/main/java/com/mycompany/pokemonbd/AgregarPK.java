@@ -205,7 +205,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         objeto_combo.setBackground(new java.awt.Color(13, 17, 23));
         objeto_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         objeto_combo.setForeground(new java.awt.Color(255, 255, 255));
-        objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Agua fresca", "Agua fresca", "Antihielo", "Antiparalizador", "Antiquemar", "Antídoto", "Ataque X", "Bicicleta", "Bicicleta", "Bono bici", "Calcio", "Calcio", "Caramelo raro", "Caramelo raro", "Carburante", "Carburante", "Caña buena", "Caña vieja", "Correo Oak", "Correo Oak", "Cuerda huida", "Cura total", "Defensa especial X", "Defensa X", "Despertar", "Dientes oro", "Directo", "Elixir", "Especial X", "Fósil domo", "Fósil domo", "Fósil hélix", "Hierro", "Hierro", "Hiperpoción", "Limonada", "Limonada", "Llave ascensor", "Llave magnética", "Llave secreta", "Mapa", "Mapa", "Monedero", "Monedero", "Más PP", "Más PS", "Más PS", "Máximo elixir", "Pepita", "Piedra agua", "Piedra agua", "Piedra fuego", "Piedra fuego", "Piedra hoja", "Piedra hoja", "Piedra lunar", "Piedra lunar", "Piedra trueno", "Piedra trueno", "Poción", "Poción", "Poción máxima", "Poción máxima", "Poké flauta", "Poké flauta", "Poké muñeco", "Poké muñeco", "Precisión X", "Protección especial", "Proteína", "Proteína", "Refresco", "Refresco", "Repartir experiencia", "Repelente", "Repelente máximo", "Repelente máximo", "Restaurar todo", "Revivir", "Revivir máximo", "Revivir máximo", " ", "S", "Scope Silph", "Scope Silph", "Supercaña", "Supercaña", "Superpoción", "Superpoción", "Superrepelente", "Ticket barco", "Velocidad X", "Zahorí", "Zahorí", "Ámbar viejo", "Ámbar viejo", "Éter", "Éter máximo" }));
+        objeto_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguno", "Agua fresca", "Antihielo", "Antiparalizador", "Antiquemar", "Antídoto", "Ataque X", "Calcio", "Caramelo raro", "Carburante", "Cuerda huida", "Cura total", "Defensa especial X", "Defensa X", "Despertar", "Elixir", "Especial X", "Fósil domo", "Fósil hélix", "Hierro", "Hiperpoción", "Limonada", "Más PP", "Más PS", "Máximo elixir", "Pepita", "Piedra agua", "Piedra fuego", "Piedra hoja", "Piedra lunar", "Piedra trueno", "Poción", "Poción máxima", "Poké muñeco", "Precisión X", "Proteína", "Refresco", "Repartir experiencia", "Repelente", "Repelente máximo", "Restaurar todo", "Revivir", "Revivir máximo", "Superpoción", "Superrepelente", "Velocidad X", "Ámbar viejo", "Éter", "Éter máximo" }));
         Agregar.add(objeto_combo);
         objeto_combo.setBounds(30, 350, 140, 30);
 
@@ -218,7 +218,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         genero_combo.setBackground(new java.awt.Color(13, 17, 23));
         genero_combo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         genero_combo.setForeground(new java.awt.Color(255, 255, 255));
-        genero_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
+        genero_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino", "Ninguno" }));
         Agregar.add(genero_combo);
         genero_combo.setBounds(190, 350, 120, 30);
 
