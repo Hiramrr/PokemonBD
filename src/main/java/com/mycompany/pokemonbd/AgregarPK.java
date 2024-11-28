@@ -1421,6 +1421,15 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     }
 
     public void calcularEstadisticas(){
+        if(totalBase_t.getText().equals("Error") || totalIVS_t.getText().equals("Error") || totalEVs_t.getText().equals("Error")){
+            pstotal_t.setText("Error");
+            atqtotal_t.setText("Error");
+            deftotal_t.setText("Error");
+            atqEspecialtotal_t.setText("Error");
+            defEspecialtotal_t.setText("Error");
+            velocidadtotal_t.setText("Error");
+            return;
+        }
         try{
             int psBase = Integer.parseInt(psBase_t.getText());
             int ataqueBase = Integer.parseInt(ataqueBase_t.getText());
