@@ -1442,9 +1442,11 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
             atqEspecialtotal_t.setText("Error");
             defEspecialtotal_t.setText("Error");
             velocidadtotal_t.setText("Error");
+            error_num.setText("Error");
             return;
         }
         try{
+            error_num.setText("");
             int psBase = Integer.parseInt(psBase_t.getText());
             int ataqueBase = Integer.parseInt(ataqueBase_t.getText());
             int defensaBase = Integer.parseInt(defensaBase_t.getText());

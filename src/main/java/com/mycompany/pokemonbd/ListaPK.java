@@ -1420,6 +1420,7 @@ public class ListaPK extends javax.swing.JFrame implements ActionListener {
         mBD.agregarMovimientos(movimientos);
 
         mBD.asignarFavorito(String.valueOf(idPokemon), idEntrenador);
+        Exito("Felicidades se te ha regalado un pikachu!");
     }
 
     public void sumatoria(){
