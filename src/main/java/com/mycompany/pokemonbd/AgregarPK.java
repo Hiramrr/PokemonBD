@@ -109,6 +109,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         atqEspecialtotal_t = new javax.swing.JTextField();
         defEspecialtotal_t = new javax.swing.JTextField();
         velocidadtotal_t = new javax.swing.JTextField();
+        error_num = new javax.swing.JLabel();
         movimientos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
@@ -393,6 +394,9 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
         velocidadtotal_t.setForeground(new java.awt.Color(255, 255, 255));
         velocidadtotal_t.setText("0");
 
+        error_num.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        error_num.setForeground(new java.awt.Color(184, 44, 0));
+
         javax.swing.GroupLayout estadisticasLayout = new javax.swing.GroupLayout(estadisticas);
         estadisticas.setLayout(estadisticasLayout);
         estadisticasLayout.setHorizontalGroup(
@@ -462,24 +466,28 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                                 .addGap(40, 40, 40)
                                 .addComponent(defEspecialtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(estadisticasLayout.createSequentialGroup()
-                                .addComponent(velocidad_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(estadisticasLayout.createSequentialGroup()
+                                        .addComponent(velocidad_label, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(40, 40, 40)
+                                        .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(velocidadIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(velocidadEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(estadisticasLayout.createSequentialGroup()
+                                        .addComponent(total_label)
+                                        .addGap(80, 80, 80)
+                                        .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(totalIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(totalEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(40, 40, 40)
-                                .addComponent(velocidadBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(velocidadIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(velocidadEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(velocidadtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(estadisticasLayout.createSequentialGroup()
-                                .addComponent(total_label)
-                                .addGap(80, 80, 80)
-                                .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(totalIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(totalEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(112, Short.MAX_VALUE))
+                                .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(velocidadtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(error_num, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         estadisticasLayout.setVerticalGroup(
             estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -531,12 +539,17 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
                     .addComponent(velocidadIVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(velocidadEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(velocidadtotal_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
                 .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(total_label)
-                    .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(estadisticasLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addGroup(estadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(total_label)
+                            .addComponent(totalBase_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(totalIVS_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(totalEVs_t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(estadisticasLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(error_num, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 13, Short.MAX_VALUE))
         );
 
@@ -876,6 +889,7 @@ public class AgregarPK extends javax.swing.JPanel implements ActionListener{
     private javax.swing.JTextField defespecialBase_t;
     private javax.swing.JTextField deftotal_t;
     private javax.swing.JButton eliminarMov;
+    private javax.swing.JLabel error_num;
     private javax.swing.JLabel especie_Label;
     private javax.swing.JComboBox<String> especies_combo;
     private javax.swing.JPanel estadisticas;
