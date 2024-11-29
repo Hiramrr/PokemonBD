@@ -38,6 +38,13 @@ public class AgregarEspecie extends javax.swing.JPanel implements ActionListener
         obtenerRegiones();
         agregarListenerSeleccionRegion();
         agregarListenerEstadisticas();
+        int filaSeleccionada = region_combo.getSelectedIndex();
+        ArrayList datos = mBD.obtenerDatosRegion(region_combo.getItemAt(filaSeleccionada));
+
+        if (filaSeleccionada != -1) {
+            generaciont.setText(datos.get(0).toString());
+            maxPokemon.setText(mBD.obtenerEspaciosDisponiblesPokemon(region_combo.getItemAt(filaSeleccionada)) + "/" + datos.get(1).toString());
+        }
     }
 
 

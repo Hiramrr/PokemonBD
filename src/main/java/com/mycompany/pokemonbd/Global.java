@@ -367,7 +367,7 @@ public class Global extends javax.swing.JFrame implements ActionListener{
         ArrayList datos = mBD.obtenerTabla(idEntrenador);
 
         if (datos != null) {
-            for (int i = 0; i < datos.size() && i < 21; i += 5) {
+            for (int i = 0; i < datos.size() && i < 21 * 5; i += 5) {
                 ImagenAlmacenEntrenador fotoP = new ImagenAlmacenEntrenador();
                 System.out.println(datos.get(i));
                 fotoP.setImagen((byte[]) datos.get(i));
@@ -385,23 +385,21 @@ public class Global extends javax.swing.JFrame implements ActionListener{
                 String nombrePokemon = datos.get(i + 2).toString();
                 String Mote = datos.get(i + 3).toString();
                 String NombreF;
-                if(Mote.equals("")) {
+                if (Mote.equals("")) {
                     NombreF = nombrePokemon;
-                }
-                else{
+                } else {
                     NombreF = Mote;
                 }
-                informacion[1] = datos.get(i + 1); // Nombre del entrenador
                 informacion[2] = NombreF;
-                if(i / 4 < tabla_usuarios.getRowCount()) {
-                    dtm.setValueAt(informacion[0], i / 4, 0);
-                    dtm.setValueAt(informacion[1], i / 4, 1);
-                    dtm.setValueAt(informacion[2], i / 4, 2);
-                } else{
+                if (i / 5 < tabla_usuarios.getRowCount()) {
+                    dtm.setValueAt(informacion[0], i / 5, 0);
+                    dtm.setValueAt(informacion[1], i / 5, 1);
+                    dtm.setValueAt(informacion[2], i / 5, 2);
+                } else {
                     ((DefaultTableModel) tabla_usuarios.getModel()).addRow(informacion);
-                    dtm.setValueAt(informacion[0], i / 4, 0);
-                    dtm.setValueAt(informacion[1], i / 4, 1);
-                    dtm.setValueAt(informacion[2], i / 4, 2);
+                    dtm.setValueAt(informacion[0], i / 5, 0);
+                    dtm.setValueAt(informacion[1], i / 5, 1);
+                    dtm.setValueAt(informacion[2], i / 5, 2);
                 }
             }
         }
